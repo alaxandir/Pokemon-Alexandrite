@@ -1,0 +1,211 @@
+#-------------------------------
+[001]
+# 5F Silph Co
+BattleEnv       = INDOOR
+#-------------------------------
+[002]
+# 6F Silph Co
+BattleEnv       = INDOOR
+#-------------------------------
+[016]
+# CYBERSPACE
+BattleEnv       = SCIFI
+#-------------------------------
+[032]
+# Your Home
+BattleEnv       = INDOOR
+#-------------------------------
+[033]
+# Earthroot Forest
+BattleEnv       = FOREST
+#-------------------------------
+[042]
+BattleEnv       = OUTDOOR
+#-------------------------------
+[043]
+BattleEnv       = OUTDOOR
+#-------------------------------
+[048]
+# Seafoam City
+BattleEnv       = OUTDOOR
+#-------------------------------
+[078]
+# Seafoam Gym
+BattleEnv       = WATER
+
+#-------------------------------
+[081]
+# Underground Tunnel
+BattleEnv       = INDOOR
+#-------------------------------
+[082]
+BattleEnv       = DARKCAVE
+#-------------------------------
+[085]
+# Route 102
+BattleEnv       = OUTDOOR
+#-------------------------------
+[086]
+# Bouldergrove
+BattleEnv       = OUTDOOR
+#-------------------------------
+[087]
+BattleEnv       = STAGE
+#-------------------------------
+[090]
+# Powerplant
+BattleEnv       = DARKNESS
+#-------------------------------
+[091]
+BattleEnv       = DARKNESS
+#-------------------------------
+[093]
+# Seafoam Cave 2F
+BattleEnv       = DARKCAVE
+#-------------------------------
+[097]
+BattleEnv       = DARKCAVE
+#-------------------------------
+[098]
+BattleEnv       = OUTDOOR
+#-------------------------------
+[100]
+# Gold Coast
+BattleEnv       = OUTDOOR
+#-------------------------------
+[104]
+BattleEnv       = OUTDOOR
+#-------------------------------
+[106]
+BattleEnv       = OUTDOOR
+#-------------------------------
+[117]
+# Bug Gym
+BattleEnv       = FOREST
+#-------------------------------
+[120]
+BattleEnv       = INDOOR
+#-------------------------------
+[123]
+# Route 105
+BattleEnv       = OUTDOOR
+#-------------------------------
+[131]
+# Fire Gym
+BattleEnv       = MAGMA
+#-------------------------------
+[133]
+# Ancient Cave
+BattleEnv       = DARKNESS
+#-------------------------------
+[134]
+BattleEnv       = MOUNTAIN
+#-------------------------------
+[138]
+# Route 106
+BattleEnv       = OUTDOOR
+#-------------------------------
+[139]
+# Shimmerwood
+BattleEnv       = FOREST
+#-------------------------------
+[141]
+# Route 107
+BattleEnv       = MOUNTAINLAKE
+#-------------------------------
+[142]
+# Route 108
+BattleEnv       = OUTDOOR
+#-------------------------------
+[143]
+# Neon City
+BattleEnv       = OUTDOOR
+#-------------------------------
+[154]
+# Route 118
+BattleEnv       = FOREST
+#-------------------------------
+[156]
+# Neon Gym
+BattleEnv       = NET
+#-------------------------------
+[157]
+# Silph Co.
+BattleEnv       = INDOOR
+#-------------------------------
+[159]
+# 3F Silpho Co
+BattleEnv       = INDOOR
+#-------------------------------
+[161]
+# 4F Silpho Co
+BattleEnv       = INDOOR
+#-------------------------------
+[162]
+# 7F Silpho Co
+BattleEnv       = CHAMPION
+#-------------------------------
+[164]
+# Route 112
+BattleEnv       = OUTDOOR
+#-------------------------------
+[170]
+# Route 110
+BattleEnv       = MOUNTAINLAKE
+#-------------------------------
+[171]
+# Mt. Mauve
+BattleEnv       = MOUNTAIN
+#-------------------------------
+[173]
+# Route 109
+BattleEnv       = MOUNTAIN
+#-------------------------------
+[175]
+BattleEnv       = DARKCAVE
+#-------------------------------
+[176]
+BattleEnv       = DARKCAVE
+#-------------------------------
+[177]
+BattleEnv       = SNOW
+#-------------------------------
+[179]
+BattleEnv       = SNOW
+#-------------------------------
+[182]
+# Glacier Gym
+BattleEnv       = ICEGYM
+#-------------------------------
+[183]
+BattleEnv       = SNOW
+#-------------------------------
+[184]
+BattleEnv       = SNOW
+#-------------------------------
+[185]
+BattleEnv       = DARKCAVE
+#-------------------------------
+[186]
+# Mt. Mauve Interior
+BattleEnv       = CAVE
+#-------------------------------
+[187]
+# Route 114
+BattleEnv       = OUTDOOR
+#-------------------------------
+[190]
+# Tomb of Thunder
+BattleEnv       = CAVE
+#-------------------------------
+[192]
+# Route 115
+BattleEnv       = OUTDOOR
+#-------------------------------
+[193]
+# Route 116
+BattleEnv       = WATER
+#-------------------------------
+[194]
+# SoulGym
+BattleEnv       = CHAMPION

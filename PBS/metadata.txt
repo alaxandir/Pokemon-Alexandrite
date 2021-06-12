@@ -1,0 +1,1043 @@
+﻿# See the documentation on the wiki to learn how to edit this file.
+#-------------------------------
+[000]
+Home = 32,33,8,4
+WildBattleBGM = WildPokemonBattle.ogg
+TrainerBattleBGM = BattleTrainer.ogg
+WildVictoryME = PokemonVictory.ogg
+SurfBGM = Surftheme.ogg
+BicycleBGM = Cycling.ogg
+PlayerA = POKEMONTRAINER_Red,trainer_POKEMONTRAINER_Red,boy_bike,boy_surf,boy_run,boy_surf,boy_fish_offset,boy_fish_offset
+PlayerB = POKEMONTRAINER_Leaf,trainer_POKEMONTRAINER_Leaf,girl_bike,girl_surf,girl_run,girl_surf,girl_fish_offset,girl_fish_offset
+#-------------------------------
+[001]
+# 5F Silph Co
+Outdoor = false
+MapPosition = 0,8,13
+BattleBack = IndoorC
+Weather = None,0
+#-------------------------------
+[002]
+# 6F Silph Co 
+Outdoor = false
+MapPosition = 0,8,13
+BattleBack = IndoorC
+Weather = None,0
+#-------------------------------
+[003]
+# Fortune City Pokeplex
+Outdoor = false
+ShowArea = false
+Weather = None,0
+MapPosition = 0,4,12
+#-------------------------------
+[004]
+# Fortune City Casino
+Outdoor = false
+ShowArea = true
+Weather = None,0
+MapPosition = 0,4,12
+#-------------------------------
+[005]
+# Test Map
+Outdoor = true
+ShowArea = true
+Weather = None,0
+MapPosition = 0,4,12
+#-------------------------------
+[006]
+# Fortune City Gym
+Outdoor = false
+ShowArea = true
+Weather = None,0
+MapPosition = 0,4,12
+#-------------------------------
+[007]
+# Glacier Gym Underground
+Outdoor = false
+MapPosition = 0,20,16
+BattleBack = EliteA
+Weather = None,0
+#-------------------------------
+[008]
+# Spirit Garden
+Outdoor = true
+ShowArea = true
+Weather = Fog,100
+MapPosition = 0,16,11
+BattleBack = 
+Environment = ForestGrass
+#-------------------------------
+[009]
+# Route 118
+Outdoor = true
+ShowArea = true
+Weather = None,0
+MapPosition = 0,3,10
+#-------------------------------
+[010]
+# Victory Road
+Outdoor = true
+ShowArea = true
+Weather = None,0
+MapPosition = 0,2,9
+#-------------------------------
+[011]
+# Victory Road 2
+Outdoor = true
+ShowArea = true
+Weather = None,0
+MapPosition = 0,2,9
+#-------------------------------
+[012]
+# Victory Plateau
+Outdoor = false
+ShowArea = true
+Weather = None,0
+MapPosition = 0,1,7
+#-------------------------------
+[013]
+# fortune interiors
+Outdoor = false
+ShowArea = true
+Weather = None,0
+MapPosition = 0,4,12
+#-------------------------------
+[014]
+# coal mine bouldergrove
+Outdoor = false
+ShowArea = true
+Weather = None,0
+MapPosition = 0,27,7
+#-------------------------------
+[015]
+# route folders
+#-------------------------------
+[016]
+# Cyberspace
+Outdoor = false
+ShowArea = true
+Weather = None,0
+#-------------------------------
+[032]
+# Your Home
+Outdoor = false
+HealingSpot = 42,26,17
+MapPosition = 0,20,5
+Weather = None,0
+#-------------------------------
+[033]
+# Earthroot Forest
+Outdoor = true
+ShowArea = true
+MapPosition = 0,20,3
+BattleBack = Forest
+Weather = None,0
+#-------------------------------
+[042]
+# Earthroot Town
+Outdoor = true
+ShowArea = true
+MapPosition = 0,20,5
+Weather = None,0
+#-------------------------------
+[043]
+# Route101
+Outdoor = true
+ShowArea = true
+MapPosition = 0,20,6
+Weather = None,0
+#-------------------------------
+[048]
+# Seafoam City
+Outdoor = true
+ShowArea = true
+MapPosition = 0,20,9
+BattleBack = City
+Weather = None,0
+#-------------------------------
+[076]
+# Seafoam City Pokemon Center
+Outdoor = false
+HealingSpot = 76,7,6
+MapPosition = 0,20,9
+Weather = None,0
+#-------------------------------
+[077]
+# Seafoam City Pokemart
+Outdoor = false
+MapPosition = 0,20,9
+Weather = None,0
+#-------------------------------
+[078]
+# Seafoam Gym
+Outdoor = false
+MapPosition = 0,20,9
+BattleBack = IndoorB
+Weather = None,0
+#-------------------------------
+[079]
+# Seafoam Apartment
+Outdoor = false
+MapPosition = 0,20,9
+Weather = None,0
+#-------------------------------
+[080]
+# Seafoam Bikeshop
+Outdoor = false
+MapPosition = 0,20,9
+Weather = None,0
+#-------------------------------
+[081]
+# Underground Tunnel
+Outdoor = false
+ShowArea = true
+BicycleAlways = true
+MapPosition = 0,22,9
+SnapEdges = true
+BattleBack = IndoorB
+Weather = None,0
+#-------------------------------
+[082]
+# Seafoam Cave
+Outdoor = false
+MapPosition = 0,19,8
+DarkMap = true
+SnapEdges = true
+BattleBack = CaveDark
+Weather = None,0
+#-------------------------------
+[083]
+# Cycling Road gate
+Outdoor = false
+MapPosition = 0,21,9
+SnapEdges = true
+Weather = None,0
+#-------------------------------
+[084]
+# Cycling Road gate2
+Outdoor = false
+MapPosition = 0,23,9
+SnapEdges = true
+Weather = None,0
+#-------------------------------
+[085]
+# Route 102
+Outdoor = true
+ShowArea = true
+MapPosition = 0,24,8
+SnapEdges = false
+Weather = None,0
+#-------------------------------
+[086]
+# Bouldergrove
+Outdoor = true
+ShowArea = true
+MapPosition = 0,27,9
+SnapEdges = false
+BattleBack = City
+Weather = None,0
+#-------------------------------
+[087]
+# Bouldergrove Gym
+Outdoor = false
+MapPosition = 0,27,9
+DarkMap = false
+SnapEdges = true
+BattleBack = IndoorC
+Weather = None,0
+#-------------------------------
+[088]
+# Bouldergrove Pokemon Center
+Outdoor = false
+HealingSpot = 88,7,6
+MapPosition = 0,27,9
+DarkMap = false
+SnapEdges = true
+Weather = None,0
+#-------------------------------
+[089]
+# Bouldergrove Pokemart
+Outdoor = false
+MapPosition = 0,27,9
+DarkMap = false
+SnapEdges = true
+Weather = None,0
+#-------------------------------
+[090]
+# Powerplant
+Outdoor = false
+ShowArea = true
+MapPosition = 0,27,9
+DarkMap = true
+SnapEdges = true
+BattleBack = IndoorC
+Weather = None,0
+#-------------------------------
+[091]
+# Powerplant - ON
+Outdoor = false
+ShowArea = true
+MapPosition = 0,27,9
+DarkMap = false
+SnapEdges = true
+BattleBack = IndoorC
+Weather = None,0
+#-------------------------------
+[092]
+# Bouldergrove Apartment1
+Outdoor = false
+MapPosition = 0,27,9
+DarkMap = false
+SnapEdges = true
+Weather = None,0
+#-------------------------------
+[093]
+# Seafoam Cave 2F
+Outdoor = false
+ShowArea = true
+MapPosition = 0,19,7
+DarkMap = true
+SnapEdges = true
+BattleBack = CaveDark
+Weather = None,0
+#-------------------------------
+[094]
+# Bouldergrove Apartment2
+Outdoor = false
+MapPosition = 0,27,9
+DarkMap = false
+SnapEdges = true
+Weather = None,0
+#-------------------------------
+[095]
+# House1
+Outdoor = false
+MapPosition = 0,27,9
+DarkMap = false
+SnapEdges = true
+Weather = None,0
+#-------------------------------
+[096]
+# House2
+Outdoor = false
+MapPosition = 0,27,9
+DarkMap = false
+SnapEdges = true
+Weather = None,0
+#-------------------------------
+[097]
+# Seafoam Cave 3F
+Outdoor = false
+ShowArea = true
+MapPosition = 0,18,7
+DarkMap = true
+SnapEdges = true
+BattleBack = CaveDark
+Weather = None,0
+#-------------------------------
+[098]
+# Route 103
+Outdoor = true
+Weather = Rain,25
+MapPosition = 0,16,5
+DarkMap = false
+SnapEdges = false
+#-------------------------------
+[099]
+# Heal House Rt 103
+Outdoor = false
+HealingSpot = 99,8,8
+MapPosition = 0,16,5
+DarkMap = false
+SnapEdges = false
+Weather = None,0
+#-------------------------------
+[100]
+# Gold Coast
+Outdoor = true
+ShowArea = true
+HealingSpot = 100,31,30
+MapPosition = 0,16,2
+DarkMap = false
+SnapEdges = false
+Weather = Sun,50
+#-------------------------------
+[101]
+# GC House 1
+Outdoor = false
+HealingSpot = 101,8,8
+MapPosition = 0,16,2
+Weather = None,0
+#-------------------------------
+[102]
+# GC House 2
+Outdoor = false
+MapPosition = 0,16,2
+Weather = None,0
+#-------------------------------
+[103]
+# GC House 3
+Outdoor = false
+MapPosition = 0,16,2
+Weather = None,0
+#-------------------------------
+[104]
+# Route 104
+Outdoor = true
+ShowArea = true
+MapPosition = 0,14,4
+DarkMap = false
+SnapEdges = false
+Weather = Rain,25
+#-------------------------------
+[105]
+# Cut Sensi Dojo
+Outdoor = false
+MapPosition = 0,14,4
+Weather = None,0
+#-------------------------------
+[106]
+# Anthophil City
+Outdoor = true
+ShowArea = true
+MapPosition = 0,13,5
+DarkMap = false
+SnapEdges = false
+BattleBack = City
+Weather = None,0
+#-------------------------------
+[107]
+# Earthroot Houses
+Outdoor = false
+MapPosition = 0,20,5
+Weather = None,0
+#-------------------------------
+[108]
+# 102 Healhouse
+Outdoor = false
+HealingSpot = 108,5,5
+MapPosition = 0,24,8
+Weather = None,0
+#-------------------------------
+[109]
+# Anthophil Pokecenter
+HealingSpot = 109,7,6
+MapPosition = 0,13,5
+Weather = None,0
+#-------------------------------
+[110]
+# Anthophil Pokemart
+Outdoor = false
+Weather = None,0
+MapPosition = 0,13,5
+#-------------------------------
+[111]
+# Game Corner
+Outdoor = false
+Weather = None,0
+MapPosition = 0,13,5
+#-------------------------------
+[112]
+# Department Store
+Outdoor = false
+Weather = None,0
+MapPosition = 0,13,5
+#-------------------------------
+[113]
+# Anthophil Elevator
+Outdoor = false
+Weather = None,0
+MapPosition = 0,13,5
+#-------------------------------
+[114]
+# TV Station
+Weather = None,0
+Outdoor = false
+MapPosition = 0,13,5
+#-------------------------------
+[115]
+# INTRO
+Weather = None,0
+MapPosition = 0,1,1
+#-------------------------------
+[116]
+# Anthrophil Lab
+Outdoor = false
+Weather = None,0
+MapPosition = 0,13,5
+#-------------------------------
+[117]
+# Bug Gym
+Outdoor = false
+Weather = None,0
+MapPosition = 0,13,5
+BattleBack = IndoorC
+#-------------------------------
+[118]
+# MoveTutor1
+Outdoor = false
+Weather = None,0
+MapPosition = 0,13,5
+#-------------------------------
+[119]
+# CardShop
+Outdoor = false
+Weather = None,0
+MapPosition = 0,13,5
+#-------------------------------
+[120]
+# Rocket Hideout
+Outdoor = false
+Weather = None,0
+MapPosition = 0,13,5
+#-------------------------------
+[121]
+# Eevee House
+Outdoor = false
+Weather = None,0
+MapPosition = 0,14,4
+#-------------------------------
+[122]
+# Anthophil Apt
+Outdoor = false
+Weather = None,0
+MapPosition = 0,13,5
+#-------------------------------
+[123]
+# Route 105
+Outdoor = true
+ShowArea = true
+MapPosition = 0,10,5
+DarkMap = false
+Weather = Sun,15
+SnapEdges = false
+BattleBack = Forest
+#-------------------------------
+[124]
+# Emberton
+Outdoor = true
+ShowArea = true
+MapPosition = 0,8,5
+DarkMap = false
+Weather = Sun,15
+SnapEdges = false
+BattleBack = City
+#-------------------------------
+[125]
+# Emberton Pokecenter
+HealingSpot = 125,7,6
+MapPosition = 0,8,5
+Weather = None,0
+Outdoor = false
+#-------------------------------
+[126]
+# Emberton Museum
+ShowArea = true
+Weather = None,0
+Outdoor = false
+MapPosition = 0,8,5
+#-------------------------------
+[127]
+# Kurt's House
+MapPosition = 0,8,5
+Outdoor = false
+Weather = None,0
+#-------------------------------
+[128]
+# Groomer House
+MapPosition = 0,8,5
+Outdoor = false
+Weather = None,0
+#-------------------------------
+[129]
+# EV House
+MapPosition = 0,8,5
+Outdoor = false
+Weather = None,0
+#-------------------------------
+[130]
+# Emberton House1
+MapPosition = 0,8,5
+Outdoor = false
+Weather = None,0
+#-------------------------------
+[131]
+# Fire Gym
+MapPosition = 0,8,5
+Outdoor = false
+Weather = None,0
+#-------------------------------
+[132]
+# Ponyta Ranch
+MapPosition = 0,8,5
+Outdoor = false
+Weather = None,0
+#-------------------------------
+[133]
+# Ancient Cave
+Outdoor = false
+ShowArea = true
+MapPosition = 0,10,4
+DarkMap = true
+SnapEdges = false
+BattleBack = Cave
+Weather = None,0
+#-------------------------------
+[134]
+# Ancient Ruins Exterior
+Outdoor = true
+ShowArea = true
+MapPosition = 0,10,52
+BattleBack = Field
+Weather = None,0
+#-------------------------------
+[135]
+# Emberton Museum B
+MapPosition = 0,8,5
+Outdoor = false
+Weather = None,0
+#-------------------------------
+[136]
+# Gold Sea
+Outdoor = true
+ShowArea = true
+MapPosition = 0,16,1
+Weather = None,0
+#-------------------------------
+[137]
+# PKMN Training Club
+Outdoor = false
+ShowArea = true
+MapPosition = 0,8,5
+Weather = None,0
+#-------------------------------
+[138]
+# Route 106
+Outdoor = true
+ShowArea = true
+Weather = Rain,100
+MapPosition = 0,7,5
+#-------------------------------
+[139]
+# Shimmerwood
+Outdoor = true
+ShowArea = true
+MapPosition = 0,10,8
+BattleBack = Forest
+Weather = None,0
+#-------------------------------
+[140]
+# Shimmerwood House
+HealingSpot = 140,11,7
+MapPosition = 0,10,8
+Outdoor = false
+Weather = None,0
+#-------------------------------
+[141]
+# Route 107
+Outdoor = true
+ShowArea = true
+MapPosition = 0,11,10
+Weather = None,0
+#-------------------------------
+[142]
+# Route 108
+Outdoor = true
+ShowArea = true
+Weather = Rain,100
+MapPosition = 0,11,13
+#-------------------------------
+[143]
+# Neon City
+Outdoor = true
+ShowArea = true
+MapPosition = 0,8,13
+BattleBack = City
+Weather = None,0
+#-------------------------------
+[144]
+# Neon Pokecenter & Mart
+Outdoor = false
+HealingSpot = 144,7,6
+MapPosition = 0,8,13
+Weather = None,0
+#-------------------------------
+[145]
+# Emberton Daycare
+MapPosition = 0,8,5
+Weather = None,0
+Outdoor = false
+#-------------------------------
+[146]
+# Training Field
+MapPosition = 0,8,5
+Weather = None,0
+Outdoor = true
+#-------------------------------
+[147]
+# Training Field
+MapPosition = 0,8,5
+Weather = None,0
+Outdoor = true
+#-------------------------------
+[148]
+# Training Field
+MapPosition = 0,8,5
+Weather = None,0
+Outdoor = true
+#-------------------------------
+[149]
+# Training Field
+MapPosition = 0,8,5
+Weather = None,0
+Outdoor = true
+#-------------------------------
+[150]
+# Training Field
+MapPosition = 0,8,5
+Weather = None,0
+Outdoor = true
+#-------------------------------
+[151]
+# Training Field
+MapPosition = 0,8,5
+Weather = None,0
+Outdoor = true
+#-------------------------------
+[152]
+# Training Field
+MapPosition = 0,8,5
+Weather = None,0
+Outdoor = true
+#-------------------------------
+[153]
+# GC Pokemon Center
+HealingSpot = 153,7,6
+MapPosition = 0,16,2
+Outdoor = false
+Weather = None,0
+#-------------------------------
+[154]
+# Route 118
+Outdoor = true
+ShowArea = true
+MapPosition = 0,18,3
+Weather = None,0
+#-------------------------------
+[155]
+# Neon Apt
+Outdoor = false
+MapPosition = 0,8,13
+Weather = None,0
+#-------------------------------
+[156]
+# Neon Gym
+Outdoor = false
+MapPosition = 0,8,13
+BattleBack = IndoorA
+Weather = None,0
+#-------------------------------
+[157]
+# Silph Co.
+Outdoor = false
+MapPosition = 0,8,13
+BattleBack = IndoorC
+Weather = None,0
+#-------------------------------
+[158]
+# Silph Co. Elevator
+MapPosition = 0,8,13
+Weather = None,0
+Outdoor = false
+#-------------------------------
+[159]
+# 3F Silpho Co
+Outdoor = false
+MapPosition = 0,8,13
+BattleBack = IndoorC
+Weather = None,0
+#-------------------------------
+[160]
+# 1B Silph Co
+Outdoor = false
+MapPosition = 0,8,13
+BattleBack = IndoorC
+Weather = None,0
+#-------------------------------
+[161]
+# 4F Silpho Co
+Outdoor = false
+MapPosition = 0,8,13
+BattleBack = IndoorC
+Weather = None,0
+#-------------------------------
+[162]
+# 7F Silpho Co
+Outdoor = false
+MapPosition = 0,8,13
+BattleBack = IndoorC
+Weather = None,0
+#-------------------------------
+[163]
+# Factory
+Outdoor = false
+MapPosition = 0,8,13
+BattleBack = IndoorC
+Weather = None,0
+#-------------------------------
+[164]
+# Route 112
+Outdoor = true
+ShowArea = true
+MapPosition = 0,8,9
+Weather = None,0
+#-------------------------------
+[165]
+# Trident Cove Town
+Outdoor = true
+ShowArea = true
+Weather = Sun,100
+MapPosition = 0,6,9
+#-------------------------------
+[166]
+# Trident Cove Pokemart
+Outdoor = false
+MapPosition = 0,6,9
+Weather = None,0
+#-------------------------------
+[167]
+# Trident Cove Pokecenter
+Outdoor = false
+HealingSpot = 165,40,17
+MapPosition = 0,6,9
+Weather = None,0
+#-------------------------------
+[168]
+# MoveRelearner
+Outdoor = false
+MapPosition = 0,20,5
+#-------------------------------
+[169]
+# Trident Cove Houses
+Outdoor = false
+Weather = None,0
+MapPosition = 0,6,9
+#-------------------------------
+[170]
+# Route 110
+Outdoor = true
+ShowArea = true
+MapPosition = 0,12,12
+#-------------------------------
+[171]
+# Mt. Mauve
+Outdoor = true
+ShowArea = true
+MapPosition = 0,13,12
+BattleBack = Mountain
+Weather = None,0
+#-------------------------------
+[172]
+# Mushroom Maniac
+Outdoor = false
+MapPosition = 0,6,9
+Weather = None,0
+#-------------------------------
+[173]
+# Route 109
+Outdoor = true
+ShowArea = true
+Weather = Snow,100
+MapPosition = 0,12,15
+BattleBack = Mountain
+#-------------------------------
+[174]
+# Route 109 Pokemon Center
+Outdoor = false
+ShowArea = false
+HealingSpot = 173,86,11
+MapPosition = 0,12,15
+Weather = None,0
+#-------------------------------
+[175]
+# Frozen Cavern
+Outdoor = false
+ShowArea = true
+MapPosition = 0,14,15
+BattleBack = Snow
+Weather = None,0
+#-------------------------------
+[176]
+# Frozen Cavern 2F
+Outdoor = false
+ShowArea = true
+MapPosition = 0,14,17
+BattleBack = Snow
+Weather = None,0
+#-------------------------------
+[177]
+# Route 111
+Outdoor = true
+ShowArea = true
+Weather = Blizzard,100
+MapPosition = 0,17,16
+BattleBack = Snow
+#-------------------------------
+[178]
+# SnowHouse
+Outdoor = false
+ShowArea = false
+HealingSpot = 177,31,11
+MapPosition = 0,17,16
+Weather = None,0
+#-------------------------------
+[179]
+# Glacier City
+Outdoor = true
+ShowArea = true
+Weather = Snow,100
+MapPosition = 0,20,16
+BattleBack = Snow
+#-------------------------------
+[180]
+# Glacier Interiors
+Outdoor = false
+MapPosition = 0,20,16
+Weather = None,0
+#-------------------------------
+[181]
+# Glacier City Pokemoncenter
+Outdoor = false
+HealingSpot = 179,15,14
+MapPosition = 0,20,16
+Weather = None,0
+#-------------------------------
+[182]
+# Glacier Gym
+Outdoor = false
+MapPosition = 0,20,16
+BattleBack = EliteA
+Weather = None,0
+#-------------------------------
+[183]
+# Route 113
+Outdoor = true
+ShowArea = true
+Weather = Snow,100
+MapPosition = 0,22,16
+BattleBack = Snow
+#-------------------------------
+[184]
+# Siren's Peak
+Outdoor = true
+ShowArea = true
+Weather = Blizzard,100
+MapPosition = 0,24,16
+BattleBack = Snow
+#-------------------------------
+[185]
+# Siren Cave
+Outdoor = false
+MapPosition = 0,24,16
+BattleBack = Snow
+Weather = None,0
+#-------------------------------
+[186]
+# Mt. Mauve Interior
+Outdoor = false
+MapPosition = 0,13,12
+DarkMap = true
+BattleBack = Cave
+Weather = None,0
+#-------------------------------
+[187]
+# Route 114
+Outdoor = true
+ShowArea = true
+MapPosition = 0,15,12
+Weather = None,0
+#-------------------------------
+[188]
+# Soul City
+Outdoor = true
+ShowArea = true
+Weather = None,0
+MapPosition = 0,16,12
+#-------------------------------
+[189]
+# Soul City PKMN Center
+Outdoor = false
+ShowArea = false
+HealingSpot = 188,6,14
+MapPosition = 0,16,12
+Weather = None,0
+#-------------------------------
+[190]
+# Tomb of Thunder
+Outdoor = false
+ShowArea = true
+MapPosition = 0,13,12
+DarkMap = false
+BattleBack = Cave
+Weather = None,0
+#-------------------------------
+[191]
+# Soul City Interior
+Outdoor = false
+ShowArea = false
+Weather = None,0
+MapPosition = 0,16,12
+#-------------------------------
+[192]
+# Route 115
+Outdoor = true
+ShowArea = true
+Weather = None,0
+MapPosition = 0,17,12
+#-------------------------------
+[193]
+# Route 116
+Outdoor = true
+ShowArea = true
+Weather = None,0
+MapPosition = 0,20,12
+#-------------------------------
+[194]
+# Lighthouse
+Outdoor = false
+ShowArea = true
+Weather = None,0
+MapPosition = 0,21,12
+#-------------------------------
+[195]
+# Soul Gym
+Outdoor = false
+ShowArea = false
+Weather = None,0
+MapPosition = 0,16,12
+#-------------------------------
+[196]
+# Route 117
+Outdoor = true
+ShowArea = true
+Weather = None,0
+MapPosition = 0,16,12
+#-------------------------------
+[197]
+# Fortune City
+Outdoor = true
+ShowArea = true
+Weather = None,0
+MapPosition = 0,4,12
+#-------------------------------
+[198]
+# Waterfall Cave
+Outdoor = false
+MapPosition = 0,15,4
+DarkMap = true
+Weather = None,0
+SnapEdges = true
+BattleBack = CaveDark
+#-------------------------------
+
