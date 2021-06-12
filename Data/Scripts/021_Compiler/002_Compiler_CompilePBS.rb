@@ -873,7 +873,8 @@ module Compiler
   # Compile wild encounter data
   #=============================================================================
   def compile_encounters(path = "PBS/encounters.txt")
-    new_format        = nil
+    GameData::Encounter::DATA.clear
+	new_format        = nil
     encounter_hash    = nil
     step_chances      = nil
     need_step_chances = false   # Not needed for new format only
