@@ -22,7 +22,7 @@ DEFAULT_ALIGNMENT=1
 # ENSURES A MIN. WIDTH OF THE WINDOW
 MIN_WIDTH=200       
 # DEFAULT FONT
-DEFAULT_FONT="Power Green Narrow" # "Power Clear", etc.
+DEFAULT_FONT="Power Green" # "Power Clear", etc.
 # DEFAULT FONT SIZE
 DEFAULT_FONT_SIZE=nil
 # DEFAULT WINDOWSKIN (nil = based on the currently displayed message windowskin)
