@@ -1,0 +1,4 @@
+Name = Summary Screen BW Style 
+Version = 1.5.1
+Credits = DeepBlue PacificWaves, Tommaniacal, Lucidious89, Weibrot, Kobi2604, Dirkriptide, Ploaj, Mr. Gela, Shashu-Greninja
+Website = https://reliccastle.com/resources/569/

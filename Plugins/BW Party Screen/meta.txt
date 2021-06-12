@@ -1,0 +1,4 @@
+Name = Party Screen BW Style
+Version = 1.4.1
+Credits = DeepBlue PacificWaves,Shashu-Greninja
+Website = https://reliccastle.com/resources/569/
