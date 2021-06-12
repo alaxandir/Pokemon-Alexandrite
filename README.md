@@ -1,12 +1,9 @@
 Pokémon Alexandrite
-Beta 5.1.6 (8Jun2021)
-Thank you for downloading!
 
 Over 600 hours of work is in this project please take the time to give me your feedback or bug reports!
 
 Pokemon Alexandrite Discord: https://discord.gg/vCnM3Nj
 
-WHAT'S NEW THIS VERSION: 5.1.6 CHANGELOG
 INSTALLATION
 Extract the .ZIP archive.
 Take off headphones and turn down system volume 
