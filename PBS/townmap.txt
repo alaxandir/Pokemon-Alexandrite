@@ -2,7 +2,7 @@
 [0]
 Filename = mapRegion0.png
 Name = Cardino
-Point = 20,5,Earthroot Town,Move Relearner,42,25,,
+Point = 20,5,Earthroot Town,Move Relearner,42,26,17,
 Point = 20,6,Route 101,,,,,
 Point = 20,7,Route 101,,,,,
 Point = 20,8,Seafoam City,,48,19,23,

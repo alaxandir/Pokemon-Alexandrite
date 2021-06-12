@@ -27,7 +27,7 @@ Pokemon = NIDORANfE,6
 [YOUNGSTER,Neil]
 LoseText = "..."
 Pokemon = BIDOOF,6
-#--------------------------------
+#-------------------------------
 [BUGCATCHER,Ian]
 LoseText = "..."
 Pokemon = WEEDLE,3
@@ -69,23 +69,23 @@ Pokemon = KRABBY,8
 Items = POTION
 LoseText = "..."
 Pokemon = WINGULL,9
+    Moves = QUICKATTACK,WATERGUN,GUST,RAINDANCE
     Item = FOCUSBAND
-	Moves = QUICKATTACK,WATERGUN,GUST,RAINDANCE
     IV = 20,20,20,20,20,20
 Pokemon = WAILMER,9
+    Moves = WATERGUN,WATERPULSE,SPLASH,ROAR
     IV = 15,20,20,20,16,16
-	Moves = WATERGUN,WATERPULSE,SPLASH,ROAR
 Pokemon = PIPLUP,10
     Shiny = yes
+    Moves = BUBBLE,RAINDANCE,MUDSLAP
     Item = RINDOBERRY
-	Moves = BUBBLE,RAINDANCE,MUDSLAP,
     IV = 17,16,17,18,19,19
 #-------------------------------
 [SUPERNERD,Issac]
 LoseText = "..."
 Pokemon = CLEFAIRY,3
 Pokemon = SANDSHREW,4
-	Form = 1
+    Form = 1
 #-------------------------------
 [BUGCATCHER,Samuel]
 LoseText = "..."
@@ -162,17 +162,17 @@ Pokemon = FOONGUS,12
 Items = SUPERPOTION
 LoseText = "..."
 Pokemon = GLIGAR,13
-	Moves = KNOCKOFF,STEALTHROCK,SANDATTACK,POISONSTING
+    Moves = KNOCKOFF,STEALTHROCK,SANDATTACK,POISONSTING
     Item = PASSHOBERRY
     IV = 22,22,22,22,22,22
 Pokemon = SUDOWOODO,14
+    Moves = ROCKTHROW,LOWKICK,WOODHAMMER,COPYCAT
     Item = ORANBERRY
-	Moves = ROCKTHROW,LOWKICK,WOODHAMMER,COPYCAT
     IV = 18,18,18,18,18,18
 Pokemon = CRANIDOS,15
     Shiny = yes
+    Moves = HEADBUTT,ROAR,BULLDOZE
     AbilityIndex = 0
-	Moves = HEADBUTT,ROAR,BULLDOZE,
     Item = FOCUSBAND
     Nature = LONELY
     IV = 20,20,20,20,20,20
@@ -295,13 +295,13 @@ Pokemon = ROSELIA,20
 Items = SUPERPOTION
 LoseText = "..."
 Pokemon = VESPIQUEN,21
+    Moves = HIDDENPOWER,UTURN,BUGBUZZ
     IV = 31,30,31,30,30,31
-	Moves = HIDDENPOWER,UTURN,BUGBUZZ
 Pokemon = SCYTHER,22
+    Moves = WINGATTACK,XSCISSOR,PURSUIT,QUICKATTACK
     AbilityIndex = 2
     Item = FOCUSBAND
     IV = 20,20,20,20,20,20
-	Moves = WINGATTACK,XSCISSOR,PURSUIT,QUICKATTACK
 Pokemon = DURANT,23
     Shiny = yes
     AbilityIndex = 1
@@ -386,22 +386,22 @@ Pokemon = LOPUNNY,23
 Items = SUPERPOTION
 LoseText = "..."
 Pokemon = PONYTA,23
+    Moves = FLAMECHARGE,AGILITY,FIRESPIN,SUNNYDAY
     AbilityIndex = 0
     IV = 25,25,25,25,25,25
-	Moves = FLAMECHARGE,AGILITY,FIRESPIN,SUNNYDAY
 Pokemon = MAGMAR,24
+    Moves = SCARYFACE,FLAMEWHEEL,FIRESPIN,SUNNYDAY
     AbilityIndex = 0
     IV = 22,22,22,22,22,22
-	Moves = SCARYFACE,FLAMEWHEEL,FIRESPIN,SUNNYDAY
 Pokemon = HOUNDOOM,25
+    Moves = WILLOWISP,BITE,FLAMETHROWER,NASTYPLOT
     AbilityIndex = 0
     Item = LANSATBERRY
-	Moves = WILLOWISP,BITE,FLAMETHROWER,NASTYPLOT
     IV = 24,24,24,24,24,24
 Pokemon = SOLROCK,26
     Shiny = yes
+    Moves = MORNINGSUN,COSMICPOWER,FLAREBLITZ,SOLARBEAM
     AbilityIndex = 0
-	Moves = MORNINGSUN,COSMICPOWER,FLAREBLITZ,SOLARBEAM
     Item = ASSAULTVEST
     Nature = MODEST
     IV = 26,26,26,26,28,28
@@ -634,25 +634,25 @@ Pokemon = EMOLGA,30
 Items = HYPERPOTION
 LoseText = "..."
 Pokemon = ELECTABUZZ,30
+    Moves = ELECTROBALL,THUNDERBOLT,ROLLINGKICK,BARRIER
     AbilityIndex = 0
     Item = LIECHIBERRY
-	Moves = ELECTROBALL,THUNDERBOLT,ROLLINGKICK,BARRIER
 Pokemon = EMOLGA,31
+    Moves = SPARK,FACADE,CHARM,QUICKATTACK
     AbilityIndex = 0
     Item = SALACBERRY
-	Moves = SPARK,FACADE,CHARM,QUICKATTACK
 Pokemon = STEELIX,32
+    Moves = GYROBALL,SCREECH,HEAVYSLAM,EARTHQUAKE
     AbilityIndex = 1
     Item = JABOCABERRY
     Nature = IMPISH
-	Moves = GYROBALL,SCREECH,HEAVYSLAM,EARTHQUAKE
     IV = 25,25,25,25,25,25
 Pokemon = SKARMORY,32
     Gender = female
     Shiny = yes
+    Moves = FLY,STEELWING,METALSOUND,DRILLPECK
     AbilityIndex = 2
     Item = CELLBATTERY
-	Moves = FLY,STEELWING,METALSOUND,DRILLPECK
     IV = 30,30,30,30,30,30
 #-------------------------------
 [ROCKETELITE_M,Cole]
@@ -842,7 +842,7 @@ LoseText = "..."
 Pokemon = WEAVILE,39
 Pokemon = STARMIE,40
 #-------------------------------
-[WINTERCOOL_M,Ashlyn]
+[WINTERCOOL_F,Ashlyn]
 LoseText = "..."
 Pokemon = HITMONCHAN,38
 Pokemon = HYPNO,39
@@ -879,25 +879,25 @@ Pokemon = DELIBIRD,42
 Items = FULLRESTORE,FULLHEAL,XSPDEF3
 LoseText = "..."
 Pokemon = KANGASKHAN,40
-	AbilityIndex = 2
-	Moves = FAKEOUT,DIZZYPUNCH,HAMMERARM,THUNDERBOLT
+    Moves = FAKEOUT,DIZZYPUNCH,HAMMERARM,THUNDERBOLT
+    AbilityIndex = 2
     IV = 26,26,26,26,26,26
 Pokemon = MAMOSWINE,42
-	Moves = THRASH,HAIL,ICICLECRASH,AVALANCHE
+    Moves = THRASH,HAIL,ICICLECRASH,AVALANCHE
     IV = 26,26,26,26,26,26
 Pokemon = CRYOGONAL,43
-	Moves = FREEZEDRY,LIGHTSCREEN,BLIZZARD,RAPIDSPIN
+    Moves = FREEZEDRY,LIGHTSCREEN,BLIZZARD,RAPIDSPIN
     IV = 26,26,26,26,26,26
 Pokemon = WALREIN,44
-	Moves = AURORABEAM,BRINE,REST,SNORE
+    Moves = AURORABEAM,BRINE,REST,SNORE
     IV = 26,26,26,26,26,26
 Pokemon = LAPRAS,44
-	Moves = BODYSLAM,THUNDERBOLT,SURF,BLIZZARD
+    Moves = BODYSLAM,THUNDERBOLT,SURF,BLIZZARD
     IV = 29,29,29,29,29,29
 Pokemon = ABOMASNOW,45
-	IV = 23
-	Item = ABOMASITE
-	Moves = WOODHAMMER,BULLDOZE,BLIZZARD,AVALANCHE
+    Moves = WOODHAMMER,BULLDOZE,BLIZZARD,AVALANCHE
+    Item = ABOMASITE
+    IV = 23,23,23,23,23,23
 #-------------------------------
 [ROCKETELITES,Zack and Vicky]
 Items = FULLHEAL
@@ -998,23 +998,23 @@ Pokemon = BLAZIKEN,46
 [LEADER_Lee,Lee]
 LoseText = "..."
 Pokemon = SCRAFTY,45
-	IV = 24
-Pokemon = BLAZIKEN,46
     IV = 24,24,24,24,24,24
-	Moves = SLASH,FLAMECHARGE,BLAZEKICK,DOUBLEKICK
+Pokemon = BLAZIKEN,46
+    Moves = SLASH,FLAMECHARGE,BLAZEKICK,DOUBLEKICK
+    IV = 24,24,24,24,24,24
 Pokemon = METAGROSS,46
+    Moves = METEORMASH,EARTHQUAKE,HAMMERARM,GIGAIMPACT
     IV = 22,22,22,22,22,22
-	Moves = METEORMASH,EARTHQUAKE,HAMMERARM,GIGAIMPACT
 Pokemon = REUNICLUS,47
+    Moves = PSYCHIC,FUTURESIGHT,RECOVER,FOCUSBLAST
     IV = 20,20,20,20,20,20
-	Moves = PSYCHIC,FUTURESIGHT,RECOVER,FOCUSBLAST
 Pokemon = LUCARIO,47
+    Moves = POWERUPPUNCH,BONERUSH,AURASPHERE,THUNDERPUNCH
     IV = 25,25,25,25,25,25
-	Moves = POWERUPPUNCH,BONERUSH,AURASPHERE,THUNDERPUNCH
 Pokemon = GALLADE,48
+    Moves = PSYCHOCUT,CLOSECOMBAT,XSCISSOR,LEAFBLADE
+    Item = GALLADITE
     IV = 25,25,25,25,25,25
-	Item = GALLADITE
-	Moves = PSYCHOCUT,CLOSECOMBAT,XSCISSOR,LEAFBLADE
 #-------------------------------
 [SWIMMER_M,Olympian]
 LoseText = "..."
@@ -1042,11 +1042,11 @@ Pokemon = WIGGLYTUFF,54
     IV = 20,20,20,20,20,20
 Pokemon = ALAKAZAM,55
     IV = 26,26,26,26,26,26
-	#-------------------------------
-[POKEMONTRAINER_Brett,Brett,0]
+#-------------------------------
+[POKEMONTRAINER_Brett,Brett]
 LoseText = "..."
 Pokemon = MARILL,4
-	IV = 10,10,10,10,10,10
+    IV = 10,10,10,10,10,10
 #-------------------------------
 [POKEMONTRAINER_Brett,Brett,1]
 LoseText = "..."
@@ -1097,87 +1097,80 @@ Pokemon = HYPNO,40
 Items = FULLRESTORE
 LoseText = "..."
 Pokemon = GARCHOMP,60
-    IV = 30
-	AbilityIndex = 2
-	Move = ROCKSLIDE,EARTHQUAKE,PROTECT,ROAR
-	Nature = CAREFUL
-	Item = ROCKYHELMET
-	EV = 160,108,0,40,0,200
+    AbilityIndex = 2
+    Item = ROCKYHELMET
+    Nature = CAREFUL
+    IV = 30,30,30,30,30,30
+    EV = 160,108,0,40,0,200
 Pokemon = PINSIR,60
-    IV = 30
-	AbilityIndex = 2
-	Move = XSCISSOR,ROCKSLIDE,CLOSECOMBAT,HELPINGHAND
-	Nature = JOLLY
-	Item = LIFEORB
-	EV = 0,252,0,252,0,4
+    AbilityIndex = 2
+    Item = LIFEORB
+    Nature = JOLLY
+    IV = 30,30,30,30,30,30
+    EV = 0,252,0,252,0,4
 Pokemon = HONCHKROW,60
-    IV = 30
-	Move = TAILWIND,TAUNT,DARKPULSE,HEATWAVE
-	AbilityIndex = 1
-	Nature = TIMID
-	Item = ROSELIBERRY
-	EV = 200,0,0,252,56,0
+    AbilityIndex = 1
+    Item = ROSELIBERRY
+    Nature = TIMID
+    IV = 30,30,30,30,30,30
+    EV = 200,0,0,252,56,0
 Pokemon = MAROWAK,60
-    IV = 30
-	Form = 1
-	AbilityIndex = 1
-	Item = THICKCLUB
-	Nature = IMPISH
-	Move = SUNNYDAY,FLAREBLITZ,SHADOWBONE,PROTECT
-	EV = 252,152,104,0,0,0
-	#HP,ATK,DEF,SPEED,SPA,SPD
+    Form = 1
+    AbilityIndex = 1
+    Item = THICKCLUB
+    Nature = IMPISH
+    IV = 30,30,30,30,30,30
+    EV = 252,152,104,0,0,0
 Pokemon = VENUSAUR,60
-	AbilityIndex = 2
-    IV = 30
-	Item = VENUSAURITE
-	Nature = MODEST
-	Move = SLUDGEBOMB,GIGADRAIN,SLEEPPOWDER,WEATHERBALL
-	EV = 252,0,0,0,252,4
+    AbilityIndex = 2
+    Item = VENUSAURITE
+    Nature = MODEST
+    IV = 30,30,30,30,30,30
+    EV = 252,0,0,0,252,4
 Pokemon = ELECTIVIRE,60
-	IV = 30
-	AbilityIndex = 2
-	Nature = JOLLY
-	Item = AIRBALLOON
-	EV = 0,252,0,252,0,4
-	Move = WILDCHARGE,CROSSCHOP,ICEPUNCH,PROTECT
-#-------------------------------1
+    AbilityIndex = 2
+    Item = AIRBALLOON
+    Nature = JOLLY
+    IV = 30,30,30,30,30,30
+    EV = 0,252,0,252,0,4
+#-------------------------------
 [BIRDKEEPER1,Larry]
 LoseText = "..."
 Pokemon = PIDGEOT,59
 Pokemon = UNFEZANT,59
-#-------------------------------1
+#-------------------------------
 [BEAUTY1,Whilma]
 LoseText = "..."
 Pokemon = WHIMSICOTT,59
 Pokemon = NINETALES,59
-	Form = 1
-#-------------------------------2
+    Form = 1
+#-------------------------------
 [MEDIUM,Shishi]
 LoseText = "..."
 Pokemon = GOLURK,58
 Pokemon = DUGTRIO,58
-	Form = 1
-#-------------------------------2
+    Form = 1
+#-------------------------------
 [CUEBALL1,Dirk]
 LoseText = "..."
 Pokemon = WEEZING,58
 Pokemon = ARBOK,58
-#-------------------------------3
+#-------------------------------
 [COOLTRAINER_F,Danielle]
 LoseText = "..."
 Pokemon = NIDOQUEEN,57
 Pokemon = MISMAGIUS,57
-#-------------------------------3
+#-------------------------------
 [COOLTRAINER_M,Daniel]
 LoseText = "..."
 Pokemon = NIDOKING,57
 Pokemon = CHANDELURE,57
-#-------------------------------4
+#-------------------------------
 [GENTLEMAN1,Eustace]
 LoseText = "..."
 Pokemon = METAGROSS,57
 Pokemon = FLYGON,57
-#-------------------------------4
+#-------------------------------
 [LASS4,Tyra]
 LoseText = "..."
 Pokemon = DELCATTY,57

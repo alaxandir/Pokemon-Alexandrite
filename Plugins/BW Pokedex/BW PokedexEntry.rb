@@ -339,10 +339,10 @@ class PokemonPokedexInfo_Scene
       type2rect = Rect.new(0, type2_number * 32, 96, 32)
 	  if @brief
       overlay.blt(286, 132, @typebitmap.bitmap, type1rect)
-      overlay.blt(366, 132, @typebitmap.bitmap, type2rect) if type1 != type2
+      overlay.blt(386, 132, @typebitmap.bitmap, type2rect) if type1 != type2 #ch
 		else
 	 overlay.blt(286, 94, @typebitmap.bitmap, type1rect)
-     overlay.blt(366, 94, @typebitmap.bitmap, type2rect) if type1 != type2
+     overlay.blt(386, 94, @typebitmap.bitmap, type2rect) if type1 != type2 #ch
 		end
     else
 # This bit of the code below is simply the Entry Page when you have seen the 
