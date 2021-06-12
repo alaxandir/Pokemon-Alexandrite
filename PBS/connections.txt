@@ -1,21 +1,16 @@
 ﻿# See the documentation on the wiki to learn how to edit this file.
 #-------------------------------
-# Earthroot Forest (33) - Route 118 (154)
-33,West,8,154,East,7
-# Earthroot Town (42) - Route101 (43)
-42,South,19,43,North,10
-# Route101 (43) - Seafoam City (48)
-43,South,8,48,North,8
-# Route 116 (193) - Seafoam City (48)
-193,North,16,48,South,31
-# Route 102 (85) - Bouldergrove (86)
+# Soul City (188) - Spirit Garden (8)
+188,North,5,8,South,0
+# Route 102 (85) - Bouldergrove City (86)
 85,East,11,86,West,30
 # Route 103 (98) - Gold Coast (100)
 98,North,0,100,South,0
 # Route 103 (98) - Route 104 (104)
 98,West,19,104,East,20
-# Route 118 (154) - Route 103 (98)
+# Route 118 (154) - Route 103 (98) && Earthroot Forest (33)
 154,West,52,98,East,15
+154,East,6,33,West,7
 # Gold Coast (100) - Gold Sea (136)
 100,North,17,136,South,17
 # Route 104 (104) - Anthophil City (106)
@@ -62,9 +57,15 @@
 179,East,18,183,West,18
 # Route 113 (183) - Siren's Peak (184)
 183,East,27,184,West,19
-# Route 115 (192) - Route 116 (193)
-192,East,32,193,West,24
 # Route 117 (196) - Fortune City (197)
 196,West,16,197,East,31
-# Soul City (188) - Spirit Garden (8)
-188,North,5,8,South,0
+# Route 101 (43) - Earthroot Town (42)
+43,North,0,42,South,9
+# Earthroot Forest (33) - Earthroot Town (42)
+33,South,0,42,North,6
+# Seafoam City (48) - Route 101 (43)
+48,North,0,43,South,0
+# Route 116 (193) - Seafoam City (48)
+193,North,0,48,South,15
+# Route 115 (192) - Route 116 (193)
+192,East,8,193,West,0
