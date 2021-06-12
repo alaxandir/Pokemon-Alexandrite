@@ -106,7 +106,9 @@ def pbPokemonFound(item,quantity = 1,message = "")
     end
     pbMessage(_INTL("#{pokename} put the {1} away\\nin the <icon=bagPocket{2}>\\c[1]{3} Pocket\\c[0].",
        itemname,pocket,PokemonBag.pocketNames()[pocket]))
-    return true
+    $PokemonGlobal.follower_hold_item = false
+	$PokemonGlobal.time_taken = 0
+	return true
   end
   # Can't add the item
   if item == :LEFTOVERS
@@ -188,7 +190,6 @@ class DependentEvents
         events[k][6] = fname
         @realEvents[k].character_name = fname
       end
-      return
     end
   end
 
@@ -206,7 +207,7 @@ class DependentEvents
   def remove_sprite
     events = $PokemonGlobal.dependentEvents
     for i in 0...events.length
-      next if !events[i] && events[i][8][/FollowerPkmn/]
+      next if !events[i] || !events[i][8][/FollowerPkmn/]
       events[i][6] = ""
       @realEvents[i].character_name = ""
       $PokemonGlobal.time_taken = 0
@@ -222,7 +223,7 @@ class DependentEvents
     if anim
       events = $PokemonGlobal.dependentEvents
       for i in 0...events.length
-        next if !events[i] && events[i][8][/FollowerPkmn/]
+        next if !events[i] || !events[i][8][/FollowerPkmn/]
         anim = getConst(FollowerSettings,(ret == true)? :Animation_Come_Out : :Animation_Come_In)
         $scene.spriteset.addUserAnimation(anim,@realEvents[i].x,@realEvents[i].y)
         pbMoveRoute($game_player,[PBMoveRoute::Wait,10])
