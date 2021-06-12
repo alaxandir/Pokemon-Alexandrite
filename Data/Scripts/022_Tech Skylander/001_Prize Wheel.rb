@@ -87,14 +87,13 @@ class PrizeWheel
           confirmtext="\\CNSpin the wheel?"
         end
           if pbConfirmMessage("#{confirmtext}")
-            pbBGMFade(0.8)
-            pbMEPlay(@style[4],@style[5],@style[6])
             if $Trainer.coins>=@cost
               $Trainer.coins-=@cost
             else
               pbMessage(_INTL("\\CNYou don't have enough coins..."))
               break
             end
+		  pbMEPlay(@style[4],@style[5],@style[6])
           spins=rand(360)
           spins+=360*(@minspins)
           spun=0
