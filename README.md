@@ -287,6 +287,7 @@ ENLS Pre-looped Music Library
 Numerous Pokémon music rips | KHInsider
 PERSONA 4 and 5 music rips | KHInsider
 Pokémon 7th gen cries | Random Talking Bush 
+Alarm Sound | Brandon (Soundbible)
 
 ELITE BATTLE DX
 Sprites:
