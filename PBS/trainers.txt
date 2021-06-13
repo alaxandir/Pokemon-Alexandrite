@@ -655,42 +655,42 @@ Pokemon = SKARMORY,32
     Item = CELLBATTERY
     IV = 30,30,30,30,30,30
 #-------------------------------
-[ROCKETELITE_M,Cole]
+[ROCKETADEPT_M,Cole]
 LoseText = "..."
 Pokemon = GLIGAR,36
 Pokemon = OCTILLERY,35
 Pokemon = DELCATTY,35
 #-------------------------------
-[ROCKETELITE_M,Victor]
+[ROCKETADEPT_M,Victor]
 LoseText = "..."
 Pokemon = DELIBIRD,35
 Pokemon = MAWILE,36
 Pokemon = KANGASKHAN,35
 #-------------------------------
-[ROCKETELITE_F,Callie]
+[ROCKETADEPT_F,Callie]
 LoseText = "..."
 Pokemon = MUK,38
     Item = LEFTOVERS
     IV = 30,30,30,30,30,30
 #-------------------------------
-[ROCKETELITE_M,Guile]
+[ROCKETADEPT_M,Guile]
 LoseText = "..."
 Pokemon = VULLABY,36
 Pokemon = LOUDRED,37
 #-------------------------------
-[ROCKETELITE_F,Olivia]
+[ROCKETADEPT_F,Olivia]
 LoseText = "..."
 Pokemon = ELECTRODE,36
     Item = LIGHTCLAY
 Pokemon = WEEZING,37
     Item = ROCKYHELMET
 #-------------------------------
-[ROCKETELITE_M,Aiden]
+[ROCKETADEPT_M,Aiden]
 LoseText = "..."
 Pokemon = HONCHKROW,36
 Pokemon = CAMERUPT,36
 #-------------------------------
-[ROCKETELITE_M,Van]
+[ROCKETADEPT_M,Van]
 LoseText = "..."
 Pokemon = METANG,35
 Pokemon = KROKOROK,35
@@ -698,7 +698,7 @@ Pokemon = KROKOROK,35
 Pokemon = ABSOL,36
     Item = SITRUSBERRY
 #-------------------------------
-[ROCKETELITE_F,Essie]
+[ROCKETADEPT_F,Essie]
 LoseText = "..."
 Pokemon = PAWNIARD,35
 Pokemon = DEINO,35
@@ -899,7 +899,7 @@ Pokemon = ABOMASNOW,45
     Item = ABOMASITE
     IV = 23,23,23,23,23,23
 #-------------------------------
-[ROCKETELITES,Zack and Vicky]
+[ROCKETELITES,Seth and Samantha]
 Items = FULLHEAL
 LoseText = "..."
 Pokemon = NIDORINO,43
@@ -1175,3 +1175,61 @@ Pokemon = FLYGON,57
 LoseText = "..."
 Pokemon = DELCATTY,57
 Pokemon = FLAREON,57
+#-------------------------------
+[ROCKETELITE_M,Garin]
+LoseText = "..."
+Pokemon = FEAROW,40
+Pokemon = NINETALES,40
+Pokemon = YANMEGA,40
+#-------------------------------
+[ROCKETELITE_M,Phillip]
+LoseText = "..."
+Pokemon = ELECTRODE,40
+Pokemon = LOPUNNY,40
+Pokemon = HOUNDOOM,40
+#-------------------------------
+[ROCKETELITE_F,Tiff]
+LoseText = "..."
+Pokemon = NINETALES_1,40
+Pokemon = CLEFAIRY,40
+Pokemon = WHIMSICOTT,40
+Pokemon = LAMPENT,40
+#-------------------------------
+[ROCKETELITE_F,Tanya]
+LoseText = "..."
+Pokemon = EXEGGUTOR,41
+Pokemon = SHIFTRY,41
+Pokemon = STOUTLAND,41
+Pokemon = SCOLIPEDE,41
+#-------------------------------
+[SCIENTIST_R_F,Eliza]
+LoseText = "..."
+Pokemon = RATICATE_1,41
+Pokemon = ROTOM_5,41
+Pokemon = SABLEYE,41
+	Item = SABLENITE
+Pokemon = MISMAGIUS,41
+#-------------------------------
+[SCIENTIST_R_F,Isabelle]
+LoseText = "..."
+Pokemon = ROTOM_4,41
+Pokemon = PORYGONZ,41
+Pokemon = AGGRON,41
+	Item = AGGRONITE
+Pokemon = GOLURK,41
+#-------------------------------
+[SCIENTIST_R_M,Walter]
+LoseText = "..."
+Pokemon = MUK_1,41
+Pokemon = ESCAVALIER,41
+Pokemon = GENGAR,41
+	Item = GENGARITE
+Pokemon = SNORLAX,41
+#-------------------------------
+[SCIENTIST_R_M,Jesse]
+LoseText = "..."
+Pokemon = HUNTAIL,41
+Pokemon = RAICHU_1,41
+Pokemon = STEELIX,41
+	Item = STEELIXITE
+Pokemon = KROOKODILE,41

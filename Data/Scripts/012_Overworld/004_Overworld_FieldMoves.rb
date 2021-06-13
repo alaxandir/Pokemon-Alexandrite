@@ -858,6 +858,9 @@ HiddenMoveHandlers::UseMove.add(:SWEETSCENT,proc { |move,pokemon|
 # Teleport
 #===============================================================================
 HiddenMoveHandlers::CanUseMove.add(:TELEPORT,proc { |move,pkmn,showmsg|
+  if $game_map.name.include?("Rocket")
+	next true
+  end
   if !GameData::MapMetadata.exists?($game_map.map_id) ||
      !GameData::MapMetadata.get($game_map.map_id).outdoor_map
     pbMessage(_INTL("Can't use that here.")) if showmsg
