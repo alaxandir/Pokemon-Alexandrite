@@ -1175,3 +1175,70 @@ Pokemon = FLYGON,57
 LoseText = "..."
 Pokemon = DELCATTY,57
 Pokemon = FLAREON,57
+<<<<<<< Updated upstream
+=======
+#-------------------------------
+[ROCKETELITE_M,Garin]
+LoseText = "..."
+Pokemon = FEAROW,40
+Pokemon = NINETALES,40
+	Form = 1
+Pokemon = YANMEGA,40
+#-------------------------------
+[ROCKETELITE_M,Phillip]
+LoseText = "..."
+Pokemon = ELECTRODE,40
+Pokemon = LOPUNNY,40
+Pokemon = HOUNDOOM,40
+#-------------------------------
+[ROCKETELITE_F,Tiff]
+LoseText = "..."
+Pokemon = NINETALES_1,40
+Pokemon = CLEFAIRY,40
+Pokemon = WHIMSICOTT,40
+Pokemon = LAMPENT,40
+#-------------------------------
+[ROCKETELITE_F,Tanya]
+LoseText = "..."
+Pokemon = EXEGGUTOR,41
+	Form = 1
+Pokemon = SHIFTRY,41
+Pokemon = STOUTLAND,41
+Pokemon = SCOLIPEDE,41
+#-------------------------------
+[SCIENTIST_R_F,Eliza]
+LoseText = "..."
+Pokemon = RATICATE,41
+	Form = 1
+Pokemon = ROTOM,41
+	Form = 5
+Pokemon = SABLEYE,41
+	Item = SABLENITE
+Pokemon = MISMAGIUS,41
+#-------------------------------
+[SCIENTIST_R_F,Isabelle]
+LoseText = "..."
+Pokemon = ROTOM_4,41
+Pokemon = PORYGONZ,41
+Pokemon = AGGRON,41
+	Item = AGGRONITE
+Pokemon = GOLURK,41
+#-------------------------------
+[SCIENTIST_R_M,Walter]
+LoseText = "..."
+Pokemon = MUK,41
+	Form = 1
+Pokemon = ESCAVALIER,41
+Pokemon = GENGAR,41
+	Item = GENGARITE
+Pokemon = SNORLAX,41
+#-------------------------------
+[SCIENTIST_R_M,Jesse]
+LoseText = "..."
+Pokemon = HUNTAIL,41
+Pokemon = RAICHU,41
+	Form = 1
+Pokemon = STEELIX,41
+	Item = STEELIXITE
+Pokemon = KROOKODILE,41
+>>>>>>> Stashed changes
