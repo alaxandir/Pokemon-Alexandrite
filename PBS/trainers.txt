@@ -1175,8 +1175,6 @@ Pokemon = FLYGON,57
 LoseText = "..."
 Pokemon = DELCATTY,57
 Pokemon = FLAREON,57
-<<<<<<< Updated upstream
-=======
 #-------------------------------
 [ROCKETELITE_M,Garin]
 LoseText = "..."
@@ -1241,4 +1239,3 @@ Pokemon = RAICHU,41
 Pokemon = STEELIX,41
 	Item = STEELIXITE
 Pokemon = KROOKODILE,41
->>>>>>> Stashed changes
