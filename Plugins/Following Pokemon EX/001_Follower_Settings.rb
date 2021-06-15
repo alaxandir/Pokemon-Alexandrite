@@ -32,7 +32,7 @@ module FollowerSettings
   # Time Taken for Follower to increase Friendship when first in party (in seconds)
   FRIENDSHIP_TIME_TAKEN = 125
   # Time Taken for Follower to find an item when first in party (in seconds)
-  ITEM_TIME_TAKEN       = 5
+  ITEM_TIME_TAKEN       = 325
 
   # List of Pokemon that will always appear behind the player when surfing
   # Doesn't include any flying or water types because those are handled already
