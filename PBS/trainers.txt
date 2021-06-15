@@ -1180,6 +1180,7 @@ Pokemon = FLAREON,57
 LoseText = "..."
 Pokemon = FEAROW,40
 Pokemon = NINETALES,40
+	Form = 1
 Pokemon = YANMEGA,40
 #-------------------------------
 [ROCKETELITE_M,Phillip]
@@ -1198,12 +1199,17 @@ Pokemon = LAMPENT,40
 [ROCKETELITE_F,Tanya]
 LoseText = "..."
 Pokemon = EXEGGUTOR,41
+	Form = 1
 Pokemon = SHIFTRY,41
 Pokemon = STOUTLAND,41
 Pokemon = SCOLIPEDE,41
 #-------------------------------
 [SCIENTIST_R_F,Eliza]
 LoseText = "..."
+Pokemon = RATICATE,41
+	Form = 1
+Pokemon = ROTOM,41
+	Form = 5
 Pokemon = RATICATE_1,41
 Pokemon = ROTOM_5,41
 Pokemon = SABLEYE,41
@@ -1220,6 +1226,8 @@ Pokemon = GOLURK,41
 #-------------------------------
 [SCIENTIST_R_M,Walter]
 LoseText = "..."
+Pokemon = MUK,41
+	Form = 1
 Pokemon = MUK_1,41
 Pokemon = ESCAVALIER,41
 Pokemon = GENGAR,41
@@ -1229,6 +1237,11 @@ Pokemon = SNORLAX,41
 [SCIENTIST_R_M,Jesse]
 LoseText = "..."
 Pokemon = HUNTAIL,41
+Pokemon = RAICHU,41
+	Form = 1
+Pokemon = STEELIX,41
+	Item = STEELIXITE
+Pokemon = KROOKODILE,41
 Pokemon = RAICHU_1,41
 Pokemon = STEELIX,41
 	Item = STEELIXITE
