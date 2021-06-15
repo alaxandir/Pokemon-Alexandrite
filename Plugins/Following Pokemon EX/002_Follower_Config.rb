@@ -96,7 +96,6 @@ Events.OnTalkToFollower += proc {|pkmn,x,y,random_val|
 
 
 Events.OnTalkToFollower += proc {|pkmn,x,y,random_val|
-  if $PokemonGlobal.follower_hold_item
     items = [:TINYMUSHROOM,:HEARTSCALE,:PEARL,:CHERIBERRY,:CHESTOBERRY,:PECHABERRY,:RAWSTBERRY,:ASPEARBERRY,
 			 :LEPPABERRY,:ORANBERRY,:PERSIMBERRY,:LUMBERRY,:SITRUSBERRY,:POKETOY,:EXPCANDYXS,:EXPCANDYS,
 			 :CHERIBERRY,:CHESTOBERRY,:PECHABERRY,:RAWSTBERRY,:ASPEARBERRY,:SILKSCARF,:SUPERPOTION,:REVIVE,
@@ -107,11 +106,9 @@ Events.OnTalkToFollower += proc {|pkmn,x,y,random_val|
 			 :REDAPRICORN,:YELLOWAPRICORN,:BLUEAPRICORN,:GREENAPRICORN,:PINKAPRICORN,:WHITEAPRICORN,:BLACKAPRICORN,
 			 :FULLHEAL,:BERRYJUICE,:FRESHWATER,:FRESHWATER,:FRESHWATER,:ETHER,:ETHER,:HEALTHWING,:MUSCLEWING,:RESISTWING,
 			 :GENIUSWING,:CLEVERWING,:SWIFTWING
-    ]
-	
+	]
     # If no message or quantity is specified the default message is used and the quantity of item is 1
     next true if pbPokemonFound(rand(items.length))
-  end
 }
 
 Events.OnTalkToFollower += proc {|pkmn,x,y,random_val|

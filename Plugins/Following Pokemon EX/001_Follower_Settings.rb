@@ -17,7 +17,7 @@ module FollowerSettings
   # Allow the player to toggle followers on/off by pressing a key
   ALLOW_TOGGLE_FOLLOW = true
   # The key the player needs to press to toggle followers. :JUMPUP is the A key by default
-  TOGGLE_FOLLOWER_KEY = :JUMPUP
+  TOGGLE_FOLLOWER_KEY = :AUX2
 
   #Status tones to be used, if this is true (Red,Green,Blue,Gray)
   APPLY_STATUS_TONES  = false
@@ -32,7 +32,7 @@ module FollowerSettings
   # Time Taken for Follower to increase Friendship when first in party (in seconds)
   FRIENDSHIP_TIME_TAKEN = 125
   # Time Taken for Follower to find an item when first in party (in seconds)
-  ITEM_TIME_TAKEN       = 375
+  ITEM_TIME_TAKEN       = 5
 
   # List of Pokemon that will always appear behind the player when surfing
   # Doesn't include any flying or water types because those are handled already
