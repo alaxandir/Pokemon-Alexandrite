@@ -148,6 +148,28 @@ MapPosition = 0,2,2
 Outdoor = false
 Weather = None,0
 MapPosition = 0,2,2
+#-------------------------------
+[022]
+# safari
+Outdoor = true
+Weather = None,0
+SafariMap = true
+MapPosition = 0,12,3
+#-------------------------------
+[023]
+# safari gate
+Outdoor = false
+Weather = None,0
+BattleBack = Forest
+MapPosition = 0,12,3
+#-------------------------------
+[024]
+# safari cave
+Outdoor = false
+Weather = None,0
+SafariMap = true
+SnapEdges = true
+MapPosition = 0,12,3
 #--------------------------------
 [032]
 # \PN's House
