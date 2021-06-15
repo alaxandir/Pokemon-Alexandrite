@@ -1,15 +1,27 @@
 #-------------------------------
 [001]
 # 5F Silph Co
-BattleEnv       = INDOOR
+BattleEnv       = INDOOR2
 #-------------------------------
 [002]
 # 6F Silph Co
-BattleEnv       = INDOOR
+BattleEnv       = INDOOR2
 #-------------------------------
 [016]
 # CYBERSPACE
 BattleEnv       = SCIFI
+#-------------------------------
+[018]
+# ROCKETBASE
+BattleEnv       = INDOOR2
+#-------------------------------
+[020]
+# ROCKETBASE
+BattleEnv       = INDOOR2
+#-------------------------------
+[021]
+# ROCKETBASE
+BattleEnv       = INDOOR2
 #-------------------------------
 [032]
 # Your Home
@@ -131,19 +143,19 @@ BattleEnv       = NET
 #-------------------------------
 [157]
 # Silph Co.
-BattleEnv       = INDOOR
+BattleEnv       = INDOOR2
 #-------------------------------
 [159]
 # 3F Silpho Co
-BattleEnv       = INDOOR
+BattleEnv       = INDOOR2
 #-------------------------------
 [161]
 # 4F Silpho Co
-BattleEnv       = INDOOR
+BattleEnv       = INDOOR2
 #-------------------------------
 [162]
 # 7F Silpho Co
-BattleEnv       = CHAMPION
+BattleEnv       = INDOOR2
 #-------------------------------
 [164]
 # Route 112

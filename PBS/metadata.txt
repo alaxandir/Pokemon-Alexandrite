@@ -234,7 +234,7 @@ BattleBack = IndoorB
 Outdoor = false
 Weather = None,0
 MapPosition = 0,19,8
-DarkMap = true
+DarkMap = false
 SnapEdges = true
 BattleBack = CaveDark
 #-------------------------------

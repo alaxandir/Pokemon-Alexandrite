@@ -128,6 +128,30 @@ module EnvironmentEBDX
 	:zoom => 0.5
 	}
   }
+    #-----------------------------------------------------------------------------
+  INDOOR2 = {
+    "backdrop" => "IndoorB", "img001" => {
+      :bitmap => "decor007",
+      :oy => 0, :z => 1, :flat => true, :scrolling => true, :speed => 0.5
+    }, "img002" => {
+      :bitmap => "decor008",
+      :oy => 0, :z => 1, :flat => true, :scrolling => true, :direction => -1
+    }, "lightsA" => true, "outdoor" => false,
+	"img003" => {
+	:bitmap => "indoor1_base1",
+	:x => 238,
+	:y => 188,
+	:z => 1,
+	:zoom => 0.5
+	},
+	"img004" => {
+	:bitmap => "indoor1_base0",
+	:x => 85,
+	:y => 250,
+	:z => 1,
+	:zoom => 0.5
+	}
+  }
   #-----------------------------------------------------------------------------
   OUTDOOR = {
     "backdrop" => "Field", "base" => "Dirt", "sky" => true, "trees" => {

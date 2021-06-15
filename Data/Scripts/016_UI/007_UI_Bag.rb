@@ -4,7 +4,7 @@
 # If used please give credits.
 #=============================================================================
 USEARROWS = true  # Whether to use BW Styled Arrows for pocket changing 
-ANIMEBG   =true  # Whether to use an Animated Background for the bag
+ANIMEBG   = false  # Whether to use an Animated Background for the bag
 
 if defined?(PluginManager)
   PluginManager.register({
