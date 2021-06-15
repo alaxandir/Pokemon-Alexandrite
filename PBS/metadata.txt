@@ -119,6 +119,36 @@ Outdoor = false
 ShowArea = true
 Weather = None,0
 #-------------------------------
+[017]
+# Fortune City Cardshop
+Outdoor = false
+Weather = None,0
+MapPosition = 0,4,12
+#-------------------------------
+[018]
+# Rocket Base 3b
+Outdoor = false
+Weather = None,0
+MapPosition = 0,2,2
+#-------------------------------
+[019]
+# Chard House
+Outdoor = false
+Weather = None,0
+MapPosition = 0,11,12
+#-------------------------------
+[020]
+# Rocket Base 2b
+Outdoor = false
+Weather = None,0
+MapPosition = 0,2,2
+#-------------------------------
+[021]
+# Rocket Base 1b
+Outdoor = false
+Weather = None,0
+MapPosition = 0,2,2
+#--------------------------------
 [032]
 # \PN's House
 Outdoor = false
