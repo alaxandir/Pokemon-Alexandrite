@@ -69,8 +69,14 @@ module BattleScripts
 		pname = @battlers[1].name
 		@scene.pbTrainerSpeak("This time I'll win! Go, #{pname}!")
 		end,
-	"damageOpp" => "Whoa! your Pokémon is really strong!",
-	"damageOpp2" => "Nice hit, my Pokémon can't handle it.",
+	"damageOpp" => proc do
+	tname = @battlers[0].name
+	"Whoa! your #{tname} is really strong!"
+	end,
+	"damageOpp2" => proc do
+	pname = @battlers[0].name
+	"Nice hit, my #{pname} can't handle it."
+	end,
 	"fainted" => "That's what I'm talking about!",
 	"recall" => "Swapping out so soon?",
 	"lowHPOpp" => "Arrgh not yet!",
