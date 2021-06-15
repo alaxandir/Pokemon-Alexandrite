@@ -1050,6 +1050,7 @@ Pokemon = MARILL,4
 #-------------------------------
 [POKEMONTRAINER_Brett,Brett,1]
 LoseText = "..."
+Items = SUPERPOTION
 Pokemon = PIDOVE,16
     Moves = PECK,AIRCUTTER,QUICKATTACK,GROWL
     AbilityIndex = 0

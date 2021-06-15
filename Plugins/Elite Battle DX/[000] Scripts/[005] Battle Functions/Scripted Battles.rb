@@ -60,7 +60,7 @@ class PokeBattle_Battler
   alias pbUseMove_ebdx pbUseMove unless self.method_defined?(:pbUseMove_ebdx)
   def pbUseMove(*args)
     # displays trainer dialogue if applicable
-    @battle.scene.pbTrainerBattleSpeech(playerBattler?(self) ? "attack": "attackOpp")
+    @battle.scene.pbTrainerBattleSpeech(playerBattler?(self) ? "attack" : "attackOpp")
     @battle.scene.briefmessage = true
     return pbUseMove_ebdx(*args)
   end

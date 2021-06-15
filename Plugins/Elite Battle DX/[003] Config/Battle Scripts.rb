@@ -62,7 +62,23 @@ module BattleScripts
     "fainted" => "That's how we do it in this gym!",
     "faintedOpp" => "Arghh. You did well my friend...",
     "loss" => "You can come back and challenge me any time you want."
-  }
+	}
+#--------------
+  BRETT1 = {
+	"turnStart0" => proc do
+		pname = @battlers[1].name
+		@scene.pbTrainerSpeak("This time I'll win! Go, #{pname}!")
+		end,
+	"damageOpp" => "Whoa! your Pokémon is really strong!",
+	"damageOpp2" => "Nice hit, my Pokémon can't handle it.",
+	"fainted" => "That's what I'm talking about!",
+	"recall" => "Swapping out so soon?",
+	"lowHPOpp" => "Arrgh not yet!",
+	"loss" => "Hah! I knew I could do it.",
+	"lowHP" => "We're not done yet.",
+	"item" => "Items already huh?",
+	"Oppitem" => "Time for a little insurance!"
+}
   #-----------------------------------------------------------------------------
   # example Dialga fight
   DIALGA = {

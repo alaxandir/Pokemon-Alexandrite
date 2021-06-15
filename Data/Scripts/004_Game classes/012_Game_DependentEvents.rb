@@ -220,6 +220,16 @@ class DependentEvents
       for i in 0...facings.length
         facing=facings[i]
         tile=$MapFactory.getFacingTile(facing,leader)
+		if tile[1] > $game_player.x
+          tile[2] -= 1 if $MapFactory.getTerrainTag(tile[0],tile[1],tile[2]-1) == PBTerrain::StairLeft && $game_map.terrain_tag($game_player.x,$game_player.y) == PBTerrain::StairLeft
+        elsif tile[1] < $game_player.x
+          tile[2] += 1 if $MapFactory.getTerrainTag(tile[0],tile[1],tile[2]+1) == PBTerrain::StairLeft
+        end
+        if tile[1] > $game_player.x
+          tile[2] += 1 if $MapFactory.getTerrainTag(tile[0],tile[1],tile[2]+1) == PBTerrain::StairRight
+        elsif tile[1] < $game_player.x
+          tile[2] -= 1 if $MapFactory.getTerrainTag(tile[0],tile[1],tile[2]-1) == PBTerrain::StairRight && $game_map.terrain_tag($game_player.x,$game_player.y) == PBTerrain::StairRight
+        end
         # Assumes leader is 1x1 tile in size
         passable=tile && $MapFactory.isPassableStrict?(tile[0],tile[1],tile[2],follower)
         if i==0 && !passable && tile &&
