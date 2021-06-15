@@ -522,8 +522,10 @@ def pbPickBerry(berry, qty = 1)
     end
     $PokemonBag.pbStoreItem(berry,qty)
     if qty>1
+	pbMEPlay("Berry.ogg")
       pbMessage(_INTL("You picked the {1} \\c[1]{2}\\c[0].\\wtnp[30]",qty,itemname))
     else
+	pbMEPlay("Berry.ogg")
       pbMessage(_INTL("You picked the \\c[1]{1}\\c[0].\\wtnp[30]",itemname))
     end
     pocket = berry.pocket
