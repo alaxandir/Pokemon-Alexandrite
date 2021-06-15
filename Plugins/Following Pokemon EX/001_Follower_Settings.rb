@@ -15,17 +15,24 @@ module FollowerSettings
   Emo_love            = 9
 
   # Allow the player to toggle followers on/off by pressing a key
-  ALLOWTOGGLEFOLLOW = true
+  ALLOW_TOGGLE_FOLLOW = true
   # The key the player needs to press to toggle followers. :JUMPUP is the A key by default
-  TOGGLEFOLLOWERKEY = :AUX2
+  TOGGLE_FOLLOWER_KEY = :JUMPUP
 
   #Status tones to be used, if this is true (Red,Green,Blue,Gray)
-  APPLYSTATUSTONES = false
-  BURNTONE         = [204,51,51,50]
-  POISONTONE       = [153,102,204,50]
-  PARALYSISTONE    = [255,255,153,50]
-  FROZENTONE       = [153,204,204,50]
-  SLEEPTONE        = [0,0,0,50]
+  APPLY_STATUS_TONES  = false
+  TONE_BURN           = [204,51,51,50]
+  TONE_POISON         = [153,102,204,50]
+  TONE_PARALYSIS      = [255,255,153,50]
+  TONE_FROZEN         = [153,204,204,50]
+  TONE_SLEEP          = [0,0,0,50]
+  # For your custom status conditions, just add it as "TONE_(INTERNAL NAME)"
+  # Example: TONE_BLEED, TONE_CONFUSE, TONE_INFATUATION
+
+  # Time Taken for Follower to increase Friendship when first in party (in seconds)
+  FRIENDSHIP_TIME_TAKEN = 125
+  # Time Taken for Follower to find an item when first in party (in seconds)
+  ITEM_TIME_TAKEN       = 375
 
   # List of Pokemon that will always appear behind the player when surfing
   # Doesn't include any flying or water types because those are handled already
@@ -105,5 +112,3 @@ module Events
   def self.FollowerRefresh;     @@FollowerRefresh;     end
   def self.FollowerRefresh=(v); @@FollowerRefresh = v; end
 end
-
-echoln("Loaded plugin: Following Pokemon EX") if !Essentials::VERSION.include?(".")

@@ -21,9 +21,10 @@ def pbSurf
     pbHiddenMoveAnimation(movefinder,false)
     surfbgm = GameData::Metadata.get.surf_BGM
     pbCueBGM(surfbgm,0.5) if surfbgm
+    surf_anim_1 = $PokemonTemp.dependentEvents.can_refresh?
     $PokemonGlobal.surfing = true
-    surf_anim = !$PokemonTemp.dependentEvents.can_refresh?
-    $PokemonTemp.dependentEvents.refresh_sprite(surf_anim)
+    surf_anim_2 = $PokemonTemp.dependentEvents.can_refresh?
+    $PokemonTemp.dependentEvents.refresh_sprite(surf_anim_1 && !surf_anim_2)
     pbStartSurfing
     return true
   end
@@ -33,11 +34,12 @@ end
 # Update after surfing
 alias follow_pbEndSurf pbEndSurf
 def pbEndSurf(_xOffset,_yOffset)
-  hidden = !$PokemonTemp.dependentEvents.can_refresh?
+  surf_anim_1 = $PokemonTemp.dependentEvents.can_refresh?
   ret = follow_pbEndSurf(_xOffset,_yOffset)
+  surf_anim_2 = $PokemonTemp.dependentEvents.can_refresh?
   if ret
     $PokemonGlobal.current_surfing = nil
-    $PokemonGlobal.call_refresh = [true, hidden]
+    $PokemonGlobal.call_refresh = [true,!surf_anim_1 && surf_anim_2]
   end
 end
 
@@ -120,7 +122,7 @@ def pbSurfacing
 end
 
 # Update when starting Strength to incorporate hiddden move animation
-HiddenMoveHandlers::UseMove.add(:STRENGTH,proc { |move,pokemon|
+HiddenMoveHandlers::UseMove.add(:STRENGTH,proc {|move,pokemon|
   if !pbHiddenMoveAnimation(pokemon,false)
     pbMessage(_INTL("{1} used {2}!\1",pokemon.name,GameData::Move.get(move).name))
   end
@@ -278,22 +280,26 @@ class Game_Map
       next if event == self_event || event.tile_id < 0 || event.through
       next if !event.at_coordinate?(x, y)
       return true if GameData::TerrainTag.try_get(@terrain_tags[event.tile_id]).ignore_passability
-      return true if GameData::TerrainTag.try_get(@terrain_tags[event.tile_id]).ice
-      return true if GameData::TerrainTag.try_get(@terrain_tags[event.tile_id]).ledge
-      return true if GameData::TerrainTag.try_get(@terrain_tags[event.tile_id]).can_surf
-      return true if GameData::TerrainTag.try_get(@terrain_tags[event.tile_id]).bridge
-      return true if GameData::TerrainTag.try_get(@terrain_tags[event.tile_id]).id_number == 42
+      if self_event != $game_player
+        return true if GameData::TerrainTag.try_get(@terrain_tags[event.tile_id]).ice
+        return true if GameData::TerrainTag.try_get(@terrain_tags[event.tile_id]).ledge
+        return true if GameData::TerrainTag.try_get(@terrain_tags[event.tile_id]).can_surf
+        return true if GameData::TerrainTag.try_get(@terrain_tags[event.tile_id]).bridge
+        return true if GameData::TerrainTag.try_get(@terrain_tags[event.tile_id]).id_number == 42
+      end
       return false if @passages[event.tile_id] & 0x0f != 0
       return true if @priorities[event.tile_id] == 0
     end
     for i in [2, 1, 0]
       tile_id = data[x, y, i]
       return true if GameData::TerrainTag.try_get(@terrain_tags[tile_id]).ignore_passability
-      return true if GameData::TerrainTag.try_get(@terrain_tags[tile_id]).ice
-      return true if GameData::TerrainTag.try_get(@terrain_tags[tile_id]).ledge
-      return true if GameData::TerrainTag.try_get(@terrain_tags[tile_id]).can_surf
-      return true if GameData::TerrainTag.try_get(@terrain_tags[tile_id]).bridge
-      return true if GameData::TerrainTag.try_get(@terrain_tags[tile_id]).id_number == 42
+      if self_event != $game_player
+        return true if GameData::TerrainTag.try_get(@terrain_tags[tile_id]).ice
+        return true if GameData::TerrainTag.try_get(@terrain_tags[tile_id]).ledge
+        return true if GameData::TerrainTag.try_get(@terrain_tags[tile_id]).can_surf
+        return true if GameData::TerrainTag.try_get(@terrain_tags[tile_id]).bridge
+        return true if GameData::TerrainTag.try_get(@terrain_tags[tile_id]).id_number == 42
+      end
       return false if @passages[tile_id] & 0x0f != 0
       return true if @priorities[tile_id] == 0
     end
@@ -303,13 +309,15 @@ end
 
 # Add a check for dependent events in the passablity method
 module Game
-
   class << self
     alias follower_load_map load_map
-    def load_map
-      follower_load_map
-      $PokemonTemp.dependentEvents.refresh_sprite(false)
-    end
+  end
+
+  module_function
+
+  def load_map
+    follower_load_map
+    $PokemonTemp.dependentEvents.refresh_sprite(false)
   end
 end
 
@@ -372,7 +380,7 @@ class Game_Player < Game_Character
 
 # Edit the dependent event check to account for followers
   def pbHasDependentEvents?
-    return false if pbGetFollowerDependentEvent
+    return false if pbGetFollowerDependentEvent && $PokemonGlobal.dependentEvents.length == 1
     return $PokemonGlobal.dependentEvents.length>0
   end
 
@@ -380,7 +388,8 @@ class Game_Player < Game_Character
   alias follow_update update
   def update
     follow_update
-    $PokemonTemp.dependentEvents.add_following_time if $PokemonTemp.dependentEvents.can_refresh?
+    return if !$PokemonTemp.dependentEvents.can_refresh?
+    $PokemonTemp.dependentEvents.add_following_time
   end
 
 # Always update follower if the player is moving
@@ -403,12 +412,11 @@ end
 
 # New method to add reflection to followers
 class Sprite_Character
+  attr_accessor :steps
+
   def setReflection(event, viewport)
     @reflection = Sprite_Reflection.new(self,event,viewport) if !@reflection
   end
-
-  attr_accessor :steps
-
 # Change the initialize and update method to add Footprints
 if defined?(footsteps_initialize)
   alias follow_init footsteps_initialize
@@ -480,14 +488,17 @@ end
 class DependentEventSprites
 
   attr_accessor :sprites
-# Change the refresh method to add Shadow and Footprints
+# Change the refresh method to add Footprints
   def refresh
     for sprite in @sprites
       sprite.dispose
     end
     @sprites.clear
-    $PokemonTemp.dependentEvents.eachEvent {|event,data|
-      if data[2] == @map.map_id # Check current map
+    $PokemonTemp.dependentEvents.eachEvent { |event,data|
+      if data[0]==@map.map_id # Check original map
+        @map.events[data[1]].erase if @map.events[data[1]]
+      end
+      if data[2]==@map.map_id # Check current map
         spr = Sprite_Character.new(@viewport,event)
         spr.setReflection(event, @viewport)
         if $PokemonTemp.dependentEvents.can_refresh?
@@ -502,20 +513,15 @@ class DependentEventSprites
   end
 
 # Change the update method to incorporate status tones and updating the follower
+  alias follower_update update
   def update
-    if $PokemonTemp.dependentEvents.lastUpdate != @lastUpdate
-      refresh
-      @lastUpdate = $PokemonTemp.dependentEvents.lastUpdate
-    end
-    for sprite in @sprites
-      sprite.update
-    end
+    follower_update
     for i in 0...@sprites.length
       pbDayNightTint(@sprites[i])
       first_pkmn = $Trainer.first_able_pokemon
       next if !$PokemonGlobal.dependentEvents[i] || !$PokemonGlobal.dependentEvents[i][8][/FollowerPkmn/]
-      if $PokemonGlobal.follower_toggled && FollowerSettings::APPLYSTATUSTONES && first_pkmn
-        status_tone = getConst(FollowerSettings,"#{first_pkmn.status}TONE")
+      if $PokemonGlobal.follower_toggled && FollowerSettings::APPLY_STATUS_TONES && first_pkmn
+        status_tone = getConst(FollowerSettings,"TONE_#{first_pkmn.status}")
         @sprites[i].tone.set(@sprites[i].tone.red + status_tone[0],
                              @sprites[i].tone.green + status_tone[1],
                              @sprites[i].tone.blue + status_tone[2],
@@ -542,15 +548,15 @@ class DependentEvents
       elsif (relativePos[1] == 0 && relativePos[0] == -2)   # 2 spaces to the left of leader
         facingDirection = 4
       elsif relativePos[1] == -2 && relativePos[0] == 0   # 2 spaces above leader
-        facingDirection = 2
-      elsif relativePos[1] == 2 && relativePos[0] == 0   # 2 spaces below leader
         facingDirection = 8
+      elsif relativePos[1] == 2 && relativePos[0] == 0   # 2 spaces below leader
+        facingDirection = 2
       end
     end
     facings = [facingDirection] # Get facing from behind
-    if !leaderIsTrueLeader
-      facings.push(d) # Get forward facing
-    end
+    facings.push([0,0,4,0,8,0,2,0,6][d])   # Get right facing
+    facings.push([0,0,6,0,2,0,8,0,4][d])   # Get left facing
+    facings.push(d) if !leaderIsTrueLeader # Get forward facing
     mapTile = nil
     if areConnected
       bestRelativePos = -1
@@ -586,7 +592,7 @@ class DependentEvents
              follower,tile[0],tile[1],tile[2])
           # Assumes follower is 1x1 tile in size
           distance = Math.sqrt(relativePos[0] * relativePos[0] + relativePos[1] * relativePos[1])
-          if bestRelativePos > distance || bestRelativePos == -1
+          if bestRelativePos == -1 || bestRelativePos > distance
             bestRelativePos = distance
             mapTile = tile
           end
@@ -655,7 +661,6 @@ class DependentEvents
       if follower.map.map_id == mapTile[0]
         # Follower is on same map as leader
         follower.moveto(leader.x,leader.y)
-        pbTurnTowardEvent(follower,leader) if !follower.move_route_forcing
       else
         # Follower will move to different map
         events = $PokemonGlobal.dependentEvents
@@ -663,13 +668,18 @@ class DependentEvents
         if eventIndex >= 0
           newFollower = @realEvents[eventIndex]
           newEventData = events[eventIndex]
+          if eventIndex >= 1 && !$dependent_connection_bug
+            echoln "The janky movement you see near map connection\nfrom the 2nd Dependent event onwards is not\ncaused by Following Pokemon EX.\n"
+            $dependent_connection_bug = true
+          end
+          # Jank Fix for Event Positions. Most Likely gonna cause errors
+          if leader.direction%4 == 0 && eventIndex == 0
+            mapTile[1] += 1
+            mapTile[2] += 1
+          end
           newFollower.moveto(mapTile[1],mapTile[2])
-          pbFancyMoveTo(newFollower,mapTile[1], mapTile[2], leader)
           newEventData[3] = mapTile[1]
           newEventData[4] = mapTile[2]
-          if mapTile[0] == leader.map.map_id
-             pbTurnTowardEvent(follower,leader) if !follower.move_route_forcing
-          end
         end
       end
     end
@@ -690,13 +700,8 @@ class Scene_Map
   alias follow_update update
   def update
     follow_update
-    for i in 0...$PokemonGlobal.dependentEvents.length
-      event = $PokemonTemp.dependentEvents.realEvents[i]
-      return if event.move_route_forcing
-      event.move_speed = $game_player.move_speed
-    end
-    if Input.trigger?(getConst(Input,FollowerSettings::TOGGLEFOLLOWERKEY)) &&
-        FollowerSettings::ALLOWTOGGLEFOLLOW
+    if Input.trigger?(getConst(Input,FollowerSettings::TOGGLE_FOLLOWER_KEY)) &&
+        FollowerSettings::ALLOW_TOGGLE_FOLLOW
       pbToggleFollowingPokemon
     end
     if $PokemonGlobal.follower_toggled
@@ -719,13 +724,13 @@ class Scene_Map
       event = $PokemonTemp.dependentEvents.realEvents[i]
       $PokemonTemp.dependentEvents.refresh_sprite(false)
       $PokemonTemp.dependentEvents.pbFollowEventAcrossMaps(leader,event,false,i == 0)
+      pbTurnTowardEvent(event,leader)
     end
   end
 end
 
 # Tiny fix for emote Animations not playing in v19
 class SpriteAnimation
-
   def effect?
     return @_animation_duration > 0 if @_animation_duration
   end

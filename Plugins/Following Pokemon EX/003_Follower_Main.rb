@@ -47,13 +47,14 @@ end
 # Script Command for Talking to Following Pokemon
 #-------------------------------------------------------------------------------
 def pbTalkToFollower
-  return false if !$PokemonTemp.dependentEvents.can_refresh?
-  if !($PokemonGlobal.surfing ||
-       (GameData::MapMetadata.exists?($game_map.map_id) &&
-       GameData::MapMetadata.get($game_map.map_id).always_bicycle) ||
-       !$game_player.pbFacingTerrainTag.can_surf_freely ||
-       !$game_map.passable?($game_player.x,$game_player.y,$game_player.direction,$game_player))
-    pbSurf
+  if !$PokemonTemp.dependentEvents.can_refresh?
+    if !($PokemonGlobal.surfing ||
+         (GameData::MapMetadata.exists?($game_map.map_id) &&
+         GameData::MapMetadata.get($game_map.map_id).always_bicycle) ||
+         !$game_player.pbFacingTerrainTag.can_surf_freely ||
+         !$game_map.passable?($game_player.x,$game_player.y,$game_player.direction,$game_player))
+      pbSurf
+    end
     return false
   end
   first_pkmn = $Trainer.first_able_pokemon
@@ -87,10 +88,10 @@ def pbPokemonFound(item,quantity = 1,message = "")
   message = "{1} seems to be holding something..." if nil_or_empty?(message)
   pbMessage(_INTL(message,pokename))
   item = GameData::Item.get(item)
-  return false if !item || quantity<1
-  itemname = (quantity>1) ? item.name_plural : item.name
+  return false if !item || quantity < 1
+  itemname = (quantity > 1) ? item.name_plural : item.name
   pocket = item.pocket
-  move = item.move
+  move   = item.move
   if $PokemonBag.pbStoreItem(item,quantity)   # If item can be picked up
     meName = (item.is_key_item?) ? "Key item get" : "Item get"
     if item == :LEFTOVERS
@@ -107,8 +108,8 @@ def pbPokemonFound(item,quantity = 1,message = "")
     pbMessage(_INTL("#{pokename} put the {1} away\\nin the <icon=bagPocket{2}>\\c[1]{3} Pocket\\c[0].",
        itemname,pocket,PokemonBag.pocketNames()[pocket]))
     $PokemonGlobal.follower_hold_item = false
-	$PokemonGlobal.time_taken = 0
-	return true
+    $PokemonGlobal.time_taken         = 0
+    return true
   end
   # Can't add the item
   if item == :LEFTOVERS
@@ -141,8 +142,10 @@ class DependentEvents
 #-------------------------------------------------------------------------------
   def add_following_time
     $PokemonGlobal.time_taken += 1
-    $Trainer.first_able_pokemon.happiness += 1 if ($PokemonGlobal.time_taken % 5000) == 0
-    $PokemonGlobal.follower_hold_item = true if ($PokemonGlobal.time_taken > 15000)
+    friendship_time = FollowerSettings::FRIENDSHIP_TIME_TAKEN * Graphics.frame_rate
+    item_time = FollowerSettings::ITEM_TIME_TAKEN * Graphics.frame_rate
+    $Trainer.first_able_pokemon.happiness += 1 if ($PokemonGlobal.time_taken % friendship_time) == 0
+    $PokemonGlobal.follower_hold_item = true if ($PokemonGlobal.time_taken > item_time)
   end
 
 # Dependent Event method to remove all events except following pokemon
@@ -154,9 +157,9 @@ class DependentEvents
         @realEvents[i]=nil
         @lastUpdate+=1
       end
-      events.compact!
-      @realEvents.compact!
     end
+    events.compact!
+    @realEvents.compact!
   end
 
 # Dependent Event method to look for Following Pokemon Event
@@ -184,12 +187,11 @@ class DependentEvents
 # Change the sprite to the correct species and data
   def change_sprite(params)
     events = $PokemonGlobal.dependentEvents
-    for k in 0...events.length
-      if events[k] && events[k][8][/FollowerPkmn/]
-        fname = GameData::Species.ow_sprite_filename(params[0],params[1],params[2],params[3],params[4]).gsub!("Graphics/Characters/","")
-        events[k][6] = fname
-        @realEvents[k].character_name = fname
-      end
+    for i in 0...events.length
+      next if !events[i] || !events[i][8][/FollowerPkmn/]
+      fname = GameData::Species.ow_sprite_filename(params[0],params[1],params[2],params[3],params[4]).gsub!("Graphics/Characters/","")
+      events[i][6] = fname
+      @realEvents[i].character_name = fname
     end
   end
 
@@ -225,9 +227,10 @@ class DependentEvents
       for i in 0...events.length
         next if !events[i] || !events[i][8][/FollowerPkmn/]
         anim = getConst(FollowerSettings,(ret == true)? :Animation_Come_Out : :Animation_Come_In)
-        $scene.spriteset.addUserAnimation(anim,@realEvents[i].x,@realEvents[i].y)
-        pbMoveRoute($game_player,[PBMoveRoute::Wait,10])
+        $scene.spriteset.addUserAnimation(anim,@realEvents[i].x,@realEvents[i].y,true,1)
       end
+      pbMoveRoute($game_player,[PBMoveRoute::Wait,2])
+      pbWait(8)
     end
     change_sprite([first_pkmn.species, first_pkmn.form,
           first_pkmn.gender, first_pkmn.shiny?,
@@ -242,11 +245,10 @@ class DependentEvents
 
 # Command to update follower/ make it reappear
   def set_move_route(commands,waitComplete=true)
-    events=$PokemonGlobal.dependentEvents
+    events = $PokemonGlobal.dependentEvents
     for i in 0...events.length
-      if events[i] && events[i][8][/FollowerPkmn/]
-        pbMoveRoute(@realEvents[i],commands,waitComplete)
-      end
+      next if !events[i] || !events[i][8][/FollowerPkmn/]
+      pbMoveRoute(@realEvents[i],commands,waitComplete)
     end
   end
 
@@ -260,8 +262,7 @@ class DependentEvents
       rpgEvent.pages[0].list = commonEvent.list
     end
     if eventData[8][/FollowerPkmn/]
-      newEvent = Game_FollowerEvent.new(eventData[0],rpgEvent,
-                                        $MapFactory.getMap(eventData[2]))
+      newEvent = Game_FollowerEvent.new(eventData[0],rpgEvent,$MapFactory.getMap(eventData[2]))
     else
       newEvent = Game_Event.new(eventData[0],rpgEvent,$MapFactory.getMap(eventData[2]))
     end
@@ -284,7 +285,7 @@ module GameData
   class Species
     def self.ow_sprite_filename(species, form = 0, gender = 0, shiny = false, shadow = false)
       ret = self.check_graphic_file("Graphics/Characters/", species, form, gender, shiny, shadow, "Followers")
-	  ret = "Graphics/Characters/Followers/000" if nil_or_empty?(ret)
+      ret = "Graphics/Characters/Followers/000" if nil_or_empty?(ret)
 	  return ret
     end
   end
@@ -324,69 +325,15 @@ end
 #-------------------------------------------------------------------------------
 # Adding a new method to GameData to easily get the appropriate Follower Graphic
 #-------------------------------------------------------------------------------
-module Compiler
-  module_function
-
-  def convert_pokemon_ows(src_dir, dest_dir)
-    split = "Graphics/Characters/Followers/".split('/')
-    for i in 0...split.size
-      Dir.mkdir(split[0..i].join('/')) unless File.directory?(split[0..i].join('/'))
-    end
-    System.reload_cache
-    split = "Graphics/Characters/Followers shiny/".split('/')
-    for i in 0...split.size
-      Dir.mkdir(split[0..i].join('/')) unless File.directory?(split[0..i].join('/'))
-    end
-    System.reload_cache
-    return if !FileTest.directory?(src_dir)
-    # generates a list of all graphic files
-    files = readDirectoryFiles(src_dir, ["*.png"])
-    # starts automatic renaming
-    files.each_with_index do |file, i|
-      Graphics.update if i % 100 == 0
-      pbSetWindowText(_INTL("Converting Pokémon overworlds {1}/{2}...", i, files.length)) if i % 50 == 0
-      next if !file[/^\d{3}[^\.]*\.[^\.]*$/]
-      if file[/s/] && !file[/shadow/]
-        prefix = "Followers shiny/"
-      else
-        prefix = "Followers/"
-      end
-      new_filename = convert_pokemon_filename(file,prefix)
-      # moves the files into their appropriate folders
-      File.move(src_dir + file, dest_dir + new_filename)
-    end
-  end
-
-  if defined?(convert_files)
-    class << self
-      alias follower_convert_files convert_files
-      def convert_files
-        follower_convert_files
-        convert_pokemon_ows("Graphics/Characters/","Graphics/Characters/")
-        pbSetWindowText(nil)
-      end
-    end
-  end
-end
-
-#-------------------------------------------------------------------------------
-# Adding a new method to GameData to easily get the appropriate Follower Graphic
-#-------------------------------------------------------------------------------
 module SpriteRenamer
   module_function
 
   def convert_pokemon_ows(src_dir, dest_dir)
-    split = "Graphics/Characters/Followers/".split('/')
-    for i in 0...split.size
-      Dir.mkdir(split[0..i].join('/')) unless File.directory?(split[0..i].join('/'))
-    end
-    System.reload_cache
-    split = "Graphics/Characters/Followers shiny/".split('/')
-    for i in 0...split.size
-      Dir.mkdir(split[0..i].join('/')) unless File.directory?(split[0..i].join('/'))
-    end
-    System.reload_cache
     return if !FileTest.directory?(src_dir)
+    Dir.mkdir(dest_dir) if !FileTest.directory?(dest_dir)
+    for ext in ["Followers/", "Followers shiny/"]
+      Dir.mkdir(dest_dir + ext) if !FileTest.directory?(dest_dir + ext)
+    end
     # generates a list of all graphic files
     files = readDirectoryFiles(src_dir, ["*.png"])
     # starts automatic renaming
@@ -408,11 +355,12 @@ module SpriteRenamer
   if defined?(convert_files)
     class << self
       alias follower_convert_files convert_files
-      def convert_files
-        follower_convert_files
-        convert_pokemon_ows("Graphics/Characters/","Graphics/Characters/")
-        pbSetWindowText(nil)
-      end
+    end
+
+    def convert_files
+      follower_convert_files
+      convert_pokemon_ows("Graphics/Characters/","Graphics/Characters/")
+      pbSetWindowText(nil)
     end
   end
 end
@@ -530,7 +478,7 @@ class PokemonGlobalMetadata
   attr_accessor :follower_hold_item
   attr_accessor :current_surfing
   attr_accessor :current_diving
-  attr_writer :dependentEvents
+  attr_writer   :dependentEvents
 
   def call_refresh
     @call_refresh = [false,false] if !@call_refresh
@@ -566,5 +514,20 @@ class PokemonGlobalMetadata
   def current_diving
     @current_diving = nil if !@current_diving
     return @current_diving
+  end
+end
+
+#-------------------------------------------------------------------------------
+# Remove v19.0 and Gen 8 Project v1.0.2 compatibility
+#-------------------------------------------------------------------------------
+module Compiler
+  if defined?(convert_files)
+    PluginManager.error("Following Pokemon EX is not compatible with Essentials v19. It's only compatible with v19.1")
+  end
+end
+
+class PokemonEntryScene2
+  if !defined?(MODE4)
+    PluginManager.error("Following Pokemon EX is not compatible with any versions of the Generation 8 below v1.0.3")
   end
 end
