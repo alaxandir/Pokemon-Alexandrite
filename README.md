@@ -1,12 +1,12 @@
 Pokémon Alexandrite
-Beta 5.1.7 (13Jun2021)
+Beta 0.5.8 (14Jun2021)
 Thank you for downloading!
 
 Over 650 hours of work is in this project please take the time to give me your feedback or bug reports!
 
 Pokemon Alexandrite Discord: https://discord.gg/vCnM3Nj
 
-WHAT'S NEW THIS VERSION: Megaring now obtainable, Retuned all audio volumes, Shiny chance is now 0.72%, More story content, lots of bug-fixes, changed list of items you can recieve from your follower pokemon--also can't get infinite items anymore.
+Version format has changed. 0.5.8 is the successor to 5.1.7
 
 INSTALLATION
 Extract the .ZIP archive.
