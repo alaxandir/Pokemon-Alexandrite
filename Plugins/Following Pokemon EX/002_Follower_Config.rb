@@ -108,7 +108,7 @@ Events.OnTalkToFollower += proc {|pkmn,x,y,random_val|
 			 :GENIUSWING,:CLEVERWING,:SWIFTWING
 	]
     # If no message or quantity is specified the default message is used and the quantity of item is 1
-    next true if pbPokemonFound(rand(items.length))
+    next true if pbPokemonFound items[rand(items.length)]
 }
 
 Events.OnTalkToFollower += proc {|pkmn,x,y,random_val|

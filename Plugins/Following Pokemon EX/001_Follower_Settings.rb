@@ -20,12 +20,13 @@ module FollowerSettings
   TOGGLE_FOLLOWER_KEY = :AUX2
 
   #Status tones to be used, if this is true (Red,Green,Blue,Gray)
-  APPLY_STATUS_TONES  = false
-  TONE_BURN           = [204,51,51,50]
-  TONE_POISON         = [153,102,204,50]
-  TONE_PARALYSIS      = [255,255,153,50]
-  TONE_FROZEN         = [153,204,204,50]
-  TONE_SLEEP          = [0,0,0,50]
+  APPLY_STATUS_TONES  = true
+  TONE_BURN           = [100,25,25,50]
+  TONE_POISON         = [115,75,150,50]
+  TONE_PARALYSIS      = [150,150,50,50]
+  TONE_FROZEN         = [100,150,150,50]
+  TONE_SLEEP          = [0,0,0,150]
+  TONE_NONE			  = [0,0,0,0]
   # For your custom status conditions, just add it as "TONE_(INTERNAL NAME)"
   # Example: TONE_BLEED, TONE_CONFUSE, TONE_INFATUATION
 
