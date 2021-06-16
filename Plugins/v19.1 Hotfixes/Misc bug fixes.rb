@@ -6,7 +6,7 @@
 # https://github.com/Maruno17/pokemon-essentials
 #==============================================================================
 
-Essentials::ERROR_TEXT += "[v19.1 Hotfixes 1.0.0]\r\n"
+Essentials::ERROR_TEXT += "[v19.1 Hotfixes 1.0.1]\r\n"
 
 #==============================================================================
 # Fix for Vs. animation not playing, and a trainer's trainer type possibly
@@ -241,5 +241,16 @@ class DependentEvents
     end
     events.compact!
     @realEvents.compact!
+  end
+end
+
+#==============================================================================
+# Fixed bad code when checking if a trainer has a Pokémon of a given type.
+#==============================================================================
+class Trainer
+  def has_pokemon_of_type?(type)
+    return false if !GameData::Type.exists?(type)
+    type = GameData::Type.get(type).id
+    return pokemon_party.any? { |p| p && p.hasType?(type) }
   end
 end

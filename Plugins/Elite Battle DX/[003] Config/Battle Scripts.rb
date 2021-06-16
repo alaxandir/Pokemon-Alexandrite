@@ -85,6 +85,155 @@ module BattleScripts
 	"item" => "Items already huh?",
 	"Oppitem" => "Time for a little insurance!"
 }
+#---------------
+  NICK = {
+	"beforeLastOpp" => proc do
+		pname = @battlers[1].name
+		@scene.pbTrainerSpeak("Let me show you what #{pname} can do!")
+		end,
+	"damageOpp" => proc do
+	tname = @battlers[0].name
+	"You have trained your #{tname} well!"
+	end,
+	"turnEnd2" => proc do
+	tname = @battlers[0].name
+	"Your #{tname} is pretty impressive!"
+	end,
+	"fainted" => "Wipe out!",
+	"recallOpp" => "Time for a switch.",
+	"lowHPOpp" => "Hang in there!",
+	"loss" => "Try again soon, you almost had it.",
+	"lowHP" => "What a nailbiter.",
+	"Oppitem" => "Let me think about this."
+}
+#---------------
+  RICHARD = {
+	"turnStart0" => proc do
+		pname = @battlers[1].name
+		@scene.pbTrainerSpeak("You've done well to get this far.")
+		end,
+	"damageOpp" => proc do
+	tname = @battlers[0].name
+	"You have trained your #{tname} well!"
+	end,
+	"damageOpp2" => proc do
+	pname = @battlers[1].name
+	"Quite impresive. #{pname} is taking a beating."
+	end,
+	"fainted" => "Learning from defeat is a good thing.",
+	"recall" => "Hmm, what are you planning?",
+	"lowHPOpp" => "My Pokémon will not falter.",
+	"loss" => "Thank you for the battle.",
+	"lowHP" => "This is close.",
+	"item" => "Items won't save you here.",
+	"Oppitem" => "I belive some medicine is in order."
+}
+#---------------
+  LORA = {
+	"turnStart0" => proc do
+		pname = @opponent[1].name
+		@scene.pbTrainerSpeak("You wont easily get my badge #{pname}!")
+		end,
+	"turnStart5" => proc do
+		pname = @opponent[1].name
+		@scene.pbTrainerSpeak("This is quite the battle #{pname}.")
+		end,
+	"damageOpp" => proc do
+	tname = @battlers[0].name
+	"You and your #{tname} share a strong bond."
+	end,
+	"damageOpp2" => proc do
+	pname = @battlers[1].name
+	"#{pname}! Are you okay?"
+	end,
+	"fainted" => "Faiting is only temporary afterall.",
+	"recall" => "A switch? What are you up to.",
+	"lowHPOpp" => "Bug Pokémon don't give up easy!",
+	"loss" => "Well fought, but you're not ready yet."
+}
+#---------------
+  BRAHM = {
+	"turnStart0" => proc do
+		pname = @opponent[1].name
+		@scene.pbTrainerSpeak("Let's light it up!")
+		end,
+	"turnStart5" => proc do
+		pname = @opponent[1].name
+		@scene.pbTrainerSpeak("Spicy battle, huh #{pname}?")
+		end,
+	"damageOpp" => proc do
+	tname = @battlers[0].name
+	"#{tname} just wont quit!"
+	end,
+	"damageOpp" => proc do
+	pname = @battlers[1].name
+	"#{pname} isn't looking too hot."
+	end,
+	"fainted" => "That Pokémon's done.",
+	"recall" => "Switching it up wont save you.",
+	"lowHPOpp" => "I'm sweating here!",
+	"loss" => "That was intense!",
+	"BeforeLastOpp" => "Lets see if I can bring this back."
+}
+#---------------
+  FRITZ = {
+	"turnStart0" => proc do
+		pname = @opponent[1].name
+		@scene.pbTrainerSpeak("#{pname}, are you ready?")
+		end,
+	"turnStart5" => proc do
+		pname = @opponent[1].name
+		@scene.pbTrainerSpeak("Shocking performance #{pname}.")
+		end,
+	"damageOpp" => proc do
+	pname = @battlers[1].name
+	"#{pname}, it's lights out for you!"
+	end,
+	"fainted" => "That Pokémon's done.",
+	"recall" => "Switching it up wont save you.",
+	"lowHPOpp" => "I'm sweating here!",
+	"loss" => "That was intense!",
+	"BeforeLastOpp" => "Power's low, but I'm still going!"
+}
+#---------------
+  HEIDI = {
+	"turnStart0" => proc do
+		pname = @opponent[1].name
+		@scene.pbTrainerSpeak("#{pname}, prepare for inclement weather!")
+		end,
+	"turnEnd6" => proc do
+		pname = @opponent[1].name
+		@scene.pbTrainerSpeak("I'm frozen in awe #{pname}.")
+		end,
+	"afterLastOpp" => proc do
+		pname = @battlers[0].name
+		@scene.pbTrainerSpeak("Lets see you handle #{pname}!")
+		end,
+	"damageOpp" => proc do
+	pname = @battlers[1].name
+	"#{pname} is getting iced."
+	end,
+	"recall" => "Switching it up wont save you.",
+	"loss" => "Is it cold in here?"
+}
+#---------------
+  LEE = {
+	"turnStart0" => proc do
+		pname = @opponent[0].name
+		@scene.pbTrainerSpeak("#{pname}, your must calm your mind for battle")
+		end,
+	"turnStart1" => proc do
+		pname = @battlers[0].name
+		@scene.pbTrainerSpeak("Your #{pname} seems nervous.")
+		end,
+	"afterLastOpp" => proc do
+		pname = @battlers[0].name
+		@scene.pbTrainerSpeak("Time for #{pname}, GO!")
+		end,
+	"recall" => "Hmm, interesting move.",
+	"loss" => "Balance in everything."
+}
+
   #-----------------------------------------------------------------------------
   # example Dialga fight
   DIALGA = {
@@ -106,21 +255,4 @@ module BattleScripts
     end
   }
   #-----------------------------------------------------------------------------
-  NICK = {
-    "turnStart0" => proc do
-      pname = @battlers[1].name
-      tname = @battle.opponent[0].name
-      # begin code block for the first turn
-      @scene.pbTrainerSpeak(["Let's see if you'll be able to handle my #{pname}."])
-    end,
-    "damageOpp" => "Woah! A powerful move!",
-    "damageOpp2" => "Another powerful move ...",
-    "lastOpp" => "This is it! Let's make it count!",
-    "lowHPOpp" => "Hang in there!",
-    "attack" => "Whatever you throw at me, my team can take it!",
-    "attackOpp" => "How about you try this one on for size!",
-    "fainted" => "That's how we do it in this gym!",
-    "faintedOpp" => "Arghh. You did well my friend...",
-    "loss" => "You can come back and challenge me any time you want."
-  }
 end

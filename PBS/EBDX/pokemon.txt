@@ -7450,3 +7450,24 @@ BattlerAltitude         = 0
 BattlerPlayerX          = 0
 BattlerPlayerY          = 0
 BattlerEnemyX           = 0
+#-------------------------------
+[PONYTA,1]
+BattlerEnemyY           = 46
+BattlerAltitude         = 0
+BattlerPlayerX          = -7
+BattlerPlayerY          = 49
+BattlerEnemyX           = 3
+#-------------------------------
+[RAPIDASH,1]
+BattlerEnemyY           = 31
+BattlerAltitude         = 0
+BattlerPlayerX          = 4
+BattlerPlayerY          = 35
+BattlerEnemyX           = 0
+#-------------------------------
+[MISSINGNO]
+BattlerEnemyY           = 14
+BattlerAltitude         = 0
+BattlerPlayerX          = 3
+BattlerPlayerY          = 0
+BattlerEnemyX           = 0
