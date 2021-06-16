@@ -25,7 +25,48 @@ Land,21
     5,SHIFTRY,43,46
     4,RAICHU,43,46
     1,REUNICLUS,43,46
-    1,KANGASKHAN,43,46
+    1,ALAKAZAM,43,46
+#--------------------------------
+[022] # Safari
+Land,21
+    10,RATTATA_1,15
+    10,MAKUHITA,15
+    10,PURRLOIN,15
+    10,YANMA,15
+    10,DRUDDIGON,15
+	10,GOLETT,15
+    10,CARNIVINE,15
+    6,MACHOP,15
+    5,TYROGUE,15
+	5,DURANT,15
+    5,GRIMER_1,15
+	5,DITTO,15
+	2,KANGASKHAN,15
+	2,AXEW,15
+Water,8
+    40,CLAMPERL,14,19
+    40,SHELLDER,15,16
+    10,WINGULL,14,16
+    7,SPHEAL,14,16
+    3,PIPLUP,16,18
+OldRod
+    70,SHELLDER,10
+    30,MARILL,10
+GoodRod
+    60,MARILL,18
+    40,SHELLDER,18
+SuperRod
+    60,MARILL,18
+    40,SHELLDER,18
+[024] #Safari Cave
+Cave,8
+    20,GEODUDE_1,15
+    20,KOFFING,15
+    20,SLUGMA,15
+	16,GEODUDE,15
+	8,MAGBY,15
+    8,CLEFAIRY,15
+    8,DRILBUR,15
 #--------------------------------
 [033] # Earthroot Forest
 Land,21

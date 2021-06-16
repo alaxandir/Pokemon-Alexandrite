@@ -83,8 +83,7 @@ BattleEnv        = DIMENSION
 BattleVS         = spaceSM
 Ace				 = 6
 #-------------------------------
-[POKEMONTRAINER_Brett]
-BattleEnv        = CHAMPION
+[POKEMONTRAINER_Brett,Brett,1]
 BattleVS         = classicVS
 #-------------------------------
 [MEDIUM]
