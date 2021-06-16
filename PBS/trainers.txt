@@ -848,7 +848,7 @@ Pokemon = HITMONCHAN,38
 Pokemon = HYPNO,39
 Pokemon = ELECTABUZZ,40
 #-------------------------------
-[WINTERCOOL_F,Jeremy]
+[WINTERCOOL_M,Jeremy]
 LoseText = "..."
 Pokemon = PIDGEOT,38
 Pokemon = PROBOPASS,39
