@@ -70,3 +70,183 @@ module Compiler
     MessageTypes.loadMessageFile("Data/messages.dat") if safeExists?("Data/messages.dat")
   end
 end
+
+#==============================================================================
+# Fix for messages in plugin scripts not being extracted for translating.
+#==============================================================================
+def pbSetTextMessages
+  Graphics.update
+  begin
+    t = Time.now.to_i
+    texts=[]
+    for script in $RGSS_SCRIPTS
+      if Time.now.to_i - t >= 5
+        t = Time.now.to_i
+        Graphics.update
+      end
+      scr=Zlib::Inflate.inflate(script[2])
+      pbAddRgssScriptTexts(texts,scr)
+    end
+    if safeExists?("Data/PluginScripts.rxdata")
+      plugin_scripts = load_data("Data/PluginScripts.rxdata")
+      for plugin in plugin_scripts
+        for script in plugin[2]
+          if Time.now.to_i - t >= 5
+            t = Time.now.to_i
+            Graphics.update
+          end
+          scr = Zlib::Inflate.inflate(script[1]).force_encoding(Encoding::UTF_8)
+          pbAddRgssScriptTexts(texts,scr)
+        end
+      end
+    end
+    # Must add messages because this code is used by both game system and Editor
+    MessageTypes.addMessagesAsHash(MessageTypes::ScriptTexts,texts)
+    commonevents = load_data("Data/CommonEvents.rxdata")
+    items=[]
+    choices=[]
+    for event in commonevents.compact
+      if Time.now.to_i - t >= 5
+        t = Time.now.to_i
+        Graphics.update
+      end
+      begin
+        neednewline=false
+        lastitem=""
+        for j in 0...event.list.size
+          list = event.list[j]
+          if neednewline && list.code!=401
+            if lastitem!=""
+              lastitem.gsub!(/([^\.\!\?])\s\s+/) { |m| $1+" " }
+              items.push(lastitem)
+              lastitem=""
+            end
+            neednewline=false
+          end
+          if list.code == 101
+            lastitem+="#{list.parameters[0]}"
+            neednewline=true
+          elsif list.code == 102
+            for k in 0...list.parameters[0].length
+              choices.push(list.parameters[0][k])
+            end
+            neednewline=false
+          elsif list.code == 401
+            lastitem+=" " if lastitem!=""
+            lastitem+="#{list.parameters[0]}"
+            neednewline=true
+          elsif list.code == 355 || list.code == 655
+            pbAddScriptTexts(items,list.parameters[0])
+          elsif list.code == 111 && list.parameters[0]==12
+            pbAddScriptTexts(items,list.parameters[1])
+          elsif list.code == 209
+            route=list.parameters[1]
+            for k in 0...route.list.size
+              if route.list[k].code == 45
+                pbAddScriptTexts(items,route.list[k].parameters[0])
+              end
+            end
+          end
+        end
+        if neednewline
+          if lastitem!=""
+            items.push(lastitem)
+            lastitem=""
+          end
+        end
+      end
+    end
+    if Time.now.to_i - t >= 5
+      t = Time.now.to_i
+      Graphics.update
+    end
+    items|=[]
+    choices|=[]
+    items.concat(choices)
+    MessageTypes.setMapMessagesAsHash(0,items)
+    mapinfos = pbLoadMapInfos
+    mapnames=[]
+    for id in mapinfos.keys
+      mapnames[id]=mapinfos[id].name
+    end
+    MessageTypes.setMessages(MessageTypes::MapNames,mapnames)
+    for id in mapinfos.keys
+      if Time.now.to_i - t >= 5
+        t = Time.now.to_i
+        Graphics.update
+      end
+      filename=sprintf("Data/Map%03d.rxdata",id)
+      next if !pbRgssExists?(filename)
+      map = load_data(filename)
+      items=[]
+      choices=[]
+      for event in map.events.values
+        if Time.now.to_i - t >= 5
+          t = Time.now.to_i
+          Graphics.update
+        end
+        begin
+          for i in 0...event.pages.size
+            neednewline=false
+            lastitem=""
+            for j in 0...event.pages[i].list.size
+              list = event.pages[i].list[j]
+              if neednewline && list.code!=401
+                if lastitem!=""
+                  lastitem.gsub!(/([^\.\!\?])\s\s+/) { |m| $1+" " }
+                  items.push(lastitem)
+                  lastitem=""
+                end
+                neednewline=false
+              end
+              if list.code == 101
+                lastitem+="#{list.parameters[0]}"
+                neednewline=true
+              elsif list.code == 102
+                for k in 0...list.parameters[0].length
+                  choices.push(list.parameters[0][k])
+                end
+                neednewline=false
+              elsif list.code == 401
+                lastitem+=" " if lastitem!=""
+                lastitem+="#{list.parameters[0]}"
+                neednewline=true
+              elsif list.code == 355 || list.code==655
+                pbAddScriptTexts(items,list.parameters[0])
+              elsif list.code == 111 && list.parameters[0]==12
+                pbAddScriptTexts(items,list.parameters[1])
+              elsif list.code==209
+                route=list.parameters[1]
+                for k in 0...route.list.size
+                  if route.list[k].code==45
+                    pbAddScriptTexts(items,route.list[k].parameters[0])
+                  end
+                end
+              end
+            end
+            if neednewline
+              if lastitem!=""
+                items.push(lastitem)
+                lastitem=""
+              end
+            end
+          end
+        end
+      end
+      if Time.now.to_i - t >= 5
+        t = Time.now.to_i
+        Graphics.update
+      end
+      items|=[]
+      choices|=[]
+      items.concat(choices)
+      MessageTypes.setMapMessagesAsHash(id,items)
+      if Time.now.to_i - t >= 5
+        t = Time.now.to_i
+        Graphics.update
+      end
+    end
+  rescue Hangup
+  end
+  Graphics.update
+end

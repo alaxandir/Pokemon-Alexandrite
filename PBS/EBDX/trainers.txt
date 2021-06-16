@@ -56,32 +56,38 @@ BattleScript	 = NICK
 [LEADER_Richard]
 BattleEnv        = CHAMPION
 BattleVS         = crystalSM
-Ace				 = 3
+Ace				 = 4
+BattleScript	 = RICHARD
 #-------------------------------
 [LEADER_Lora]
 BattleEnv        = CHAMPION
 BattleVS         = forestSM
-Ace				 = 3
+Ace				 = 4
+BattleScript	 = LORA
 #-------------------------------
 [LEADER_Brahm]
 BattleEnv        = MAGMA
 BattleVS         = flamesSM
-Ace				 = 4
+Ace				 = 5
+BattleScript	 = BRAHM
 #-------------------------------
 [LEADER_Fritz]
 BattleEnv        = NET
 BattleVS         = plamsaSM
-Ace				 = 4
+Ace				 = 5
+BattleScript	 = FRITZ
 #-------------------------------
 [LEADER_Heidi]
 BattleEnv        = ICEGYM
 BattleVS         = specialSM
 Ace				 = 6
+BattleScript	 = HEIDI
 #-------------------------------
 [LEADER_Lee]
 BattleEnv        = DIMENSION
 BattleVS         = spaceSM
 Ace				 = 6
+BattleScript	 = LEE
 #-------------------------------
 [POKEMONTRAINER_Brett,Brett,1]
 BattleVS         = classicVS
