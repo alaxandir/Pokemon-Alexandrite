@@ -66,9 +66,9 @@ module BattleScripts
 #--------------
   BRETT1 = {
 	"turnStart0" => proc do
-		pname = @battlers[1].name
-		@scene.pbTrainerSpeak("This time I'll win! Go, #{pname}!")
-		end,
+	tname = $Trainer.name
+	@scene.pbTrainerSpeak("We'll be good rivals #{tname}, goodluck!")
+	end,
 	"damageOpp" => proc do
 	tname = @battlers[0].name
 	"Whoa! your #{tname} is really strong!"
@@ -76,6 +76,10 @@ module BattleScripts
 	"damageOpp2" => proc do
 	pname = @battlers[0].name
 	"Nice hit, my #{pname} can't handle it."
+	end,
+	"turnStart4" => proc do
+		pname = @battlers[1].name
+		@scene.pbTrainerSpeak("#{pname}, don't give up!")
 	end,
 	"fainted" => "That's what I'm talking about!",
 	"recall" => "Swapping out so soon?",
@@ -85,19 +89,27 @@ module BattleScripts
 	"item" => "Items already huh?",
 	"Oppitem" => "Time for a little insurance!"
 }
-#---------------
+#---------------# BATTLER 0 IS PLAYER, BATTLER 1 IS OPPONENT
   NICK = {
 	"beforeLastOpp" => proc do
 		pname = @battlers[1].name
 		@scene.pbTrainerSpeak("Let me show you what #{pname} can do!")
 		end,
-	"damageOpp" => proc do
-	tname = @battlers[0].name
-	"You have trained your #{tname} well!"
+	"turnStart0" => proc do
+	tname = $Trainer.name
+	@scene.pbTrainerSpeak("Alright #{tname}, let's battle!")
 	end,
-	"turnEnd2" => proc do
+	"lowHP" => proc do
 	tname = @battlers[0].name
-	"Your #{tname} is pretty impressive!"
+	@scene.pbTrainerSpeak("That #{tname} is tough!")
+	end,
+	"lowHP2" => proc do
+	tname = @battlers[0].name
+	@scene.pbTrainerSpeak("No way #{tname} is still standing!")
+	end,
+	"turnEnd3" => proc do
+	tname = @battlers[0].name
+	@scene.pbTrainerSpeak("Your #{tname} is really impressive!")
 	end,
 	"fainted" => "Wipe out!",
 	"recallOpp" => "Time for a switch.",
@@ -106,19 +118,19 @@ module BattleScripts
 	"lowHP" => "What a nailbiter.",
 	"Oppitem" => "Let me think about this."
 }
-#---------------
+#----------------# BATTLER 0 IS PLAYER, BATTLER 1 IS OPPONENT
   RICHARD = {
 	"turnStart0" => proc do
-		pname = @battlers[1].name
-		@scene.pbTrainerSpeak("You've done well to get this far.")
-		end,
+	tname = $Trainer.name
+	@scene.pbTrainerSpeak("You've done well to come this far #{tname}.")
+	end,
 	"damageOpp" => proc do
 	tname = @battlers[0].name
-	"You have trained your #{tname} well!"
+	@scene.pbTrainerSpeak("You have trained your #{tname} well!")
 	end,
 	"damageOpp2" => proc do
 	pname = @battlers[1].name
-	"Quite impresive. #{pname} is taking a beating."
+	@scene.pbTrainerSpeak("Quite impresive. #{pname} is taking a beating.")
 	end,
 	"fainted" => "Learning from defeat is a good thing.",
 	"recall" => "Hmm, what are you planning?",
@@ -131,43 +143,34 @@ module BattleScripts
 #---------------
   LORA = {
 	"turnStart0" => proc do
-		pname = @opponent[1].name
-		@scene.pbTrainerSpeak("You wont easily get my badge #{pname}!")
-		end,
-	"turnStart5" => proc do
-		pname = @opponent[1].name
-		@scene.pbTrainerSpeak("This is quite the battle #{pname}.")
-		end,
-	"damageOpp" => proc do
-	tname = @battlers[0].name
-	"You and your #{tname} share a strong bond."
+	tname = $Trainer.name
+	@scene.pbTrainerSpeak("You wont get my badge easily #{tname}!")
 	end,
-	"damageOpp2" => proc do
+	"turnStart5" => "This is quite the battle.",
+	"turnStart6" => proc do
+	pname = @battlers[0].name
+	@scene.pbTrainerSpeak("You and your #{pname} share a strong bond.")
+	end,
+	"lowHPOpp" => proc do
 	pname = @battlers[1].name
-	"#{pname}! Are you okay?"
+	@scene.pbTrainerSpeak("#{pname}! Are you okay?")
 	end,
-	"fainted" => "Faiting is only temporary afterall.",
+	"fainted" => "Fainting is only temporary afterall.",
 	"recall" => "A switch? What are you up to.",
 	"lowHPOpp" => "Bug Pokémon don't give up easy!",
 	"loss" => "Well fought, but you're not ready yet."
 }
-#---------------
+#----------------# BATTLER 0 IS PLAYER, BATTLER 1 IS OPPONENT
   BRAHM = {
-	"turnStart0" => proc do
-		pname = @opponent[1].name
-		@scene.pbTrainerSpeak("Let's light it up!")
-		end,
-	"turnStart5" => proc do
-		pname = @opponent[1].name
-		@scene.pbTrainerSpeak("Spicy battle, huh #{pname}?")
-		end,
+	"turnStart0" => "Let's light it up!",
+	"turnStart5" => "Spicy battle, huh?",
 	"damageOpp" => proc do
-	tname = @battlers[0].name
-	"#{tname} just wont quit!"
+	pname = @battlers[0].name
+	@scene.pbTrainerSpeak("Your #{pname} just wont quit!")
 	end,
-	"damageOpp" => proc do
+	"damageOpp1" => proc do
 	pname = @battlers[1].name
-	"#{pname} isn't looking too hot."
+	@scene.pbTrainerSpeak("#{pname} isn't looking too hot.")
 	end,
 	"fainted" => "That Pokémon's done.",
 	"recall" => "Switching it up wont save you.",
@@ -175,19 +178,16 @@ module BattleScripts
 	"loss" => "That was intense!",
 	"BeforeLastOpp" => "Lets see if I can bring this back."
 }
-#---------------
+#----------------# BATTLER 0 IS PLAYER, BATTLER 1 IS OPPONENT
   FRITZ = {
 	"turnStart0" => proc do
-		pname = @opponent[1].name
-		@scene.pbTrainerSpeak("#{pname}, are you ready?")
-		end,
-	"turnStart5" => proc do
-		pname = @opponent[1].name
-		@scene.pbTrainerSpeak("Shocking performance #{pname}.")
-		end,
-	"damageOpp" => proc do
-	pname = @battlers[1].name
-	"#{pname}, it's lights out for you!"
+	tname = $Trainer.name
+	@scene.pbTrainerSpeak("#{tname}, I will be your greatest challenge yet!")
+	end,
+	"turnStart5" => "A shocking performance so far!",
+	"damage" => proc do
+	pname = @battlers[0].name
+	@scene.pbTrainerSpeak("#{pname}, it's lights out for you!")
 	end,
 	"fainted" => "That Pokémon's done.",
 	"recall" => "Switching it up wont save you.",
@@ -197,43 +197,60 @@ module BattleScripts
 }
 #---------------
   HEIDI = {
-	"turnStart0" => proc do
-		pname = @opponent[1].name
-		@scene.pbTrainerSpeak("#{pname}, prepare for inclement weather!")
-		end,
-	"turnEnd6" => proc do
-		pname = @opponent[1].name
-		@scene.pbTrainerSpeak("I'm frozen in awe #{pname}.")
-		end,
+	"turnStart0" => "I hope you brought your winter coat!",
+	"turnEnd6" => "I'm frozen in awe.",
 	"afterLastOpp" => proc do
-		pname = @battlers[0].name
-		@scene.pbTrainerSpeak("Lets see you handle #{pname}!")
+		pname = @battlers[1].name
+		@scene.pbTrainerSpeak("Lets see if you can handle #{pname}!")
 		end,
-	"damageOpp" => proc do
-	pname = @battlers[1].name
-	"#{pname} is getting iced."
+	"mega" => "Finally, I was waiting for this!",
+	"megaopp" => "Here.. we.. GO!",
+	"damage" => proc do
+	pname = @battlers[0].name
+	@scene.pbTrainerSpeak("#{pname} is getting iced.")
 	end,
 	"recall" => "Switching it up wont save you.",
 	"loss" => "Is it cold in here?"
 }
-#---------------
+#---------------# BATTLER 0 IS PLAYER, BATTLER 1 IS OPPONENT
   LEE = {
-	"turnStart0" => proc do
-		pname = @opponent[0].name
-		@scene.pbTrainerSpeak("#{pname}, your must calm your mind for battle")
-		end,
+	"turnStart0" => "You must calm your mind for battle",
 	"turnStart1" => proc do
 		pname = @battlers[0].name
 		@scene.pbTrainerSpeak("Your #{pname} seems nervous.")
 		end,
 	"afterLastOpp" => proc do
-		pname = @battlers[0].name
+		pname = @battlers[1].name
 		@scene.pbTrainerSpeak("Time for #{pname}, GO!")
 		end,
 	"recall" => "Hmm, interesting move.",
 	"loss" => "Balance in everything."
 }
-
+#---------------
+  GIOVANNI1 = {
+	"turnStart0" => proc do
+	tname = $Trainer.name
+	@scene.pbTrainerSpeak("#{tname}! You've meddled in my affairs long enough.")
+	end,
+	"turnStart5" => "This should not be too difficult.",
+	"turnStart6" => proc do
+	pname = @battlers[0].name
+	@scene.pbTrainerSpeak("Your #{pname}, I will cherish it...")
+	end,
+	"lowHPOpp" => proc do
+	pname = @battlers[1].name
+	@scene.pbTrainerSpeak("#{pname}! Get back in there!")
+	end,
+	"megaOpp" => "BEHOLD! The power of the Mega Ring!",
+	"fainted" => "You have no chance against me.",
+	"fainted2" => "You're faltering.",
+	"recall" => "Running away?",
+	"recall2" => "Stop wasting time, switching is pointless.",
+	"lowHPOpp" => "These Pokémon are too weak!",
+	"afterLastOpp" => "This is impossible!",
+	"afterLast" => "Foolish child, you're defeat is imminent.",
+	"loss" => "Futile, you will remember this day."
+}
   #-----------------------------------------------------------------------------
   # example Dialga fight
   DIALGA = {

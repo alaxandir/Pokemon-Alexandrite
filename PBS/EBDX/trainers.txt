@@ -42,6 +42,7 @@ BattleVS         = trainerSM
 [ROCKETBOSS]
 BattleIntro      = evilTeam
 BattleVS         = classicVS
+BattleScript	= GIOVANNI1
 #-------------------------------
 [ROCKETTHUGS]
 BattleIntro      = evilTeam

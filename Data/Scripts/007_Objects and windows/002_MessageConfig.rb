@@ -12,7 +12,7 @@ module MessageConfig
   # 0 = Pause cursor is displayed at end of text
   # 1 = Pause cursor is displayed at bottom right
   # 2 = Pause cursor is displayed at lower middle side
-  CURSOR_POSITION         = 1
+  CURSOR_POSITION         = 2
   WINDOW_OPACITY          = 255
   TEXT_SPEED              = nil   # can be positive to wait frames or negative to
                                   # show multiple characters in a single frame

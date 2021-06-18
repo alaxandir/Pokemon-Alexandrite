@@ -172,6 +172,7 @@ Pokemon = SUDOWOODO,14
 Pokemon = PONYTA,14
     Moves = ACCELEROCK,BULLDOZE,STOMP,DOUBLEKICK
     IV = 18,18,18,18,18,18
+	Form = 1
 Pokemon = CRANIDOS,15
     Shiny = yes
     Moves = HEADBUTT,ROAR,BULLDOZE

@@ -15,6 +15,9 @@ class PokeBattle_Battle
     if @choices[idxBattler][0] == :UseItem
       item = @choices[idxBattler][1]
       pbReturnUnusedItemToBag(item, idxBattler) if item
+	  if pbOwnedByPlayer?(idxBattler)  #!
+		@playerItemcount -= 1 		   #reduce count 0.6.1
+	  end					           #!
     end
     # If idxBattler chose to Mega Evolve, cancel it
     pbUnregisterMegaEvolution(idxBattler)
@@ -214,10 +217,14 @@ class PokeBattle_Battle
         when 0    # Fight
           break if pbFightMenu(idxBattler)
         when 1    # Bag
-          if pbItemMenu(idxBattler,actioned.length==1)
-            commandsEnd = true if pbItemUsesAllActions?(@choices[idxBattler][1])
-            break
-          end
+			if trainerBattle? && $PokemonSystem.difficulty>=1 && @playerItemcount>=(3-($PokemonSystem.difficulty-2)) #0.6.1
+			pbDisplay(_INTL("You've already used {1} items.",@playerItemcount))	#!						
+			else																#!
+				if pbItemMenu(idxBattler,actioned.length==1)
+				commandsEnd = true if pbItemUsesAllActions?(@choices[idxBattler][1])
+				break
+				end
+			end
         when 2    # Pokémon
           break if pbPartyMenu(idxBattler)
         when 3    # Run

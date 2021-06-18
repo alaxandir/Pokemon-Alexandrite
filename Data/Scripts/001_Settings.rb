@@ -6,7 +6,7 @@
 
 module Settings
   # The version of your game. It has to adhere to the MAJOR.MINOR.PATCH format.
-  GAME_VERSION = '0.6.0'
+  GAME_VERSION = '0.6.1'
 
   # The generation that the battle system follows. Used throughout the battle
   # scripts, and also by some other settings which are used in and out of battle
@@ -98,7 +98,7 @@ module Settings
   #=============================================================================
 
   # The number of steps allowed before a Safari Zone game is over (0=infinite).
-  SAFARI_STEPS     = 600
+  SAFARI_STEPS     = 400
   # The number of seconds a Bug Catching Contest lasts for (0=infinite).
   BUG_CONTEST_TIME = 20 * 60   # 20 minutes
 
@@ -356,7 +356,52 @@ module Settings
     "speech hgss 18",
     "speech hgss 19",
     "speech hgss 20",
-    "speech pl 18"
+	"speech pl 1",
+	"speech pl 2",
+	"speech pl 3",
+	"speech pl 4",
+	"speech pl 5",
+	"speech pl 6",
+	"speech pl 7",
+	"speech pl 8",
+	"speech pl 9",
+	"speech pl 10",
+	"speech pl 11",
+	"speech pl 12",
+	"speech pl 13",
+	"speech pl 14",
+	"speech pl 15",
+	"speech pl 16",
+	"speech pl 17",
+	"speech pl 18",
+	"speech pl 19",
+	"speech pl 20",
+	"speech ug 1",
+	"speech ug 2",
+	"speech em",
+	"speech rs",
+	"speech frlg",
+	"speech dp 1",
+	"speech dp 2",
+	"speech dp 3",
+	"speech dp 4",
+	"speech dp 5",
+	"speech dp 6",
+	"speech dp 7",
+	"speech dp 8",
+	"speech dp 9",
+	"speech dp 10",
+	"speech dp 11",
+	"speech dp 12",
+	"speech dp 13",
+	"speech dp 14",
+	"speech dp 15",
+	"speech dp 16",
+	"speech dp 17",
+	"speech dp 18",
+	"speech dp 19",
+	"speech dp 20"
+	
   ]
 
   # Available menu frames. These are graphic files in "Graphics/Windowskins/".
@@ -388,7 +433,9 @@ module Settings
     "choice 25",
     "choice 26",
     "choice 27",
-    "choice 28"
+    "choice 28",
+	"choice dp",
+	"choice ug"
   ]
 end
 

@@ -130,6 +130,7 @@ class PokeBattle_Battle
     @debug             = false
     @canRun            = true
     @canLose           = false
+	@playerItemcount   = 0 		#0.6.1
     @switchStyle       = true
     @showAnims         = true
     @controlPlayer     = false

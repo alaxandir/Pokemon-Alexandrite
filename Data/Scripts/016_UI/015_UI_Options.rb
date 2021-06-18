@@ -13,6 +13,7 @@ class PokemonSystem
   attr_accessor :bgmvolume
   attr_accessor :sevolume
   attr_accessor :textinput
+  attr_accessor :difficulty
 
   def initialize
     @textspeed   = 1     # Text speed (0=slow, 1=normal, 2=fast)
@@ -23,10 +24,17 @@ class PokemonSystem
     @screensize  = (Settings::SCREEN_SCALE * 2).floor - 1   # 0=half size, 1=full size, 2=full-and-a-half size, 3=double size
     @language    = 0     # Language (see also Settings::LANGUAGES in script PokemonSystem)
     @runstyle    = 1     # Default movement speed (0=walk, 1=run)
-    @bgmvolume   = 60   # Volume of background music and ME
-    @sevolume    = 60   # Volume of sound effects
+    @bgmvolume   = 60    # Volume of background music and ME
+    @sevolume    = 60    # Volume of sound effects
     @textinput   = 0     # Text input mode (0=cursor, 1=keyboard)
+	@difficulty  = 0     #0.6.1
+	end
+	
+  def difficulty						#0.6.1
+	@difficulty = 0 if !@difficulty		#!
+  return @difficulty					#!
   end
+
 end
 
 #===============================================================================
@@ -218,12 +226,13 @@ class Window_PokemonOption < Window_DrawableCommand
         xpos = optionwidth+rect.x
         ivalue = 0
         for value in @options[index].values
+		  pbSetSmallFont(self.contents)
           pbDrawShadowText(self.contents,xpos,rect.y,optionwidth,rect.height,value,
              (ivalue==self[index]) ? @selBaseColor : self.baseColor,
              (ivalue==self[index]) ? @selShadowColor : self.shadowColor
           )
           xpos += self.contents.text_size(value).width
-          xpos += spacing
+          xpos += spacing+5
           ivalue += 1
         end
       else
@@ -266,12 +275,12 @@ class Window_PokemonOption < Window_DrawableCommand
     if self.active && self.index<@options.length
       if Input.repeat?(Input::LEFT)
         self[self.index] = @options[self.index].prev(self[self.index])
-        dorefresh = true
-        @mustUpdateOptions = true
+		dorefresh = true
+        @mustUpdateOptions = true		
       elsif Input.repeat?(Input::RIGHT)
         self[self.index] = @options[self.index].next(self[self.index])
-        dorefresh = true
-        @mustUpdateOptions = true
+		dorefresh = true
+        @mustUpdateOptions = true		
       end
     end
     refresh if dorefresh
@@ -339,11 +348,41 @@ class PokemonOption_Scene
          proc { $PokemonSystem.battlescene },
          proc { |value| $PokemonSystem.battlescene = value }
        ),
+	   EnumOption.new(_INTL("Difficulty"),[_INTL("Normal"),_INTL("Hard"),_INTL("Expert"),_INTL("Master")], #0.6.1
+		 proc { $PokemonSystem.difficulty },															   #
+		 proc { |value|
+				if value > 0
+				$PokemonSystem.battlestyle = 1
+				end
+				$PokemonSystem.difficulty = value
+			if $PokemonSystem.difficulty == 0
+				pbSetSmallFont(@sprites["textbox"].contents)
+				@sprites["textbox"].text           =(_INTL("No item limit. No battle style enforcement."))
+			end
+			if $PokemonSystem.difficulty == 1
+				pbSetSmallFont(@sprites["textbox"].contents)
+				@sprites["textbox"].text           =(_INTL("Limit of 4 items in trainer battles. Set battle style forced."))
+			end
+			if $PokemonSystem.difficulty == 2	
+				pbSetSmallFont(@sprites["textbox"].contents)
+				@sprites["textbox"].text           =(_INTL("Limit of 3 items in trainer battles. Set battle style forced."))
+			end
+			if $PokemonSystem.difficulty == 3
+				pbSetSmallFont(@sprites["textbox"].contents)
+				@sprites["textbox"].text           =(_INTL("Limit of 2 items in trainer battles. Set battle style forced."))
+			end
+			}
+	    ),
        EnumOption.new(_INTL("Battle Style"),[_INTL("Switch"),_INTL("Set")],
          proc { $PokemonSystem.battlestyle },
-         proc { |value| $PokemonSystem.battlestyle = value }
+         proc { |value| 
+		 	if $PokemonSystem.difficulty > 0
+			value = 1
+			end
+			$PokemonSystem.battlestyle = value 
+			}
        ),
-       EnumOption.new(_INTL("Default Movement"),[_INTL("Walking"),_INTL("Running")],
+       EnumOption.new(_INTL("Movement"),[_INTL("Walking"),_INTL("Running")],
          proc { $PokemonSystem.runstyle },
          proc { |value| $PokemonSystem.runstyle = value }
        ),
@@ -373,7 +412,7 @@ class PokemonOption_Scene
              pbSetResizeFactor($PokemonSystem.screensize)
            end
          }
-       )
+       )														  		                               #0.6.1
     ]
     @PokemonOptions = pbAddOnOptions(@PokemonOptions)
     @sprites["option"] = Window_PokemonOption.new(@PokemonOptions,0,

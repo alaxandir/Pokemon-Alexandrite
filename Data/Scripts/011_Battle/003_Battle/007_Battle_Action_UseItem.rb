@@ -33,6 +33,9 @@ class PokeBattle_Battle
     # Delete the item from the Bag. If it turns out it will have no effect, it
     # will be re-added to the Bag later.
     pbConsumeItemInBag(item,idxBattler)
+	if pbOwnedByPlayer?(idxBattler)    #!
+		@playerItemcount += 1 		   #reduce count 0.6.1
+	 end							   #!
     return true
   end
 

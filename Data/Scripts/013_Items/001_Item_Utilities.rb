@@ -744,13 +744,13 @@ end
 #===============================================================================
 # Add EXP
 #===============================================================================
-def pbAddEXP(pkmn,exp)
-  new_exp = pkmn.growth_rate.add_exp(pkmn.exp,exp)
-  new_level = pkmn.growth_rate.level_from_exp(new_exp)
-  pkmn.setExp(new_exp)
-  pkmn.calc_stats
-  return new_level
-end
+#def pbAddEXP(pkmn,exp)
+#  new_exp = pkmn.growth_rate.add_exp(pkmn.exp,exp)
+#  new_level = pkmn.growth_rate.level_from_exp(new_exp)
+#  pkmn.setExp(new_exp)
+#  pkmn.calc_stats
+#  return new_level
+#end
 
 def pbEXPAdditionItem(pkmn,exp,item,scene)
   current_lv = pkmn.level
