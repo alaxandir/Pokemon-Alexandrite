@@ -161,7 +161,7 @@ Pokemon = FOONGUS,12
 [LEADER_Richard,Richard]
 Items = SUPERPOTION
 LoseText = "..."
-Pokemon = GLIGAR,13
+Pokemon = GLIGAR,14
     Moves = KNOCKOFF,STEALTHROCK,SANDATTACK,POISONSTING
     Item = PASSHOBERRY
     IV = 22,22,22,22,22,22
@@ -392,16 +392,16 @@ Pokemon = LOPUNNY,23
 [LEADER_Brahm,Brahm]
 Items = SUPERPOTION
 LoseText = "..."
-Pokemon = PONYTA,23
+Pokemon = PONYTA,25
     Moves = FLAMECHARGE,AGILITY,FIRESPIN,SUNNYDAY
     AbilityIndex = 0
     IV = 25,25,25,25,25,25
-Pokemon = SLUGMA,24
+Pokemon = SLUGMA,25
     Moves = ANCIENTPOWER,RECOVER,FLAMEBURST,PAINSPLIT
     AbilityIndex = 1
     IV = 22,22,22,22,22,22
 	Item = PASSHOBERRY
-Pokemon = MAGMAR,24
+Pokemon = MAGMAR,25
     Moves = SCARYFACE,FLAMEWHEEL,FIRESPIN,SUNNYDAY
     AbilityIndex = 0
     IV = 22,22,22,22,22,22
@@ -723,7 +723,7 @@ Pokemon = SKUNTANK,36
     Item = BLACKSLUDGE
 #-------------------------------
 [ROCKETBOSS,Giovanni]
-Items = MAXREVIVE
+Items = FULLRESTORE
 LoseText = "..."
 Pokemon = PIDGEOT,40
     Item = PIDGEOTITE
@@ -892,9 +892,9 @@ Pokemon = PIDGEOT,42
 Pokemon = DELIBIRD,42
 #-------------------------------
 [LEADER_Heidi,Heidi]
-Items = FULLRESTORE,FULLHEAL,XSPDEF3
+Items = FULLRESTORE,FULLHEAL
 LoseText = "..."
-Pokemon = KANGASKHAN,40
+Pokemon = KANGASKHAN,42
     Moves = FAKEOUT,DIZZYPUNCH,HAMMERARM,THUNDERBOLT
     AbilityIndex = 2
     IV = 26,26,26,26,26,26
@@ -1013,12 +1013,12 @@ Pokemon = BLAZIKEN,46
 #-------------------------------
 [LEADER_Lee,Lee]
 LoseText = "..."
-Pokemon = SCRAFTY,45
+Pokemon = SCRAFTY,47
     IV = 24,24,24,24,24,24
-Pokemon = BLAZIKEN,46
+Pokemon = BLAZIKEN,47
     Moves = SLASH,FLAMECHARGE,BLAZEKICK,DOUBLEKICK
     IV = 24,24,24,24,24,24
-Pokemon = METAGROSS,46
+Pokemon = METAGROSS,47
     Moves = METEORMASH,EARTHQUAKE,HAMMERARM,GIGAIMPACT
     IV = 22,22,22,22,22,22
 Pokemon = REUNICLUS,47

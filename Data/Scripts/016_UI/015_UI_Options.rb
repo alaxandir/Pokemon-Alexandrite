@@ -232,7 +232,7 @@ class Window_PokemonOption < Window_DrawableCommand
              (ivalue==self[index]) ? @selShadowColor : self.shadowColor
           )
           xpos += self.contents.text_size(value).width
-          xpos += spacing+5
+          xpos += spacing+1
           ivalue += 1
         end
       else
@@ -348,7 +348,7 @@ class PokemonOption_Scene
          proc { $PokemonSystem.battlescene },
          proc { |value| $PokemonSystem.battlescene = value }
        ),
-	   EnumOption.new(_INTL("Difficulty"),[_INTL("Normal"),_INTL("Hard"),_INTL("Expert"),_INTL("Master")], #0.6.1
+	   EnumOption2.new(_INTL("Difficulty"),[_INTL("Nintendo Mode"),_INTL("Normal: Recomended"),_INTL("Hard"),_INTL("Challenge Mode")], #0.6.1
 		 proc { $PokemonSystem.difficulty },															   #
 		 proc { |value|
 				if value > 0
@@ -357,19 +357,19 @@ class PokemonOption_Scene
 				$PokemonSystem.difficulty = value
 			if $PokemonSystem.difficulty == 0
 				pbSetSmallFont(@sprites["textbox"].contents)
-				@sprites["textbox"].text           =(_INTL("No item limit. No battle style enforcement."))
+				@sprites["textbox"].text           =(_INTL("No special rules, normal Pokémon gameplay."))
 			end
 			if $PokemonSystem.difficulty == 1
 				pbSetSmallFont(@sprites["textbox"].contents)
-				@sprites["textbox"].text           =(_INTL("Limit of 4 items in trainer battles. Set battle style forced."))
+				@sprites["textbox"].text           =(_INTL("Limit of 4 item in trainer battles. Set battle mode only."))
 			end
 			if $PokemonSystem.difficulty == 2	
 				pbSetSmallFont(@sprites["textbox"].contents)
-				@sprites["textbox"].text           =(_INTL("Limit of 3 items in trainer battles. Set battle style forced."))
+				@sprites["textbox"].text           =(_INTL("As Normal but 3 items. Level caps based on Gym Badges."))
 			end
 			if $PokemonSystem.difficulty == 3
 				pbSetSmallFont(@sprites["textbox"].contents)
-				@sprites["textbox"].text           =(_INTL("Limit of 2 items in trainer battles. Set battle style forced."))
+				@sprites["textbox"].text           =(_INTL("As Hard but 2 items. PKMN Centers cost $ based on avg level of party. Can be very punishing."))
 			end
 			}
 	    ),
@@ -445,7 +445,9 @@ class PokemonOption_Scene
           # Set the values of each option
           for i in 0...@PokemonOptions.length
             @PokemonOptions[i].set(@sprites["option"][i])
+			@sprites["option"].setValueNoRefresh(i,(@PokemonOptions[i].get || 0))
           end
+		  @sprites["option"].refresh
           if $PokemonSystem.textskin!=oldTextSkin
             @sprites["textbox"].setSkin(MessageConfig.pbGetSpeechFrame())
             @sprites["textbox"].text = _INTL("Speech frame {1}.",1+$PokemonSystem.textskin)

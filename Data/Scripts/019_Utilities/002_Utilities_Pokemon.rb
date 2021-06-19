@@ -265,3 +265,17 @@ def pbHasEgg?(species)
   return true if species == baby   # Is an egg species without incense
   return false
 end
+
+#===============================================================================
+# 0.6.1 Returns a value equal to each pokemons level (^2) and added togetherg
+#===============================================================================
+
+def pbPokeCenterCost(party)
+  return 1 if party.length == 0
+  sum = 0
+  # Add party levels all together and square them
+  party.each { |p| sum += (p.level**1.6)+200 }
+  sum = sum.round
+  return 1 if sum == 0
+  return sum
+end

@@ -752,6 +752,80 @@ end
 #  return new_level
 #end
 
+def pbAddExp(pkmn,exp,scene)
+  old_level = pkmn.level
+  pkmn.exp = pkmn.growth_rate.add_exp(pkmn.exp,exp)
+  level_diff = (pkmn.level+1) - old_level
+  if exp>0
+    pbMessage(_INTL("{1} gained {2} Experience Points.",pkmn.name,exp))
+  else
+    pbMessage(_INTL("{1} lost {2} Experience Points.",pkmn.name,exp))
+  end
+  if old_level>pkmn.level
+    attackdiff  = pkmn.attack
+    defensediff = pkmn.defense
+    speeddiff   = pkmn.speed
+    spatkdiff   = pkmn.spatk
+    spdefdiff   = pkmn.spdef
+    totalhpdiff = pkmn.totalhp
+    pkmn.calc_stats
+    scene.pbRefresh
+    pbMessage(_INTL("{1} dropped to Lv. {2}!",pkmn.name,pkmn.level))
+    attackdiff  = pkmn.attack-attackdiff
+    defensediff = pkmn.defense-defensediff
+    speeddiff   = pkmn.speed-speeddiff
+    spatkdiff   = pkmn.spatk-spatkdiff
+    spdefdiff   = pkmn.spdef-spdefdiff
+    totalhpdiff = pkmn.totalhp-totalhpdiff
+    pbTopRightWindow(_INTL("Max. HP<r>{1}\r\nAttack<r>{2}\r\nDefense<r>{3}\r\nSp. Atk<r>{4}\r\nSp. Def<r>{5}\r\nSpeed<r>{6}",
+       totalhpdiff,attackdiff,defensediff,spatkdiff,spdefdiff,speeddiff))
+    pbTopRightWindow(_INTL("Max. HP<r>{1}\r\nAttack<r>{2}\r\nDefense<r>{3}\r\nSp. Atk<r>{4}\r\nSp. Def<r>{5}\r\nSpeed<r>{6}",
+       pkmn.totalhp,pkmn.attack,pkmn.defense,pkmn.spatk,pkmn.spdef,pkmn.speed))
+  elsif old_level<pkmn.level
+    attackdiff  = pkmn.attack
+    defensediff = pkmn.defense
+    speeddiff   = pkmn.speed
+    spatkdiff   = pkmn.spatk
+    spdefdiff   = pkmn.spdef
+    totalhpdiff = pkmn.totalhp
+    pkmn.changeHappiness("vitamin")
+    pkmn.calc_stats
+    scene.pbRefresh
+    if scene.is_a?(PokemonPartyScreen)
+      scene.pbDisplay(_INTL("{1} grew to Lv. {2}!",pkmn.name,pkmn.level))
+    else
+      pbMessage(_INTL("{1} grew to Lv. {2}!",pkmn.name,pkmn.level))
+    end
+    attackdiff  = pkmn.attack-attackdiff
+    defensediff = pkmn.defense-defensediff
+    speeddiff   = pkmn.speed-speeddiff
+    spatkdiff   = pkmn.spatk-spatkdiff
+    spdefdiff   = pkmn.spdef-spdefdiff
+    totalhpdiff = pkmn.totalhp-totalhpdiff
+    pbTopRightWindow(_INTL("Max. HP<r>+{1}\r\nAttack<r>+{2}\r\nDefense<r>+{3}\r\nSp. Atk<r>+{4}\r\nSp. Def<r>+{5}\r\nSpeed<r>+{6}",
+       totalhpdiff,attackdiff,defensediff,spatkdiff,spdefdiff,speeddiff),scene)
+    pbTopRightWindow(_INTL("Max. HP<r>{1}\r\nAttack<r>{2}\r\nDefense<r>{3}\r\nSp. Atk<r>{4}\r\nSp. Def<r>{5}\r\nSpeed<r>{6}",
+       pkmn.totalhp,pkmn.attack,pkmn.defense,pkmn.spatk,pkmn.spdef,pkmn.speed),scene)
+    # Learn new moves upon level up
+    movelist = pkmn.getMoveList
+    for i in movelist
+      next if i[0]!=pkmn.level
+      pbLearnMove(pkmn,i[1],true) { scene.pbUpdate }
+    end
+    # Check for evolution
+    newspecies = pkmn.check_evolution_on_level_up
+    if newspecies
+      pbFadeOutInWithMusic {
+        evo = PokemonEvolutionScene.new
+        evo.pbStartScreen(pkmn,newspecies)
+        evo.pbEvolution
+        evo.pbEndScreen
+        scene.pbRefresh if scene.is_a?(PokemonPartyScreen)
+      }
+	end
+  end
+end
+
 def pbEXPAdditionItem(pkmn,exp,item,scene)
   current_lv = pkmn.level
   current_exp = pkmn.exp
