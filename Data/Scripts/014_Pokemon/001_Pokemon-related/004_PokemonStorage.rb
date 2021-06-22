@@ -192,7 +192,7 @@ class PokemonStorage
       pkmn.time_form_set = nil
       pkmn.form          = 0 if pkmn.isSpecies?(:SHAYMIN)
       if $PokemonSystem.difficulty <3 
-	  pkmn.heal
+		pkmn.heal
 	  end
       self[boxDst,indexDst] = pkmn
     end
