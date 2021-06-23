@@ -292,6 +292,17 @@ class Pokemon
       @moves.each { |m| m.pp = m.total_pp }
     end
   end
+  
+  # Restores all PP of this Pokémon. If a move index is given, restores the PP
+  # of the move in that index.
+  # @param move_index [Integer] index of the move to heal (-1 if all moves
+  #   should be healed)
+  def countspent_PP(move_index = -1)
+    spent = 0
+    return if egg?
+    @moves.each { |m| spent += m.total_pp - m.pp }
+	return spent
+  end
 
   # Heals all HP, PP, and status problems of this Pokémon.
   def heal

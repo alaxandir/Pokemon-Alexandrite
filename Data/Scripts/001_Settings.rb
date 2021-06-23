@@ -321,6 +321,13 @@ module Settings
   # ID of the animation played when a berry tree grows a stage while the player
   # is on the map (for new plant growth mechanics only).
   PLANT_SPARKLE_ANIMATION_ID   = 7
+  
+  #============================================================================
+  # AIUR JORDAN ADDITIONS
+  #============================================================================
+  
+  HP_VALUE_CONST = 8
+  PP_VALUE_CONST = 20
 
   #=============================================================================
 

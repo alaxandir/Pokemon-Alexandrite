@@ -273,9 +273,11 @@ end
 def pbPokeCenterCost(party)
   return 1 if party.length == 0
   sum = 0
-  # Add party levels all together and square them
-  party.each { |p| sum += (p.level**1.6)+200 }
-  sum = sum.round
+  # Add party levels all together
+  party.each { |p| sum += ((p.totalhp-p.hp)*Settings::HP_VALUE_CONST) }
+  party.each { |p| sum += (p.countspent_PP)*Settings::PP_VALUE_CONST) }
+  sum = sum.to_i
+  
   return 1 if sum == 0
   return sum
 end
