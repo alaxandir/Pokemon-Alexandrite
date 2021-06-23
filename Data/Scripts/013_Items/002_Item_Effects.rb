@@ -1109,8 +1109,28 @@ ItemHandlers::UseOnPokemon.add(:ABILITYCAPSULE,proc { |item,pkmn,scene|
   end
   next false
 })
+
+ItemHandlers::UseOnPokemon.add(:SUPERCAPSULE,proc{|item,pkmn,scene,pkmnid|
+        abils = pkmn.getAbilityList
+        ability_commands = []
+        abil_cmd = 0
+		cmd = 0
+        for i in abils
+          ability_commands.push(((i[1] < 2) ? "" : "(H) ") + GameData::Ability.get(i[0]).name)
+          abil_cmd = ability_commands.length - 1 if pkmn.ability_id == i[0]
+		  break if cmd < 0
+        end
+        abil_cmd = scene.pbShowCommands(_INTL("Choose an ability."), ability_commands, abil_cmd)
+        next if abil_cmd < 0
+        pkmn.ability_index = abils[abil_cmd][1]
+        pkmn.ability = nil
+        scene.pbRefreshSingle(pkmnid)
+		scene.pbDisplay(_INTL("{1}'s ability changed to {2}!",pkmn.name,pkmn.ability.name))
+      next true
+})
+
 ItemHandlers::UseOnPokemon.add(:POPPINGCANDY,proc { |item,pkmn,scene|
-  scene.pbDisplay(_INTL("{1} ate the delicious treat!",pkmn.name))
+  scene.pbDisplay(_INTL("{1} ate the delicious treat! {1}'s happiness increased.",pkmn.name))
   pkmn.changeHappiness("poppingcandy")
   next true
 })
