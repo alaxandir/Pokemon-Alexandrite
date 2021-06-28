@@ -12,12 +12,12 @@ ItemHandlers::CanUseInBattle.add(:GUARDSPEC,proc { |item,pokemon,battler,move,fi
 ItemHandlers::CanUseInBattle.add(:POKEDOLL,proc { |item,pokemon,battler,move,firstAction,battle,scene,showMessages|
   if !battle.wildBattle?
     if showMessages
-      scene.pbDisplay(_INTL("Oak's words echoed... There's a time and place for everything! But not now."))
+       battle.pbDisplay(_INTL("Oak's words echoed... There's a time and place for everything! But not now.")) if showMessages
     end
     next false
   end
   if !battle.canRun
-    scene.pbDisplay(_INTL("You can't escape!")) if showMessages
+    battle.pbDisplay(_INTL("You can't escape!")) if showMessages #CHANGED 0.6.1 all scene.pbDisplay to battle.pbDisplay
     next false
   end
   next true
@@ -80,7 +80,7 @@ ItemHandlers::CanUseInBattle.copy(:AWAKENING,:CHESTOBERRY)
 
 ItemHandlers::CanUseInBattle.add(:BLUEFLUTE,proc { |item,pokemon,battler,move,firstAction,battle,scene,showMessages|
   if battler && battler.hasActiveAbility?(:SOUNDPROOF)
-    scene.pbDisplay(_INTL("It won't have any effect.")) if showMessages
+    battle.pbDisplay(_INTL("It won't have any effect.")) if showMessages
     next false
   end
   next pbBattleItemCanCureStatus?(:SLEEP, pokemon, scene, showMessages)
@@ -181,7 +181,7 @@ ItemHandlers::CanUseInBattle.copy(:ELIXIR,:MAXELIXIR)
 ItemHandlers::CanUseInBattle.add(:REDFLUTE,proc { |item,pokemon,battler,move,firstAction,battle,scene,showMessages|
   if !battler || battler.effects[PBEffects::Attract]<0 ||
      battler.hasActiveAbility?(:SOUNDPROOF)
-    scene.pbDisplay(_INTL("It won't have any effect.")) if showMessages
+    battle.pbDisplay(_INTL("It won't have any effect.")) if showMessages
     next false
   end
   next true
@@ -189,7 +189,7 @@ ItemHandlers::CanUseInBattle.add(:REDFLUTE,proc { |item,pokemon,battler,move,fir
 
 ItemHandlers::CanUseInBattle.add(:PERSIMBERRY,proc { |item,pokemon,battler,move,firstAction,battle,scene,showMessages|
   if !battler || battler.effects[PBEffects::Confusion]==0
-    scene.pbDisplay(_INTL("It won't have any effect.")) if showMessages
+    battle.pbDisplay(_INTL("It won't have any effect.")) if showMessages
     next false
   end
   next true
@@ -198,7 +198,7 @@ ItemHandlers::CanUseInBattle.add(:PERSIMBERRY,proc { |item,pokemon,battler,move,
 ItemHandlers::CanUseInBattle.add(:YELLOWFLUTE,proc { |item,pokemon,battler,move,firstAction,battle,scene,showMessages|
   if !battler || battler.effects[PBEffects::Confusion]==0 ||
      battler.hasActiveAbility?(:SOUNDPROOF)
-    scene.pbDisplay(_INTL("It won't have any effect.")) if showMessages
+    battle.pbDisplay(_INTL("It won't have any effect.")) if showMessages
     next false
   end
   next true
@@ -244,7 +244,7 @@ ItemHandlers::CanUseInBattle.copy(:XACCURACY,:XACCURACY2,:XACCURACY3,:XACCURACY6
 
 ItemHandlers::CanUseInBattle.add(:DIREHIT,proc { |item,pokemon,battler,move,firstAction,battle,scene,showMessages|
   if !battler || battler.effects[PBEffects::FocusEnergy]>=1
-    scene.pbDisplay(_INTL("It won't have any effect.")) if showMessages
+    battle.pbDisplay(_INTL("It won't have any effect.")) if showMessages
     next false
   end
   next true
@@ -252,7 +252,7 @@ ItemHandlers::CanUseInBattle.add(:DIREHIT,proc { |item,pokemon,battler,move,firs
 
 ItemHandlers::CanUseInBattle.add(:DIREHIT2,proc { |item,pokemon,battler,move,firstAction,battle,scene,showMessages|
   if !battler || battler.effects[PBEffects::FocusEnergy]>=2
-    scene.pbDisplay(_INTL("It won't have any effect.")) if showMessages
+    battle.pbDisplay(_INTL("It won't have any effect.")) if showMessages
     next false
   end
   next true
@@ -260,7 +260,7 @@ ItemHandlers::CanUseInBattle.add(:DIREHIT2,proc { |item,pokemon,battler,move,fir
 
 ItemHandlers::CanUseInBattle.add(:DIREHIT3,proc { |item,pokemon,battler,move,firstAction,battle,scene,showMessages|
   if !battler || battler.effects[PBEffects::FocusEnergy]>=3
-    scene.pbDisplay(_INTL("It won't have any effect.")) if showMessages
+    battle.pbDisplay(_INTL("It won't have any effect.")) if showMessages
     next false
   end
   next true
@@ -274,7 +274,7 @@ ItemHandlers::CanUseInBattle.add(:POKEFLUTE,proc { |item,pokemon,battler,move,fi
     break
   end
   if !anyAsleep
-    scene.pbDisplay(_INTL("It won't have any effect.")) if showMessages
+    battle.pbDisplay(_INTL("It won't have any effect.")) if showMessages
     next false
   end
   next true

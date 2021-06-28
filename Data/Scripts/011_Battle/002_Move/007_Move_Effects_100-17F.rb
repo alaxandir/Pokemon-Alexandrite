@@ -377,16 +377,17 @@ end
 # Removes trapping moves, entry hazards and Leech Seed on user/user's side.
 # (Rapid Spin)
 #===============================================================================
-class PokeBattle_Move_110 < PokeBattle_Move
+class PokeBattle_Move_110 < PokeBattle_StatUpMove
   
   def initialize(battle,move)
     super
     @statUp = [:SPEED,1]
   end
+
   
   def pbEffectAfterAllHits(user,target)
     return if user.fainted? || target.damageState.unaffected
-    if user.effects[PBEffects::Trapping]>0
+	if user.effects[PBEffects::Trapping]>0
       trapMove = GameData::Move.get(user.effects[PBEffects::TrappingMove]).name
       trapUser = @battle.battlers[user.effects[PBEffects::TrappingUser]]
       @battle.pbDisplay(_INTL("{1} got free of {2}'s {3}!",user.pbThis,trapUser.pbThis(true),trapMove))

@@ -36,7 +36,7 @@
 class Scene_Credits
   # Backgrounds to show in credits. Found in Graphics/Titles/ folder
   BACKGROUNDS_LIST       = ["credits1", "credits2", "credits3", "credits4", "credits5"]
-  BGM                    = "Credits"
+  BGM                    = "17 - catch'em & evolution mode in blue field"
   SCROLL_SPEED           = 40   # Pixels per second
   SECONDS_PER_BACKGROUND = 11
   TEXT_OUTLINE_COLOR     = Color.new(0, 0, 128, 255)
@@ -47,17 +47,276 @@ class Scene_Credits
   # Start Editing
   CREDIT = <<_END_
 
-Your credits go here.
 
-Your credits go here.
+POKÉMON ALEXANDRITE
 
-Your credits go here.
 
-Your credits go here.
+CREATED BY: 
 
-Your credits go here.
+AIURJORDAN
+
+http://www.twitch.tv/AiurJordan
+
+
+
+
+
+GEN7 & Beyond Sprite Repository 
+The PokéCommunity Forums
+
+The Pokémon Generation 8 Project
+Generation 8 Project for Essentials
+
+Smogon XY Sprite Project
+Smogon Forums
+
+Gen VIII Animations Project
+PokéCommunity Forums
+
+
+ART
+
+Animation Pack
+roby_kof
+
+EBDX Anim Additions
+WolfPP
+
+Gen 3 Tilesets Additions
+Ekat
+
+Frosslass OW
+PokeOneMMO
+
+Gen 4-5 OW Sprite
+Mashirosakura<s>Young-Dante
+
+Helicopter Sprite
+Ulithium_Dragon<s>godofsalad
+
+MANY MOVES PROJECT
+Pkmn.master<s>KLNOTHINCOMIN
+HarmonyConcept<s>PoCitMonster
+
+Mega Evolution Sprites
+Diegotoon20<s>Snivy101
+Typhlito<s>Legitimate Username
+Ayanocloud<s>N-Kin
+Turtleye<s>Siiilver
+Wyverii<s>Branflakes325
+princessofmusic<s>Layell
+branflakes<s>Falgaia
+aXl<s>Wobblebuns
+N-Kin<s>zerudez
+Brylark<s>princess-phoenix
+Pumpkin Pastel<s>TrainerSplash
+Gnomowladny<s>Gardow
+RockAdam<s>Brylark
+www.smogon.com
+
+MegaPidgeot
+ZestyCactus<s>PixelMister
+
+New Mega Evolution Forms
+King_Waluigi<s>Zygoat 
+(Pokemon Banished Platinum)
+
+
+SW/SH Type Icons
+BiggusWeeabus<s>VentZX
+Lichenprincess<s>AiurJordan
+
+Overworld Sprites
+redblueyellow<s>DRAGOON
+KyleDove
+
+Pokémon Badges
+icycatelf
+
+Rival Backsprite
+MegaBlueAce
+
+Trainer Sprites (Various)
+KyleDove<s>Droid779
+Rebellious<s>Treecko
+Raccoonchan12<s>Pokémon Showdown
+Owiwanbashu<s>Autumspire
+
+Trainer Sprites (Overworld)
+Droid779<s>Young-Dante
+Roark<s>PurpleZaffre
+
+Pokémon SM/USU in Gen III Style
+Droid779 
+
+Battle Backgrounds
+Carchagui 
+
+
+
+SOUND
+
+ENLS Pre-looped Music Library
+
+Numerous Pokémon music rips
+KHInsider
+
+PERSONA 4 and 5 music rips
+KHInsider
+
+Victory Road Theme
+GlitchxCity
+
+
+
+POKéMON GENERATION VII & BEYOND 
+SPRITE REPOSITORY
+Alex<s>Amethyst
+Bazaro<s>Conyjams
+DatLopunnyTho<s>Falgaia
+Jan<s>Koyo
+Leparagon<s>Lord-Myre
+LuigiPlayer<s>N-kin
+Noscium<s>Pikafan2000
+Smeargletail<s>The cynical poet
+Zumi<s>fishbowlsoul90
+kaji atsu<s>princess-phoenix
+
+GENERATION 8 PROJECT
+Battler Sprites:
+Gen 1-5 Pokemon Sprites
+veekun
+Gen 6 Pokemon Sprites
+All Contributors To Smogon X/Y Sprite Project
+Gen 7 Pokemon Sprites
+All Contributors To Smogon Sun/Moon Sprite Project
+Gen 8 Pokemon Sprites
+All Contributors To Smogon Sword/Shield Sprite Project
+
+Overworld Sprites
+Gen 1-5 Pokemon Overworlds
+MissingLukey<s>help-14
+Kymoyonian<s>cSc-A7X
+2and2makes5<s>Pokegirl4ever
+Fernandojl<s>Silver-Skies
+TyranitarDark<s>Getsuei-H
+Kid1513<s>Milomilotic11
+Kyt666<s>kdiamo11
+Chocosrawlooid<s>Syledude
+Gallanty<s>Gizamimi-Pichu
+2and2makes5<s>Zyon17
+LarryTurbo<s>spritesstealer
+Gen 6 Pokemon Overworlds
+princess-pheonix<s>LunarDusk
+Wolfang62<s>TintjeMadelintje101
+piphybuilder88
+Gen 7 Pokemon Overworlds
+Larry Turbo
+Gen 8 Pokemon Overworlds
+SageDeoxys<s>Wolfang62
+
+Icon Sprites
+Gen 1-6 Pokemon Icons
+Alaguesia
+Gen 7 Pokemon Icons
+Marin<s>MapleBranchWing
+Contributors to DS Styled Gen 7+ Repository
+Gen 8 Icon Sprites
+Larry Turbo<s>Leparagon
+
+Cry Credits:
+Gen 1-6 Pokemon Cries
+Rhyden
+Gen 7 Pokemon Cries
+Marin<s>Rhyden
+Gen 8 Pokemon Cries
+Zeak6464
+
+PBS Credits:
+Golisopod User
+Zerokid<s>TheToxic
+HM100<s>KyureJL
+ErwanBeurier
+
+Script Credits:
+EBS Bitmap Wrapper
+Luka S.J.
+Gen 8 Scripts
+Golisopod User
+Vendily<s>TheToxic
+HM100<s>Aioross
+WolfPP<s>MFilice
+lolface<s>KyureJL
+DarrylBD99<s>Turn20Negate
+TheKandinavian<s>ErwanBeurier
+
+Compilation of Resources
+Golisopod User<s>UberDunsparce
+
+Porting to v19
+Golisopod User
+
+
 
 {INSERTS_PLUGIN_CREDITS_DO_NOT_REMOVE}
+
+
+
+Prize Wheel
+TechSkylander1518
+
+Roulette System
+FL
+
+Pokemon Encounter List 
+ThatWelshOne_<s>raZ, 
+Marin<s>Maruno, 
+Nuri Yuri<s>PurpleZaffre, 
+Savordez<s>Vendily
+
+Overworld Weather Moves
+TechSkylander1518
+
+Unreal Time System
+FL
+
+Triple Triad Boosters
+FL
+
+SuperAbility Capsule
+Maruno<s>Kirik
+Marin<s>AiurJordan
+
+
+
+TESTING
+Lead: Conartist93
+The Gay Garden<s>L0rdCranial
+UnknownCAPN<s>Bellwoodbros
+Mathy<s>Pizzatacoburger1234
+
+
+
+Special Thanks
+
+Vendily<s>Golisopod User
+
+Connartist93<s>Atlas
+(Team2Stock - Twitch)
+
+HoeenHero
+
+Thundaga
+RMXP Tutorials
+Essentials Tutorials
+
+
+
+www.pokecommunity.com
+www.reliccastle.com
+reddit/RMXP
+My wife Emily
+Thank you Shiba Squad.
 
 "Pokémon Essentials" was created by:
 Flameguru
@@ -97,6 +356,11 @@ This is a non-profit fan-made game.
 No copyright infringements intended.
 Please support the official games!
 
+
+
+
+For additional credit information
+please refer to the documentation.
 _END_
 # Stop Editing
 

@@ -1,0 +1,5 @@
+Name         = Level Cap
+Version      = 1.0
+Requires     = v19.1 Hotfixes
+Website      = https://reliccastle.com/resources/featured/
+Credits      = Golisopod User

@@ -1,7 +1,49 @@
 ﻿# See the documentation on the wiki to learn how to edit this file.
 #-------------------------------
+# Spirit Garden (8) - Route 115 (192)
+8,South,35,192,North,0
+# Soul City (188) - Spirit Garden (8)
+188,North,5,8,South,0
+# Route 114 (187) - Spirit Garden (8)
+187,North,77,8,South,0
+# Bouldergrove Coalmine (26) - Bouldergrove Coalmine (25)
+26,West,0,25,East,0
+# Earthroot Forest (33) - Earthroot Town (42)
+33,South,0,42,North,6
+# Route 118 (154) - Earthroot Forest (33)
+154,East,0,33,West,1
+# Earthroot Town (42) - Route 101 (43)
+42,South,9,43,North,0
+# Route 101 (43) - Seafoam City (48)
+43,South,0,48,North,7
+# Route 104 (104) - Route 101 (43)
+104,South,248,43,North,0
+# Emberton (124) - Route 101 (43)
+124,South,474,43,North,0
+# Route 116 (193) - Seafoam City (48)
+193,North,0,48,South,25
 # Route 102 (85) - Bouldergrove City (86)
 85,East,11,86,West,30
+# Route 103 (98) - Route 118 (154)
+98,East,0,154,West,37
+# Gold Coast (100) - Route 103 (98)
+100,South,0,98,North,0
+# Route 104 (104) - Route 103 (98)
+104,East,1,98,West,0
+# Gold Sea (136) - Gold Coast (100)
+136,South,0,100,North,0
+# Route 104 (104) - Gold Coast (100)
+104,East,0,100,West,39
+# Route 104 (104) - Gold Sea (136)
+104,East,0,136,West,69
+# Anthophil City (106) - Route 104 (104)
+106,East,9,104,West,0
+# Route 105 (123) - Anthophil City (106)
+123,East,0,106,West,21
+# Emberton (124) - Route 105 (123)
+124,East,0,123,West,0
+# Route 106 (138) - Emberton (124)
+138,East,1,124,West,0
 # Route 107 (141) - Route 108 (142)
 141,South,17,142,North,36
 # Route 107 (141) - Route 110 (170)
@@ -38,51 +80,15 @@
 179,East,18,183,West,18
 # Route 113 (183) - Siren's Peak (184)
 183,East,27,184,West,19
-# Route 117 (196) - Fortune City (197)
-196,West,16,197,East,31
-# Route 101 (43) - Seafoam City (48)
-43,South,0,48,North,7
-# Route 116 (193) - Seafoam City (48)
-193,North,0,48,South,25
-# Earthroot Town (42) - Route 101 (43)
-42,South,9,43,North,0
-# Route 104 (104) - Route 101 (43)
-104,South,248,43,North,0
-# Emberton (124) - Route 101 (43)
-124,South,474,43,North,0
-# Earthroot Forest (33) - Earthroot Town (42)
-33,South,0,42,North,6
-# Route 118 (154) - Earthroot Forest (33)
-154,East,0,33,West,1
-# Route 103 (98) - Route 118 (154)
-98,East,0,154,West,37
-# Gold Coast (100) - Route 103 (98)
-100,South,0,98,North,0
-# Route 104 (104) - Route 103 (98)
-104,East,1,98,West,0
-# Gold Sea (136) - Gold Coast (100)
-136,South,0,100,North,0
-# Route 104 (104) - Gold Coast (100)
-104,East,0,100,West,39
-# Route 104 (104) - Gold Sea (136)
-104,East,0,136,West,69
-# Anthophil City (106) - Route 104 (104)
-106,East,9,104,West,0
-# Route 105 (123) - Anthophil City (106)
-123,East,0,106,West,21
-# Emberton (124) - Route 105 (123)
-124,East,0,123,West,0
-# Route 106 (138) - Emberton (124)
-138,East,1,124,West,0
-# Route 115 (192) - Route 116 (193)
-192,East,0,193,West,9
-# Spirit Garden (8) - Route 115 (192)
-8,South,35,192,North,0
-# Soul City (188) - Route 115 (192)
-188,East,0,192,West,0
-# Soul City (188) - Spirit Garden (8)
-188,North,5,8,South,0
-# Route 114 (187) - Spirit Garden (8)
-187,North,77,8,South,0
 # Route 114 (187) - Soul City (188)
 187,East,0,188,West,0
+# Soul City (188) - Route 115 (192)
+188,East,0,192,West,0
+# Route 115 (192) - Route 116 (193)
+192,East,0,193,West,9
+# Route 117 (196) - Fortune City (197)
+196,West,16,197,East,31
+# Route 119 (29) - Route 119 (9)
+29,East,22,9,West,0
+# Victory Road (10) - Route 119 (29)
+10,South,0,29,North,0

@@ -1,0 +1,4 @@
+Name = Message Box
+Version = 1.0.0
+Credits = Theo, MrGela
+Website = https://reliccastle.com/resources/569/

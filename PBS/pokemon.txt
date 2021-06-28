@@ -845,7 +845,7 @@ Evolutions = RAICHU,Item,THUNDERSTONE
 Name = Raichu
 InternalName = RAICHU
 Type1 = ELECTRIC
-BaseStats = 60,90,55,110,90,80
+BaseStats = 75,90,55,110,90,80
 GenderRate = Female50Percent
 GrowthRate = Medium
 BaseEXP = 218
@@ -3198,7 +3198,7 @@ Name = Onix
 InternalName = ONIX
 Type1 = ROCK
 Type2 = GROUND
-BaseStats = 45,75,160,70,30,65
+BaseStats = 60,75,160,70,30,65
 GenderRate = Female50Percent
 GrowthRate = Medium
 BaseEXP = 77
@@ -4637,7 +4637,7 @@ BattlerEnemyX = -1
 BattlerEnemyY = 14
 BattlerShadowX = 0
 BattlerShadowSize = 2
-Evolutions = PORYGON2,TradeItem,UPGRADE
+Evolutions = PORYGON2,Item,UPGRADE
 #-------------------------------
 [138]
 Name = Omanyte
@@ -11811,7 +11811,7 @@ BattlerEnemyX = 1
 BattlerEnemyY = 2
 BattlerShadowX = 0
 BattlerShadowSize = 2
-Evolutions = MILOTIC,Beauty,170,MILOTIC,Level,50
+Evolutions = MILOTIC,Item,PRISMSCALE
 #-------------------------------
 [350]
 Name = Milotic
@@ -12668,7 +12668,7 @@ Name = Metang
 InternalName = METANG
 Type1 = STEEL
 Type2 = PSYCHIC
-BaseStats = 60,75,100,50,55,80
+BaseStats = 60,75,100,50,55,70
 GenderRate = Genderless
 GrowthRate = Slow
 BaseEXP = 147
