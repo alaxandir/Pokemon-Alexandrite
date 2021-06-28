@@ -4637,7 +4637,7 @@ BattlerEnemyX = -1
 BattlerEnemyY = 14
 BattlerShadowX = 0
 BattlerShadowSize = 2
-Evolutions = PORYGON2,TradeItem,UPGRADE
+Evolutions = PORYGON2,Item,UPGRADE
 #-------------------------------
 [138]
 Name = Omanyte

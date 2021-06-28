@@ -1259,3 +1259,19 @@ ItemHandlers::UseOnPokemon.add(:SERIOUSMINT,proc { |item,pkmn,scene|
   ret = pbNatureChangeItem(pkmn,:SERIOUS,item,scene)
   next ret
 })
+
+ItemHandlers::UseOnPokemon.add(:COFFEE,proc { |item,pkmn,scene|
+  if pkmn.fainted? || (pkmn.hp==pkmn.totalhp && pkmn.status != :NONE)
+    scene.pbDisplay(_INTL("It won't have any effect."))
+    next false
+  end
+  hpgain = pbItemRestoreHP(pkmn,40)
+  pkmn.heal_status
+  scene.pbRefresh
+  if hpgain>0
+    scene.pbDisplay(_INTL("{1}'s HP was restored by {2} points.",pkmn.name,hpgain))
+  else
+    scene.pbDisplay(_INTL("{1} drank the Coffee and was cured!",pkmn.name))
+  end
+  next true
+})

@@ -6,6 +6,8 @@
 188,North,5,8,South,0
 # Route 114 (187) - Spirit Garden (8)
 187,North,77,8,South,0
+# Bouldergrove Coalmine (26) - Bouldergrove Coalmine (25)
+26,West,0,25,East,0
 # Earthroot Forest (33) - Earthroot Town (42)
 33,South,0,42,North,6
 # Route 118 (154) - Earthroot Forest (33)
@@ -86,5 +88,7 @@
 192,East,0,193,West,9
 # Route 117 (196) - Fortune City (197)
 196,West,16,197,East,31
-# Bouldergrove Coalmine (26) - Bouldergrove Coalmine (25)
-26,West,0,25,East,0
+# Route 119 (29) - Route 119 (9)
+29,East,22,9,West,0
+# Victory Road (10) - Route 119 (29)
+10,South,0,29,North,0

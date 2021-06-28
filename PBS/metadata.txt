@@ -76,15 +76,15 @@ Weather = None,0
 MapPosition = 0,3,10
 #-------------------------------
 [010]
-# Victory Road
+# Victory Road ext
 Outdoor = true
 ShowArea = true
 Weather = None,0
 MapPosition = 0,2,9
 #-------------------------------
 [011]
-# Victory Road 2
-Outdoor = true
+# Victory Road 1F
+Outdoor = false
 ShowArea = true
 Weather = None,0
 MapPosition = 0,2,9
@@ -170,6 +170,48 @@ Weather = None,0
 SafariMap = true
 SnapEdges = true
 MapPosition = 0,12,3
+#-------------------------------
+[025]
+# Bouldergrove coalmine
+Outdoor = false
+Weather = None,0
+MapPosition = 0,27,7
+DarkMap = true
+BattleBack = CaveDark
+#-------------------------------
+[026]
+# Bouldergrove coalmine
+Outdoor = false
+Weather = None,0
+MapPosition = 0,27,6
+DarkMap = true
+BattleBack = CaveDark
+#-------------------------------
+[027]
+# cinder island
+Outdoor = true
+Weather = None,0
+MapPosition = 0,27,5
+SnapEdges = true
+#-------------------------------
+[028]
+# PKMN Plaza
+Outdoor = false
+Weather = None,0
+#-------------------------------
+[029]
+# Route 119-2
+Outdoor = true
+ShowArea = true
+Weather = None,0
+MapPosition = 0,2,10
+#-------------------------------
+[031]
+# Victory Road 2F
+Outdoor = false
+ShowArea = true
+Weather = None,0
+MapPosition = 0,2,9
 #--------------------------------
 [032]
 # \PN's House
@@ -186,6 +228,20 @@ Bicycle = true
 Weather = None,0
 MapPosition = 0,20,3
 BattleBack = Forest
+#-------------------------------
+[034]
+# Victory Road ext
+Outdoor = false
+ShowArea = true
+Weather = None,0
+MapPosition = 0,2,7
+#-------------------------------
+[035]
+# Victory Road lava
+Outdoor = false
+ShowArea = true
+Weather = None,0
+MapPosition = 0,2,7
 #-------------------------------
 [042]
 # Earthroot Town

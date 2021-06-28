@@ -203,7 +203,7 @@
 201,CHILLDRIVE,Chill Drive,Chill Drives,1,1000,"A cassette to be held by Genesect. It changes Techno Blast to an Ice-type move.",0,0,0,
 202,EVERSTONE,Everstone,Everstones,1,3000,"An item to be held by a Pokémon. The Pokémon holding this peculiar stone is prevented from evolving.",0,0,0,
 203,DRAGONSCALE,Dragon Scale,Dragon Scales,1,2000,"A thick and tough scale. Dragon-type Pokémon may be holding this item when caught.",0,0,0,
-204,UPGRADE,Upgrade,Upgrades,1,2000,"A transparent device filled with all sorts of data. It was produced by Silph Co.",0,0,0,
+204,UPGRADE,Upgrade,Upgrades,1,2000,"A transparent device filled with all sorts of data. It was produced by Silph Co.",1,0,7,
 205,DUBIOUSDISC,Dubious Disc,Dubious Discs,1,2000,"A transparent device overflowing with dubious data.  Its producer is unknown.",0,0,0,
 206,PROTECTOR,Protector,Protectors,1,2000,"A protective item of some sort. It is extremely stiff and heavy. It is loved by a certain Pokémon.",1,0,7,
 207,ELECTIRIZER,Electirizer,Electirizers,1,2000,"A box packed with a tremendous amount of electric energy. It is loved by a certain Pokémon.",1,0,7,
@@ -694,6 +694,7 @@
 917,DARKPACK,Dark Pack,Dark Packs,1,1000,A booster pack for Triple Triad. Contains 3 dark type cards.,2,0,0,
 918,HEARTPACK,Heart Pack,Heart Packs,1,1000,A booster pack for Triple Triad. Contains 3 fairy type cards.,2,0,0,
 919,SUPERCAPSULE,Super Capsule,Super Capsule,2,10000,"A capsule that allows a Pokémon with switch between all abilities they possess.",1,0,0,
+920,COFFEE,Coffee,Coffees,2,375,"A stimulating hot beverage, heals 40 HP and cure all statuses, can't be used in battle.",1,0,0,
 ########GEN8 PROJECT MINTS
 1000,LONELYMINT,Lonely Mint,Lonely Mints,1,0,"When a Pokémon smells this mint, its Attack will grow more easily, but its Defense will grow more slowly.",1,0,0,
 1001,ADAMANTMINT,Adamant Mint,Adamant Mints,1,0,"When a Pokémon smells this mint, its Attack will grow more easily, but its Sp. Atk will grow more slowly.",1,0,0,
