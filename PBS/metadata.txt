@@ -243,6 +243,41 @@ ShowArea = true
 Weather = None,0
 MapPosition = 0,2,7
 #-------------------------------
+[036]
+# e4 1
+Outdoor = false
+ShowArea = false
+Weather = None,0
+MapPosition = 0,1,7
+#-------------------------------
+[037]
+# e4 2
+Outdoor = false
+ShowArea = false
+Weather = None,0
+MapPosition = 0,1,7
+#-------------------------------
+[039]
+# e4 4
+Outdoor = false
+ShowArea = false
+Weather = None,0
+MapPosition = 0,1,7
+#-------------------------------
+[040]
+# champion
+Outdoor = false
+ShowArea = false
+Weather = None,0
+MapPosition = 0,1,7
+#-------------------------------
+[041]
+# Hall of Fame
+Outdoor = false
+ShowArea = true
+Weather = None,0
+MapPosition = 0,1,7
+#-------------------------------
 [042]
 # Earthroot Town
 Outdoor = true
@@ -256,6 +291,13 @@ Outdoor = true
 ShowArea = true
 Weather = None,0
 MapPosition = 0,20,6
+#-------------------------------
+[044]
+# farm
+Outdoor = true
+ShowArea = true
+Weather = None,0
+MapPosition = 0,13,5
 #-------------------------------
 [048]
 # Seafoam City
