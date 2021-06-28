@@ -11811,7 +11811,7 @@ BattlerEnemyX = 1
 BattlerEnemyY = 2
 BattlerShadowX = 0
 BattlerShadowSize = 2
-Evolutions = MILOTIC,Beauty,170,MILOTIC,Level,50
+Evolutions = MILOTIC,Item,PRISMSCALE
 #-------------------------------
 [350]
 Name = Milotic

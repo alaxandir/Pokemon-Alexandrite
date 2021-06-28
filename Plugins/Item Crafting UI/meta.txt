@@ -1,0 +1,4 @@
+Name         = Item Crafting UI
+Version      = 1.2
+Link         = https://reliccastle.com/resources/632/
+Credits      = ThatWelshOne_
