@@ -11805,6 +11805,7 @@ Habitat = WatersEdge
 Kind = Fish
 Pokedex = Feebas live in ponds that are heavily infested with weeds. Because of its hopelessly shabby appearance, it seems as if few trainers raise it.
 Generation = 3
+WildItemUncommon = PRISMSCALE
 BattlerPlayerX = -5
 BattlerPlayerY = 0
 BattlerEnemyX = 1
