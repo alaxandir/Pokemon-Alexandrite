@@ -526,7 +526,7 @@
 517,SPRAYDUCK,Sprayduck,Sprayducks,8,1000,"A watering can shaped like a Psyduck. It helps promote healthy growth of Berries planted in soft soil.",0,0,6,
 518,WAILMERPAIL,Wailmer Pail,Wailmer Pails,8,0,"A nifty watering pail. Use it to promote strong growth in Berries planted in soft soil.",0,0,6,
 519,GRACIDEA,Gracidea,Gracideas,8,0,"A flower sometimes bundled in bouquets to convey gratitude on special occasions like birthdays.",5,0,6,
-520,AURORATICKET,Aurora Ticket,Aurora Tickets,8,0,"A ticket required to board the ship to Doxy Island. It glows beautifully.",0,0,6,
+520,AURORATICKET,SS Alice Ticket,SS Alice Tickets,8,0,"A ticket required to board the ship to Castform Island. It departs from Fortune City.",0,0,6,
 521,OLDSEAMAP,Old Sea Map,Old Sea Maps,8,0,"A faded sea chart that shows the way to a certain island.",0,0,6,
 522,DNASPLICERS,DNA Splicers,DNA Splicers,8,0,"A splicer that fuses Kyurem and a certain Pokémon. They are said to have been one in the beginning.",5,0,6,
 523,REVEALGLASS,Reveal Glass,Reveal Glasses,8,0,"A glass that reveals the truth. It is a mysterious glass that returns a Pokémon back to its original shape.",5,0,6,

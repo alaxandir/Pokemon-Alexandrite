@@ -92,3 +92,39 @@ class PokeBattle_Move_096 < PokeBattle_Move
     return ret
   end
 end
+
+#==============================================================================
+# Fixed error when trying to return an unused item to the Bag in battle.
+#==============================================================================
+class PokeBattle_Battle
+  def pbReturnUnusedItemToBag(item,idxBattler)
+    return if !item
+    useType = GameData::Item.get(item).battle_use
+    return if useType==0 || (useType>=6 && useType<=10)   # Not consumed upon use
+    if pbOwnedByPlayer?(idxBattler)
+      if $PokemonBag && $PokemonBag.pbCanStore?(item)
+        $PokemonBag.pbStoreItem(item)
+      else
+        raise _INTL("Couldn't return unused item to Bag somehow.")
+      end
+    else
+      items = pbGetOwnerItems(idxBattler)
+      items.push(item) if items
+    end
+  end
+end
+
+#==============================================================================
+# Fixed typo in Relic Song's code that changes Meloetta's form.
+#==============================================================================
+class PokeBattle_Move_003 < PokeBattle_SleepMove
+  def pbEndOfMoveUsageEffect(user,targets,numHits,switchedBattlers)
+    return if numHits==0
+    return if user.fainted? || user.effects[PBEffects::Transform]
+    return if @id != :RELICSONG
+    return if !user.isSpecies?(:MELOETTA)
+    return if user.hasActiveAbility?(:SHEERFORCE) && @addlEffect>0
+    newForm = (user.form+1)%2
+    user.pbChangeForm(newForm,_INTL("{1} transformed!",user.pbThis))
+  end
+end

@@ -161,15 +161,15 @@ Pokemon = FOONGUS,12
 [LEADER_Richard,Richard]
 Items = SUPERPOTION
 LoseText = "..."
-Pokemon = GLIGAR,14
+Pokemon = GLIGAR,15
     Moves = KNOCKOFF,STEALTHROCK,SANDATTACK,POISONSTING
     Item = PASSHOBERRY
     IV = 22,22,22,22,22,22
-Pokemon = SUDOWOODO,14
+Pokemon = SUDOWOODO,15
     Moves = ROCKTHROW,LOWKICK,WOODHAMMER,COPYCAT
     Item = ORANBERRY
     IV = 18,18,18,18,18,18
-Pokemon = PONYTA,14
+Pokemon = PONYTA,15
     Moves = ACCELEROCK,BULLDOZE,STOMP,DOUBLEKICK
     IV = 18,18,18,18,18,18
 	Form = 1
@@ -309,7 +309,7 @@ Pokemon = SCYTHER,22
     AbilityIndex = 2
     Item = FOCUSBAND
     IV = 20,20,20,20,20,20
-Pokemon = DURANT,23
+Pokemon = DURANT,22
     Shiny = yes
     AbilityIndex = 1
     Item = OCCABERRY
@@ -410,7 +410,7 @@ Pokemon = HOUNDOOM,25
     AbilityIndex = 0
     Item = LANSATBERRY
     IV = 24,24,24,24,24,24
-Pokemon = SOLROCK,26
+Pokemon = SOLROCK,25
     Shiny = yes
     Moves = MORNINGSUN,COSMICPOWER,FLAREBLITZ,SOLARBEAM
     AbilityIndex = 0
@@ -645,15 +645,15 @@ Pokemon = EMOLGA,30
 [LEADER_Fritz,Fritz]
 Items = HYPERPOTION
 LoseText = "..."
-Pokemon = ELECTABUZZ,30
+Pokemon = ELECTABUZZ,32
     Moves = ELECTROBALL,THUNDERBOLT,ROLLINGKICK,BARRIER
     AbilityIndex = 0
     Item = LIECHIBERRY
-Pokemon = GRAVELER,31
+Pokemon = GRAVELER,32
     AbilityIndex = 0
 	Form = 1
     Item = SALACBERRY
-Pokemon = EMOLGA,31
+Pokemon = EMOLGA,32
     Moves = SPARK,FACADE,CHARM,QUICKATTACK
     AbilityIndex = 0
     Item = SALACBERRY
@@ -883,34 +883,34 @@ Pokemon = ABOMASNOW,41
 #-------------------------------
 [ICEDIVER,Lisa]
 LoseText = "..."
-Pokemon = MAWILE,42
-Pokemon = WALREIN,42
+Pokemon = MAWILE,41
+Pokemon = WALREIN,41
 #-------------------------------
 [GENTLEMAN,Nigel]
 LoseText = "..."
-Pokemon = PIDGEOT,42
-Pokemon = DELIBIRD,42
+Pokemon = PIDGEOT,41
+Pokemon = DELIBIRD,41
 #-------------------------------
 [LEADER_Heidi,Heidi]
 Items = FULLRESTORE,FULLHEAL
 LoseText = "..."
-Pokemon = KANGASKHAN,42
+Pokemon = KANGASKHAN,41
     Moves = FAKEOUT,DIZZYPUNCH,HAMMERARM,THUNDERBOLT
     AbilityIndex = 2
     IV = 26,26,26,26,26,26
-Pokemon = MAMOSWINE,42
+Pokemon = MAMOSWINE,41
     Moves = THRASH,HAIL,ICICLECRASH,AVALANCHE
     IV = 26,26,26,26,26,26
-Pokemon = CRYOGONAL,43
+Pokemon = CRYOGONAL,41
     Moves = FREEZEDRY,LIGHTSCREEN,BLIZZARD,RAPIDSPIN
     IV = 26,26,26,26,26,26
-Pokemon = WALREIN,44
+Pokemon = WALREIN,41
     Moves = AURORABEAM,BRINE,REST,SNORE
     IV = 26,26,26,26,26,26
-Pokemon = LAPRAS,44
+Pokemon = LAPRAS,41
     Moves = BODYSLAM,THUNDERBOLT,SURF,BLIZZARD
     IV = 29,29,29,29,29,29
-Pokemon = ABOMASNOW,45
+Pokemon = ABOMASNOW,41
     Moves = WOODHAMMER,BULLDOZE,BLIZZARD,AVALANCHE
     Item = ABOMASITE
     IV = 23,23,23,23,23,23
@@ -941,12 +941,12 @@ Pokemon = SANDSLASH,44
 [TRAILBLAZER,Mitchell]
 Items = HYPERPOTION,FULLHEAL
 LoseText = "..."
-Pokemon = AGGRON,50
+Pokemon = AGGRON,44
 #-------------------------------
 [POKEMANIAC,Peter]
 Items = FULLHEAL
 LoseText = "..."
-Pokemon = RAPIDASH,43
+Pokemon = RAPIDASH,44
 Pokemon = LAPRAS,44
 Pokemon = LEAFEON,45
 #-------------------------------
@@ -1013,18 +1013,18 @@ Pokemon = BLAZIKEN,46
 #-------------------------------
 [LEADER_Lee,Lee]
 LoseText = "..."
-Pokemon = SCRAFTY,47
+Pokemon = SCRAFTY,48
     IV = 24,24,24,24,24,24
-Pokemon = BLAZIKEN,47
+Pokemon = BLAZIKEN,48
     Moves = SLASH,FLAMECHARGE,BLAZEKICK,DOUBLEKICK
     IV = 24,24,24,24,24,24
-Pokemon = METAGROSS,47
+Pokemon = METAGROSS,48
     Moves = METEORMASH,EARTHQUAKE,HAMMERARM,GIGAIMPACT
     IV = 22,22,22,22,22,22
-Pokemon = REUNICLUS,47
+Pokemon = REUNICLUS,48
     Moves = PSYCHIC,FUTURESIGHT,RECOVER,FOCUSBLAST
     IV = 20,20,20,20,20,20
-Pokemon = LUCARIO,47
+Pokemon = LUCARIO,48
     Moves = POWERUPPUNCH,BONERUSH,AURASPHERE,THUNDERPUNCH
     IV = 25,25,25,25,25,25
 Pokemon = GALLADE,48
@@ -1109,6 +1109,55 @@ Pokemon = AZUMARILL,40
     IV = 25,25,25,25,25,25
 Pokemon = HYPNO,40
     IV = 25,25,25,25,25,25
+#-------------------------------
+[POKEMONTRAINER_Brett,Brett,5]
+Items = FULLRESTORE
+LoseText = "..."
+Pokemon = GOLEM, 49
+	Form = 1
+	IV = 31,31,31,31,31,31
+	EV = 0,252,0,252,4,0
+	Moves = WILDCHARGE,EARTHQUAKE,FIREPUNCH,STEALTHROCK
+	Nature = JOLLY
+	AbilityIndex = 0
+	Item = CHOICESCARF
+Pokemon = KANGASKHAN,49
+    IV = 31,31,31,31,31,31
+	Item = KANGASKHANITE
+	AbilityIndex = 2
+	Nature = JOLLY
+	EV = 52,180,36,232,8,0
+	Moves = FAKEOUT,SEISMICTOSS,SHADOWCLAW,BODYSLAM
+Pokemon = DUSKNOIR,49
+    IV = 31,31,31,31,31,31
+	Moves = EARTHQUAKE,SHADOWSNEAK,ICEPUNCH,TRICK
+	Item = CHOICEBAND
+	AbilityIndex = 2
+	EV = 212,252,0,44,0,0
+	Nature = ADAMANT
+Pokemon = UNFEZANT,49
+    IV = 31,31,31,31,31,31
+	Moves = TAILWIND,HYPNOSIS,UTURN,RETURN
+	Happiness = 255
+	Item = SCOPELENS
+	Nature = ADAMANT
+	EV = 0,252,4,252,0,0
+Pokemon = AZUMARILL,49
+    IV = 31,31,31,31,31,31
+	Moves = BELLYDRUM,AQUAJET,PLAYROUGH,KNOCKOFF
+	Item = FOCUSSASH
+	AbilityIndex = 1
+	Nature = ADAMANT
+	EV = 4,252,0,252,0,0
+Pokemon = MUK,49
+    IV = 31,31,31,31,31,31
+	Form = 1
+	AbilityIndex = 2
+	Item = BLACKSLUDGE
+	Nature = ADAMANT
+	EV = 4,252,0,252,0,0
+	Moves = PURSUIT,GUNKSHOT,KNOCKOFF,FIREPUNCH
+
 #-------------------------------
 [LEADER_HAOAI,Hao & Ai]
 Items = FULLRESTORE

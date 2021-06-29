@@ -1,5 +1,5 @@
 ﻿Name      = v19.1 Hotfixes
-Version   = 1.0.1
+Version   = 1.0.2
 Conflicts = v19 Updates
 Conflicts = v19 Hotfixes
 Website   = https://github.com/Maruno17/pokemon-essentials
@@ -33,5 +33,13 @@ Credits   = Maruno
 # - Fix for AI bug with Natural Gift when a Pokémon has no item.
 # - Fixed bad code when checking if a trainer has a Pokémon of a given
 #   type.
+#
+# 1.0.2:
+# - Fixed error in code used by Pickup.
+# - Fixed abilities that force wild encounters with a particular type
+#   using the wrong value as the preferred type and usually crashing.
+# - Fixed error when trying to return an unused item to the Bag in
+#   battle.
+# - Fixed typo in Relic Song's code that changes Meloetta's form.
 #
 #=====================================================================

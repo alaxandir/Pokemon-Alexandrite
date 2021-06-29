@@ -26,6 +26,45 @@ Land,21
     4,RAICHU,43,46
     1,REUNICLUS,43,46
     1,ALAKAZAM,43,46
+#--------------------------------
+[046] # Spirit tower 2f
+Land,21
+    20,MISDREAVUS,43,46
+    20,LAMPENT,43,46
+    14,RAICHU_1,43,46
+    10,BANETTE,43,46
+    10,SABLEYE,43,46
+    10,HYPNO,43,46
+    5,HAUNTER,43,46
+    5,DUSCLOPS,43,46
+    4,SPIRITOMB,43,46
+    2,ESPEON,43,46
+#--------------------------------
+[047] # Spirit tower 3f
+Land,21
+    20,MISDREAVUS,43,46
+    20,LAMPENT,43,46
+    14,RAICHU_1,43,46
+    10,BANETTE,43,46
+    10,SABLEYE,43,46
+    10,HYPNO,43,46
+    5,HAUNTER,43,46
+    5,DUSCLOPS,43,46
+    4,SPIRITOMB,43,46
+    2,ESPEON,43,46
+#--------------------------------
+[049] # Spirit tower 4f
+Land,21
+    20,MISDREAVUS,43,46
+    20,LAMPENT,43,46
+    14,RAICHU_1,43,46
+    10,BANETTE,43,46
+    10,SABLEYE,43,46
+    10,HYPNO,43,46
+    5,HAUNTER,43,46
+    5,DUSCLOPS,43,46
+    4,SPIRITOMB,43,46
+    2,ESPEON,43,46
 #-------------------------------
 [016] # Cyberspace
 Cave,5

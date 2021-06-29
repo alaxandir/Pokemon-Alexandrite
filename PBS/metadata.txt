@@ -299,6 +299,27 @@ ShowArea = true
 Weather = None,0
 MapPosition = 0,13,5
 #-------------------------------
+[045]
+# Spirit tower 1f
+Outdoor = false
+ShowArea = true
+Weather = None,0
+MapPosition = 0,16,11
+#-------------------------------
+[046]
+# Spirit tower 2f
+Outdoor = false
+ShowArea = true
+Weather = Fog,100
+MapPosition = 0,16,11
+#-------------------------------
+[047]
+# Spirit tower 3f
+Outdoor = false
+ShowArea = true
+Weather = Fog,100
+MapPosition = 0,16,11
+#-------------------------------
 [048]
 # Seafoam City
 Outdoor = true
@@ -306,6 +327,20 @@ ShowArea = true
 Weather = None,0
 MapPosition = 0,20,9
 BattleBack = City
+#-------------------------------
+[049]
+# Spirit tower 4f
+Outdoor = false
+ShowArea = true
+Weather = Fog,100
+MapPosition = 0,16,11
+#-------------------------------
+[050]
+# Fortune Harbor
+Outdoor = false
+ShowArea = true
+Weather = None,0
+MapPosition = 0,4,12
 #-------------------------------
 [076]
 # Seafoam City Pokémon Center
