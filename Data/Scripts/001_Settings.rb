@@ -229,7 +229,8 @@ module Settings
   REGION_MAP_EXTRAS = [
     [0, 51, 16, 15, "mapHiddenBerth", false],
     [0, 52, 20, 14, "mapHiddenFaraday", false],
-	[0, 130, 0, 0, "mapRocketIsland", false]
+	[0, 130, 0, 0, "mapRocketIsland", false],
+	[0, 135, 3, 15, "mapCastformIsland", false],
   ]
 
   #=============================================================================

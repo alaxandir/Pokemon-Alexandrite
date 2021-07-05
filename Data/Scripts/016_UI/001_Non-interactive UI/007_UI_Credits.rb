@@ -36,7 +36,7 @@
 class Scene_Credits
   # Backgrounds to show in credits. Found in Graphics/Titles/ folder
   BACKGROUNDS_LIST       = ["credits1", "credits2", "credits3", "credits4", "credits5"]
-  BGM                    = "17 - catch'em & evolution mode in blue field"
+  BGM                    = "theocean"
   SCROLL_SPEED           = 40   # Pixels per second
   SECONDS_PER_BACKGROUND = 11
   TEXT_OUTLINE_COLOR     = Color.new(0, 0, 128, 255)

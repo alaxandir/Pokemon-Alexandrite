@@ -342,6 +342,55 @@ ShowArea = true
 Weather = None,0
 MapPosition = 0,4,12
 #-------------------------------
+[051]
+# Castform Island / Paradise Cove
+Outdoor = true
+ShowArea = true
+Weather = None,0
+MapPosition = 0,5,17
+#-------------------------------
+[052]
+# Castform Island / PKMN center
+Outdoor = false
+ShowArea = true
+Weather = None,0
+MapPosition = 0,5,17
+#-------------------------------
+[053]
+# Castform Island / Verdant Jungle
+Outdoor = true
+ShowArea = true
+Weather = Fog,50
+MapPosition = 0,5,17
+#-------------------------------
+[054]
+# Castform Island / Overgrown Ruin
+Outdoor = false
+ShowArea = true
+Weather = Fog,10
+MapPosition = 0,5,17
+#-------------------------------
+[055]
+# Paradise Harbor
+Outdoor = false
+ShowArea = false
+Weather = None,0
+MapPosition = 0,5,17
+#-------------------------------
+[056]
+# Boat Cutscene
+Outdoor = false
+ShowArea = false
+Weather = None,0
+MapPosition = 0,5,17
+#-------------------------------
+[057]
+# Paradise Cove Int.
+Outdoor = false
+ShowArea = false
+Weather = None,0
+MapPosition = 0,5,17
+#-------------------------------
 [076]
 # Seafoam City Pokémon Center
 Outdoor = false
@@ -771,7 +820,7 @@ SnapEdges = false
 BattleBack = Cave
 #-------------------------------
 [134]
-# Ancient Ruins Exterior
+# Origin Valley
 Outdoor = true
 ShowArea = true
 Weather = None,0

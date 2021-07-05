@@ -54,6 +54,8 @@ class PokemonGlobalMetadata
   attr_accessor :pokerusTime
   # Save file
   attr_accessor :safesave
+  ##################### AiurJordan
+  attr_accessor :stepCountdown
 
   def initialize
     # Movement
@@ -110,6 +112,8 @@ class PokemonGlobalMetadata
     @pokerusTime          = nil
     # Save file
     @safesave             = false
+	# AiurJordan
+	@stepCountdown		  = nil
   end
 
   # @deprecated Use {Player#character_ID} instead. This alias is slated to be removed in v20.

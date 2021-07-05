@@ -7,6 +7,7 @@ module GameData
     attr_reader :level_up_proc
     attr_reader :use_item_proc
     attr_reader :on_trade_proc
+	attr_reader :on_battle_proc
     attr_reader :after_evolution_proc
 
     DATA = {}
@@ -25,6 +26,7 @@ module GameData
       @level_up_proc        = hash[:level_up_proc]
       @use_item_proc        = hash[:use_item_proc]
       @on_trade_proc        = hash[:on_trade_proc]
+	  @on_battle_proc       = hash[:on_battle_proc]
       @after_evolution_proc = hash[:after_evolution_proc]
     end
 
@@ -38,6 +40,10 @@ module GameData
 
     def call_on_trade(*args)
       return (@on_trade_proc) ? @on_trade_proc.call(*args) : nil
+    end
+	
+	def call_on_battle(*args)
+      return (@on_battle_proc) ? @on_battle_proc.call(*args) : nil
     end
 
     def call_after_evolution(*args)
@@ -595,5 +601,18 @@ GameData::Evolution.register({
   :parameter     => :Species,
   :on_trade_proc => proc { |pkmn, parameter, other_pkmn|
     next pkmn.species == parameter && !other_pkmn.hasItem?(:EVERSTONE)
+  }
+})
+
+#===============================================================================
+# Evolution methods that triggers after a battle is completed
+#=
+GameData::Evolution.register({
+  :id            => :CriticalHits,
+  :parameter     => Integer,
+  :on_battle_proc => proc { |pkmn, parameter|
+    ret = pkmn.critical_hits >= parameter
+    pkmn.critical_hits = 0
+    next ret
   }
 })

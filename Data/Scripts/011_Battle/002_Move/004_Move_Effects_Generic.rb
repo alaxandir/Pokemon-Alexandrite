@@ -307,6 +307,65 @@ end
 #===============================================================================
 # Generic target's stat increase/decrease classes.
 #===============================================================================
+class PokeBattle_TargetMultiStatUpMove < PokeBattle_Move
+  def pbFailsAgainstTarget?(user,target)
+    return false if damagingMove?
+    failed = true
+    for i in 0...@statUp.length/2
+      next if !target.pbCanRaiseStatStage?(@statUp[i*2],user,self)
+      failed = false
+      break
+    end
+    if failed
+      # NOTE: It's a bit of a faff to make sure the appropriate failure message
+      #       is shown here, I know.
+      canRaise = false
+      if target.hasActiveAbility?(:CONTRARY) && !@battle.moldBreaker
+        for i in 0...@statUp.length/2
+          next if target.statStageAtMin?(@statUp[i*2])
+          canRaise = true
+          break
+        end
+        @battle.pbDisplay(_INTL("{1}'s stats won't go any lower!",target.pbThis)) if !canRaise
+      else
+        for i in 0...@statUp.length/2
+          next if target.statStageAtMax?(@statUp[i*2])
+          canRaise = true
+          break
+        end
+        @battle.pbDisplay(_INTL("{1}'s stats won't go any higher!",target.pbThis)) if !canRaise
+      end
+      if canRaise
+        target.pbCanRaiseStatStage?(@statUp[0],user,self,true)
+      end
+      return true
+    end
+    return false
+  end
+
+  def pbEffectAgainstTarget(user,target)
+    return if damagingMove?
+    showAnim = true
+    for i in 0...@statUp.length/2
+      next if !target.pbCanRaiseStatStage?(@statUp[i*2],user,self)
+      if target.pbRaiseStatStage(@statUp[i*2],@statUp[i*2+1],user,showAnim)
+        showAnim = false
+      end
+    end
+  end
+
+  def pbAdditionalEffect(user,target)
+    return if target.damageState.substitute
+    showAnim = true
+    for i in 0...@statUp.length/2
+      next if !target.pbCanLowerStatStage?(@statUp[i*2],user,self)
+      if target.pbRaiseStatStage(@statUp[i*2],@statUp[i*2+1],user,showAnim)
+        showAnim = false
+      end
+    end
+  end
+end
+
 class PokeBattle_TargetStatDownMove < PokeBattle_Move
   def pbFailsAgainstTarget?(user,target)
     return false if damagingMove?

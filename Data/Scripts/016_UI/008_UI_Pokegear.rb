@@ -130,6 +130,7 @@ class PokemonPokegearScreen
     cmdJukebox = -1
     cmdEncounters = -1
     cmdClock = -1
+	cmdCards = -1
     t=pbGetTimeNow.strftime("%I:%M %p")
     commands[cmdMap = commands.length]     = ["map",_INTL("Map")]
     if $PokemonGlobal.phoneNumbers && $PokemonGlobal.phoneNumbers.length>0

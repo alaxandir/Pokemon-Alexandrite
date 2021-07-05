@@ -39,7 +39,7 @@ BattleVS         = trainerSM
 BattleIntro      = evilTeam
 BattleVS         = trainerSM
 #-------------------------------
-[ROCKETBOSS]
+[ROCKETBOSS,Giovanni]
 BattleIntro      = evilTeam
 BattleVS         = classicVS
 BattleScript	= GIOVANNI1
@@ -100,3 +100,11 @@ SpriteScale       = 1
 BattleEnv        = CHAMPION
 SpriteSpeed      = 0
 Ace = 6
+#-------------------------------
+[ROCKETBOSS,Giovanni,1]
+BattleIntro      = evilTeam
+BattleVS         = classicVS
+BattleScript	 = GIOVANNI2
+BattleVS         = forestSM
+Ace				 = 6
+BattleEnv        = FOREST

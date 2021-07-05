@@ -113,6 +113,7 @@ Point = 27,9,Bouldergrove City,Powerplant,86,29,23,
 Point = 27,7,Bouldergrove Mine,,,,,
 Point = 27,5,Cinder Island,,,,,
 Point = 2,2,Rocket Island,Rocket Base,,,,130
+Point = 5,17,Castform Island,Paradise Cove,,,,135
 #-------------------------------
 [1]
 Name=Tiall

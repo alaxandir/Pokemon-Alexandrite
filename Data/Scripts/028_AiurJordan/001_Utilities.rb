@@ -16,70 +16,92 @@ PluginManager.register({
 #-------------------------------------------------------------------------------
 # Config
 #-------------------------------------------------------------------------------
-CHOICES=[
-#Each array is a separate list of Megastones for the player to choose from
-[:AERODACTYLITE,:ALAKAZITE,:ALTARIANITE,
-:CAMERUPTITE,:GARCHOMPITE,:GARDEVOIRITE,
-:GENGARITE,:HOUNDOOMINITE,:LUCARIONITE,
-:MEDICHAMITE,:METAGROSSITE,:PIDGEOTITE,
-:SABLENITE,:SALAMENCITE,:SCEPTILITE],
-[:PIDGEOTITE,
- :GENGARITE]
-]
 
-COSTS=[
-#Array index corresponds to the megastone list chosen (CHOICES)
-#GREENSHARD,BLUESHARD,REDSHARD,YELLOWSHARD
-[1,1,0,1, 0,1,0,2, 0,2,1,0,
- 0,0,1,1, 2,3,1,2, 1,2,1,0,
- 1,1,0,2, 1,0,2,0, 3,0,1,0,
- 1,1,1,1, 2,0,3,3, 0,1,0,1,
- 1,0,0,1, 4,4,0,0, 2,0,0,1 ],
-[3,0,0,0,
- 4,0,0,0]
-]
 #-------------------------------------------------------------------------------
 # 
 #-------------------------------------------------------------------------------
-
-def pbMegastoneSynthesis(list,cost)
-	@megastone = CHOICES[list]
-	@cost	= COSTS[cost]
-
-	stone = @megastone
-	cost = @cost
-	megastone_commands = []
-	mega_cmd = 0
-	cmd = 0
-
-	for i in 0...stone.length
-	  megastone_commands.push(GameData::Item.get(stone[i]).name)
-	  mega_cmd = megastone_commands.length
-	  break if cmd < 0
+class StepCountdown
+	attr_accessor :steps
+    attr_accessor :decision
+  
+	def initialize
+#@start     = [$game_map.map_id,$game_player.x,$game_player.y,$game_player.direction]
+	@start      = nil
+	@inProgress = false
+	@steps	    = 0
+	@decision   = 0
 	end
-	mega_cmd = pbMessage(_INTL("Choose a Mega Stone."), megastone_commands, mega_cmd)
-	i = mega_cmd
-	stonech = GameData::Item.get(stone[i]).name
-	
-	green 	= cost[i*4]
-	blue 	= cost[i*4+1]
-	red 	= cost[i*4+2]
-	yellow 	= cost[i*4+3]
 
-	if pbConfirmMessageSerious("<ac>\\l[3]You want #{stonech}?<fs=34>\\n\\c[3]#{green}(G) <icon=GREENSHARD> \\c[1]#{blue}(B) <icon=BLUESHARD> \\c[2]#{red}(R) <icon=REDSHARD> \\c[6]#{yellow}(Y) <icon=YELLOWSHARD> </ac>")
-		if (green > $PokemonBag.pbQuantity(:GREENSHARD) || blue > $PokemonBag.pbQuantity(:BLUESHARD) || red > $PokemonBag.pbQuantity(:REDSHARD) || yellow > $PokemonBag.pbQuantity(:YELLOWSHARD))
-			pbMessage("You don't have enough shards.")
-		elsif $PokemonBag.pbHasItem?(GameData::Item.get(stone[i]))
-			pbMessage("You already have #{stonech}.")
-		elsif $PokemonBag.pbCanStore?(GameData::Item.get(stone[i]))
-			pbSEPlay('Megastone')
-			pbMessage("\\PN handed over the shards, and synthesized #{stonech}!")
-			pbReceiveItem(GameData::Item.get(stone[i]))
-			$PokemonBag.pbDeleteItem(:GREENSHARD,green)
-			$PokemonBag.pbDeleteItem(:BLUESHARD,green)
-			$PokemonBag.pbDeleteItem(:REDSHARD,green)
-			$PokemonBag.pbDeleteItem(:YELLOWSHARD,green)
-		end
+	def pbStart(steps)
+    @start      = [$game_map.map_id,$game_player.x,$game_player.y,$game_player.direction]
+    @inProgress = true
+	@steps      = steps
+	end
+
+	def pbEnd
+    @start      = nil
+    @inProgress = false
+    @steps      = 0
+    @decision   = 0
+    $game_map.need_refresh = true
+	end
+
+	def pbGoToStart
+	if $scene.is_a?(Scene_Map)
+      pbFadeOutIn {
+        $game_temp.player_transferring   = true
+        $game_temp.transition_processing = true
+        $game_temp.player_new_map_id    = @start[0]
+        $game_temp.player_new_x         = @start[1]
+        $game_temp.player_new_y         = @start[2]
+        $game_temp.player_new_direction = 2
+        $scene.transfer_player
+      }
+	end
+	end
+
+	def inProgress?
+	return @inProgress
 	end
 end
 
+def pbStepCountdown
+	$PokemonGlobal.stepCountdown = StepCountdown.new if !$PokemonGlobal.stepCountdown
+	return $PokemonGlobal.stepCountdown
+end
+
+def pbInStepCountdown?
+	if pbStepCountdown.inProgress?
+    # Reception map is handled separately from safari map since the reception
+    # map can be outdoors, with its own grassy patches.
+    #reception = pbSafariState.pbReceptionMap
+    return true if $game_map.name == "Overgrown Ruin"
+    map_metadata = GameData::MapMetadata.try_get($game_map.map_id)
+    return true if map_metadata && map_metadata.safari_map
+	end
+	return false
+end
+
+
+
+Events.onMapChange += proc { |_sender,*args|
+  pbStepCountdown.pbEnd if !pbInStepCountdown?
+}
+
+
+
+Events.onStepTakenTransferPossible += proc { |_sender,e|
+  handled = e[0]
+  next if handled[0]
+    if pbInStepCountdown? && pbStepCountdown.steps > 0
+		pbStepCountdown.steps -= 1
+		if pbInStepCountdown? && pbStepCountdown.steps == 50
+			pbMessage(_INTL("A strange energy is building around you."))
+		end
+		if pbInStepCountdown? && pbStepCountdown.steps <= 0
+			pbMessage(_INTL("A mysterious force sweeps you out of the temple."))
+			pbStepCountdown.pbGoToStart
+			handled[0] = true
+		end
+	end
+ }

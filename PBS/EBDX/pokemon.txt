@@ -4897,10 +4897,10 @@ BattlerPlayerY          = 40
 BattlerEnemyX           = 0
 #-------------------------------
 [SHAYMIN,1]
-BattlerEnemyY           = 14
+BattlerEnemyY           = 61
 BattlerAltitude         = 0
 BattlerPlayerX          = 0
-BattlerPlayerY          = 16
+BattlerPlayerY          = 54
 BattlerEnemyX           = 0
 #-------------------------------
 [ARCEUS,1]
@@ -5492,11 +5492,11 @@ BattlerPlayerY          = 30
 BattlerEnemyX           = 0
 #-------------------------------
 [MANECTRIC,1]
-BattlerEnemyY           = 49
+BattlerEnemyY           = 40
 BattlerAltitude         = 0
-BattlerPlayerX          = -4
-BattlerPlayerY          = 30
-BattlerEnemyX           = 0
+BattlerPlayerX          = -23
+BattlerPlayerY          = 31
+BattlerEnemyX           = -2
 #-------------------------------
 [SHARPEDO,1]
 BattlerEnemyY           = 0
@@ -6934,17 +6934,17 @@ BattlerPlayerY          = 0
 BattlerEnemyX           = 0
 #-------------------------------
 [WIMPOD]
-BattlerEnemyY           = 0
+BattlerEnemyY           = 72
 BattlerAltitude         = 0
-BattlerPlayerX          = 0
-BattlerPlayerY          = 0
-BattlerEnemyX           = 0
+BattlerPlayerX          = -7
+BattlerPlayerY          = 77
+BattlerEnemyX           = -2
 #-------------------------------
 [GOLISOPOD]
-BattlerEnemyY           = 0
+BattlerEnemyY           = 31
 BattlerAltitude         = 0
-BattlerPlayerX          = 0
-BattlerPlayerY          = 0
+BattlerPlayerX          = -7
+BattlerPlayerY          = 40
 BattlerEnemyX           = 0
 #-------------------------------
 [SANDYGAST]
@@ -7471,3 +7471,10 @@ BattlerAltitude         = 0
 BattlerPlayerX          = 3
 BattlerPlayerY          = 0
 BattlerEnemyX           = 0
+#-------------------------------
+[MILOTIC,1]
+BattlerEnemyY           = 1
+BattlerAltitude         = 0
+BattlerPlayerX          = -12
+BattlerPlayerY          = 32
+BattlerEnemyX           = 1

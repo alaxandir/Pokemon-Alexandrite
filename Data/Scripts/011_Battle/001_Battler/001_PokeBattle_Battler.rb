@@ -43,6 +43,7 @@ class PokeBattle_Battler
   attr_accessor :damageState
   attr_accessor :initialHP     # Set at the start of each move's usage
 
+
   #=============================================================================
   # Complex accessors
   #=============================================================================
@@ -120,6 +121,13 @@ class PokeBattle_Battler
     @statusCount = value
     @pokemon.statusCount = value if @pokemon
     @battle.scene.pbRefreshOne(@index)
+  end
+  
+  attr_reader :critical_hits
+
+  def critical_hits=(value)
+    @critical_hits = value
+    @pokemon.critical_hits = value if @pokemon
   end
 
   #=============================================================================

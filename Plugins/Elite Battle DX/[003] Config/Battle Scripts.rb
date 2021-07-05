@@ -251,6 +251,37 @@ module BattleScripts
 	"afterLast" => "Foolish child, you're defeat is imminent.",
 	"loss" => "Futile, you will remember this day."
 }
+#----------------
+  GIOVANNI2 = {
+	"turnStart0" => proc do
+	tname = $Trainer.name
+	@scene.pbTrainerSpeak("#{tname}! Hand over that tablet.")
+	end,
+	"turnStart4" => "This is getting irritating.",
+	"turnStart6" => proc do
+	pname = @battlers[0].name
+	@scene.pbTrainerSpeak("Your #{pname}, how is it so strong?")
+	end,
+	"turnStart10" => "Such power, you would do well to join me.",
+	"turnStart15" => "This is... interesting. Do you have a plan now?",
+	"lowHPOpp" => proc do
+	pname = @battlers[1].name
+	@scene.pbTrainerSpeak("#{pname}! Get back in there!")
+	end,
+	"megaOpp" => "It's time to stop toying with you.",
+	"fainted" => "Give up, you can't win.",
+	"fainted2" => "Don't worry, it'll all be over soon.",
+	"fainted2" => "<laughs> You're beaten.",
+	"recall" => "Stop delaying the inevitable.",
+	"recall2" => "Stop wasting my time.",
+	"recall3" => "You're really persistent arent you...",
+	"recall4" => "Enough of this, stop trying to defeat me.",
+	"lowHPOpp2" => "Argh, come on you, keep fighting!",
+	"lowHPOpp3" => "If you give up, you will be punished!",
+	"afterLastOpp" => "W-What?",
+	"afterLast" => "Foolish child, you're defeat is imminent.",
+	"loss" => "Futile, you will remember this day."
+}
   #-----------------------------------------------------------------------------
   # example Dialga fight
   DIALGA = {
