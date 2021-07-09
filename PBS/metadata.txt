@@ -7,8 +7,8 @@ TrainerBattleBGM = BattleTrainer.ogg
 WildVictoryME = PokemonVictory.ogg
 SurfBGM = Surftheme.ogg
 BicycleBGM = Cycling.ogg
-PlayerA = POKEMONTRAINER_Red,trainer_POKEMONTRAINER_Red,boy_bike,boy_surf,boy_run,boy_surf,boy_fish_offset,boy_fish_offset
-PlayerB = POKEMONTRAINER_Leaf,trainer_POKEMONTRAINER_Leaf,girl_bike,girl_surf,girl_run,girl_surf,girl_fish_offset,girl_fish_offset
+PlayerA = POKEMONTRAINER_Red,trainer_POKEMONTRAINER_Red,boy_bike,boy_surf,boy_run,boy_surf,boy_fish_offset,boy_spin
+PlayerB = POKEMONTRAINER_Leaf,trainer_POKEMONTRAINER_Leaf,girl_bike,girl_surf,girl_run,girl_surf,girl_fish_offset,girl_spin
 #-------------------------------
 [001]
 # 5F Silph Co
@@ -76,14 +76,14 @@ Weather = None,0
 MapPosition = 0,3,10
 #-------------------------------
 [010]
-# Victory Road ext
+# Victory Road Ent.
 Outdoor = true
 ShowArea = true
 Weather = None,0
 MapPosition = 0,2,9
 #-------------------------------
 [011]
-# Victory Road 1F
+# Victory Road (Water)
 Outdoor = false
 ShowArea = true
 Weather = None,0
@@ -126,7 +126,7 @@ Weather = None,0
 MapPosition = 0,4,12
 #-------------------------------
 [018]
-# Rocket Base 3b
+# Rocket Base
 Outdoor = false
 Weather = None,0
 MapPosition = 0,2,2
@@ -138,41 +138,41 @@ Weather = None,0
 MapPosition = 0,11,12
 #-------------------------------
 [020]
-# Rocket Base 2b
+# Rocket Base 2B
 Outdoor = false
 Weather = None,0
 MapPosition = 0,2,2
 #-------------------------------
 [021]
-# Rocket Base 1b
+# Rocket Base 1B
 Outdoor = false
 Weather = None,0
 MapPosition = 0,2,2
 #-------------------------------
 [022]
-# safari
+# Safari
 Outdoor = true
 Weather = None,0
-SafariMap = true
 MapPosition = 0,12,3
+SafariMap = true
 #-------------------------------
 [023]
-# safari gate
+# Gate
 Outdoor = false
 Weather = None,0
-BattleBack = Forest
 MapPosition = 0,12,3
+BattleBack = Forest
 #-------------------------------
 [024]
-# safari cave
+# Safari Cave
 Outdoor = false
 Weather = None,0
+MapPosition = 0,12,3
 SafariMap = true
 SnapEdges = true
-MapPosition = 0,12,3
 #-------------------------------
 [025]
-# Bouldergrove coalmine
+# Bouldergrove Coalmine
 Outdoor = false
 Weather = None,0
 MapPosition = 0,27,7
@@ -180,7 +180,7 @@ DarkMap = true
 BattleBack = CaveDark
 #-------------------------------
 [026]
-# Bouldergrove coalmine
+# Bouldergrove Coalmine
 Outdoor = false
 Weather = None,0
 MapPosition = 0,27,6
@@ -188,7 +188,7 @@ DarkMap = true
 BattleBack = CaveDark
 #-------------------------------
 [027]
-# cinder island
+# Cinder Island
 Outdoor = true
 Weather = None,0
 MapPosition = 0,27,5
@@ -200,19 +200,19 @@ Outdoor = false
 Weather = None,0
 #-------------------------------
 [029]
-# Route 119-2
+# Route 119
 Outdoor = true
 ShowArea = true
 Weather = None,0
 MapPosition = 0,2,10
 #-------------------------------
 [031]
-# Victory Road 2F
+# Victory Road (Cave)
 Outdoor = false
 ShowArea = true
 Weather = None,0
 MapPosition = 0,2,9
-#--------------------------------
+#-------------------------------
 [032]
 # \PN's House
 Outdoor = false
@@ -230,42 +230,42 @@ MapPosition = 0,20,3
 BattleBack = Forest
 #-------------------------------
 [034]
-# Victory Road ext
+# Victory Road Ext.
 Outdoor = false
 ShowArea = true
 Weather = None,0
 MapPosition = 0,2,7
 #-------------------------------
 [035]
-# Victory Road lava
+# Victory Road (Lava)
 Outdoor = false
 ShowArea = true
 Weather = None,0
 MapPosition = 0,2,7
 #-------------------------------
 [036]
-# e4 1
+# Elite Four - Robert
 Outdoor = false
 ShowArea = false
 Weather = None,0
 MapPosition = 0,1,7
 #-------------------------------
 [037]
-# e4 2
+# Elite Four - William
 Outdoor = false
 ShowArea = false
 Weather = None,0
 MapPosition = 0,1,7
 #-------------------------------
 [039]
-# e4 4
+# Elite Four - Anya
 Outdoor = false
 ShowArea = false
 Weather = None,0
 MapPosition = 0,1,7
 #-------------------------------
 [040]
-# champion
+# Champion
 Outdoor = false
 ShowArea = false
 Weather = None,0
@@ -293,28 +293,28 @@ Weather = None,0
 MapPosition = 0,20,6
 #-------------------------------
 [044]
-# farm
+# Anthrophil Farm
 Outdoor = true
 ShowArea = true
 Weather = None,0
 MapPosition = 0,13,5
 #-------------------------------
 [045]
-# Spirit tower 1f
+# Spirit Tower
 Outdoor = false
 ShowArea = true
 Weather = None,0
 MapPosition = 0,16,11
 #-------------------------------
 [046]
-# Spirit tower 2f
+# Spirit Tower 2F
 Outdoor = false
 ShowArea = true
 Weather = Fog,100
 MapPosition = 0,16,11
 #-------------------------------
 [047]
-# Spirit tower 3f
+# Spirit Tower 3F
 Outdoor = false
 ShowArea = true
 Weather = Fog,100
@@ -329,7 +329,7 @@ MapPosition = 0,20,9
 BattleBack = City
 #-------------------------------
 [049]
-# Spirit tower 4f
+# Spirit Tower 4F
 Outdoor = false
 ShowArea = true
 Weather = Fog,100
@@ -343,28 +343,28 @@ Weather = None,0
 MapPosition = 0,4,12
 #-------------------------------
 [051]
-# Castform Island / Paradise Cove
+# Paradise Cove
 Outdoor = true
 ShowArea = true
 Weather = None,0
 MapPosition = 0,5,17
 #-------------------------------
 [052]
-# Castform Island / PKMN center
+# Paradise PKMN Ctr.
 Outdoor = false
 ShowArea = true
 Weather = None,0
 MapPosition = 0,5,17
 #-------------------------------
 [053]
-# Castform Island / Verdant Jungle
+# Verdant Jungle
 Outdoor = true
 ShowArea = true
 Weather = Fog,50
 MapPosition = 0,5,17
 #-------------------------------
 [054]
-# Castform Island / Overgrown Ruin
+# Overgrown Ruin
 Outdoor = false
 ShowArea = true
 Weather = Fog,10
@@ -385,14 +385,17 @@ Weather = None,0
 MapPosition = 0,5,17
 #-------------------------------
 [057]
-# Paradise Cove Int.
+# Paradise Cove Int
 Outdoor = false
 ShowArea = false
 Weather = None,0
 MapPosition = 0,5,17
 #-------------------------------
+[058]
+# Filler Sea
+#-------------------------------
 [076]
-# Seafoam City Pokémon Center
+# Seafoam PKMN Ctr.
 Outdoor = false
 HealingSpot = 76,7,6
 Weather = None,0
@@ -483,7 +486,7 @@ SnapEdges = true
 BattleBack = IndoorC
 #-------------------------------
 [088]
-# Bouldergrove Pokemon Center
+# Bouldergrove PKMN Ctr.
 Outdoor = false
 HealingSpot = 88,7,6
 Weather = None,0
@@ -656,7 +659,7 @@ Weather = None,0
 MapPosition = 0,24,8
 #-------------------------------
 [109]
-# Anthophil Pokémon Center
+# Anthophil PKMN Ctr.
 HealingSpot = 109,7,6
 Weather = None,0
 MapPosition = 0,13,5
@@ -774,7 +777,7 @@ Weather = None,0
 MapPosition = 0,8,5
 #-------------------------------
 [127]
-# Kurt's House
+# Walter's House
 Outdoor = false
 Weather = None,0
 MapPosition = 0,8,5
@@ -1042,7 +1045,7 @@ Weather = None,0
 MapPosition = 0,6,9
 #-------------------------------
 [167]
-# Trident Cove Pokecenter
+# Trident Cove PKMN Ctr.
 Outdoor = false
 HealingSpot = 165,40,17
 Weather = None,0

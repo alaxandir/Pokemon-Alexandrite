@@ -576,7 +576,7 @@ end
 
 module PlayerProperty
   def self.set(settingname,oldsetting)
-    oldsetting = [nil,"xxx","xxx","xxx","xxx","xxx","xxx","xxx"] if !oldsetting
+    oldsetting = [nil,"xxx","xxx","xxx","xxx","xxx","xxx","xxx","xxx"] if !oldsetting
     properties = [
        [_INTL("Trainer Type"), TrainerTypeProperty, _INTL("Trainer type of this player.")],
        [_INTL("Sprite"),       CharacterProperty,   _INTL("Walking character sprite.")],
@@ -585,7 +585,8 @@ module PlayerProperty
        [_INTL("Running"),      CharacterProperty,   _INTL("Running character sprite.")],
        [_INTL("Diving"),       CharacterProperty,   _INTL("Diving character sprite.")],
        [_INTL("Fishing"),      CharacterProperty,   _INTL("Fishing character sprite.")],
-       [_INTL("Field Move"),   CharacterProperty,   _INTL("Using a field move character sprite.")]
+       [_INTL("Field Move"),   CharacterProperty,   _INTL("Using a field move character sprite.")],
+	   [_INTL("Spinning"),     CharacterProperty,   _INTL("Spinning on a tile sprite.")]
     ]
     pbPropertyList(settingname,oldsetting,properties,false)
     return oldsetting

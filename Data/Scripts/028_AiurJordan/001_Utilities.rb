@@ -8,9 +8,9 @@
 # v1.0 - Initial Release
 #-------------------------------------------------------------------------------
 PluginManager.register({
-  :name => "AiurJordan Utilities",
+  :name => "Extra Utilities",
   :version => "1.0",
-  :credits => ["AiurJordan"],
+  :credits => ["AiurJordan, Boon"],
   :link => "https://reliccastle.com",
 })
 #-------------------------------------------------------------------------------
@@ -25,7 +25,6 @@ class StepCountdown
     attr_accessor :decision
   
 	def initialize
-#@start     = [$game_map.map_id,$game_player.x,$game_player.y,$game_player.direction]
 	@start      = nil
 	@inProgress = false
 	@steps	    = 0
@@ -89,7 +88,7 @@ Events.onMapChange += proc { |_sender,*args|
 }
 
 
-
+############ MIRROR EVENT by: boon#######################
 Events.onStepTakenTransferPossible += proc { |_sender,e|
   handled = e[0]
   next if handled[0]
@@ -105,3 +104,78 @@ Events.onStepTakenTransferPossible += proc { |_sender,e|
 		end
 	end
  }
+
+class PokemonTemp
+  attr_accessor :mirror_guy_eventid
+end
+
+def pbStartMirror(eventid)
+  $PokemonTemp.mirror_guy_eventid=eventid
+end
+
+def pbEndMirror
+  $PokemonTemp.mirror_guy_eventid = nil
+end
+
+def caught
+  #pbMessage("The shade has reached you, dark thoughts flood your mind.")
+  pbEndMirror
+end
+
+def move_creepy_event(dir)
+  event = $game_map.events[$PokemonTemp.mirror_guy_eventid]
+  if $game_player.x == event.x && $game_player.y == event.y
+    caught
+    return
+  end
+  case dir
+  when 2
+    if $game_player.y==event.y-1 && $game_player.x == event.x
+      caught
+      return
+    end
+    if $game_map.passable?(event.x,event.y+1,event.direction,event)
+	pbMoveRoute(event,[PBMoveRoute::Down])
+	end
+  when 4
+     if $game_player.y==event.y && $game_player.x == event.x-1
+      caught
+      return
+    end
+	if $game_map.passable?(event.x+1,event.y,event.direction,event)
+	pbMoveRoute(event,[PBMoveRoute::Right])
+	end
+  when 6
+     if $game_player.y==event.y && $game_player.x == event.x+1
+      caught
+      return
+    end
+	if $game_map.passable?(event.x-1,event.y,event.direction,event)
+	pbMoveRoute(event,[PBMoveRoute::Left])
+	end
+  when 8
+     if $game_player.y==event.y+1 && $game_player.x == event.x
+      caught
+      return
+    end
+	if $game_map.passable?(event.x,event.y-1,event.direction,event)
+	pbMoveRoute(event,[PBMoveRoute::Up])
+	end
+  end
+end
+
+Events.onStepTakenFieldMovement += proc { |_sender,e|
+  event = e[0] # Get the event affected by field movement
+  if event==$game_player
+    move_creepy_event($game_player.direction) if $PokemonTemp.mirror_guy_eventid != nil
+  end
+}
+
+class Game_Player
+  alias bumpintocreepy bump_into_object
+  def bump_into_object
+    bumpintocreepy
+    move_creepy_event(@direction) if $PokemonTemp.mirror_guy_eventid != nil
+  end
+end
+###################################

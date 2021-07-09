@@ -87,7 +87,7 @@ module Settings
   NEW_BERRY_PLANTS      = (MECHANICS_GENERATION >= 4)
   # Whether fishing automatically hooks the Pokémon (true), or whether there is
   # a reaction test first (false).
-  FISHING_AUTO_HOOK     = false
+  FISHING_AUTO_HOOK     = true
   # The ID of the common event that runs when the player starts fishing (runs
   # instead of showing the casting animation).
   FISHING_BEGIN_COMMON_EVENT = -1

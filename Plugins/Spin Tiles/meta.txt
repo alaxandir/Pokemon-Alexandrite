@@ -1,0 +1,4 @@
+Name = Spin Tiles
+Version = 1.0
+Credits = Vendily, thepsynergist, Barrel's O'Fun
+Website = https://www.pokecommunity.com/showthread.php?t=438624

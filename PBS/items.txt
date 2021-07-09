@@ -706,6 +706,10 @@
 918,HEARTPACK,Heart Pack,Heart Packs,1,1000,A booster pack for Triple Triad. Contains 3 fairy type cards.,2,0,0,
 919,SUPERCAPSULE,Super Capsule,Super Capsule,2,10000,"A capsule that allows a Pokémon with switch between all abilities they possess.",1,0,0,
 920,COFFEE,Coffee,Coffees,2,375,"A stimulating hot beverage, heals 40 HP and cure all statuses, can't be used in battle.",1,0,0,
+921,FOSSILIZEDBIRD,Fossilized Bird,Fossilized Birds,1,5000,"The fossil of an ancient Pokémon that once soared through the sky. What it looked like is a mystery.",0,0,8,
+922,FOSSILIZEDFISH,Fossilized Fish,Fossilized Fishes,1,5000,"The fossil of an ancient Pokémon that once lived in the sea. What it looked like is a mystery.",0,0,8,
+923,FOSSILIZEDDRAKE,Fossilized Drake,Fossilized Drakes,1,5000,"The fossil of an ancient Pokémon that once roamed the land. What it looked like is a mystery.",0,0,13,
+924,FOSSILIZEDDINO,Fossilized Dino,Fossilized Dinos,1,5000,"The fossil of an ancient Pokémon that once lived in the artic. What it looked like is a mystery.",0,0,13,
 ########GEN8 PROJECT MINTS
 1000,LONELYMINT,Lonely Mint,Lonely Mints,1,0,"When a Pokémon smells this mint, its Attack will grow more easily, but its Defense will grow more slowly.",1,0,0,
 1001,ADAMANTMINT,Adamant Mint,Adamant Mints,1,0,"When a Pokémon smells this mint, its Attack will grow more easily, but its Sp. Atk will grow more slowly.",1,0,0,
