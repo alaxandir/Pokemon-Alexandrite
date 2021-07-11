@@ -17,3 +17,17 @@ class PokeBattle_Move_18C < PokeBattle_Move
     return 0
   end
 end
+
+#===============================================================================
+# Reduces Defense and Raises Speed after all hits (Scale Shot)
+#===============================================================================
+class PokeBattle_Move_193 < PokeBattle_Move_0C0
+  def pbEffectAfterAllHits(user,target)
+    if user.pbCanRaiseStatStage?(:SPEED,user,self)
+      user.pbRaiseStatStage(:SPEED,1,user)
+    end
+    if user.pbCanLowerStatStage?(:DEFENSE,target)
+      user.pbLowerStatStage(:DEFENSE,1,user)
+    end
+  end
+end

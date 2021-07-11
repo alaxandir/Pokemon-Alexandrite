@@ -1,24 +1,4 @@
 #-------------------------------
-[RIVAL1]
-BattleBGM        = Battle Elite.mid
-#-------------------------------
-[RIVAL1,Blue]
-BattleVS         = forestSM
-#-------------------------------
-[RIVAL1,Blue,1]
-BattleVS         = flamesSM
-#-------------------------------
-[RIVAL1,Blue,2]
-BattleVS         = wavesSM
-#-------------------------------
-[LEADER_Brock]
-TrainerPositionX = -8
-BattleEnv        = STAGE
-BattleVS         = classicVS
-#-------------------------------
-[LEADER_Brock,Brock]
-BattleScript     = BROCK
-#-------------------------------
 [TEAMROCKET_M]
 BattleIntro      = evilTeam
 BattleVS         = trainerSM
@@ -39,9 +19,17 @@ BattleVS         = trainerSM
 BattleIntro      = evilTeam
 BattleVS         = trainerSM
 #-------------------------------
+[SCIENTIST_R_F]
+BattleIntro      = evilTeam
+BattleVS         = trainerSM
+#-------------------------------
+[SCIENTIST_R_M]
+BattleIntro      = evilTeam
+BattleVS         = trainerSM
+#-------------------------------
 [ROCKETBOSS,Giovanni]
 BattleIntro      = evilTeam
-BattleVS         = classicVS
+BattleVS         = integratedVS
 BattleScript	= GIOVANNI1
 #-------------------------------
 [ROCKETTHUGS]
@@ -90,21 +78,193 @@ BattleVS         = spaceSM
 Ace				 = 6
 BattleScript	 = LEE
 #-------------------------------
-[POKEMONTRAINER_Brett,Brett,1]
-BattleVS         = classicVS
-#-------------------------------
-[MEDIUM]
-SpriteScale       = 1
+[POKEMONTRAINER_Brett]
+BattleVS         = integratedVS
 #-------------------------------
 [LEADER_HAOAI]
 BattleEnv        = CHAMPION
+BattleVS         = ultraSM
 SpriteSpeed      = 0
+BattleScript 	 = HAOAI
 Ace = 6
 #-------------------------------
 [ROCKETBOSS,Giovanni,1]
 BattleIntro      = evilTeam
-BattleVS         = classicVS
+BattleVS         = integratedVS
 BattleScript	 = GIOVANNI2
-BattleVS         = forestSM
 Ace				 = 6
 BattleEnv        = FOREST
+#-------------------------------
+[POKEMONTRAINER_Brett,Brett,2]
+BattleVS         = integratedVS
+BattleScript	 = BRETT2
+#-------------------------------
+[POKEMONTRAINER_Brett,Brett,3]
+BattleVS         = integratedVS
+BattleScript	 = BRETT3
+#-------------------------------
+[POKEMONTRAINER_Brett,Brett,5]
+BattleVS         = integratedVS
+BattleScript	 = BRETT5
+#-------------------------------
+[POKEMONTRAINER_Brett,Brett,6]
+BattleVS         = integratedVS
+BattleScript	 = BRETT6
+Ace = 3
+#-------------------------------
+[ELITEFOUR_Robert]
+BattleVS         = eliteSM
+BattleScript = ROBERT
+#-------------------------------
+[ELITEFOUR_William]
+BattleVS         = eliteSM
+BattleScript = WILLIAM
+#-------------------------------
+[ELITEFOUR_Kyra]
+BattleVS         = eliteSM
+BattleScript = KYRA
+#-------------------------------
+[ELITEFOUR_Anya]
+BattleVS         = eliteSM
+BattleScript = ANYA
+#-------------------------------
+[CHAMPION]
+BattleVS         = eliteSM
+BattleScript = JAY
+#-------------------------------
+[ACETRAINERS]
+BattleVS		= minorTrainer
+[AROMALADY]
+BattleVS		= minorTrainer
+[BEAUTY]
+BattleVS		= minorTrainer
+[BEAUTY1]
+BattleVS		= minorTrainer
+[BIKER]
+BattleVS		= minorTrainer
+[BIRDKEEPER]
+BattleVS		= minorTrainer
+[BIRDKEEPER1]
+BattleVS		= minorTrainer
+[BLACKBELT]
+BattleVS		= minorTrainer
+[BUGCATCHER]
+BattleVS		= minorTrainer
+[BUGCATCHER1]
+BattleVS		= minorTrainer
+[BURGLAR]
+BattleVS		= minorTrainer
+[CAMPER]
+BattleVS		= minorTrainer
+[CHANELLER]
+BattleVS		= minorTrainer
+[COOLCOUPLE]
+BattleVS		= minorTrainer
+[COOLTRAINER_F]
+BattleVS		= minorTrainer
+[COOLTRAINER_M]
+BattleVS		= minorTrainer
+[CRUSHGIRL]
+BattleVS		= minorTrainer
+[CRUSHKIN]
+BattleVS		= minorTrainer
+[CUEBALL]
+BattleVS		= minorTrainer
+[CUEBALL1]
+BattleVS		= minorTrainer
+[CYCLIST]
+BattleVS		= minorTrainer
+[ENGINEER]
+BattleVS		= minorTrainer
+[FISHERMAN]
+BattleVS		= minorTrainer
+[FISHERMAN1]
+BattleVS		= minorTrainer
+[GAMBLER]
+BattleVS		= minorTrainer
+[GENTLEMAN]
+BattleVS		= minorTrainer
+[GENTLEMAN1]
+BattleVS		= minorTrainer
+[HIKER]
+BattleVS		= minorTrainer
+[ICEDIVER]
+BattleVS		= minorTrainer
+[JUGGLER]
+BattleVS		= minorTrainer
+[LADY]
+BattleVS		= minorTrainer
+[LASS]
+BattleVS		= minorTrainer
+[LASS4]
+BattleVS		= minorTrainer
+[MARTIALARTIST_M]
+BattleVS		= minorTrainer
+[MEDIUM]
+BattleVS		= minorTrainer
+[OLDCOUPLE]
+BattleVS		= minorTrainer
+[PAINTER]
+BattleVS		= minorTrainer
+[PICNICKER]
+BattleVS		= minorTrainer
+[PICNICKER_1]
+BattleVS		= minorTrainer
+[POKEMANIAC]
+BattleVS		= minorTrainer
+[POKEMONBREEDER]
+BattleVS		= minorTrainer
+[POKEMONRANGER_F]
+BattleVS		= minorTrainer
+[POKEMONRANGER_M]
+BattleVS		= minorTrainer
+[PSYCHIC2_F]
+BattleVS		= minorTrainer
+[PSYCHIC2_M]
+BattleVS		= minorTrainer
+[PSYCHIC_F]
+BattleVS		= minorTrainer
+[PSYCHIC_M]
+BattleVS		= minorTrainer
+[ROCKER]
+BattleVS		= minorTrainer
+[RUINMANIAC]
+BattleVS		= minorTrainer
+[SAILOR]
+BattleVS		= minorTrainer
+[SCIENTIST]
+BattleVS		= minorTrainer
+[SISANDBRO]
+BattleVS		= minorTrainer
+[SUPERNERD]
+BattleVS		= minorTrainer
+[SWIMMER2_F]
+BattleVS		= minorTrainer
+[SWIMMER2_M]
+BattleVS		= minorTrainer
+[SWIMMER_F]
+BattleVS		= minorTrainer
+[SWIMMER_M]
+BattleVS		= minorTrainer
+[TAMER]
+BattleVS		= minorTrainer
+[TRAILBLAZER]
+BattleVS		= minorTrainer
+[TUBER2_F]
+BattleVS		= minorTrainer
+[TUBER2_M]
+BattleVS		= minorTrainer
+[TUBER_F]
+BattleVS		= minorTrainer
+[TUBER_M]
+BattleVS		= minorTrainer
+[TWINS]
+BattleVS		= minorTrainer
+[WINTERCOOL_F]
+BattleVS		= minorTrainer
+[WINTERCOOL_M]
+BattleVS		= minorTrainer
+[YOUNGCOUPLE]
+BattleVS		= minorTrainer
+[YOUNGSTER]
+BattleVS		= minorTrainer

@@ -213,6 +213,10 @@ class PokeBattle_Battler
       b.effects[PBEffects::LockOn]    = 0
       b.effects[PBEffects::LockOnPos] = -1
     end
+	@effects[PBEffects::JawLock]             = -1
+    @battle.eachBattler do |b|   # Other battlers no longer blocked by self
+      b.effects[PBEffects::JawLock] = -1 if b.effects[PBEffects::JawLock] == @index
+    end
     @effects[PBEffects::MagicBounce]         = false
     @effects[PBEffects::MagicCoat]           = false
     @effects[PBEffects::MeanLook]            = -1

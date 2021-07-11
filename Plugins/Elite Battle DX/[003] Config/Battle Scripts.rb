@@ -191,12 +191,12 @@ module BattleScripts
 	end,
 	"fainted" => "That Pokémon's done.",
 	"recall" => "Switching it up wont save you.",
-	"lowHPOpp" => "I'm sweating here!",
-	"loss" => "That was intense!",
+	"lowHPOpp" => "I'm just hanging in there!",
+	"loss" => "Fearless combat!",
 	"BeforeLastOpp" => "Power's low, but I'm still going!"
 }
 #---------------
-  HEIDI = {
+HEIDI = {
 	"turnStart0" => "I hope you brought your winter coat!",
 	"turnEnd6" => "I'm frozen in awe.",
 	"afterLastOpp" => proc do
@@ -213,7 +213,7 @@ module BattleScripts
 	"loss" => "Is it cold in here?"
 }
 #---------------# BATTLER 0 IS PLAYER, BATTLER 1 IS OPPONENT
-  LEE = {
+LEE = {
 	"turnStart0" => "You must calm your mind for battle",
 	"turnStart1" => proc do
 		pname = @battlers[0].name
@@ -225,6 +225,22 @@ module BattleScripts
 		end,
 	"recall" => "Hmm, interesting move.",
 	"loss" => "Balance in everything."
+}
+
+HAOAI = {
+	"turnStart0" => "We hope you are ready for the battle of a lifetime!",
+	"turnStart1" => proc do
+		pname = @battlers[0].name
+		@scene.pbTrainerSpeak("Have you trained #{pname} well enough?")
+		end,
+	"afterLastOpp" => proc do
+		pname = @battlers[1].name
+		@scene.pbTrainerSpeak("The finale awaits, #{pname}, GO!")
+		end,
+	"megaOpp" => "Time to take this to the limit!",
+	"fainted" => "You're not ready for this challenge..",
+	"fainted2" => "One by one they fall.",
+	"lowHPOpp" => "Such intensity, you are fascinating!",
 }
 #---------------
   GIOVANNI1 = {
@@ -303,4 +319,292 @@ module BattleScripts
     end
   }
   #-----------------------------------------------------------------------------
+  BRETT2 = {
+	"turnStart0" => proc do
+	tname = $Trainer.name
+	@scene.pbTrainerSpeak("Alright, time for a rematch #{tname}!")
+	end,
+	"damageOpp" => proc do
+	tname = @battlers[0].name
+	"Whoa! your #{tname} is really strong!"
+	end,
+	"damageOpp2" => proc do
+	pname = @battlers[0].name
+	"Nice hit, my #{pname} can't handle it."
+	end,
+	"turnStart4" => proc do
+		pname = @battlers[1].name
+		@scene.pbTrainerSpeak("#{pname}, don't give up!")
+	end,
+	"fainted" => "That's what I'm talking about!",
+	"recall" => "Swapping out so soon?",
+	"lowHPOpp" => "Arrgh not yet!",
+	"loss" => "Hah! I knew I could do it.",
+	"lowHP" => "We're not done yet.",
+	"item" => "Items already huh?",
+	"Oppitem" => "Time for a little insurance!"
+}
+  #-----------------------------------------------------------------------------
+  BRETT3 = {
+	"turnStart0" => proc do
+	tname = $Trainer.name
+	@scene.pbTrainerSpeak("#{tname}! I'm coming for you!")
+	end,
+	"damageOpp" => proc do
+	tname = @battlers[0].name
+	"Whoa! your #{tname} is really strong!"
+	end,
+	"damageOpp2" => proc do
+	pname = @battlers[0].name
+	"Nice hit, my #{pname} can't handle it."
+	end,
+	"turnStart4" => proc do
+		pname = @battlers[1].name
+		@scene.pbTrainerSpeak("#{pname}, don't give up!")
+	end,
+	"fainted" => "That's what I'm talking about!",
+	"recall" => "Swapping out so soon?",
+	"lowHPOpp" => "Arrgh not yet!",
+	"loss" => "Hah! I knew I could do it.",
+	"lowHP" => "We're not done yet.",
+	"item" => "Items already huh?",
+	"Oppitem" => "Time for a little insurance!"
+}
+  #-----------------------------------------------------------------------------
+  BRETT5 = {
+	"turnStart0" => proc do
+	tname = $Trainer.name
+	@scene.pbTrainerSpeak("You're done #{pname}. I'm through messing around. ")
+	end,
+	"damageOpp" => proc do
+	tname = @battlers[0].name
+	"Unreal, #{tname} is really strong!"
+	end,
+	"damageOpp2" => proc do
+	pname = @battlers[0].name
+	"#{pname}... Don't go down!"
+	end,
+	"turnStart4" => proc do
+		pname = @battlers[1].name
+		@scene.pbTrainerSpeak("#{pname}, please don't give up!")
+	end,
+	"fainted" => "Yes, YES!",
+	"recall" => "Hmph, swapping.",
+	"lowHPOpp" => "No, I can't lose!",
+	"loss" => "Oh, that... you went easy didn't you...",
+	"lowHP" => "We're not done yet!",
+	"item" => "... Really?",
+	"Oppitem" => "I didn't want to have to use this..."
+}
+  #-----------------------------------------------------------------------------
+  BRETT6 = {
+	"turnStart0" => proc do
+	tname = $Trainer.name
+	@scene.pbTrainerSpeak("#{pname}, you better try your hardest. I'm not joking around.")
+	end,
+	"damageOpp" => proc do
+	tname = @battlers[0].name
+	"#{tname}, I hate that thing."
+	end,
+	"damageOpp2" => proc do
+	pname = @battlers[0].name
+	"#{pname}, you've failed me for the last time!"
+	end,
+	"turnStart4" => proc do
+		pname = @battlers[1].name
+		@scene.pbTrainerSpeak("#{pname}, you need to win this for me.")
+	end,
+	"fainted" => "Maybe there's hope.",
+	"fainted2" => "What? Another one? Yes!",
+	"recall" => "Urgh! Stop wasting time.",
+	"recall2" => "Swapping is so annoying.",
+	"lowHPOpp" => "... Don't you dare faint on me!",
+	"lowHPOpp2" => "Why? WHY DO I ALWAYS LOSE!?",
+	"damageOpp3" => "Haha! YES!",
+	"damageOpp4" => "You're going down!",
+	"lowHPOpp3" => "If you go down we've got no chance.",
+	"loss" => "So this is it...",
+	"lowHP" => "Yes, this is happening!",
+	"lowHP2" => "Oh my gosh, it's really happening!",
+	"lowHP3" => "Hit it harder! Go now! Attack!"
+}
+
+ROBERT = {
+	"turnStart0" => proc do
+	tname = $Trainer.name
+	@scene.pbTrainerSpeak("Alright #{tname}, show me what you're made of!")
+	end,
+	"damageOpp" => proc do
+	tname = @battlers[0].name
+	"Excellent technique by your #{tname}!"
+	end,
+	"damageOpp2" => proc do
+	pname = @battlers[0].name
+	"Nice hit, my #{pname} is faltering."
+	end,
+	"turnStart4" => proc do
+		pname = @battlers[1].name
+		@scene.pbTrainerSpeak("#{pname}, don't give up!")
+	end,
+	"fainted" => "What a fighter!",
+	"lowHPOpp" => "I fear this is not going well!",
+	"lowHPOpp2" => "My Pokémon just cant cut it.",
+	"loss" => "You fought well, come back soon.",
+	"lowHP" => "We're not done yet!",
+	"item" => "Items are frowned upon in the League Challenge."
+}
+
+WILLIAM = {
+	"turnStart0" => proc do
+	tname = $Trainer.name
+	@scene.pbTrainerSpeak("#{tname}! Your league challenge ends here!")
+	end,
+	"damageOpp" => proc do
+	tname = @battlers[0].name
+	"What a strong #{tname}! What's your secret?"
+	end,
+	"damageOpp2" => proc do
+	pname = @battlers[0].name
+	"#{pname}, hang in there buddy!"
+	end,
+	"turnStart4" => proc do
+		pname = @battlers[1].name
+		@scene.pbTrainerSpeak("#{pname}, you've been through worse come on!")
+	end,
+	"fainted" => "That was too easy.",
+	"lowHPOpp" => "You're winning, but I'm not done yet!",
+	"lowHPOpp2" => "No no no! Still standing... Phew!",
+	"loss" => "You fought well, I'll take you on anytime.",
+	"lowHP" => "Your Pokémon, how is it still standing?",
+	"lowHP2" => "Still alive? You gotta be kidding me."
+}
+
+WILLIAM = {
+	"turnStart0" => proc do
+	tname = $Trainer.name
+	@scene.pbTrainerSpeak("#{tname}! Your league challenge ends here!")
+	end,
+	"damageOpp" => proc do
+	tname = @battlers[0].name
+	"What a strong #{tname}! What's your secret?"
+	end,
+	"damageOpp2" => proc do
+	pname = @battlers[0].name
+	"#{pname}, hang in there buddy!"
+	end,
+	"turnStart4" => proc do
+		pname = @battlers[1].name
+		@scene.pbTrainerSpeak("#{pname}, you've been through worse come on!")
+	end,
+	"fainted" => "That was too easy.",
+	"lowHPOpp" => "You're winning, but I'm not done yet!",
+	"lowHPOpp2" => "No no no! Still standing... Phew!",
+	"loss" => "You fought well, I'll take you on anytime.",
+	"lowHP" => "Your Pokémon, how is it still standing?",
+	"lowHP2" => "Still alive? You gotta be kidding me."
+}
+
+KYRA = {
+	"turnStart0" => proc do
+	tname = $Trainer.name
+	@scene.pbTrainerSpeak("#{tname}! #{tname}!! #{tname}!!!")
+	end,
+	"damageOpp" => proc do
+	tname = @battlers[0].name
+	"I like that #{tname}! They are really giving it their all."
+	end,
+	"damageOpp2" => proc do
+	pname = @battlers[0].name
+	"#{pname}, they said you can't give up yet! They said no!"
+	end,
+	"turnStart7" => proc do
+		pname = @battlers[1].name
+		@scene.pbTrainerSpeak("#{pname}, they're telling me you're doing good!")
+	end,
+	"fainted" => "They like it when that happens.",
+	"fainted2" => "That one was really satisfying.",
+	"fainted3" => "Ooh! Another one, yes! yes!!",
+	"lowHPOpp" => "Oh no, it might be hurt. Should we stop?",
+	"lowHPOpp2" => "I'm not sure that went as planned.",
+	"loss" => "They enjoyed this fight, they wish to see you again.",
+	"lowHP" => "Only a very well trained battler would withstand that. You're a good match.",
+	"lowHP2" => "They didn't like that, you should be fainted by now."
+}
+
+ANYA = {
+	"turnStart0" => proc do
+	tname = $Trainer.name
+	@scene.pbTrainerSpeak("#{tname}, you really think you can do this?")
+	end,
+	"damageOpp" => proc do
+	tname = @battlers[0].name
+	"Hmm, impressive... your #{tname} at least, not sure about you yet."
+	end,
+	"damageOpp2" => proc do
+	pname = @battlers[0].name
+	"That #{pname} is really something isn't it?"
+	end,
+	"turnStart5" => proc do
+		pname = @battlers[1].name
+		@scene.pbTrainerSpeak("#{pname}, don't you let this kid beat you!")
+	end,
+	"fainted" => "Too easy.",
+	"fainted2" => "You're out of your league kid.",
+	"fainted3" => "Just give up already.",
+	"lowHPOpp" => "Hmph, you think that's enough to stop me?",
+	"lowHPOpp2" =>  "You're gonna have to do better than that.",
+	"loss" => "I think you've got some potential, maybe come back when you're older.",
+	"lowHP" => "I didn't expect that, what a suprise.",
+	"lowHP2" => "You can't be serious, you're still standing?"
+}
+
+JAY = {
+	"turnStart0" => proc do
+	tname = $Trainer.name
+	@scene.pbTrainerSpeak("#{tname}, as the Cardino League Champion. I accept your challenge!")
+	end,
+	"damageOpp" => proc do
+	tname = @battlers[0].name
+	"You might just have what it takes if you trained that #{tname}."
+	end,
+	"damageOpp2" => proc do
+	pname = @battlers[0].name
+	"Impressive show by your #{pname}."
+	end,
+	"turnStart5" => proc do
+		pname = @battlers[1].name
+		@scene.pbTrainerSpeak("#{pname}, I know this is tough but you can do it.")
+	end,
+	"turnStart12" => proc do
+		tname = $Trainer.name
+		@scene.pbTrainerSpeak("#{tname}, is your confidence failing you?")
+	end,
+	"turnStart24" => proc do
+		tname = $Trainer.name
+		@scene.pbTrainerSpeak("This fight is really something isn't it #{tname}?")
+	end,
+	"turnStart33" => proc do
+		tname = $Trainer.name
+		@scene.pbTrainerSpeak("Stalling isn't going to help you #{tname}. Stop this nonsense!")
+	end,
+	"fainted" => "That's one down.",
+	"fainted2" => "Two down, too easy.",
+	"fainted3" => "Three down already?",
+	"fainted4" => "Four... You're getting nervous now I'll bet.",
+	"fainted5" => proc do
+	tname = $Trainer.name
+	@scene.pbTrainerSpeak("#{tname}, come on! Do you give up so easily?")
+	end,
+	"lowHPOpp" => "Shrug it off, not enough to stop us!",
+	"lowHPOpp2" =>  "Unexpected turn of events, you're quite a match for me.",
+	"loss" => proc do
+	tname = $Trainer.name
+	@scene.pbTrainerSpeak("#{tname}, please do challenge me again soon. I look forward to it.")
+	end,
+	"lowHP" => "Oh, you endured that? Impressive!",
+	"lowHP2" => proc do
+	pname = @battlers[0].name
+	"How is #{pname} still standing?!"
+	end
+}
 end

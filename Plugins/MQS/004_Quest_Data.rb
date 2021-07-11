@@ -442,4 +442,34 @@ CHARMELEON = {
     :QuestDescription => "A trainer wants to trade Pokémon with you. Your Pikachu for his Charmeleon.",
     :RewardString => "Charmeleon"
   }
+  
+SWEETTOOTH = {
+    :ID => "39",
+    :Name => "A sweet tooth.",
+    :QuestGiver => "Candy Fanatic",
+    :Stage1 => "Bring a Root Candy bar to the Fanatic.",
+    :Location1 => "Fortune City",
+    :QuestDescription => "A candy fanatic has asked you to retrieve a Root Candy Bar from Earthroot and bring it to him.",
+    :RewardString => "Valuable Item"
+  }
+
+CHARCOAL = {
+    :ID => "40",
+    :Name => "Fuel for the Winter.",
+    :QuestGiver => "Concerned Mother",
+    :Stage1 => "Bring Charcoal to the Mother.",
+    :Location1 => "Glacier City",
+    :QuestDescription => "A woman is concerned about having enough fuel for the winter, you could be nice and bring her Charcoal.",
+    :RewardString => "Lum Berries"
+  }
+  
+DUNSPARCE = {
+    :ID => "41",
+    :Name => "The Lonely Dunsparce.",
+    :QuestGiver => "nil",
+    :Stage1 => "Bring Popping Candy to Dunsparce",
+    :Location1 => "Neon City",
+    :QuestDescription => "You found a scared and lonely Dunsparce hiding in a back alley. Time to make friends!",
+    :RewardString => "Dunsparce"
+  }
 end

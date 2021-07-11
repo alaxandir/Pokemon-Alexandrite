@@ -346,7 +346,7 @@ MapPosition = 0,4,12
 # Paradise Cove
 Outdoor = true
 ShowArea = true
-Weather = None,0
+Weather = Sun,100
 MapPosition = 0,5,17
 #-------------------------------
 [052]

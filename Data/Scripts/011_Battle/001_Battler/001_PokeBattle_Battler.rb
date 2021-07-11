@@ -596,6 +596,18 @@ class PokeBattle_Battler
     return false
   end
 
+  def trappedInBattle?
+    return true if @effects[PBEffects::Trapping] > 0
+    return true if @effects[PBEffects::MeanLook] >= 0
+    return true if @effects[PBEffects::JawLock] >= 0
+    @battle.eachBattler { |b| return true if b.effects[PBEffects::JawLock] == @index }
+    #return true if @effects[PBEffects::Octolock] >= 0
+    return true if @effects[PBEffects::Ingrain]
+    #return true if @effects[PBEffects::NoRetreat]
+    return true if @battle.field.effects[PBEffects::FairyLock] > 0
+    return false
+  end
+
   def inTwoTurnAttack?(*arg)
     return false if !@effects[PBEffects::TwoTurnAttack]
     ttaFunction = GameData::Move.get(@effects[PBEffects::TwoTurnAttack]).function_code

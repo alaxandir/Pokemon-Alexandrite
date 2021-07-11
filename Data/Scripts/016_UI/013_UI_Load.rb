@@ -116,6 +116,7 @@ class PokemonLoad_Scene
     @sprites["cmdwindow"] = Window_CommandPokemon.new([])
     @sprites["cmdwindow"].viewport = @viewport
     @sprites["cmdwindow"].visible  = false
+	
   end
 
   def pbStartScene2

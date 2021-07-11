@@ -311,7 +311,7 @@ class PokeBattle_Battler
     end
     # Wide Guard
     if target.pbOwnSide.effects[PBEffects::WideGuard] && user.index!=target.index &&
-       move.pbTarget(user).num_targets > 1 &&
+       move.pbTarget(user).num_targets > 1 && move.function != "17C" &&
        (Settings::MECHANICS_GENERATION >= 7 || move.damagingMove?)
       @battle.pbCommonAnimation("WideGuard",target)
       @battle.pbDisplay(_INTL("Wide Guard protected {1}!",target.pbThis(true)))

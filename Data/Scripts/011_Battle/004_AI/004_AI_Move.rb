@@ -111,8 +111,30 @@ class PokeBattle_AI
   # Get scores for the given move against each possible target
   #=============================================================================
   # Wild Pokémon choose their moves randomly.
-  def pbRegisterMoveWild(_user,idxMove,choices)
-    choices.push([idxMove,100,-1])   # Move index, score, target
+#  def pbRegisterMoveWild(_user,idxMove,choices)
+#    score = 100
+#	if _user.isSpecies?(:MEW)
+#		moveFx = _user.moves[idxMove]
+#		p moveFx
+#		if moveFx == "0B8" then score = 100;	 #"0B8" imprison	
+#		elsif moveFx == "069" then score = 99; 	#"069" transform
+#		else score = 98;
+#		end
+#	end
+#	choices.push([idxMove,score,-1])   # Move index, score, target
+ # end
+ 
+  def pbRegisterMoveWild(user,idxMove,choices)
+    move = user.moves[idxMove]
+    name = move.name
+    score = 100
+    if user.isSpecies?(:MEW)
+      score = 0 if user.turnCount < 2
+      if (move.function == "0B8" && user.turnCount == 0) then score = 100; #"0B8" imprison
+      elsif (move.function == "069" && user.turnCount == 1) then score = 100; #"069" transform
+      end
+    end
+    choices.push([idxMove,score,-1])   # Move index, score, target
   end
 
   # Trainer Pokémon calculate how much they want to use each of their moves.
