@@ -693,4 +693,15 @@
 674,SOAK,Soak,061,0,WATER,Status,100,20,0,NearOther,0,bce,"The user shoots a torrent of water at the target and changes the target's type to Water."
 675,WATERSPORT,Water Sport,09E,0,WATER,Status,0,15,0,BothSides,0,,"The user soaks itself with water. The move weakens Fire-type moves while the user is in the battle."
 676,WITHDRAW,Withdraw,01D,0,WATER,Status,0,40,0,User,0,d,"The user withdraws its body into its hard shell, raising its Defense stat."
+#-------------------ADDITIONS	
 677,PSYGRAINE,Psygraine,013,30,PSYCHIC,Special,80,15,5,Other,0,ef,"A weak telekenisis attempts to give the opponent a bad headache. Very small chance of confusion."
+700,DUALWINGBEAT,Dual Wingbeat,0BD,40,FLYING,Physical,90,10,0,NearOther,0,abef,"The user slams the target with its wings. The target is hit twice in a row."
+701,METEORASSAULT,Meteor Assault,0C2,150,FIGHTING,Physical,100,5,0,NearOther,0,bef,"Attacks wildly with its thick leek. The user can't move on the next turn."
+702,COACHING,Coaching,18E,0,FIGHTING,Status,0,10,0,NearAlly,0,,"The user properly coaches its ally Pokémon, boosting their Attack and Defense stats."
+703,GRASSYGLIDE,Grassy Glide,18C,70,GRASS,Physical,100,20,0,NearOther,0,abef,"Attacks by gliding on the ground. This move always goes first on Grassy Terrain."
+704,SCALESHOT,Scale Shot,193,25,DRAGON,Physical,90,20,100,NearOther,0,abef,"The user attacks by shooting scales two to five times. Boosts the user's Speed but lowers its Defense."
+705,JAWLOCK,Jaw Lock,17D,80,DARK,Physical,100,10,100,NearOther,0,bef,"Prevents the user and target from switching out until either of them faints or is switched out."
+706,DRAGONDARTS,Dragon Darts,17C,50,DRAGON,Physical,100,10,0,AllNearFoes,0,bef,"The user attacks twice using Dreepy. If there are two targets, it hits each target once."
+707,BREAKINGSWIPE,Breaking Swipe,042,60,DRAGON,Physical,100,15,100,AllNearFoes,0,abef,"The user swings its tail wildly and attacks opposing Pokémon, lowering their Attack stats."
+
+

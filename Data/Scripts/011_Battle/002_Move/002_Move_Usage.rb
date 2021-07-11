@@ -272,6 +272,8 @@ class PokeBattle_Move
       @battle.pbDisplay(_INTL("The substitute took damage for {1}!",target.pbThis(true)))
     end
     if target.damageState.critical
+	  user.critical_hits += 1
+	  PBDebug.log("Crit Count #{user.critical_hits}")
       if numTargets>1
         @battle.pbDisplay(_INTL("A critical hit on {1}!",target.pbThis(true)))
       else

@@ -94,6 +94,7 @@ class PokeBattle_Battler
     @pokemonIndex = idxParty
     @participants = []   # Participants earn Exp. if this battler is defeated
     @moves        = []
+	@critical_hits = 0
     pkmn.moves.each_with_index do |m,i|
       @moves[i] = PokeBattle_Move.from_pokemon_move(@battle,m)
     end
@@ -211,6 +212,10 @@ class PokeBattle_Battler
       next if b.effects[PBEffects::LockOnPos]!=@index
       b.effects[PBEffects::LockOn]    = 0
       b.effects[PBEffects::LockOnPos] = -1
+    end
+	@effects[PBEffects::JawLock]             = -1
+    @battle.eachBattler do |b|   # Other battlers no longer blocked by self
+      b.effects[PBEffects::JawLock] = -1 if b.effects[PBEffects::JawLock] == @index
     end
     @effects[PBEffects::MagicBounce]         = false
     @effects[PBEffects::MagicCoat]           = false

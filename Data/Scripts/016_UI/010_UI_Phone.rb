@@ -137,7 +137,21 @@ class PokemonPhoneScene
         elsif Input.trigger?(Input::USE)
           index = @sprites["list"].index
           if index>=0
-            pbCallTrainer(@trainers[index][0],@trainers[index][1])
+			pbCallTrainer(@trainers[index][0],@trainers[index][1])
+          end
+		elsif Input.trigger?(Input::SPECIAL)
+          index = @sprites["list"].index
+		  if index>=0
+			if pbConfirmMessage(_INTL("Delete this contact?"))
+				trainer = pbFindPhoneTrainer(@trainers[index][0],@trainers[index][1])
+				if trainer.length!=8 
+					pbMessage(_INTL("You can't delete a special contact"))
+					break
+				else
+					pbMessage(_INTL("Contact Deleted."))
+					pbPhoneDeleteContact(index)
+				end
+			end
           end
         end
       end
@@ -145,5 +159,5 @@ class PokemonPhoneScene
     pbFadeOutAndHide(@sprites)
     pbDisposeSpriteHash(@sprites)
     @viewport.dispose
-  end
+  end 
 end

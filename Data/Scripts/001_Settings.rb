@@ -6,7 +6,7 @@
 
 module Settings
   # The version of your game. It has to adhere to the MAJOR.MINOR.PATCH format.
-  GAME_VERSION = '0.6.1'
+  GAME_VERSION = '0.7.0'
 
   # The generation that the battle system follows. Used throughout the battle
   # scripts, and also by some other settings which are used in and out of battle
@@ -87,7 +87,7 @@ module Settings
   NEW_BERRY_PLANTS      = (MECHANICS_GENERATION >= 4)
   # Whether fishing automatically hooks the Pokémon (true), or whether there is
   # a reaction test first (false).
-  FISHING_AUTO_HOOK     = false
+  FISHING_AUTO_HOOK     = true
   # The ID of the common event that runs when the player starts fishing (runs
   # instead of showing the casting animation).
   FISHING_BEGIN_COMMON_EVENT = -1
@@ -229,7 +229,8 @@ module Settings
   REGION_MAP_EXTRAS = [
     [0, 51, 16, 15, "mapHiddenBerth", false],
     [0, 52, 20, 14, "mapHiddenFaraday", false],
-	[0, 130, 0, 0, "mapRocketIsland", false]
+	[0, 130, 0, 0, "mapRocketIsland", false],
+	[0, 135, 3, 15, "mapCastformIsland", false],
   ]
 
   #=============================================================================

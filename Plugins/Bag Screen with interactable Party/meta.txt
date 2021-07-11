@@ -1,0 +1,3 @@
+Name         = Bag Screen with interactable Party
+Version      = 1.4
+Credits      = DiegoWT

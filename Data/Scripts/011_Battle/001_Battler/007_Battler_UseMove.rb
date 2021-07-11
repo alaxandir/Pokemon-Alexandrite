@@ -377,6 +377,10 @@ class PokeBattle_Battler
         end
       end
     end
+	# Redirect Dragon Darts first hit if necessary
+    if move.function == "17C" && @battle.pbSideSize(targets[0].index) > 1
+      targets = pbChangeTargets(move,user,targets,0)
+    end
     #---------------------------------------------------------------------------
     magicCoater  = -1
     magicBouncer = -1
@@ -438,7 +442,17 @@ class PokeBattle_Battler
         # NOTE: If a multi-hit move becomes disabled partway through doing those
         #       hits (e.g. by Cursed Body), the rest of the hits continue as
         #       normal.
-        break if !targets.any? { |t| !t.fainted? }   # All targets are fainted
+        if move.function == "17C" && realNumHits < numHits
+          endMove = true
+          @battle.eachBattler do |b|
+            next if b == self
+            endMove = false
+          end
+          break if endMove
+        else
+          # All targets are fainted
+          break if targets.all? { |t| t.fainted? }
+        end
       end
       # Battle Arena only - attack is successful
       @battle.successStates[user.index].useState = 2
@@ -581,7 +595,12 @@ class PokeBattle_Battler
     targets.each { |b| b.damageState.resetPerHit }
     # Count a hit for Parental Bond (if it applies)
     user.effects[PBEffects::ParentalBond] -= 1 if user.effects[PBEffects::ParentalBond]>0
-    # Accuracy check (accuracy/evasion calc)
+    # Redirect Dragon Darts other hits
+    if move.function=="17C" && @battle.pbSideSize(targets[0].index)>1 && hitNum>0
+      targets = pbChangeTargets(move,user,targets,1)
+    end
+    targets.each { |b| b.damageState.resetPerHit }
+	# Accuracy check (accuracy/evasion calc)
     if hitNum==0 || move.successCheckPerHit?
       targets.each do |b|
         next if b.damageState.unaffected

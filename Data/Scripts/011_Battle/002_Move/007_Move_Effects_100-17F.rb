@@ -2601,3 +2601,31 @@ end
 #       Actually, you might as well use high numbers like 500+ (up to FFFF),
 #       just to make sure later additions to Essentials don't clash with your
 #       new effects.
+
+
+#===============================================================================
+# In singles, this move hits the target twice. In doubles, this move hits each
+# target once. If one of the two opponents protects or while semi-invulnerable
+# or is a Fairy-type Pokémon, it hits the opponent that doesn't protect twice.
+# In Doubles, not affected by WideGuard.
+# (Dragon Darts)
+#===============================================================================
+class PokeBattle_Move_17C < PokeBattle_Move_0BD
+  def pbNumHits(user,targets)
+    return 1 if targets.length > 1
+    return 2
+  end
+end
+
+#===============================================================================
+# Prevents both the user and the target from escaping. (Jaw Lock)
+#===============================================================================
+class PokeBattle_Move_17D < PokeBattle_Move
+  def pbAdditionalEffect(user,target)
+    return if user.fainted? || target.fainted? || target.damageState.substitute
+    return if Settings::MORE_TYPE_EFFECTS && target.pbHasType?(:GHOST)
+    return if user.trappedInBattle? || target.trappedInBattle?
+    target.effects[PBEffects::JawLock] = user.index
+    @battle.pbDisplay(_INTL("Neither Pokémon can run away!"))
+  end
+end

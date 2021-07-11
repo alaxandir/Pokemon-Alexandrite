@@ -26,7 +26,7 @@ class Game_Player < Game_Character
     input = ($PokemonSystem.runstyle == 1) ^ Input.press?(Input::ACTION)
     return input && $Trainer.has_running_shoes && !jumping? &&
        !$PokemonGlobal.diving && !$PokemonGlobal.surfing &&
-       !$PokemonGlobal.bicycle && !$game_player.pbTerrainTag.must_walk
+       !$PokemonGlobal.bicycle && !$game_player.pbTerrainTag.must_walk && !$PokemonGlobal.spinning ## && + !spinning are new #e
   end
 
   def pbIsRunning?
@@ -41,8 +41,11 @@ class Game_Player < Game_Character
       if meta && !$PokemonGlobal.bicycle && !$PokemonGlobal.diving && !$PokemonGlobal.surfing
         charset = 1   # Display normal character sprite
         if pbCanRun? && (moving? || @wasmoving) && Input.dir4!=0 && meta[4] && meta[4]!=""
-          charset = 4   # Display running character sprite
+          charset = 4   #4 Display running character sprite
         end
+		if $PokemonGlobal.spinning
+		  charset = 7
+		end
         newCharName = pbGetPlayerCharset(meta,charset)
         @character_name = newCharName if newCharName
         @wasmoving = moving?
@@ -54,6 +57,8 @@ class Game_Player < Game_Character
   def update_command
     if $game_player.pbTerrainTag.ice
       self.move_speed = 4     # Sliding on ice
+	elsif $PokemonGlobal.spinning #e
+      self.move_speed = 3 # Spinning #e 
     elsif !moving? && !@move_route_forcing && $PokemonGlobal
       if $PokemonGlobal.bicycle
         self.move_speed = 5   # Cycling

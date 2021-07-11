@@ -544,6 +544,13 @@ def pbAfterBattle(decision,canLose)
     pkmn.statusCount = 0 if pkmn.status == :POISON   # Bad poison becomes regular
     pkmn.makeUnmega
     pkmn.makeUnprimal
+	newspecies = pkmn.check_evolution_after_battle
+	if newspecies
+      evo = PokemonEvolutionScene.new
+      evo.pbStartScreen(pkmn,newspecies)
+      evo.pbEvolution(false)
+      evo.pbEndScreen
+    end
   end
   if $PokemonGlobal.partner
     $Trainer.heal_party

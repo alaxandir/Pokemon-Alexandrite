@@ -23,7 +23,7 @@ Point = 19,2,Route 118,,,,,
 Point = 20,2,Earthroot Forest,,,,,
 Point = 20,3,Earthroot Forest,,,,,
 Point = 20,4,Earthroot Forest,,,,,
-Point = 16,2,Gold Coast Town,,106,31,30,
+Point = 16,2,Gold Coast Town,,100,31,30,
 Point = 16,1,Coral Sea,,,,,
 Point = 16,0,Coral Island,,,,,
 Point = 15,4,Route 104,,,,,
@@ -113,6 +113,7 @@ Point = 27,9,Bouldergrove City,Powerplant,86,29,23,
 Point = 27,7,Bouldergrove Mine,,,,,
 Point = 27,5,Cinder Island,,,,,
 Point = 2,2,Rocket Island,Rocket Base,,,,130
+Point = 5,17,Castform Island,Paradise Cove,51,22,24,135
 #-------------------------------
 [1]
 Name=Tiall

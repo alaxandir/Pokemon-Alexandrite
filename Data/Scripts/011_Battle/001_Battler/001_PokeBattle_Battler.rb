@@ -43,6 +43,7 @@ class PokeBattle_Battler
   attr_accessor :damageState
   attr_accessor :initialHP     # Set at the start of each move's usage
 
+
   #=============================================================================
   # Complex accessors
   #=============================================================================
@@ -120,6 +121,13 @@ class PokeBattle_Battler
     @statusCount = value
     @pokemon.statusCount = value if @pokemon
     @battle.scene.pbRefreshOne(@index)
+  end
+  
+  attr_reader :critical_hits
+
+  def critical_hits=(value)
+    @critical_hits = value
+    @pokemon.critical_hits = value if @pokemon
   end
 
   #=============================================================================
@@ -585,6 +593,18 @@ class PokeBattle_Battler
     return true if @effects[PBEffects::Outrage]>0
     return true if @effects[PBEffects::Uproar]>0
     return true if @effects[PBEffects::Bide]>0
+    return false
+  end
+
+  def trappedInBattle?
+    return true if @effects[PBEffects::Trapping] > 0
+    return true if @effects[PBEffects::MeanLook] >= 0
+    return true if @effects[PBEffects::JawLock] >= 0
+    @battle.eachBattler { |b| return true if b.effects[PBEffects::JawLock] == @index }
+    #return true if @effects[PBEffects::Octolock] >= 0
+    return true if @effects[PBEffects::Ingrain]
+    #return true if @effects[PBEffects::NoRetreat]
+    return true if @battle.field.effects[PBEffects::FairyLock] > 0
     return false
   end
 

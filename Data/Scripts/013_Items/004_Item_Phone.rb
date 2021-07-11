@@ -56,6 +56,7 @@ def pbPhoneRegisterBattle(message,event,trainertype,trainername,maxbattles)
     pbPhoneIncrement(trainertype,trainername,maxbattles)
   end
   pbMessage(_INTL("\\me[Register phone]Registered {1} in the Pokégear.",displayname))
+  pbSEPlay(beepsoundeffect)
 end
 
 #===============================================================================
@@ -199,8 +200,8 @@ def pbCallTrainer(trtype,trname)
     pbMessage(_INTL("The Trainer is out of range."))
     return   # Can't call if in different region
   end
-  call = pbPhoneGenerateCall(trainer)
-  pbPhoneCall(call,trainer)
+	call = pbPhoneGenerateCall(trainer)
+	pbPhoneCall(call,trainer)
 end
 
 #===============================================================================
@@ -300,4 +301,8 @@ def pbPhoneCall(call,phonenum)
     pbMessage(messages[i])
   end
   pbMessage(_INTL("Click!\\wt[10]\n......\\wt[5] ......\\1"))
+end
+
+def pbConfirmMessage(message,&block)
+  return (pbMessage(message,[_INTL("Yes"),_INTL("No")],2,&block)==0)
 end

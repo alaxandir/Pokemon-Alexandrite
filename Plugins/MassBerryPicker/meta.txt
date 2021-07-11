@@ -1,0 +1,4 @@
+Name         = Mass Berry Picker
+Version      = 1.0
+Website      = RelicCastle
+Credits      = PurpleZaffre

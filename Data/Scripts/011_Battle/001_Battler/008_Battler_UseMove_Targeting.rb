@@ -92,7 +92,7 @@ class PokeBattle_Battler
     target_data = move.pbTarget(user)
     return targets if @battle.switching   # For Pursuit interrupting a switch
     return targets if move.cannotRedirect?
-    return targets if !target_data.can_target_one_foe? || targets.length != 1
+    return targets if move.function != "17C" && !target_data.can_target_one_foe? || targets.length != 1
     priority = @battle.pbPriority(true)
     nearOnly = !target_data.can_choose_distant_target?
     # Spotlight (takes priority over Follow Me/Rage Powder/Lightning Rod/Storm Drain)

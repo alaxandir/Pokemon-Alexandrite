@@ -277,7 +277,7 @@ def pbJustRaiseEffortValues(pkmn, stat, evGain)
   return evGain
 end
 
-def pbRaiseEffortValues(pkmn, stat, evGain = 10, ev_limit = true)
+def pbRaiseEffortValues(pkmn, stat, evGain = 42, ev_limit = true)
   stat = GameData::Stat.get(stat).id
   return 0 if ev_limit && pkmn.ev[stat] >= 100
   evTotal = 0

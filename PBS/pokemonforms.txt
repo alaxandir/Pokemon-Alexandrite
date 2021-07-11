@@ -1806,3 +1806,44 @@ Color = Black
 Pokedex = The glistening geodes on this Pokémon's back can radiate with dazzling blindness, it leaps with powerful hindlegs and surprising agility.
 Generation = 7
 WildItemUncommon = HARDSTONE
+#-------------------------------
+[MILOTIC,1]
+FormName = Mega Milotic
+MegaStone = MILOTICITE
+BaseStats = 95,80,100,81,119,165
+Type1 = WATER
+Type2 = FAIRY
+Abilities = MULTISCALE
+HiddenAbility = MULTISCALE
+Weight = 200
+Pokedex = Beautiful glistening scales scintilate in a rhythmic fashion on this Pokémon's coat
+Generation = 6
+#-------------------------------
+[MEW,1]
+FormName = Mega Mew
+MegaStone = MEWTITE
+BaseStats = 100,80,120,120,130,150
+Type1 = PSYCHIC
+Abilities = PSYCHICSURGE
+HiddenAbility = PSYCHICSURGE
+Weight = 6
+Pokedex = This Pokémon floats effortlessly as its body radiates with pure psychic power, yet the Pokémon looks friendly and carefree.
+Generation = 6
+#-------------------------------
+[FARFETCHD,1]
+FormName = Galarian Form
+Type1 = FIGHTING
+BaseStats = 52,95,55,55,58,62
+Abilities = STEADFAST
+HiddenAbility = SCRAPPY
+Moves = 1,PECK,1,SANDATTACK,5,LEER,10,FURYCUTTER,15,ROCKSMASH,20,BRUTALSWING,25,DETECT,30,KNOCKOFF,35,DEFOG,40,BRICKBREAK,45,SWORDSDANCE,50,SLAM,55,LEAFBLADE,60,FINALGAMBIT,65,BRAVEBIRD
+TutorMoves = ASSURANCE,ATTRACT,BODYSLAM,BRAVEBIRD,BRICKBREAK,BRUTALSWING,CLOSECOMBAT,DUALWINGBEAT,ENDURE,FACADE,FOCUSENERGY,HELPINGHAND,LEAFBLADE,POISONJAB,PROTECT,REST,RETALIATE,REVENGE,ROUND,SLEEPTALK,SNORE,SOLARBLADE,STEELWING,SUBSTITUTE,SUNNYDAY,SUPERPOWER,SWORDSDANCE,THROATCHOP,WORKUP
+EggMoves = COUNTER,COVET,CURSE,DOUBLEEDGE,FEINT,FLAIL,NIGHTSLASH,QUICKATTACK,QUICKGUARD,SIMPLEBEAM,SKYATTACK
+Weight = 42.0
+Pokedex = The stalks of leeks are thicker and longer in the Galar region. Farfetch'd that adapted to these stalks took on a unique form.
+Generation = 8
+WildItemCommon = LEEK
+BattlerPlayerX = -2
+BattlerPlayerY = 58
+BattlerEnemyX = 6
+Evolutions = SIRFETCHD,CriticalHits,3

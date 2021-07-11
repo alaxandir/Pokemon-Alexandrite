@@ -22,6 +22,7 @@ ItemHandlers::UseFromBag.add(:HONEY,proc { |item|
   next 4
 })
 
+
 ItemHandlers::UseFromBag.add(:ESCAPEROPE,proc { |item|
   if $game_player.pbHasDependentEvents?
     pbMessage(_INTL("It can't be used when you have someone with you."))
@@ -95,6 +96,11 @@ def pbRepel(item,steps)
   $PokemonGlobal.repel = steps
   return 3
 end
+
+ItemHandlers::UseInField.add(:CARDCASE,proc { |item|
+  pbTriadList
+  next 1
+})
 
 ItemHandlers::UseInField.add(:REPEL,proc { |item|
   next pbRepel(item,100)
@@ -706,7 +712,7 @@ ItemHandlers::UseOnPokemon.add(:CARBOS,proc { |item,pkmn,scene|
 })
 
 ItemHandlers::UseOnPokemon.add(:HEALTHWING,proc { |item,pkmn,scene|
-  if pbRaiseEffortValues(pkmn,:HP,1,false)==0
+  if pbRaiseEffortValues(pkmn,:HP,2,false)==0
     scene.pbDisplay(_INTL("It won't have any effect."))
     next false
   end
@@ -717,7 +723,7 @@ ItemHandlers::UseOnPokemon.add(:HEALTHWING,proc { |item,pkmn,scene|
 })
 
 ItemHandlers::UseOnPokemon.add(:MUSCLEWING,proc { |item,pkmn,scene|
-  if pbRaiseEffortValues(pkmn,:ATTACK,1,false)==0
+  if pbRaiseEffortValues(pkmn,:ATTACK,2,false)==0
     scene.pbDisplay(_INTL("It won't have any effect."))
     next false
   end
@@ -727,7 +733,7 @@ ItemHandlers::UseOnPokemon.add(:MUSCLEWING,proc { |item,pkmn,scene|
 })
 
 ItemHandlers::UseOnPokemon.add(:RESISTWING,proc { |item,pkmn,scene|
-  if pbRaiseEffortValues(pkmn,:DEFENSE,1,false)==0
+  if pbRaiseEffortValues(pkmn,:DEFENSE,2,false)==0
     scene.pbDisplay(_INTL("It won't have any effect."))
     next false
   end
@@ -737,7 +743,7 @@ ItemHandlers::UseOnPokemon.add(:RESISTWING,proc { |item,pkmn,scene|
 })
 
 ItemHandlers::UseOnPokemon.add(:GENIUSWING,proc { |item,pkmn,scene|
-  if pbRaiseEffortValues(pkmn,:SPECIAL_ATTACK,1,false)==0
+  if pbRaiseEffortValues(pkmn,:SPECIAL_ATTACK,2,false)==0
     scene.pbDisplay(_INTL("It won't have any effect."))
     next false
   end
@@ -747,7 +753,7 @@ ItemHandlers::UseOnPokemon.add(:GENIUSWING,proc { |item,pkmn,scene|
 })
 
 ItemHandlers::UseOnPokemon.add(:CLEVERWING,proc { |item,pkmn,scene|
-  if pbRaiseEffortValues(pkmn,:SPECIAL_DEFENSE,1,false)==0
+  if pbRaiseEffortValues(pkmn,:SPECIAL_DEFENSE,2,false)==0
     scene.pbDisplay(_INTL("It won't have any effect."))
     next false
   end
@@ -757,7 +763,7 @@ ItemHandlers::UseOnPokemon.add(:CLEVERWING,proc { |item,pkmn,scene|
 })
 
 ItemHandlers::UseOnPokemon.add(:SWIFTWING,proc { |item,pkmn,scene|
-  if pbRaiseEffortValues(pkmn,:SPEED,1,false)==0
+  if pbRaiseEffortValues(pkmn,:SPEED,2,false)==0
     scene.pbDisplay(_INTL("It won't have any effect."))
     next false
   end
@@ -1274,4 +1280,156 @@ ItemHandlers::UseOnPokemon.add(:COFFEE,proc { |item,pkmn,scene|
     scene.pbDisplay(_INTL("{1} drank the Coffee and was cured!",pkmn.name))
   end
   next true
+})
+
+#IV VITAMINS
+ItemHandlers::UseOnPokemon.add(:HPVITAMIN,proc{|item,pkmn,scene|
+
+   if pkmn.iv[:HP]>=31
+
+     scene.pbDisplay(_INTL("It won't have any effect."))
+
+     next false
+
+   else
+
+     pkmn.iv[:HP]=(pkmn.iv[:HP]==30) ? 31 : pkmn.iv[:HP]+2
+
+     scene.pbRefresh
+
+     scene.pbDisplay(_INTL("{1}'s HP IV increased to #{pkmn.iv[:HP]}",pkmn.name))
+
+     pkmn.changeHappiness("vitamin")
+	 
+	 pkmn.calc_stats
+
+     next true
+
+   end
+
+})
+ItemHandlers::UseOnPokemon.add(:ATTACKVITAMIN,proc{|item,pkmn,scene|
+
+   if pkmn.iv[:ATTACK]>=31
+
+     scene.pbDisplay(_INTL("It won't have any effect."))
+
+     next false
+
+   else
+
+     pkmn.iv[:ATTACK]=(pkmn.iv[:ATTACK]==30) ? 31 : pkmn.iv[:ATTACK]+2
+
+     scene.pbRefresh
+
+     scene.pbDisplay(_INTL("{1}'s ATTACK IV increased to #{pkmn.iv[:ATTACK]}",pkmn.name))
+
+     pkmn.changeHappiness("vitamin")
+	 
+	 pkmn.calc_stats
+
+     next true
+
+   end
+
+})
+ItemHandlers::UseOnPokemon.add(:DEFENSEVITAMIN,proc{|item,pkmn,scene|
+
+   if pkmn.iv[:DEFENSE]>=31
+
+     scene.pbDisplay(_INTL("It won't have any effect."))
+
+     next false
+
+   else
+
+     pkmn.iv[:DEFENSE]=(pkmn.iv[:DEFENSE]==30) ? 31 : pkmn.iv[:DEFENSE]+2
+
+     scene.pbRefresh
+
+     scene.pbDisplay(_INTL("{1}'s DEFENSE IV increased to #{pkmn.iv[:DEFENSE]}",pkmn.name))
+
+     pkmn.changeHappiness("vitamin")
+	 
+	 pkmn.calc_stats
+
+     next true
+
+   end
+
+})
+ItemHandlers::UseOnPokemon.add(:SPEEDVITAMIN,proc{|item,pkmn,scene|
+
+   if pkmn.iv[:SPEED]>=31
+
+     scene.pbDisplay(_INTL("It won't have any effect."))
+
+     next false
+
+   else
+
+     pkmn.iv[:SPEED]=(pkmn.iv[:SPEED]==30) ? 31 : pkmn.iv[:SPEED]+2
+
+     scene.pbRefresh
+
+     scene.pbDisplay(_INTL("{1}'s SPEED IV increased to #{pkmn.iv[:SPEED]}",pkmn.name))
+
+     pkmn.changeHappiness("vitamin")
+	 
+	 pkmn.calc_stats
+
+     next true
+
+   end
+
+})
+ItemHandlers::UseOnPokemon.add(:SPECIALATTACKVITAMIN,proc{|item,pkmn,scene|
+
+   if pkmn.iv[:SPECIAL_ATTACK]>=31
+
+     scene.pbDisplay(_INTL("It won't have any effect."))
+
+     next false
+
+   else
+
+     pkmn.iv[:SPECIAL_ATTACK]=(pkmn.iv[:SPECIAL_ATTACK]==30) ? 31 : pkmn.iv[:SPECIAL_ATTACK]+2
+
+     scene.pbRefresh
+
+     scene.pbDisplay(_INTL("{1}'s SP. ATTACK IV increased to #{pkmn.iv[:SPECIAL_ATTACK]}",pkmn.name))
+
+     pkmn.changeHappiness("vitamin")
+	 
+	 pkmn.calc_stats
+
+     next true
+
+   end
+
+})
+ItemHandlers::UseOnPokemon.add(:SPECIALDEFENSEVITAMIN,proc{|item,pkmn,scene|
+
+   if pkmn.iv[:SPECIAL_DEFENSE]>=31
+
+     scene.pbDisplay(_INTL("It won't have any effect."))
+
+     next false
+
+   else
+
+     pkmn.iv[:SPECIAL_DEFENSE]=(pkmn.iv[:SPECIAL_DEFENSE]==30) ? 31 : pkmn.iv[:SPECIAL_DEFENSE]+2
+
+     scene.pbRefresh
+
+     scene.pbDisplay(_INTL("{1}'s SP. DEFENSE IV increased to #{pkmn.iv[:SPECIAL_DEFENSE]}",pkmn.name))
+
+     pkmn.changeHappiness("vitamin")
+	 
+	 pkmn.calc_stats
+
+     next true
+
+   end
+
 })

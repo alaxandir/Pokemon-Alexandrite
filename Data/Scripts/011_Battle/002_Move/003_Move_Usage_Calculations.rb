@@ -419,6 +419,12 @@ class PokeBattle_Move
         multipliers[:final_damage_multiplier] *= 1.5
       end
     end
+	# Recalculate the type modifier for Dragon Darts else it does 1 damage on its
+    # second hit on a different target
+    if @function == "17C" && @battle.pbSideSize(target.index)>1
+      typeMod = self.pbCalcTypeMod(self.calcType,user,target)
+      target.damageState.typeMod = typeMod
+    end
     # Type effectiveness
     multipliers[:final_damage_multiplier] *= target.damageState.typeMod.to_f / Effectiveness::NORMAL_EFFECTIVE
     # Burn
