@@ -28,7 +28,7 @@ Land,21
     1,ALAKAZAM,42,44
 #--------------------------------
 [046] # Spirit tower 2f
-Land,21
+Cave,5
     20,MISDREAVUS,43,45
     20,LAMPENT,43,45
     14,RAICHU_1,43,45
@@ -41,7 +41,7 @@ Land,21
     2,ESPEON,43,45
 #--------------------------------
 [047] # Spirit tower 3f
-Land,21
+Cave,5
     20,MISDREAVUS,43,46
     20,LAMPENT,43,46
     14,RAICHU_1,43,46
@@ -54,7 +54,7 @@ Land,21
     2,ESPEON,43,46
 #--------------------------------
 [049] # Spirit tower 4f
-Land,21
+Cave,5
     20,MISDREAVUS,43,46
     20,LAMPENT,43,46
     14,RAICHU_1,43,46
