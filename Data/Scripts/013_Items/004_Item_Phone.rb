@@ -56,7 +56,6 @@ def pbPhoneRegisterBattle(message,event,trainertype,trainername,maxbattles)
     pbPhoneIncrement(trainertype,trainername,maxbattles)
   end
   pbMessage(_INTL("\\me[Register phone]Registered {1} in the Pokégear.",displayname))
-  #pbSEPlay("beepsoundeffect")
 end
 
 #===============================================================================
