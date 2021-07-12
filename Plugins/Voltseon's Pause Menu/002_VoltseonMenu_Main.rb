@@ -56,8 +56,8 @@ class VoltseonsPauseMenu_Scene
 			filename = MENU_FILE_PATH + "Backgrounds/arrow_left_#{DEFAULT_MENU_THEME}"
 		end
 		@sprites["leftarrow"] = AnimatedSprite.new(filename,8,40,28,2,@viewport)
-		@sprites["leftarrow"].x       = 180
-		@sprites["leftarrow"].y       = 328
+		@sprites["leftarrow"].x       = Graphics.width/2 - @sprites["leftarrow"].bitmap.width - ($PokemonTemp.menu_icon_width/4 * 3)
+		@sprites["leftarrow"].y       = Graphics.height - 56 
 		@sprites["leftarrow"].z       = 2
 		@sprites["leftarrow"].visible = true
 		@sprites["leftarrow"].play
@@ -67,8 +67,8 @@ class VoltseonsPauseMenu_Scene
 			filename = MENU_FILE_PATH + "Backgrounds/arrow_right_#{DEFAULT_MENU_THEME}"
 		end
 		@sprites["rightarrow"] = AnimatedSprite.new(filename,8,40,28,2,@viewport)
-		@sprites["rightarrow"].x       = 292
-		@sprites["rightarrow"].y       = 328
+		@sprites["rightarrow"].x       = Graphics.width/2 + ($PokemonTemp.menu_icon_width/4 * 3)
+		@sprites["rightarrow"].y       = Graphics.height - 56
 		@sprites["rightarrow"].z       = 2
 		@sprites["rightarrow"].visible = true
 		@sprites["rightarrow"].play
@@ -375,16 +375,30 @@ class PokemonSystem
 end
 
 #-------------------------------------------------------------------------------
-# Attribute in PokemonTemo to store the last selected  menu option
+# Attribute in PokemonTemp to store the last selected  menu option
 #-------------------------------------------------------------------------------
 class PokemonTemp
 	attr_accessor :last_menu_selection
 	attr_accessor :menu_warining_done
 	attr_accessor :menu_theme_changed
+	attr_accessor :menu_icon_width
 
 	def last_menu_selection
 		@last_menu_selection = 0 if !@last_menu_selection
 		return @last_menu_selection
+	end
+
+	def menu_icon_width
+		if !@menu_icon_width
+			width = 48
+			if safeExists?(MENU_FILE_PATH + "menuDebug")
+			  bmp = RPG::Cache.load_bitmap(MENU_FILE_PATH + "menuDebug")
+				width = bmp.width
+				bmp.dispose
+			end
+		  @menu_icon_width = width
+		end
+		return @menu_icon_width
 	end
 end
 

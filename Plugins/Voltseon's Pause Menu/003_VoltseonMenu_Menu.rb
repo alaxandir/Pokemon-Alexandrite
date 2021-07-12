@@ -7,7 +7,6 @@ class VoltseonsPauseMenu < Component
 		@sprites = spritehash
 		@menu = menu
 		@entries = []
-		@originY = Graphics.height/2 - ICON_HEIGHT / 2
 		@currentSelection = $PokemonTemp.last_menu_selection
 		@shouldRefresh = true
 		# Background image
@@ -19,7 +18,7 @@ class VoltseonsPauseMenu < Component
 		end
 		@sprites["menuback"].z        = -5
 		@sprites["menuback"].oy       = @sprites["menuback"].bitmap.height
-		@sprites["menuback"].y       = @sprites["menuback"].bitmap.height
+		@sprites["menuback"].y        = @sprites["menuback"].bitmap.height
 		# Did you know that the first pokémon you see in Red and Blue, Nidorino plays a Nidorina cry?
 		# This could have been prevented if they just used vCry("Nidorino") ;)
 		# Voltseon's Handy Tools is available at https://reliccastle.com/resources/400/4
@@ -27,16 +26,16 @@ class VoltseonsPauseMenu < Component
 		calculateDisplayIndex
 		redrawMenuIcons
 		@sprites["dummyiconL"] = IconSprite.new(0,0,@viewport)
-		@sprites["dummyiconL"].y = 342
-		@sprites["dummyiconL"].ox = ICON_WIDTH/2
-		@sprites["dummyiconL"].oy = ICON_HEIGHT/2
+		@sprites["dummyiconL"].y = Graphics.height - 42
+		@sprites["dummyiconL"].ox = $PokemonTemp.menu_icon_width/2
+		@sprites["dummyiconL"].oy = $PokemonTemp.menu_icon_width/2
 		@sprites["dummyiconR"] = IconSprite.new(0,0,@viewport)
-		@sprites["dummyiconR"].y = 342
-		@sprites["dummyiconR"].ox = ICON_WIDTH/2
-		@sprites["dummyiconR"].oy = ICON_HEIGHT/2
+		@sprites["dummyiconR"].y = Graphics.height - 42
+		@sprites["dummyiconR"].ox = $PokemonTemp.menu_icon_width/2
+		@sprites["dummyiconR"].oy = $PokemonTemp.menu_icon_width/2
 		calculateXPositions(true)
-		@sprites["entrytext"] = BitmapSprite.new(256,40,@viewport)
-		@sprites["entrytext"].y = @originY + 32
+		@sprites["entrytext"] = BitmapSprite.new(Graphics.width/2,40,@viewport)
+		@sprites["entrytext"].y = Graphics.height - 188
 		@sprites["entrytext"].ox = 128
 		@sprites["entrytext"].x = Graphics.width/2
 		@sprites["leftarrow"].visible = !(@displayIndexes.length == 1)
@@ -139,14 +138,11 @@ class VoltseonsPauseMenu < Component
 			@displayIndexes[0] = nil
 			@displayIndexes.compact!
 		end
-		
 		if @displayIndexes.length > 7
-			offset = (@entryIndexes.length - 7) - 1
-			startVal = @entryIndexes.length - (offset + 7)
-			endVal = @entryIndexes.length - offset
-			@displayIndexes = @displayIndexes[startVal...endVal]
+			offset = (@entryIndexes.length - 7)/2
+			endVal = 7 + offset
+			@displayIndexes = @displayIndexes[offset...endVal]
 		end
-		
 	end
 
 	# Get all the entries to be displayed
@@ -189,39 +185,43 @@ class VoltseonsPauseMenu < Component
 		for i in 0...@displayIndexes.length
 			@sprites["icon#{i}"] = IconSprite.new(0,0,@viewport)
 			@sprites["icon#{i}"].visible = true
-			@sprites["icon#{i}"].y = 342
-			@sprites["icon#{i}"].ox = ICON_WIDTH/2
-			@sprites["icon#{i}"].oy = ICON_HEIGHT/2
+			@sprites["icon#{i}"].y = Graphics.height - 42
+			@sprites["icon#{i}"].ox = $PokemonTemp.menu_icon_width/2
+			@sprites["icon#{i}"].oy = $PokemonTemp.menu_icon_width/2
 		end
 		if @displayIndexes.length == 2
 			@sprites["icon1"] = IconSprite.new(0,0,@viewport)
 			@sprites["icon1"].visible = true
-			@sprites["icon1"].y = 342
-			@sprites["icon1"].ox = ICON_WIDTH/2
-			@sprites["icon1"].oy = ICON_HEIGHT/2
+			@sprites["icon1"].y = Graphics.height - 42
+			@sprites["icon1"].ox = $PokemonTemp.menu_icon_width/2
+			@sprites["icon1"].oy = $PokemonTemp.menu_icon_width/2
 		end
 	end
 
 	# Calculate x positions of icons after animation is complete
 	def calculateXPositions(recalc = false)
 		middle = @displayIndexes.length/2
-		@sprites["icon#{middle}"].x = 256
-		offset = middle == 0 ? 63 : 63/(@displayIndexes.length/2)
-		offset = offset.clamp(21,63)
-		@sprites["dummyiconL"].x = 1 + (ICON_WIDTH/2) + ((offset - 21) * @displayIndexes.length/2) - (ICON_WIDTH + offset)
+		@sprites["icon#{middle}"].x = Graphics.width/2
+		maxdist = Graphics.width/8
+		offset = middle == 0 ? maxdist : maxdist/(@displayIndexes.length/2)
+		offset = offset.clamp(maxdist/3,maxdist)
+		lastx = 0
+		addl_space = 48 - $PokemonTemp.menu_icon_width
 		for i in 0...middle
-			finalx = 1 + (ICON_WIDTH/2) + ((offset - 21) * @displayIndexes.length/2)
-			finalx += ((ICON_WIDTH + offset) * i)
+			finalx = Graphics.width/2 - ($PokemonTemp.menu_icon_width/2) - ((offset - 21) * @displayIndexes.length/2)
+			finalx -= ($PokemonTemp.menu_icon_width + offset + addl_space) * (middle - i)
 			@sprites["icon#{i}"].x = finalx
+			lastx = finalx if i == 0
 		end
+		@sprites["dummyiconL"].x = lastx - ($PokemonTemp.menu_icon_width + offset + addl_space)
 		lastx = 0
 		for i in (middle + 1)...@displayIndexes.length
-			finalx = 256 + (ICON_WIDTH/2) + (@displayIndexes.length < 5 ?  offset/2 : ((offset - 21) * @displayIndexes.length/2))
-			finalx += (ICON_WIDTH + offset) * (i - middle)
+			finalx = Graphics.width/2 + ($PokemonTemp.menu_icon_width/2) + (@displayIndexes.length < 5 ?  offset/2 : ((offset - 21) * @displayIndexes.length/2))
+			finalx += ($PokemonTemp.menu_icon_width + offset + addl_space) * (i - middle)
 			@sprites["icon#{i}"].x = finalx
 			lastx = finalx
 		end
-		@sprites["dummyiconR"].x = lastx + (ICON_WIDTH + offset)
+		@sprites["dummyiconR"].x = lastx + ($PokemonTemp.menu_icon_width + offset + addl_space)
 		return if !recalc
 		@iconsBaseX = {}
 		@iconsDeviationL = {}
@@ -264,9 +264,10 @@ class VoltseonsPauseMenu < Component
 			b2 = @entries[@entryIndexes[0]].icon
 			b1 = ((@entries.length%2==0)? @entries[@entryIndexes[0]] : @entries[@entryIndexes[@displayIndexes.length - 1]]).icon
 		else
-			offset = (@entryIndexes.length - 7) - 1
-			b1 = @entries[@entryIndexes[offset - 1]].icon
-			b2 = @entries[@entryIndexes[@displayIndexes.length + offset]].icon
+			offset = (@entryIndexes.length - 7)/2
+			of2 = (@entryIndexes.length%2 - 1).abs
+			b1 = @entries[@entryIndexes[offset - 1 + of2]].icon
+			b2 = @entries[@entryIndexes[@entryIndexes.length - offset]].icon
 		end
 		@sprites["dummyiconL"].setBitmap(b1)
 		@sprites["dummyiconR"].setBitmap(b2)
