@@ -139,12 +139,14 @@ class VoltseonsPauseMenu < Component
 			@displayIndexes[0] = nil
 			@displayIndexes.compact!
 		end
+		
 		if @displayIndexes.length > 7
 			offset = (@entryIndexes.length - 7) - 1
 			startVal = @entryIndexes.length - (offset + 7)
 			endVal = @entryIndexes.length - offset
 			@displayIndexes = @displayIndexes[startVal...endVal]
 		end
+		
 	end
 
 	# Get all the entries to be displayed
