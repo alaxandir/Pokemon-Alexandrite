@@ -179,3 +179,92 @@ class Game_Player
   end
 end
 ###################################
+# BERRY SMASHER
+##################################
+def pbBerrySmash
+
+ret = nil
+pbFadeOutIn {
+  scene = PokemonBag_Scene.new
+  screen = PokemonBagScreen.new(scene,$PokemonBag)
+  ret = screen.pbChooseItemScreen(Proc.new { |item| GameData::Item.get(item).is_berry? })
+}
+
+if ret
+  params = ChooseNumberParams.new
+  params.setRange(1, $PokemonBag.pbQuantity(ret))
+  params.setInitialValue(1)
+  params.setCancelValue(0)
+  qty = pbMessageChooseNumber(_INTL("Select the number of {1}.", GameData::Item.get(ret.name_plural, params)))
+  $PokemonBag.pbDeleteItem(ret, qty) if qty > 0
+end
+  
+  case $game_variables[1]
+	when nil
+    pbMessage("Did not select a berry.")
+	when :CHERIBERRY
+	when :CHESTOBERRY
+	when :PECHABERRY
+	when :RAWSTBERRY
+	when :ASPEARBERRY
+	when :LEPPABERRY
+	when :ORANBERRY
+	when :PERSIMBERRY
+	when :LUMBERRY
+	when :SITRUSBERRY
+	when :FIGYBERRY
+	when :WIKIBERRY
+	when :MAGOBERRY
+	when :AGUAVBERRY
+	when :IAPAPABERRY
+	when :RAZZBERRY
+	when :BLUKBERRY
+	when :NANABBERRY
+	when :WEPEARBERRY
+	when :PINAPBERRY
+	when :POMEGBERRY
+	when :KELPSYBERRY
+	when :QUALOTBERRY
+	when :HONDEWBERRY
+	when :GREPABERRY
+	when :TAMATOBERRY
+	when :CORNNBERRY
+	when :MAGOSTBERRY
+	when :RABUTABERRY
+	when :NOMELBERRY
+	when :SPELONBERRY
+	when :PAMTREBERRY
+	when :WATMELBERRY
+	when :DURINBERRY
+	when :BELUEBERRY
+	when :OCCABERRY
+	when :PASSHOBERRY
+	when :WACANBERRY
+	when :RINDOBERRY
+	when :YACHEBERRY
+	when :CHOPLEBERRY
+	when :KEBIABERRY
+	when :SHUCABERRY
+	when :COBABERRY
+	when :PAYAPABERRY
+	when :TANGABERRY
+	when :CHARTIBERRY
+	when :KASIBBERRY
+	when :HABANBERRY
+	when :COLBURBERRY
+	when :BABIRIBERRY
+	when :CHILANBERRY
+	when :LIECHIBERRY
+	when :GANLONBERRY
+	when :SALACBERRY
+	when :PETAYABERRY
+	when :APICOTBERRY
+	when :LANSATBERRY
+	when :STARFBERRY
+	when :ENIGMABERRY
+	when :MICLEBERRY
+	when :CUSTAPBERRY
+	when :JABOCABERRY
+	when :ROWAPBERRY
+	end
+end

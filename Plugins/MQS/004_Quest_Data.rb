@@ -235,7 +235,7 @@ Powerplant = {
   }
   
   
-VUPLIX = {
+VULPIX = {
     :ID => "19",
     :Name => "TRADE: Geodude for Vulpix",
     :QuestGiver => "Lass",

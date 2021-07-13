@@ -130,6 +130,16 @@ Land,21
     4,NIDORANmA,5,8
     1,DRASHIMI,5,8
     1,BULBASAUR,5,8
+OldRod
+    45,GOLDEEN,5
+    40,MAGIKARP,5
+	10,POLIWAG,5
+	5,DRASHIMI,5
+GoodRod
+    45,GOLDEEN,15
+    40,MARILL,15
+	10,POLIWAG,15
+	5,DRASHIMI,15
 #-------------------------------
 [042] # Earthroot Town
 OldRod
@@ -165,12 +175,32 @@ Water,2
     9,MAGIKARP,14,16
     1,MAGIKARP,50
 OldRod
-    70,MAGIKARP,10
+    30,MAGIKARP,10
     30,SLOWPOKE,10
+	10,POLIWAG,10
 GoodRod
-    60,MAGIKARP,18
+    50,MAGIKARP,18
     20,GOLDEEN,18
     20,SLOWPOKE,17
+	10,POLIWAG,10
+#-------------------------------
+[048] # Seafoam City
+Water,2
+    60,REMORAID,46,51
+    30,TENTACRUEL,46,51
+    5,OCTILLERY,46,51
+    4,SLOWBRO,46,51
+    1,HUNTAIL,46,51
+OldRod
+    30,WIMPOD,10
+    30,FINNEON,10
+	30,GOLDEEN,10
+	10,MAGIKARP,10
+GoodRod
+    30,WIMPOD,18
+    30,FINNEON,18
+	30,GOLDEEN,18
+	10,MAGIKARP,18
 #-------------------------------
 [082] # Seafoam Cave
 Cave,5
