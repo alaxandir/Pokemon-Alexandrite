@@ -237,6 +237,7 @@ BattleVS		= minorTrainer
 [SISANDBRO]
 BattleVS		= minorTrainer
 [SUPERNERD]
+BattleBGM       = BattleTrainer.ogg
 BattleVS		= minorTrainer
 [SWIMMER2_F]
 BattleVS		= minorTrainer

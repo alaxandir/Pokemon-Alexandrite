@@ -149,10 +149,12 @@ Events.onStepTakenFieldMovement += proc { |_sender, e|
   event = e[0]   # Get the event affected by field movement
   if $scene.is_a?(Scene_Map)
     event.each_occupied_tile do |x, y|
+	if $PokemonSystem.grassanim == 0
       if $MapFactory.getTerrainTag(event.map.map_id, x, y, true).shows_grass_rustle
         $scene.spriteset.addUserAnimation(Settings::GRASS_ANIMATION_ID, x, y, true, 1)
       end
-    end
+	end
+  end
     if event == $game_player
       currentTag = $game_player.pbTerrainTag
       if currentTag.waterfall_crest
