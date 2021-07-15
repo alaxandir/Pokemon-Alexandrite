@@ -394,6 +394,46 @@ MapPosition = 0,5,17
 [058]
 # Filler Sea
 #-------------------------------
+[066]
+# Shimmerwood Forest
+Outdoor = true
+ShowArea = true
+Weather = None,0
+MapPosition = 0,9,7
+BattleBack = Forest
+#-------------------------------
+[067]
+# Shimmerwood Forest
+Outdoor = true
+ShowArea = true
+Weather = None,0
+MapPosition = 0,10,7
+BattleBack = Forest
+#-------------------------------
+[068]
+# Shimmerwood Forest
+Outdoor = true
+ShowArea = true
+Weather = None,0
+MapPosition = 0,11,8
+BattleBack = Forest
+#-------------------------------
+[069]
+# Shimmerwood Forest
+Outdoor = true
+ShowArea = true
+Weather = None,0
+MapPosition = 0,10,9
+BattleBack = Forest
+#-------------------------------
+[070]
+# Shimmerwood Forest
+Outdoor = true
+ShowArea = true
+Weather = None,0
+MapPosition = 0,10,8
+BattleBack = Forest
+#-------------------------------
 [076]
 # Seafoam PKMN Ctr.
 Outdoor = false

@@ -10,7 +10,7 @@
 # a random chance, the items are called 
 # :BERRYA, :BERRYT, :BERRYC, :BERRYG, :BERRYU
 # This is based on DNA/RNA where in the real world 
-# Thyamine and Uracil are never present together.
+# Thiamine and Uracil are never present together.
 #
 # You will need to add the following five items to your items.txt
 #
@@ -27,7 +27,7 @@
 #
 # These items do not do anything by themselves, but
 # you are encouraged to find a use for these items
-# via selling or combining, or alternatively I reccomend
+# via selling or combining, or alternatively I recommend
 # that you use ThatWelshOne_'s item crafting system to
 # allow these to be combined in a crafting interface.
 #

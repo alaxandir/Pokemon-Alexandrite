@@ -202,6 +202,81 @@ GoodRod
 	30,GOLDEEN,18
 	10,MAGIKARP,18
 #-------------------------------
+[066] # Shimmerwood
+Land,21
+    20,DUSTOX,24,27
+    20,JOLTIK,24,27
+    10,AMOONGUSS,24,27
+    10,COMBEE,24,27
+    10,NUZLEAF,24,27
+    10,SKIPLOOM,24,27
+    5,MURKROW,24,27
+    5,HERACROSS,24,27
+    4,PINSIR,24,27
+    4,SOLROCK,24,27
+    1,LEAFEON,24,27
+    1,TRAPINCH,24,27
+#-------------------------------
+[067] # Shimmerwood
+Land,21
+    20,DUSTOX,24,27
+    20,JOLTIK,24,27
+    10,AMOONGUSS,24,27
+    10,COMBEE,24,27
+    10,NUZLEAF,24,27
+    10,SKIPLOOM,24,27
+    5,MURKROW,24,27
+    5,HERACROSS,24,27
+    4,PINSIR,24,27
+    4,SOLROCK,24,27
+    1,LEAFEON,24,27
+    1,TRAPINCH,24,27
+#-------------------------------
+[068] # Shimmerwood
+Land,21
+    20,DUSTOX,24,27
+    20,JOLTIK,24,27
+    10,AMOONGUSS,24,27
+    10,COMBEE,24,27
+    10,NUZLEAF,24,27
+    10,SKIPLOOM,24,27
+    5,MURKROW,24,27
+    5,HERACROSS,24,27
+    4,PINSIR,24,27
+    4,SOLROCK,24,27
+    1,LEAFEON,24,27
+    1,TRAPINCH,24,27
+#-------------------------------
+[069] # Shimmerwood
+Land,21
+    20,DUSTOX,24,27
+    20,JOLTIK,24,27
+    10,AMOONGUSS,24,27
+    10,COMBEE,24,27
+    10,NUZLEAF,24,27
+    10,SKIPLOOM,24,27
+    5,MURKROW,24,27
+    5,HERACROSS,24,27
+    4,PINSIR,24,27
+    4,SOLROCK,24,27
+    1,LEAFEON,24,27
+    1,TRAPINCH,24,27
+#-------------------------------
+[070] # Shimmerwood
+Land,21
+    20,DUSTOX,24,27
+    20,JOLTIK,24,27
+    10,AMOONGUSS,24,27
+    10,COMBEE,24,27
+    10,NUZLEAF,24,27
+    10,SKIPLOOM,24,27
+    5,MURKROW,24,27
+    5,HERACROSS,24,27
+    4,PINSIR,24,27
+    4,SOLROCK,24,27
+    1,LEAFEON,24,27
+    1,TRAPINCH,24,27
+#-------------------------------
 [082] # Seafoam Cave
 Cave,5
     20,DIGLETT,4,6
