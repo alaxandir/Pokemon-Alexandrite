@@ -45,29 +45,29 @@ DYNAMAX
 SINGLE
   XYZ              = 116,252,21
 DOUBLE
-  XYZ              = 80,240,21
+  XYZ              = 70,240,21
 TRIPLE
-  XYZ              = 76,234,21
+  XYZ              = 66,234,21
 #-------------------------------
 [BATTLERPOS-1]
 SINGLE
   XYZ              = 234,152,11
 DOUBLE
-  XYZ              = 260,148,15
+  XYZ              = 264,156,15
 TRIPLE
   XYZ              = 264,156,18
 #-------------------------------
 [BATTLERPOS-2]
 DOUBLE
-  XYZ              = 188,252,25
+  XYZ              = 168,262,25
 TRIPLE
   XYZ              = 142,244,25
 #-------------------------------
 [BATTLERPOS-3]
 DOUBLE
-  XYZ              = 202,140,11
+  XYZ              = 220,148,11
 TRIPLE
-  XYZ              = 210,154,15
+  XYZ              = 220,154,15
 #-------------------------------
 [BATTLERPOS-4]
 TRIPLE

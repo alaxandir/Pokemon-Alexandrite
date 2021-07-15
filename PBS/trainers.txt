@@ -790,13 +790,6 @@ LoseText = "..."
 Pokemon = TOBISHIMI,38
 Pokemon = SEALEO,38
 #-------------------------------
-[ICEDIVER,Sarah]
-LoseText = "..."
-Pokemon = MAWILE,37
-Pokemon = WHIMSICOTT,37
-Pokemon = SNOVER,38
-Pokemon = ABOMASNOW,38
-#-------------------------------
 [WINTERCOOL_M,Fonz]
 LoseText = "..."
 Pokemon = KANKERSAUR,38
@@ -807,16 +800,13 @@ LoseText = "..."
 Pokemon = WEAVILE,38
 Pokemon = STARMIE,38
 #-------------------------------
-[WINTERCOOL_F,Ashlyn]
+[WINTERCOOLS,Ashlyn & Jeremy]
 LoseText = "..."
 Pokemon = HITMONCHAN,37
-Pokemon = HYPNO,38
-Pokemon = ELECTABUZZ,39
-#-------------------------------
-[WINTERCOOL_M,Jeremy]
-LoseText = "..."
 Pokemon = PIDGEOT,37
+Pokemon = HYPNO,38
 Pokemon = PROBOPASS,38
+Pokemon = ELECTABUZZ,39
 Pokemon = GOLETT,39
 #-------------------------------
 [WINTERCOOL_M,David]
@@ -952,9 +942,9 @@ Pokemon = BLAZIKEN,47
 [LEADER_Lee,Lee]
 LoseText = "..."
 Pokemon = TOBISHIMI,47
+    Moves = ICEFANG,LIQUIDATION,CLOSECOMBAT,BULKUP
+    AbilityIndex = 0
     IV = 24,24,24,24,24,24
-	AbilityIndex = 0
-	Moves = ICEFANG,LIQUIDATION,CLOSECOMBAT,BULKUP
 Pokemon = BLAZIKEN,47
     Moves = SLASH,FLAMECHARGE,BLAZEKICK,DOUBLEKICK
     IV = 24,24,24,24,24,24
@@ -1837,11 +1827,11 @@ Pokemon = DRAGONAIR,40
 LoseText = "Does my training mean nothing?"
 Pokemon = MAMOSWINE,43
 Pokemon = HOUNDOOM,43
-	Item = HOUNDOOMINITE
+    Item = HOUNDOOMINITE
 Pokemon = ELECTABUZZ,43
 Pokemon = DRAGONAIR,43
 Pokemon = RAPIDASH,43
-	Form = 1
+    Form = 1
 #-------------------------------
 [HIKER,Noah]
 Items = HYPERPOTION
@@ -1861,7 +1851,7 @@ Items = HYPERPOTION
 LoseText = "Harder than winning an argument on the internet! You're nuts kid!"
 Pokemon = CARBINK,39
 Pokemon = STEELIX,39
-	Item = STEELIXITE
+    Item = STEELIXITE
 Pokemon = GOLEM,39
 #-------------------------------
 [ICEDIVER,Sarah]
@@ -1885,7 +1875,7 @@ Pokemon = MAWILE,43
 Pokemon = WHIMSICOTT,43
 Pokemon = WALREIN,43
 Pokemon = ALTARIA,43
-	Item = ALTARIANITE
+    Item = ALTARIANITE
 Pokemon = ABOMASNOW,44
 Pokemon = CLOYSTER,44
 #-------------------------------
@@ -1898,21 +1888,21 @@ Pokemon = AGGRON,43
 Items = HYPERPOTION,FULLHEAL
 LoseText = "..."
 Pokemon = AGGRON,45
-	Item = AGGRONITE
+    Item = AGGRONITE
 Pokemon = RAPIDASH,45
-	Form = 1
+    Form = 1
 Pokemon = SUDOWOODO,45
 #-------------------------------
 [TRAILBLAZER,Mitchell,2]
 Items = HYPERPOTION,FULLHEAL
 LoseText = "..."
 Pokemon = AGGRON,48
-	Item = AGGRONITE
+    Item = AGGRONITE
 Pokemon = RAPIDASH,48
-	Form = 1
+    Form = 1
 Pokemon = SUDOWOODO,48
-Pokemon = RATICATE, 48
-	Form = 1
+Pokemon = RATICATE,48
+    Form = 1
 #-------------------------------
 [GAMBLER,Ornn]
 LoseText = "Awh, come on!"
@@ -1946,7 +1936,7 @@ Pokemon = WIGGLYTUFF,50
     IV = 20,20,20,20,20,20
 Pokemon = ALAKAZAM,50
     IV = 26,26,26,26,26,26
-	#-------------------------------
+#-------------------------------
 [POKEMONBREEDER,Juliet,1]
 LoseText = "That just can't be right."
 Pokemon = NIDOQUEEN,52
@@ -1959,16 +1949,16 @@ Pokemon = SLOWBRO,53
     IV = 26,26,26,26,26,26
 Pokemon = GARDEVOIR,53
     IV = 26,26,26,26,26,26
-	#-------------------------------
+#-------------------------------
 [POKEMONBREEDER,Juliet,2]
-LoseText = But I trained my EV's so hard!"
+LoseText = "But I trained my EV's so hard!\""
 Pokemon = NIDOQUEEN,55
     IV = 28,28,28,28,28,28
 Pokemon = WIGGLYTUFF,55
     IV = 20,20,20,20,20,20
 Pokemon = ALAKAZAM,56
+    Item = ALAKAZITE
     IV = 26,26,26,26,26,26
-	Item = ALAKAZITE
 Pokemon = SLOWBRO,56
     IV = 26,26,26,26,26,26
 Pokemon = GARDEVOIR,56
@@ -2054,7 +2044,7 @@ Pokemon = HOUNDOOM,60
 Items = FULLRESTORE
 LoseText = "....."
 Pokemon = GARCHOMP,50
-	Moves = DRAGONTAIL,STEALTHROCK,CRUNCH,STONEEDGE
+    Moves = DRAGONTAIL,STEALTHROCK,CRUNCH,STONEEDGE
     AbilityIndex = 2
     Item = LIFEORB
     Nature = ADAMANT

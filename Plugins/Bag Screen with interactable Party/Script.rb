@@ -1,5 +1,5 @@
 #===============================================================================
-#
+# Creating specific Bag and Party functionalities
 #===============================================================================
 class Window_PokemonBag < Window_DrawableCommand
   attr_reader :pocket
@@ -406,21 +406,21 @@ class PokemonBag_Scene
   ITEMLISTSHADOWCOLOR   = Color.new(160,160,168)
   ITEMTEXTBASECOLOR     = Color.new(239,239,239)
   ITEMTEXTSHADOWCOLOR   = ITEMLISTSHADOWCOLOR
-  POCKETNAMEBASECOLOR   = Color.new(248,240,240)
-  POCKETNAMESHADOWCOLOR = Color.new(140,80,80)
+  POCKETNAMEBASECOLOR   = Color.new(139,74,73)
+  POCKETNAMESHADOWCOLOR = Color.new(221,111,35)
   ITEMSVISIBLE          = 6
 
   def pbUpdate
     pbUpdateSpriteHash(@sprites)
   end
 
-  def pbStartScene(bag,choosing=false,filterproc=nil,resetpocket=true)
+  def pbStartScene(bag,party,choosing=false,filterproc=nil,resetpocket=true)
     @viewport = Viewport.new(0,0,Graphics.width,Graphics.height)
     @viewport.z = 99999
     @bag        = bag
     @choosing   = choosing
     @filterproc = filterproc
-		@party      = $Trainer.party
+    @party      = party
     
     pbRefreshFilter
     lastpocket = @bag.lastpocket
@@ -509,9 +509,23 @@ class PokemonBag_Scene
 
   def pbFadeOutScene
     @oldsprites = pbFadeOutAndHide(@sprites)
+    @oldtext = []
+    for i in 0...Settings::MAX_PARTY_SIZE
+      @oldtext.push(@sprites["pokemon#{i}"].text)
+      @sprites["pokemon#{i}"].dispose
+    end
   end
 
   def pbFadeInScene
+    for i in 0...Settings::MAX_PARTY_SIZE
+      if @party[i]
+        @sprites["pokemon#{i}"] = PokemonBagPartyPanel.new(@party[i],i,@viewport)
+      else
+        @sprites["pokemon#{i}"] = PokemonBagPartyBlankPanel.new(@party[i],i,@viewport)
+      end
+      @sprites["pokemon#{i}"].text = @oldtext[i]
+    end
+    @oldtext = nil
     pbFadeInAndShow(@sprites,@oldsprites)
     @oldsprites = nil
   end
@@ -585,7 +599,6 @@ class PokemonBag_Scene
   end
   
   def pbRefreshParty
-    @party = $Trainer.party
     for i in 0...Settings::MAX_PARTY_SIZE
       if @party[i]
         @sprites["pokemon#{i}"].pokemon = @party[i]
@@ -722,7 +735,7 @@ class PokemonBag_Scene
           end
         end
       else
-        for i in $Trainer.party
+        for i in @party
           annotations.push((elig) ? _INTL("ABLE") : _INTL("NOT ABLE"))
         end
       end
@@ -1174,7 +1187,7 @@ class PokemonBagScreen
   end
 
   def pbStartScreen
-    @scene.pbStartScene(@bag)
+    @scene.pbStartScene(@bag,$Trainer.party)
     item = nil
     loop do
       item = @scene.pbChooseItem
@@ -1189,14 +1202,14 @@ class PokemonBagScreen
       commands = []
       # Generate command list
       commands[cmdRead = commands.length]       = _INTL("Read") if itm.is_mail?
-      if ItemHandlers.hasOutHandler(item) || (itm.is_machine? && $Trainer.party.length>0)
+      if ItemHandlers.hasOutHandler(item) || (itm.is_machine? && @party.length>0)
         if ItemHandlers.hasUseText(item)
           commands[cmdUse = commands.length]    = ItemHandlers.getUseText(item)
         else
           commands[cmdUse = commands.length]    = _INTL("Use")
         end
       end
-      commands[cmdGive = commands.length]       = _INTL("Give") if $Trainer.pokemon_party.length > 0 && itm.can_hold?
+      commands[cmdGive = commands.length]       = _INTL("Give") if $Trainer.party.length > 0 && itm.can_hold?
       commands[cmdToss = commands.length]       = _INTL("Toss") if !itm.is_important? || $DEBUG
       if @bag.pbIsRegistered?(item)
         commands[cmdRegister = commands.length] = _INTL("Deselect")
@@ -1303,7 +1316,7 @@ class PokemonBagScreen
   def pbChooseItemScreen(proc=nil)
     oldlastpocket = @bag.lastpocket
     oldchoices = @bag.getAllChoices
-    @scene.pbStartScene(@bag,true,proc)
+    @scene.pbStartScene(@bag,$Trainer.party,true,proc)
     item = @scene.pbChooseItem
     @scene.pbEndScene
     @bag.lastpocket = oldlastpocket
@@ -1317,7 +1330,7 @@ class PokemonBagScreen
       $PokemonGlobal.pcItemStorage = PCItemStorage.new
     end
     storage = $PokemonGlobal.pcItemStorage
-    @scene.pbStartScene(storage)
+    @scene.pbStartScene(storage,$Trainer.party)
     loop do
       item = @scene.pbChooseItem
       break if !item
@@ -1347,7 +1360,7 @@ class PokemonBagScreen
 
   # UI logic for depositing an item in the item storage screen.
   def pbDepositItemScreen
-    @scene.pbStartScene(@bag)
+    @scene.pbStartScene(@bag,$Trainer.party)
     if !$PokemonGlobal.pcItemStorage
       $PokemonGlobal.pcItemStorage = PCItemStorage.new
     end
@@ -1386,7 +1399,7 @@ class PokemonBagScreen
       $PokemonGlobal.pcItemStorage = PCItemStorage.new
     end
     storage = $PokemonGlobal.pcItemStorage
-    @scene.pbStartScene(storage)
+    @scene.pbStartScene(storage,$Trainer.party)
     loop do
       item = @scene.pbChooseItem
       break if !item
@@ -1501,9 +1514,12 @@ class PokeBattle_Scene
     oldChoices    = $PokemonBag.getAllChoices
     $PokemonBag.lastpocket = @bagLastPocket if @bagLastPocket!=nil
     $PokemonBag.setAllChoices(@bagChoices) if @bagChoices!=nil
-    # Start Bag screen
+    # Setting up party and starting Bag screen
+    partyPos = @battle.pbPartyOrder(idxBattler)
+    partyStart, _partyEnd = @battle.pbTeamIndexRangeFromBattlerIndex(idxBattler)
+    modParty = @battle.pbPlayerDisplayParty(idxBattler)
     itemScene = PokemonBag_Scene.new
-    itemScene.pbStartScene($PokemonBag,true,Proc.new { |item|
+    itemScene.pbStartScene($PokemonBag,modParty,true,Proc.new { |item|
       useType = GameData::Item.get(item).battle_use
       next useType && useType>0
       },false)

@@ -55,6 +55,18 @@ class PokeBattle_Scene
         pbPlayDecisionSE
         ret = -2
         break
+	  elsif Input.trigger?(Input::ACTION) # New, check stats
+        player = @battle.array_change_stats_in_battle
+        opponent = @battle.array_change_stats_in_battle(1)
+        quantity = []
+        2.times { |i| quantity << @battle.pbSideBattlerCount(i) }
+        activef = @battle.active_field
+        actives = @battle.active_side
+        activep = @battle.active_position
+        team = [player, opponent]
+        activestore = [activef, actives, activep]
+        CheckStatsInBattle.show(team, quantity, activestore)
+		#break
       end
     end
     # hide command window
@@ -109,6 +121,7 @@ class CommandWindowEBDX
 
     @btnCmd = pbBitmap(@path+@cmdImg)
     @btnEmp = pbBitmap(@path+@empImg)
+	@btnHint = pbBitmap(@path+@hintImg) #EDIT	
 
     @sprites["sel"] = SpriteSheet.new(@viewport,4)
     @sprites["sel"].setBitmap(pbSelBitmap(@path+@selImg,Rect.new(0,0,92,38)))
@@ -122,6 +135,7 @@ class CommandWindowEBDX
     @sprites["bg"].create_rect(@viewport.width,40,Color.new(0,0,0,150))
     @sprites["bg"].bitmap = pbBitmap(@path+@barImg) if !@barImg.nil?
     @sprites["bg"].y = @viewport.height
+	
     self.update
   end
   #-----------------------------------------------------------------------------
@@ -133,6 +147,7 @@ class CommandWindowEBDX
     @empImg = "btnEmpty"
     @selImg = "cmdSel"
     @parImg = "partyLine"
+	@hintImg = "hintButton" #EDIT
     @barImg = nil
     # looks up next cached metrics first
     d1 = EliteBattle.get(:nextUI)
@@ -182,6 +197,15 @@ class CommandWindowEBDX
       @sprites["b#{i}"].y = @viewport.height - 36 + 80
     end
     @sprites["bg"].y = @viewport.height + 40
+	
+	#EDIT
+	@sprites["hint"] = Sprite.new(@viewport)										#
+    @sprites["hint"].bitmap = pbBitmap(@path + @hintImg)							#	
+    @sprites["hint"].z = 101														#
+    @sprites["hint"].src_rect.width /= 2											#
+    @sprites["hint"].center!														#
+    @sprites["hint"].x = 30															#
+    @sprites["hint"].y = @viewport.height - 35 										#
   end
   #-----------------------------------------------------------------------------
   #  compile command menu
@@ -223,6 +247,7 @@ class CommandWindowEBDX
   def dispose
     @btnCmd.dispose
     @btnEmp.dispose
+	@btnHint.dispose
     pbDisposeSpriteHash(@sprites)
   end
   def color; end; def color=(val); end
@@ -275,6 +300,7 @@ class CommandWindowEBDX
   #  show command menu animation
   #-----------------------------------------------------------------------------
   def show
+
     @sprites["sel"].visible = false
     @sprites["bg"].y -= @sprites["bg"].bitmap.height/4
     for i in 0...@indexes.length
@@ -283,6 +309,7 @@ class CommandWindowEBDX
     end
   end
   def showPlay
+  	@sprites["hint"].visible = true
     8.times do
       self.show; @scene.wait(1, true)
     end
@@ -292,6 +319,7 @@ class CommandWindowEBDX
   #-----------------------------------------------------------------------------
   def hide(skip = false)
     return if skip
+
     @sprites["sel"].visible = false
     @sprites["bg"].y += @sprites["bg"].bitmap.height/4
     for i in 0...@indexes.length
@@ -300,6 +328,7 @@ class CommandWindowEBDX
     end
   end
   def hidePlay
+	@sprites["hint"].visible = false
     8.times do
       self.hide; @scene.wait(1, true)
     end

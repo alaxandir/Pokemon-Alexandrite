@@ -20,7 +20,7 @@ def pbMassBerryPicker(num1,num2,map=nil)
   map = $game_map.map_id if map == nil
   harvestedBerries = false
   for i in num1..num2
-    berryData = $PokemonGlobal.eventvars[[map,i]]
+    berryData = i.variable#[[map,i]]
     if berryData
       berryToReceive=berryData[1]
       if berryData[0] == 5

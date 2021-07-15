@@ -1,0 +1,5 @@
+Name         = Berry Centrifuge
+Version      = 1.0
+Requires     = v19.1 Hotfixes
+Website      = https://reliccastle.com/resources/featured/
+Credits      = AiurJordan, GolisopodUser, Vendily, ThatWelshOne_

@@ -116,4 +116,4 @@
 113,ELITEFOUR_William,Elite Four,100,BattleBoss,,e4appears,Male,255,
 114,ELITEFOUR_Kyra,Elite Four,100,ChairmanRose,,e4appears,Female,255,
 115,ELITEFOUR_Anya,Elite Four,100,DecisiveBattle,,e4appears,Female,255,
-116,NEWTRAINERTYPE,NewTrainerType,30,,,,Male,,
+117,WINTERCOOLS,Cool Trainers,70,Trainer_Battle_Kanto,,Cooltrainer,Mixed,80,
