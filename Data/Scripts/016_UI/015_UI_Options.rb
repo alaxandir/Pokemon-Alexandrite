@@ -14,6 +14,7 @@ class PokemonSystem
   attr_accessor :sevolume
   attr_accessor :textinput
   attr_accessor :difficulty
+  attr_accessor :grassanim
 
   def initialize
     @textspeed   = 1     # Text speed (0=slow, 1=normal, 2=fast)
@@ -28,11 +29,17 @@ class PokemonSystem
     @sevolume    = 60    # Volume of sound effects
     @textinput   = 0     # Text input mode (0=cursor, 1=keyboard)
 	@difficulty  = 0     #0.6.1
+	@grassanim   = 0     #0.7.2
 	end
 	
   def difficulty						#0.6.1
 	@difficulty = 0 if !@difficulty		#!
   return @difficulty					#!
+  end
+  
+  def grassanim						#0.7.2
+	@grassanim = 0 if !@grassanim   #!
+  return @grassanim					#!
   end
 
 end
@@ -354,22 +361,19 @@ class PokemonOption_Scene
 				if value > 0
 				$PokemonSystem.battlestyle = 1
 				end
-				$PokemonSystem.difficulty = value
-			if $PokemonSystem.difficulty == 0
+			if $PokemonSystem.difficulty != value
+			$PokemonSystem.difficulty = value
+			case $PokemonSystem.difficulty
+			when 0 
+				@sprites["textbox"].text =(_INTL("No special rules, normal Pokémon gameplay."))
+			when 1
+				@sprites["textbox"].text =(_INTL("Limit of 4 items in trainer battles. Set battle mode only."))
+			when 2
+				@sprites["textbox"].text =(_INTL("As Normal but only 3 items. Level caps based on Gym Badges."))
+			when 3
 				pbSetSmallFont(@sprites["textbox"].contents)
-				@sprites["textbox"].text           =(_INTL("No special rules, normal Pokémon gameplay."))
+				@sprites["textbox"].text =(_INTL("Hard Mode but only 2 items and Pokémon Centers cost money. Can be very difficult!"))
 			end
-			if $PokemonSystem.difficulty == 1
-				pbSetSmallFont(@sprites["textbox"].contents)
-				@sprites["textbox"].text           =(_INTL("Limit of 4 item in trainer battles. Set battle mode only."))
-			end
-			if $PokemonSystem.difficulty == 2	
-				pbSetSmallFont(@sprites["textbox"].contents)
-				@sprites["textbox"].text           =(_INTL("As Normal but 3 items. Level caps based on Gym Badges."))
-			end
-			if $PokemonSystem.difficulty == 3
-				pbSetSmallFont(@sprites["textbox"].contents)
-				@sprites["textbox"].text           =(_INTL("As Hard but 2 items. PKMN Centers cost $ based on avg level of party. Can be very punishing."))
 			end
 			}
 	    ),
@@ -412,7 +416,17 @@ class PokemonOption_Scene
              pbSetResizeFactor($PokemonSystem.screensize)
            end
          }
-       )														  		                               #0.6.1
+       ),
+       EnumOption.new(_INTL("Grass Step Animation"),[_INTL("On"),_INTL("Off")],
+         proc { $PokemonSystem.grassanim },
+         proc { |value| 
+		 if $PokemonSystem.grassanim != value
+		 $PokemonSystem.grassanim = value
+		 pbSetSmallFont(@sprites["textbox"].contents)
+		 @sprites["textbox"].text =(_INTL("Disables the grass rustling when walking, useful for lower-end computers."))
+		 end
+		 }
+       )
     ]
     @PokemonOptions = pbAddOnOptions(@PokemonOptions)
     @sprites["option"] = Window_PokemonOption.new(@PokemonOptions,0,

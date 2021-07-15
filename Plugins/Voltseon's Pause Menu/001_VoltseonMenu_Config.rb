@@ -20,7 +20,7 @@
 MENU_FILE_PATH = "Graphics/Pictures/Voltseon's Pause Menu/"
 
 # An array of aLL the Menu Entry Classes from 005_VoltseonMenu_Entries that
-# need to be loaded
+# need to be loaded , "MenuEntryMap"
 MENU_ENTRIES = [
 	"MenuEntryPokemon", "MenuEntryPokedex", "MenuEntryBag", "MenuEntryPokegear",
 	"MenuEntryTrainer", "MenuEntryMap", "MenuEntryExitBugContest",

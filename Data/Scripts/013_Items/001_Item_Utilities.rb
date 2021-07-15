@@ -637,7 +637,7 @@ def pbGiveItemToPokemon(item,pkmn,scene,pkmnid=0)
     end
   else
     if !GameData::Item.get(item).is_mail? || pbWriteMail(item,pkmn,pkmnid,scene)
-      $PokemonBag.pbDeleteItem(item)
+	  $PokemonBag.pbDeleteItem(item)
       pkmn.item = item
       scene.pbDisplay(_INTL("{1} is now holding the {2}.",pkmn.name,newitemname))
       return true

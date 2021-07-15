@@ -178,4 +178,4 @@ class Game_Player
     move_creepy_event(@direction) if $PokemonTemp.mirror_guy_eventid != nil
   end
 end
-###################################
+

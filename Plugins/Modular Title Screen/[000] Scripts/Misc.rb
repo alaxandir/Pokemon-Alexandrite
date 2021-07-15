@@ -87,7 +87,7 @@ class MTS_Element_MX2
     # initializes pokemon sprite
     @sprites["poke"] = Sprite.new(@viewport)
     @sprites["poke"].bitmap = pbBitmap("Graphics/MODTS/Panorama/pokemon")
-    @sprites["poke"].src_rect.set(0,0,@sprites["poke"].bitmap.height,@sprites["poke"].bitmap.width/186)
+    @sprites["poke"].src_rect.set(0,0,@sprites["poke"].bitmap.height,@sprites["poke"].bitmap.width/6)
     @sprites["poke"].z = z.nil? ? 100 : z
     @sprites["poke"].ox = @sprites["poke"].src_rect.width/2
     @sprites["poke"].oy = @sprites["poke"].src_rect.height

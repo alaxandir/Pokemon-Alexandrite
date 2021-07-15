@@ -280,13 +280,13 @@ def pbItemCrafter(stock,speech1=nil,speech2=nil)
   if stock.length==0
     raise _INTL("After data validation, there are no items left in your input array. Please check for typos before trying again.")
   end
-  if pbConfirmMessage(_INTL("Would you like to use the synthesizer?"))
+  #if pbConfirmMessage(_INTL("Would you like to use the synthesizer?"))
     #pbMessage(speech1 ? speech1 : _INTL("Let's get started!"))
     pbFadeOutIn {
       scene = ItemCraft_Scene.new
       screen = ItemCraft_Screen.new(scene,stock)
       screen.pbStartScreen
     }
-  end
+  #end
   #pbMessage(speech2 ? speech2 : _INTL("The machine powered down."))
 end

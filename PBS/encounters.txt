@@ -28,7 +28,7 @@ Land,21
     1,ALAKAZAM,42,44
 #--------------------------------
 [046] # Spirit tower 2f
-Land,21
+Cave,5
     20,MISDREAVUS,43,45
     20,LAMPENT,43,45
     14,RAICHU_1,43,45
@@ -41,7 +41,7 @@ Land,21
     2,ESPEON,43,45
 #--------------------------------
 [047] # Spirit tower 3f
-Land,21
+Cave,5
     20,MISDREAVUS,43,46
     20,LAMPENT,43,46
     14,RAICHU_1,43,46
@@ -54,7 +54,7 @@ Land,21
     2,ESPEON,43,46
 #--------------------------------
 [049] # Spirit tower 4f
-Land,21
+Cave,5
     20,MISDREAVUS,43,46
     20,LAMPENT,43,46
     14,RAICHU_1,43,46
@@ -130,6 +130,16 @@ Land,21
     4,NIDORANmA,5,8
     1,DRASHIMI,5,8
     1,BULBASAUR,5,8
+OldRod
+    45,GOLDEEN,5
+    40,MAGIKARP,5
+	10,POLIWAG,5
+	5,DRASHIMI,5
+GoodRod
+    45,GOLDEEN,15
+    40,MARILL,15
+	10,POLIWAG,15
+	5,DRASHIMI,15
 #-------------------------------
 [042] # Earthroot Town
 OldRod
@@ -165,12 +175,107 @@ Water,2
     9,MAGIKARP,14,16
     1,MAGIKARP,50
 OldRod
-    70,MAGIKARP,10
+    30,MAGIKARP,10
     30,SLOWPOKE,10
+	10,POLIWAG,10
 GoodRod
-    60,MAGIKARP,18
+    50,MAGIKARP,18
     20,GOLDEEN,18
     20,SLOWPOKE,17
+	10,POLIWAG,10
+#-------------------------------
+[048] # Seafoam City
+Water,2
+    60,REMORAID,46,51
+    30,TENTACRUEL,46,51
+    5,OCTILLERY,46,51
+    4,SLOWBRO,46,51
+    1,HUNTAIL,46,51
+OldRod
+    30,WIMPOD,10
+    30,FINNEON,10
+	30,GOLDEEN,10
+	10,MAGIKARP,10
+GoodRod
+    30,WIMPOD,18
+    30,FINNEON,18
+	30,GOLDEEN,18
+	10,MAGIKARP,18
+#-------------------------------
+[066] # Shimmerwood
+Land,21
+    20,DUSTOX,24,27
+    20,JOLTIK,24,27
+    10,AMOONGUSS,24,27
+    10,COMBEE,24,27
+    10,NUZLEAF,24,27
+    10,SKIPLOOM,24,27
+    5,MURKROW,24,27
+    5,HERACROSS,24,27
+    4,PINSIR,24,27
+    4,SOLROCK,24,27
+    1,LEAFEON,24,27
+    1,TRAPINCH,24,27
+#-------------------------------
+[067] # Shimmerwood
+Land,21
+    20,DUSTOX,24,27
+    20,JOLTIK,24,27
+    10,AMOONGUSS,24,27
+    10,COMBEE,24,27
+    10,NUZLEAF,24,27
+    10,SKIPLOOM,24,27
+    5,MURKROW,24,27
+    5,HERACROSS,24,27
+    4,PINSIR,24,27
+    4,SOLROCK,24,27
+    1,LEAFEON,24,27
+    1,TRAPINCH,24,27
+#-------------------------------
+[068] # Shimmerwood
+Land,21
+    20,DUSTOX,24,27
+    20,JOLTIK,24,27
+    10,AMOONGUSS,24,27
+    10,COMBEE,24,27
+    10,NUZLEAF,24,27
+    10,SKIPLOOM,24,27
+    5,MURKROW,24,27
+    5,HERACROSS,24,27
+    4,PINSIR,24,27
+    4,SOLROCK,24,27
+    1,LEAFEON,24,27
+    1,TRAPINCH,24,27
+#-------------------------------
+[069] # Shimmerwood
+Land,21
+    20,DUSTOX,24,27
+    20,JOLTIK,24,27
+    10,AMOONGUSS,24,27
+    10,COMBEE,24,27
+    10,NUZLEAF,24,27
+    10,SKIPLOOM,24,27
+    5,MURKROW,24,27
+    5,HERACROSS,24,27
+    4,PINSIR,24,27
+    4,SOLROCK,24,27
+    1,LEAFEON,24,27
+    1,TRAPINCH,24,27
+#-------------------------------
+[070] # Shimmerwood
+Land,21
+    20,DUSTOX,24,27
+    20,JOLTIK,24,27
+    10,AMOONGUSS,24,27
+    10,COMBEE,24,27
+    10,NUZLEAF,24,27
+    10,SKIPLOOM,24,27
+    5,MURKROW,24,27
+    5,HERACROSS,24,27
+    4,PINSIR,24,27
+    4,SOLROCK,24,27
+    1,LEAFEON,24,27
+    1,TRAPINCH,24,27
 #-------------------------------
 [082] # Seafoam Cave
 Cave,5
@@ -369,12 +474,12 @@ Land,21
     20,PIDGEY,15,17
     10,KANKWART,15,17
     10,NUMEL,15,17
-    10,HOUNDOOM,15,17
-    10,RATICATE,15,18
-    5,MEDITITE,18
+    10,HOUNDOUR,15,17
+    10,RATICATE,18
+    5,MEDITITE,15,17
     5,PIDGEOTTO,18
     4,BUTTERFREE,18
-    4,ROSELIA,18
+    4,ROSELIA,15,17
     2,RHYHORN,17,19
 RockSmash,50
     90,NOSEPASS,15,17
@@ -408,18 +513,18 @@ GoodRod
 #-------------------------------
 [123] # Route 105
 Land,21
-    20,ARBOK,22
-    20,LEDIAN,19,22
+    20,EKANS,17,21
+    20,LEDIAN,18,21
     10,BIBAREL,17,21
-    10,PSYDUCK,19,22
-    10,WATCHOG,17,21
-    10,WEEPINBELL,21,22
-    5,HOUNDOUR,18,21
-    5,MURKROW,18,21
-    4,ABRA,12,15
-    4,TRANQUILL,18,21
-    1,CARNIVINE,19,21
-    1,POLITOED,19,21
+    10,PSYDUCK,17,21
+    10,WATCHOG,20,21
+    10,WEEPINBELL,21
+    5,HOUNDOUR,17,21
+    5,MURKROW,17,21
+    4,ABRA,15,17
+    4,PIDOVE,17,21
+    1,CARNIVINE,17,21
+    1,POLIWAG,17,21
 Water,2
     60,TENTACOOL,14,19
     30,WINGULL,15,16
@@ -436,18 +541,18 @@ GoodRod
 #-------------------------------
 [133] # Ancient Cave
 Cave,5
-    20,KANKRYST,24
-    20,BANETTE,24
-    10,GASTLY,24
-    10,GRAVELER,25,26
-    10,HAUNTER,25,26
-    10,SHUPPET,24,26
-    5,DUSKULL,24,26
-    5,GOLBAT,25,26
-    4,ARON,24,26
-    4,SANDILE,24,26
-    1,BRONZOR,24,26
-    1,DRUDDIGON,24,26
+    20,KANKRYST,22,24
+    20,BANETTE,22,24
+    10,GASTLY,22,24
+    10,GRAVELER,22,24
+    10,HAUNTER,22,24
+    10,SHUPPET,22,24
+    5,DUSKULL,22,24
+    5,GOLBAT,22,24
+    4,ARON,22,24
+    4,SANDILE,22,24
+    1,BRONZOR,22,24
+    1,DRUDDIGON,22,24
 OldRod
     70,LUVDISC,10
     30,MAGIKARP,10
@@ -484,18 +589,18 @@ Land,21
 #-------------------------------
 [139] # Shimmerwood
 Land,21
-    20,DUSTOX,26,31
-    20,JOLTIK,26,31
-    10,AMOONGUSS,30,31
-    10,COMBEE,24,31
-    10,NUZLEAF,26,29
-    10,SKIPLOOM,24,29
-    5,MURKROW,28,29
-    5,HERACROSS,26,28
-    4,PINSIR,31
-    4,SOLROCK,31
-    1,LEAFEON,31
-    1,TRAPINCH,31
+    20,DUSTOX,24,27
+    20,JOLTIK,24,27
+    10,AMOONGUSS,24,27
+    10,COMBEE,24,27
+    10,NUZLEAF,24,27
+    10,SKIPLOOM,24,27
+    5,MURKROW,24,27
+    5,HERACROSS,24,27
+    4,PINSIR,24,27
+    4,SOLROCK,24,27
+    1,LEAFEON,24,27
+    1,TRAPINCH,24,27
 #-------------------------------
 [141] # Route 107
 Land,21
