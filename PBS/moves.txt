@@ -223,7 +223,7 @@
 214,DRILLPECK,Drill Peck,000,80,FLYING,Physical,100,20,0,Other,0,abef,"A corkscrewing attack with the sharp beak acting as a drill."
 215,OBLIVIONWING,Oblivion Wing,14F,80,FLYING,Special,100,10,0,Other,0,bef,"The user absorbs its target's HP. The user's HP is restored by over half of the damage dealt."
 216,AIRSLASH,Air Slash,00F,75,FLYING,Special,95,15,30,Other,0,be,"The user attacks with a blade of air that slices even the sky. It may also make the target flinch."
-217,CHATTER,Chatter,014,65,FLYING,Special,100,20,100,Other,0,befk,"The user attacks using a sound wave based on words it has learned. It may also confuse the target."
+217,CHATTER,Chatter,014,65,FLYING,Special,100,20,15,Other,0,befk,"The user attacks using a sound wave based on words it has learned. It may also confuse the target."
 218,AERIALACE,Aerial Ace,0A5,60,FLYING,Physical,0,20,0,Other,0,abef,"The user confounds the foe with speed, then slashes. The attack lands without fail."
 219,AIRCUTTER,Air Cutter,000,60,FLYING,Special,95,25,0,AllNearFoes,0,befh,"The user launches razor-like wind to slash the opposing team. Critical hits land more easily."
 220,PLUCK,Pluck,0F4,60,FLYING,Physical,100,20,0,Other,0,abef,"The user pecks the target. If the target is holding a Berry, the user eats it and gains its effect."

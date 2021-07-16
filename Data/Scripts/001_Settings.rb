@@ -4,10 +4,12 @@
 #                https://github.com/Maruno17/pokemon-essentials                #
 #==============================================================================#
 
+
 module Settings
   # The version of your game. It has to adhere to the MAJOR.MINOR.PATCH format.
-  GAME_VERSION = '0.7.3'
+	GAME_VERSION = '0.7.3'
 
+	
   # The generation that the battle system follows. Used throughout the battle
   # scripts, and also by some other settings which are used in and out of battle
   # (you can of course change those settings to suit your game).
@@ -452,3 +454,5 @@ module Essentials
   VERSION = "19.1"
   ERROR_TEXT = ""
 end
+
+Essentials::ERROR_TEXT += "[Pokémon Alexandrite v#{Settings::GAME_VERSION}]\r\n"

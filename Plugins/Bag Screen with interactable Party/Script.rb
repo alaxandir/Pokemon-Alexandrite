@@ -1202,7 +1202,7 @@ class PokemonBagScreen
       commands = []
       # Generate command list
       commands[cmdRead = commands.length]       = _INTL("Read") if itm.is_mail?
-      if ItemHandlers.hasOutHandler(item) || (itm.is_machine? && @party.length>0)
+      if ItemHandlers.hasOutHandler(item) || ((itm.is_machine? && $Trainer.party.length>0))
         if ItemHandlers.hasUseText(item)
           commands[cmdUse = commands.length]    = ItemHandlers.getUseText(item)
         else

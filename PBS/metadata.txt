@@ -346,7 +346,7 @@ MapPosition = 0,4,12
 # Paradise Cove
 Outdoor = true
 ShowArea = true
-Weather = Sun,100
+Weather = None,0
 MapPosition = 0,5,17
 #-------------------------------
 [052]
@@ -394,6 +394,55 @@ MapPosition = 0,5,17
 [058]
 # Filler Sea
 #-------------------------------
+[059]
+# Origin Ruins
+Outdoor = false
+ShowArea = true
+Weather = None,0
+MapPosition = 0,10,2
+#-------------------------------
+[060]
+# Mirror 1
+Outdoor = false
+ShowArea = false
+Weather = None,0
+MapPosition = 0,10,2
+#-------------------------------
+[061]
+# Mirror 2
+Outdoor = false
+ShowArea = false
+Weather = None,0
+MapPosition = 0,10,2
+#-------------------------------
+[062]
+# Mirror 3
+Outdoor = false
+ShowArea = false
+Weather = None,0
+MapPosition = 0,10,2
+#-------------------------------
+[063]
+# Mirror 4
+Outdoor = false
+ShowArea = false
+Weather = None,0
+MapPosition = 0,10,2
+#-------------------------------
+[064]
+# Mirror 5
+Outdoor = false
+ShowArea = false
+Weather = None,0
+MapPosition = 0,10,2
+#-------------------------------
+[065]
+# Origin Apex
+Outdoor = true
+ShowArea = true
+Weather = None,0
+MapPosition = 0,10,2
+#-------------------------------
 [066]
 # Shimmerwood Forest
 Outdoor = true
@@ -434,6 +483,30 @@ Weather = None,0
 MapPosition = 0,10,8
 BattleBack = Forest
 #-------------------------------
+[073]
+# Ochre Valley
+Outdoor = true
+ShowArea = true
+Weather = None,0
+MapPosition = 0,13,8
+BattleBack = Forest
+#-------------------------------
+[074]
+# Ochre Valley
+Outdoor = true
+ShowArea = true
+Weather = None,0
+MapPosition = 0,14,8
+BattleBack = Forest
+#-------------------------------
+[075]
+# Ochre Valley
+Outdoor = true
+ShowArea = true
+Weather = None,0
+MapPosition = 0,15,8
+BattleBack = Forest
+#-------------------------------
 [076]
 # Seafoam PKMN Ctr.
 Outdoor = false
@@ -472,7 +545,7 @@ Outdoor = false
 ShowArea = true
 BicycleAlways = true
 Weather = None,0
-MapPosition = 0,22,9
+MapPosition = 0,21,9
 SnapEdges = true
 BattleBack = IndoorB
 #-------------------------------
@@ -575,7 +648,7 @@ SnapEdges = true
 Outdoor = false
 ShowArea = true
 Weather = None,0
-MapPosition = 0,19,7
+MapPosition = 0,18,7
 DarkMap = true
 SnapEdges = true
 BattleBack = CaveDark
@@ -609,7 +682,7 @@ SnapEdges = true
 Outdoor = false
 ShowArea = true
 Weather = None,0
-MapPosition = 0,18,7
+MapPosition = 0,16,7
 DarkMap = true
 SnapEdges = true
 BattleBack = CaveDark
@@ -617,7 +690,7 @@ BattleBack = CaveDark
 [098]
 # Route 103
 Outdoor = true
-Weather = Rain,25
+Weather = None,0
 MapPosition = 0,16,5
 DarkMap = false
 SnapEdges = false
@@ -636,7 +709,7 @@ SnapEdges = false
 Outdoor = true
 ShowArea = true
 HealingSpot = 100,31,30
-Weather = Sun,50
+Weather = None,0
 MapPosition = 0,16,2
 DarkMap = false
 SnapEdges = false
@@ -664,7 +737,7 @@ MapPosition = 0,16,2
 # Route 104
 Outdoor = true
 ShowArea = true
-Weather = Rain,25
+Weather = None,0
 MapPosition = 0,14,4
 DarkMap = false
 SnapEdges = false
@@ -786,7 +859,7 @@ MapPosition = 0,13,5
 # Route 105
 Outdoor = true
 ShowArea = true
-Weather = Sun,15
+Weather = None,0
 MapPosition = 0,10,5
 DarkMap = false
 SnapEdges = false
@@ -796,7 +869,7 @@ BattleBack = Forest
 # Emberton
 Outdoor = true
 ShowArea = true
-Weather = Sun,15
+Weather = None,0
 MapPosition = 0,8,5
 DarkMap = false
 SnapEdges = false
@@ -867,7 +940,7 @@ BattleBack = Cave
 Outdoor = true
 ShowArea = true
 Weather = None,0
-MapPosition = 0,10,52
+MapPosition = 0,10,3
 BattleBack = Field
 #-------------------------------
 [135]
@@ -1075,7 +1148,7 @@ MapPosition = 0,8,9
 # Trident Cove Town
 Outdoor = true
 ShowArea = true
-Weather = Sun,100
+Weather = None,0
 MapPosition = 0,6,9
 #-------------------------------
 [166]

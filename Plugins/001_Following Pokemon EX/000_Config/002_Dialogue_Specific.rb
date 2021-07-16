@@ -182,7 +182,8 @@ Events.OnTalkToFollower += proc {|pkmn,x,y,random_val|
 Events.OnTalkToFollower += proc {|pkmn,x,y,random_val|
   if $game_map.name.include?("Sea") ||
 	 $game_map.name.include?("Coast") ||
-	 $game_map.name.include?("Cove")
+	 $game_map.name.include?("Cove") &&
+	 !$game_map.name.include?("Cave")
     $scene.spriteset.addUserAnimation(FollowerSettings::Emo_Happy,x,y)
     pbMoveRoute($game_player,[PBMoveRoute::Wait,20])
     messages = [

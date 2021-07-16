@@ -191,10 +191,10 @@ module PokeBattle_BattleCommon
     if Settings::ENABLE_CRITICAL_CAPTURES
       c = 0
       numOwned = $Trainer.pokedex.owned_count
-      if numOwned>600;    c = x*5/12
-      elsif numOwned>450; c = x*4/12
-      elsif numOwned>300; c = x*3/12
-      elsif numOwned>150; c = x*2/12
+      if numOwned>400;    c = x*5/12
+      elsif numOwned>300; c = x*4/12
+      elsif numOwned>200; c = x*3/12
+      elsif numOwned>100; c = x*2/12
       elsif numOwned>30;  c = x/12
       end
       # Calculate the number of shakes

@@ -402,7 +402,7 @@ RockSmash,50
     90,NOSEPASS,13,14
     10,GEODUDE,12,15
 #-------------------------------
-[095] # Seafoam Cave 3f
+[097] # Seafoam Cave 3f
 Cave,5
     20,ZUBAT,13,14
 	20,IMPURP,13,14

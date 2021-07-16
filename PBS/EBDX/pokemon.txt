@@ -99,7 +99,7 @@ BattlerEnemyX           = 0
 #-------------------------------
 [BEEDRILL]
 BattlerEnemyY           = 38
-BattlerAltitude         = 15
+BattlerAltitude         = 20
 BattlerPlayerX          = 0
 BattlerPlayerY          = 22
 BattlerEnemyX           = 0

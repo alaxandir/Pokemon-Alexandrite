@@ -93,7 +93,7 @@ module BattleScripts
   NICK = {
 	"beforeLastOpp" => proc do
 		pname = @battlers[1].name
-		@scene.pbTrainerSpeak("Let me show you what #{pname} can do!")
+		@scene.pbTrainerSpeak("Let me show you what Piplup can do!")
 		end,
 	"turnStart0" => proc do
 	tname = $Trainer.name

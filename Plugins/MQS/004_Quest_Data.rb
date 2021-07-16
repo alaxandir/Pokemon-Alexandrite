@@ -244,6 +244,7 @@ VULPIX = {
     :QuestDescription => "A trainer wants to trade Pokémon with you. Your Geodude for her Vulpix.",
     :RewardString => "Vulpix"
   }
+
   
 COALMINE = {
     :ID => "20",
@@ -471,5 +472,15 @@ DUNSPARCE = {
     :Location1 => "Neon City",
     :QuestDescription => "You found a scared and lonely Dunsparce hiding in a back alley. Time to make friends!",
     :RewardString => "Dunsparce"
+  }
+
+STARYU = {
+    :ID => "42",
+    :Name => "TRADE: Diglett for Staryu",
+    :QuestGiver => "Swimmer Erick",
+    :Stage1 => "Trade a Diglett for a Vuplix",
+    :Location1 => "Gold Coast",
+    :QuestDescription => "A trainer wants to trade Pokémon with you. Your Diglett for his Staryu.",
+    :RewardString => "Staryu"
   }
 end
