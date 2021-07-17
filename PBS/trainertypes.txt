@@ -117,3 +117,5 @@
 114,ELITEFOUR_Kyra,Elite Four,100,ChairmanRose,,e4appears,Female,255,
 115,ELITEFOUR_Anya,Elite Four,100,DecisiveBattle,,e4appears,Female,255,
 117,WINTERCOOLS,Cool Trainers,70,Trainer_Battle_Kanto,,Cooltrainer,Mixed,80,
+118,DESERT_M,Explorer,38,,,Collector,Male,,
+119,DESERT_F,Explorer,38,,,Collector,Female,,

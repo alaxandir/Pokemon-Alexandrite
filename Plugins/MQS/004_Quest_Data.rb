@@ -1,163 +1,7 @@
 module QuestModule
-  
   # You don't actually need to add any information, but the respective fields in the UI will be blank or "???"
   # I included this here mostly as an example of what not to do, but also to show it's a thing that exists
-  Quest0 = {
-  
-  }
-  
   # Here's the simplest example of a single-stage quest with everything specified
-  Quest1 = {
-    :ID => "1",
-    :Name => "Introductions",
-    :QuestGiver => "Little Boy",
-    :Stage1 => "Look for clues.",
-    :Location1 => "Lappet Town",
-    :QuestDescription => "Some wild Pokémon stole a little boy's favourite toy. Find those troublemakers and help him get it back.",
-    :RewardString => "Something shiny!"
-  }
-  
-  # Here's an extension of the above that includes multiple stages
-  Quest2 = {
-    :ID => "2",
-    :Name => "Introductions",
-    :QuestGiver => "Little Boy",
-    :Stage1 => "Look for clues.",
-    :Stage2 => "Follow the trail.",
-    :Stage3 => "Catch the troublemakers!",
-    :Location1 => "Lappet Town",
-    :Location2 => "Viridian Forest",
-    :Location3 => "Route 3",
-    :QuestDescription => "Some wild Pokémon stole a little boy's favourite toy. Find those troublemakers and help him get it back.",
-    :RewardString => "Something shiny!"
-  }
-  
-  # Here's an example of a quest with lots of stages that also doesn't have a stage location defined for every stage
-  Quest3 = {
-    :ID => "3",
-    :Name => "Last-minute chores",
-    :QuestGiver => "Grandma",
-    :Stage1 => "A",
-    :Stage2 => "B",
-    :Stage3 => "C",
-    :Stage4 => "D",
-    :Stage5 => "E",
-    :Stage6 => "F",
-    :Stage7 => "G",
-    :Stage8 => "H",
-    :Stage9 => "I",
-    :Stage10 => "J",
-    :Stage11 => "K",
-    :Stage12 => "L",
-    :Location1 => "nil",
-    :Location2 => "nil",
-    :Location3 => "Dewford Town",
-    :QuestDescription => "Isn't the alphabet longer than this?",
-    :RewardString => "Chicken soup!"
-  }
-  
-  # Here's an example of not defining the quest giver and reward text
-  Quest4 = {
-    :ID => "4",
-    :Name => "A new beginning",
-    :QuestGiver => "nil",
-    :Stage1 => "Turning over a new leaf... literally!",
-    :Stage2 => "Help your neighbours.",
-    :Location1 => "Milky Way",
-    :Location2 => "nil",
-    :QuestDescription => "You crash landed on an alien planet. There are other humans here and they look hungry...",
-    :RewardString => "nil"
-  }
-  
-  # Other random examples you can look at if you want to fill out the UI and check out the page scrolling
-  Quest5 = {
-    :ID => "5",
-    :Name => "All of my friends",
-    :QuestGiver => "Barry",
-    :Stage1 => "Meet your friends near Acuity Lake.",
-    :QuestDescription => "Barry told me that he saw something cool at Acuity Lake and that I should go see. I hope it's not another trick.",
-    :RewardString => "You win nothing for giving in to peer pressure."
-  }
-  
-  Quest6 = {
-    :ID => "6",
-    :Name => "The journey begins",
-    :QuestGiver => "Professor Oak",
-    :Stage1 => "Deliver the parcel to the Pokémon Mart in Viridian City.",
-    :Stage2 => "Return to the Professor.",
-    :Location1 => "Viridian City",
-    :Location2 => "nil",
-    :QuestDescription => "The Professor has entrusted me with an important delivery for the Viridian City Pokémon Mart. This is my first task, best not mess it up!",
-    :RewardString => "nil"
-  }
-  
-  Quest7 = {
-    :ID => "7",
-    :Name => "Close encounters of the... first kind?",
-    :QuestGiver => "nil",
-    :Stage1 => "Make contact with the strange creatures.",
-    :Location1 => "Rock Tunnel",
-    :QuestDescription => "A sudden burst of light, and then...! What are you?",
-    :RewardString => "A possible probing."
-  }
-  
-  Quest8 = {
-    :ID => "8",
-    :Name => "These boots were made for walking",
-    :QuestGiver => "Musician #1",
-    :Stage1 => "Listen to the musician's, uhh, music.",
-    :Stage2 => "Find the source of the power outage.",
-    :Location1 => "nil",
-    :Location2 => "Celadon City Sewers",
-    :QuestDescription => "A musician was feeling down because he thinks no one likes his music. I should help him drum up some business."
-  }
-  
-  Quest9 = {
-    :ID => "9",
-    :Name => "Got any grapes?",
-    :QuestGiver => "Duck",
-    :Stage1 => "Listen to The Duck Song.",
-    :Stage2 => "Try not to sing it all day.",
-    :Location1 => "YouTube",
-    :QuestDescription => "Let's try to revive old memes by listening to this funny song about a duck wanting grapes.",
-    :RewardString => "A loss of braincells. Hurray!"
-  }
-  
-  Quest10 = {
-    :ID => "10",
-    :Name => "Singing in the rain",
-    :QuestGiver => "Some old dude",
-    :Stage1 => "I've run out of things to write.",
-    :Stage2 => "If you're reading this, I hope you have a great day!",
-    :Location1 => "Somewhere prone to rain?",
-    :QuestDescription => "Whatever you want it to be.",
-    :RewardString => "Wet clothes."
-  }
-  
-  Quest11 = {
-    :ID => "11",
-    :Name => "When is this list going to end?",
-    :QuestGiver => "Me",
-    :Stage1 => "When IS this list going to end?",
-    :Stage2 => "123",
-    :Stage3 => "456",
-    :Stage4 => "789",
-    :QuestDescription => "I'm losing my sanity.",
-    :RewardString => "nil"
-  }
-  
-  Quest12 = {
-    :ID => "12",
-    :Name => "The laaast melon",
-    :QuestGiver => "Some stupid dodo",
-    :Stage1 => "Fight for the last of the food.",
-    :Stage2 => "Don't die.",
-    :Location1 => "A volcano/cliff thing?",
-    :Location2 => "Good advice for life.",
-    :QuestDescription => "Tea and biscuits, anyone?",
-    :RewardString => "Food, glorious food!"
-  }
-  
 Main = {
     :ID => "13",
     :Name => "Pokémon League",
@@ -228,7 +72,7 @@ Powerplant = {
     :ID => "18",
     :Name => "The Powerplant",
     :QuestGiver => "Pokémon Encyclopedia",
-    :Stage1 => "Investigate why Team Rocket is in Bouldergrove.",
+    :Stage1 => "Check out the Powerplant",
     :Location1 => "Bouldergrove City",
     :QuestDescription => "Team Rocket has taken over the Powerplant! Find out what they're planning.",
     :RewardString => "Story Progress"
@@ -280,7 +124,7 @@ GAMECORNER = {
     :ID => "23",
     :Name => "Rocket has a thing with Game Corners.",
     :QuestGiver => "Professor Yew",
-    :Stage1 => "Investigate the Game Corner and surrounding area.",
+    :Stage1 => "Investigate the Game Corner.",
     :Location1 => "Anthrophil Game Corner",
     :QuestDescription => "Team Rocket has some kind of influence over the Anthrophil Game Corner. One of your Dad's assistants has gone missing and he suspects they can be found there.",
     :RewardString => "Story Progress"
@@ -384,7 +228,7 @@ EXEGGUTOR = {
     :ID => "33",
     :Name => "TRADE: Manectric for Exeggutor",
     :QuestGiver => "Lady Sarah",
-    :Stage1 => "Trade a Manectric for a Exeggutor",
+    :Stage1 => "Trade a Manectric for Exeggutor",
     :Location1 => "Neon City PKMN Center",
     :QuestDescription => "A trainer wants to trade Pokémon with you. Your Manectric for her Exeggutor.",
     :RewardString => "Alolan Exeggutor"
@@ -428,7 +272,7 @@ POLIWAG = {
     :ID => "37",
     :Name => "TRADE: Pidgey for Poliwag",
     :QuestGiver => "Fat Guy",
-    :Stage1 => "Trade a Pidgey for a Poliwag",
+    :Stage1 => "Trade a Pidgey for Poliwag",
     :Location1 => "Trident Cove PKMN Center",
     :QuestDescription => "A trainer wants to trade Pokémon with you. Your Pidgey for his Poliwag.",
     :RewardString => "Poliwag"
@@ -438,7 +282,7 @@ CHARMELEON = {
     :ID => "38",
     :Name => "TRADE: Pikachu for Charmeleon",
     :QuestGiver => "Lass",
-    :Stage1 => "Trade a Pikachu for a Charmeleon",
+    :Stage1 => "Trade a Pikachu for Charmeleon",
     :Location1 => "Route 109 PKMN Center",
     :QuestDescription => "A trainer wants to trade Pokémon with you. Your Pikachu for his Charmeleon.",
     :RewardString => "Charmeleon"
@@ -468,7 +312,7 @@ DUNSPARCE = {
     :ID => "41",
     :Name => "The Lonely Dunsparce.",
     :QuestGiver => "nil",
-    :Stage1 => "Bring Popping Candy to Dunsparce",
+    :Stage1 => "Give Popping Candy to Dunsparce",
     :Location1 => "Neon City",
     :QuestDescription => "You found a scared and lonely Dunsparce hiding in a back alley. Time to make friends!",
     :RewardString => "Dunsparce"
@@ -482,5 +326,65 @@ STARYU = {
     :Location1 => "Gold Coast",
     :QuestDescription => "A trainer wants to trade Pokémon with you. Your Diglett for his Staryu.",
     :RewardString => "Staryu"
+  }
+
+EEVEE = {
+    :ID => "43",
+    :Name => "Eevee's Hungry!",
+    :QuestGiver => "School Girl",
+    :Stage1 => "Give Eevee a Tamato Berry.",
+	:Stage2 => "Give Eevee a Rawst Berry.",
+	:Stage3 => "Give Eevee a Sitrus Berry.",
+    :Location1 => "Route 104",
+    :Location2 => "Route 104",
+	:Location3 => "Route 104",
+    :QuestDescription => "A young trainer's Eevee is upset and hungry! Give it some berries!",
+    :RewardString => "Eevee"
+  }
+
+MINING = {
+    :ID => "44",
+    :Name => "Mining Expedition!",
+    :QuestGiver => "Archaeologist",
+    :Stage1 => "Get a Pickaxe and Fresh Water!",
+	:Stage2 => "Get a Pickaxe and Fresh Water!",
+    :Location1 => "Saltstone Villa",
+	:Location2 => "Saltstone Villa",
+    :QuestDescription => "The archeologist explained that you can go mining for rare items if you craft a pickaxe and have some Fresh Water. You can find the ingredients from Aggron (Hardstone) and Marowak (Thick Club).",
+    :RewardString => "Mining Expedition"
+  }
+  
+HOPPIP = {
+    :ID => "45",
+    :Name => "She's crazy about Hoppip",
+    :QuestGiver => "Preschooler",
+    :Stage1 => "Show her a Hoppip",
+    :Location1 => "Emberton",
+    :QuestDescription => "A little girl wants to see a Hoppip, can you find one to show her?",
+    :RewardString => "Soothe Bell"
+  }
+  
+DEINO = {
+    :ID => "46",
+    :Name => "TRADE: Slowking for Deino",
+    :QuestGiver => "Supernerd",
+    :Stage1 => "Trade Slowking",
+    :Location1 => "Saltstone Villa",
+    :QuestDescription => "A supernerd wants to trade Pokémon with you. Your Slowking for his Deino.",
+    :RewardString => "Deino"
+  }
+  
+SEAVOUCHER = {
+    :ID => "47",
+    :Name => "The Sea Voucher!",
+    :QuestGiver => "Leader Lee",
+    :Stage1 => "Talk to the Gate Guard.",
+	:Stage2 => "Deliver Jake's Parcel.",
+	:Stage3 => "Talk to the Gate Guard.",
+    :Location1 => "Trident Cove Town",
+	:Location2 => "Saltstone Villa",
+	:Location3 => "Trident Cove Town.",
+    :QuestDescription => "Lee wants you to travel to Trident Cove so you can challenge the 8th gym, but you'll need a Sea Voucher. Lee told you he knows the guard and that he can help you out.",
+    :RewardString => "Sea Voucher"
   }
 end

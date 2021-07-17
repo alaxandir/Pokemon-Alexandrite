@@ -4,7 +4,7 @@
 29,East,22,9,West,0
 # Victory Road Ent. (10) - Route 119 (29)
 10,South,0,29,North,0
-# Bouldergrove Coalmine (26) - Bouldergrove Coalmine (25)
+# Bouldergrove Tunnel (26) - Bouldergrove Tunnel (25)
 26,West,0,25,East,0
 # Verdant Jungle (53) - Paradise Cove (51)
 53,West,0,51,East,0
@@ -48,16 +48,22 @@
 183,East,27,184,West,19
 # Route 117 (196) - Fortune City (197)
 196,West,16,197,East,31
-# Route 101 (43) - Seafoam City (48)
-43,South,0,48,North,7
-# Route 116 (193) - Seafoam City (48)
-193,North,0,48,South,25
-# Filler Sea (58) - Seafoam City (48)
-58,North,0,48,South,5
+# Route 104 (104) - Anthophil City (106)
+104,West,0,106,East,9
+# Route 105 (123) - Anthophil City (106)
+123,East,0,106,West,21
+# Route 101 (43) - Route 104 (104)
+43,North,0,104,South,248
+# Route 103 (98) - Route 104 (104)
+98,West,0,104,East,1
+# Gold Coast (100) - Route 104 (104)
+100,West,39,104,East,0
+# Gold Sea (136) - Route 104 (104)
+136,West,69,104,East,0
 # Earthroot Town (42) - Route 101 (43)
 42,South,9,43,North,0
-# Route 104 (104) - Route 101 (43)
-104,South,248,43,North,0
+# Seafoam City (48) - Route 101 (43)
+48,North,7,43,South,0
 # Emberton (124) - Route 101 (43)
 124,South,474,43,North,0
 # Earthroot Forest (33) - Earthroot Town (42)
@@ -68,26 +74,16 @@
 98,East,0,154,West,37
 # Gold Coast (100) - Route 103 (98)
 100,South,0,98,North,0
-# Route 104 (104) - Route 103 (98)
-104,East,1,98,West,0
 # Gold Sea (136) - Gold Coast (100)
 136,South,0,100,North,0
-# Route 104 (104) - Gold Coast (100)
-104,East,0,100,West,39
-# Route 104 (104) - Gold Sea (136)
-104,East,0,136,West,69
-# Anthophil City (106) - Route 104 (104)
-106,East,9,104,West,0
-# Route 105 (123) - Anthophil City (106)
-123,East,0,106,West,21
-# Emberton (124) - Route 105 (123)
-124,East,0,123,West,0
-# Route 106 (138) - Emberton (124)
-138,East,1,124,West,0
-# Route 115 (192) - Route 116 (193)
-192,East,0,193,West,9
+# Route 116 (193) - Seafoam City (48)
+193,North,0,48,South,25
+# Filler Sea (58) - Seafoam City (48)
+58,North,0,48,South,5
 # Filler Sea (58) - Route 116 (193)
 58,East,0,193,West,0
+# Route 115 (192) - Route 116 (193)
+192,East,0,193,West,9
 # Spirit Garden (8) - Route 115 (192)
 8,South,35,192,North,0
 # Soul City (188) - Route 115 (192)
@@ -98,3 +94,17 @@
 187,North,77,8,South,0
 # Route 114 (187) - Soul City (188)
 187,East,0,188,West,0
+# Route 105 (123) - Emberton (124)
+123,West,0,124,East,0
+# Route 106 (138) - Emberton (124)
+138,East,1,124,West,0
+# Ochre Valley (74) - Ochre Valley (73)
+74,West,0,73,East,0
+# Saltstone Villa (71) - Ochre Valley (73)
+71,North,0,73,South,48
+# Ochre Valley (75) - Ochre Valley (74)
+75,West,0,74,East,0
+# Saltstone Villa (71) - Ochre Valley (74)
+71,North,8,74,South,0
+# Saltstone Villa (71) - Ochre Valley (75)
+71,North,40,75,South,0

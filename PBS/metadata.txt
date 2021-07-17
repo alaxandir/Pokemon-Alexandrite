@@ -172,7 +172,7 @@ SafariMap = true
 SnapEdges = true
 #-------------------------------
 [025]
-# Bouldergrove Coalmine
+# Bouldergrove Tunnel
 Outdoor = false
 Weather = None,0
 MapPosition = 0,27,7
@@ -180,7 +180,7 @@ DarkMap = true
 BattleBack = CaveDark
 #-------------------------------
 [026]
-# Bouldergrove Coalmine
+# Bouldergrove Tunnel
 Outdoor = false
 Weather = None,0
 MapPosition = 0,27,6
@@ -483,29 +483,47 @@ Weather = None,0
 MapPosition = 0,10,8
 BattleBack = Forest
 #-------------------------------
+[071]
+# Saltstone Villa
+Outdoor = true
+ShowArea = true
+HealingSpot = 71,12,16
+MapPosition = 0,14,10
+#-------------------------------
+[072]
+# Slate tunnel
+Outdoor = false
+ShowArea = true
+Weather = None,0
+MapPosition = 0,12,8
+BattleBack = Cave
+#-------------------------------
 [073]
 # Ochre Valley
 Outdoor = true
 ShowArea = true
-Weather = None,0
+Weather = Sandstorm,100
 MapPosition = 0,13,8
-BattleBack = Forest
+BattleBack = rocky
+Environment = Sand
 #-------------------------------
 [074]
 # Ochre Valley
 Outdoor = true
 ShowArea = true
-Weather = None,0
+Weather = Sandstorm,100
 MapPosition = 0,14,8
-BattleBack = Forest
+BattleBack = rocky
+Environment = Sand
 #-------------------------------
 [075]
 # Ochre Valley
 Outdoor = true
 ShowArea = true
-Weather = None,0
+Weather = Sandstorm,100
 MapPosition = 0,15,8
-BattleBack = Forest
+BattleBack = rocky
+Environment = Sand
 #-------------------------------
 [076]
 # Seafoam PKMN Ctr.
@@ -579,6 +597,7 @@ ShowArea = true
 Weather = None,0
 MapPosition = 0,24,8
 SnapEdges = false
+BattleBack = Outdoor
 #-------------------------------
 [086]
 # Bouldergrove City
@@ -971,7 +990,7 @@ Weather = Rain,100
 MapPosition = 0,7,5
 #-------------------------------
 [139]
-# Shimmerwood Forest
+# Shimmerwood Folder
 Outdoor = true
 ShowArea = true
 Weather = None,0
@@ -1325,7 +1344,7 @@ Weather = None,0
 MapPosition = 0,16,12
 #-------------------------------
 [190]
-# Tomb of Thunder
+# Throne of Thunder
 Outdoor = false
 ShowArea = true
 Weather = None,0
@@ -1390,3 +1409,8 @@ MapPosition = 0,15,4
 DarkMap = true
 SnapEdges = true
 BattleBack = CaveDark
+#-------------------------------
+[199]
+# Saltstone Pokémon Center
+HealingSpot = 71,12,16
+MapPosition = 0,14,10

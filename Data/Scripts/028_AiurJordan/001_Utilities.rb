@@ -4,6 +4,16 @@
 # By AiurJordan
 #-------------------------------------------------------------------------------
 # 
+=begin
+Optional are blue
+Mandatory are green
+activateQuest(:Bidoof, colorQuest("blue"),false)
+completeQuest(:Bidoof)
+
+
+
+
+=end
 #-------------------------------------------------------------------------------
 # v1.0 - Initial Release
 #-------------------------------------------------------------------------------
@@ -13,12 +23,14 @@ PluginManager.register({
   :credits => ["AiurJordan, Boon"],
   :link => "https://reliccastle.com",
 })
+
+Essentials::ERROR_TEXT += "[Pokémon Alexandrite v#{Settings::GAME_VERSION}]\r\n"
 #-------------------------------------------------------------------------------
 # Config
 #-------------------------------------------------------------------------------
 
 #-------------------------------------------------------------------------------
-# 
+# ANCIENT RUINS STEP COUNTER
 #-------------------------------------------------------------------------------
 class StepCountdown
 	attr_accessor :steps
@@ -179,3 +191,11 @@ class Game_Player
   end
 end
 
+################# CHECK ENCOUNTER ID'S ON MAP CHANGE
+
+#Check the desert for encounter tables
+Events.onMapChanging += proc { |_sender, e|
+  new_map_ID = e[0]
+  next if new_map_ID == 0
+  $PokemonGlobal.encounter_version = [73,74,75].include?($game_map.map_id) && $Trainer.badge_count >= 7 ? 1 : 0
+}
