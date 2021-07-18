@@ -268,3 +268,5 @@ BattleVS		= minorTrainer
 BattleVS		= minorTrainer
 [YOUNGSTER]
 BattleVS		= minorTrainer
+[STRANGEDUO]
+BattleVS		= minorTrainer

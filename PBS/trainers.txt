@@ -1167,46 +1167,34 @@ Pokemon = ELECTIVIRE,55
     IV = 30,30,30,30,30,30
     EV = 0,252,0,252,0,4
 #-------------------------------
-[BIRDKEEPER1,Larry]
-LoseText = "..."
-Pokemon = PIDGEOT,53
-Pokemon = UNFEZANT,54
-#-------------------------------
-[BEAUTY1,Whilma]
+[BIRDBEAUTY,Whilma & Larry]
 LoseText = "..."
 Pokemon = WHIMSICOTT,53
+Pokemon = PIDGEOT,53
 Pokemon = NINETALES,54
     Form = 1
+Pokemon = UNFEZANT,54
 #-------------------------------
-[MEDIUM,Shishi]
+[STRANGEDUO,Dirk & Shishi]
 LoseText = "..."
 Pokemon = GOLURK,52
+Pokemon = WEEZING,52
 Pokemon = DUGTRIO,53
     Form = 1
-#-------------------------------
-[CUEBALL1,Dirk]
-LoseText = "..."
-Pokemon = WEEZING,52
 Pokemon = ARBOK,53
 #-------------------------------
-[COOLTRAINER_F,Danielle]
-LoseText = "..."
-Pokemon = NIDOQUEEN,52
-Pokemon = MISMAGIUS,53
-#-------------------------------
-[COOLTRAINER_M,Daniel]
+[COOLCOUPLE,Danielle & Daniel]
 LoseText = "..."
 Pokemon = NIDOKING,52
+Pokemon = NIDOQUEEN,52
 Pokemon = CHANDELURE,53
+Pokemon = MISMAGIUS,53
 #-------------------------------
-[GENTLEMAN1,Eustace]
+[ACETRAINERS,Dylan & Hailey]
 LoseText = "..."
 Pokemon = METAGROSS,52
-Pokemon = FLYGON,52
-#-------------------------------
-[LASS4,Tyra]
-LoseText = "..."
 Pokemon = DELCATTY,52
+Pokemon = FLYGON,52
 Pokemon = FLAREON,52
 #-------------------------------
 [ROCKETELITE_M,Garin]
