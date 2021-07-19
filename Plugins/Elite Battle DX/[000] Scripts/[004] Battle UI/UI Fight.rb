@@ -124,7 +124,7 @@ class FightWindowEBDX
     @background = Sprite.new(@viewport)
     @background.create_rect(@viewport.width,64,Color.new(0,0,0,150))
     @background.bitmap = pbBitmap(@path + @barImg) if !@barImg.nil?
-    @background.y = Graphics.height - @background.bitmap.height
+    @background.y = @viewport.height + 68#(Graphics.height - @background.bitmap.height) - 2
     @background.z = 100
 
     @megaButton = Sprite.new(@viewport)
@@ -132,7 +132,7 @@ class FightWindowEBDX
     @megaButton.z = 101
     @megaButton.src_rect.width /= 2
     @megaButton.center!
-    @megaButton.x = 30
+    @megaButton.x = 36
     @megaButton.y = @viewport.height - @background.bitmap.height/2 + 100
 
     @sel = SpriteSheet.new(@viewport,4)
@@ -276,11 +276,12 @@ class FightWindowEBDX
     end
   end
   def showPlay
-    @megaButton.src_rect.x = 0
+    #@megaButton.src_rect.x = 0
     @background.y = @viewport.height
     8.times do
       self.show; @scene.wait(1, true)
     end
+	@background.y -= 4
   end
   #-----------------------------------------------------------------------------
   #  hide fight menu animation
@@ -289,7 +290,7 @@ class FightWindowEBDX
     @sel.visible = false
     @typeInd.visible = false
     @background.y += (@background.bitmap.height/8)
-    @megaButton.y += 12
+    @megaButton.y += 10
     for i in 0...@nummoves
       @button["#{i}"].x -= ((i%2 == 0 ? 1 : -1)*@viewport.width/16)
     end
@@ -300,7 +301,8 @@ class FightWindowEBDX
     8.times do
       self.hide; @scene.wait(1, true)
     end
-    @megaButton.y = @viewport.height - @background.bitmap.height/2 + 100
+	@background.y += 4
+    @megaButton.y = (@viewport.height - @background.bitmap.height/2 + 100)
   end
   #-----------------------------------------------------------------------------
   #  toggle mega button visibility
@@ -314,7 +316,7 @@ class FightWindowEBDX
   def megaButtonTrigger
     @megaButton.src_rect.x += @megaButton.src_rect.width
     @megaButton.src_rect.x = 0 if @megaButton.src_rect.x > @megaButton.src_rect.width
-    @megaButton.src_rect.y = -4
+    @megaButton.src_rect.y = -2
   end
   #-----------------------------------------------------------------------------
   #  update fight menu
@@ -322,7 +324,7 @@ class FightWindowEBDX
   def update
     @sel.visible = true
     if @showMega
-      @megaButton.y -= 10 if @megaButton.y > @viewport.height - @background.bitmap.height/2
+      @megaButton.y = @viewport.height - 24 #if @megaButton.y > @viewport.height - @background.bitmap.height/2
       @megaButton.src_rect.y += 1 if @megaButton.src_rect.y < 0
     end
     if @oldindex != @index

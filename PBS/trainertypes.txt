@@ -121,3 +121,4 @@
 119,DESERT_F,Explorer,38,,,Collector,Female,,
 120,STRANGEDUO,Strange Duo,80,Trainer_Battle_Johto,,Collector,Mixed,80,
 121,BIRDBEAUTY,Birdkeeper & Beauty,80,Trainer_Battle_Johto,,AceTrainer,Mixed,80,
+122,BURGLARS,Burglars,88,,,Thug,Male,50,

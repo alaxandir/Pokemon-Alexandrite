@@ -39,7 +39,7 @@ module EliteBattle
   SUPER_SHINY_RATE = 1
 
   # Show player line up during wild battles
-  SHOW_LINEUP_WILD = true
+  SHOW_LINEUP_WILD = false
 
   # Adjust the player sendout animations based on whether or not the
   # Following Pokemon EX system is present

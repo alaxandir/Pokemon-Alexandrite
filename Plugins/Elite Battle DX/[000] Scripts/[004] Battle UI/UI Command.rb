@@ -134,7 +134,16 @@ class CommandWindowEBDX
     @sprites["bg"] = Sprite.new(@viewport)
     @sprites["bg"].create_rect(@viewport.width,40,Color.new(0,0,0,150))
     @sprites["bg"].bitmap = pbBitmap(@path+@barImg) if !@barImg.nil?
-    @sprites["bg"].y = @viewport.height
+    @sprites["bg"].y = @viewport.height + 2
+	
+	#EDIT
+	@sprites["hint"] = Sprite.new(@viewport)										#
+    @sprites["hint"].bitmap = pbBitmap(@path + @hintImg)							#	
+    @sprites["hint"].z = 101														#
+    @sprites["hint"].src_rect.width /= 2											#
+    @sprites["hint"].center!														#
+    @sprites["hint"].x = 46															#
+    @sprites["hint"].y = @viewport.height - 30										#
 	
     self.update
   end
@@ -193,19 +202,12 @@ class CommandWindowEBDX
         c = (j > 0) ? @btnCmd.get_pixel(x+8,h*i+8).darken(0.6) : Color.new(51,51,51)
         pbDrawOutlineText(@sprites["b#{i}"].bitmap,@btnEmp.width*j,11,@btnEmp.width,h,cmds[i],Color.white,c,1)
       end
-      @sprites["b#{i}"].x = (@viewport.width/(cmds.length + 1))*(i+1)
-      @sprites["b#{i}"].y = @viewport.height - 36 + 80
+      @sprites["b#{i}"].x = ((@viewport.width/(cmds.length + 1))*(i+1))+20
+      @sprites["b#{i}"].y = @viewport.height + 49 #- 36 + 80
     end
-    @sprites["bg"].y = @viewport.height + 40
+    @sprites["bg"].y = @viewport.height + 68 #+40
+	@sprites["hint"].visible = true
 	
-	#EDIT
-	@sprites["hint"] = Sprite.new(@viewport)										#
-    @sprites["hint"].bitmap = pbBitmap(@path + @hintImg)							#	
-    @sprites["hint"].z = 101														#
-    @sprites["hint"].src_rect.width /= 2											#
-    @sprites["hint"].center!														#
-    @sprites["hint"].x = 30															#
-    @sprites["hint"].y = @viewport.height - 35 										#
   end
   #-----------------------------------------------------------------------------
   #  compile command menu
@@ -300,38 +302,39 @@ class CommandWindowEBDX
   #  show command menu animation
   #-----------------------------------------------------------------------------
   def show
-
     @sprites["sel"].visible = false
     @sprites["bg"].y -= @sprites["bg"].bitmap.height/4
+	@sprites["hint"].y -= 30
     for i in 0...@indexes.length
       next if !@sprites["b#{i}"]
       @sprites["b#{i}"].y -= 10
     end
   end
   def showPlay
-  	@sprites["hint"].visible = true
     8.times do
       self.show; @scene.wait(1, true)
     end
+	@scene.wait(8,true)
+
   end
   #-----------------------------------------------------------------------------
   #  hide command menu animation
   #-----------------------------------------------------------------------------
   def hide(skip = false)
     return if skip
-
     @sprites["sel"].visible = false
     @sprites["bg"].y += @sprites["bg"].bitmap.height/4
+	@sprites["hint"].y += 30
     for i in 0...@indexes.length
       next if !@sprites["b#{i}"]
       @sprites["b#{i}"].y += 10
     end
   end
   def hidePlay
-	@sprites["hint"].visible = false
     8.times do
       self.hide; @scene.wait(1, true)
     end
+	@sprites["hint"].visible = false
   end
   #-----------------------------------------------------------------------------
   #  update command menu

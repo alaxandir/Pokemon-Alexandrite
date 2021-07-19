@@ -582,28 +582,25 @@ Pokemon = COMFEY,27
 Pokemon = ESPEON,27
 Pokemon = AZUMARILL,27
 #-------------------------------
-[BIKER,Carlos]
-LoseText = "..."
-Pokemon = LAIRON,27
-Pokemon = ELECTRODE,27
-Pokemon = MIGHTYENA,27
-#-------------------------------
 [BIKER,Brent]
 LoseText = "..."
 Pokemon = LIEPARD,27
 Pokemon = MINUN,27
 Pokemon = DUNSPARCE,27
 #-------------------------------
-[BURGLAR,Zack]
+[BURGLARS,Zack & Abbot]
 LoseText = "..."
 Pokemon = NINJASK,27
-Pokemon = RATICATE,27
-#-------------------------------
-[BURGLAR,Abbot]
-LoseText = "..."
 Pokemon = DUGTRIO,27
-Pokemon = NUZLEAF,27
-#-------------------------------
+Pokemon = RATICATE_1,27
+Pokemon = PAWNIARD,27
+#--------------------------
+[BIKER,Carlos]
+LoseText = "..."
+Pokemon = LAIRON,27
+Pokemon = ELECTRODE,27
+Pokemon = MIGHTYENA,27
+#------------------------------
 [BIKER,Fred]
 LoseText = "..."
 Pokemon = KOFFING,20
