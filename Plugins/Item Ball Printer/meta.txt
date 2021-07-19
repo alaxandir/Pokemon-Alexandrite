@@ -1,0 +1,4 @@
+Name         = Item Ball Printer
+Version      = 1.1
+Website      = https://www.pokecommunity.com/showthread.php?p=10382457
+Credits      = FL 

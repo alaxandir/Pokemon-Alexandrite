@@ -127,7 +127,7 @@ GameData::Weather.register({
   :tile_delta_x     => -720,
   :tile_delta_y     => 360,
   :tone_proc        => proc { |strength|
-    next Tone.new(strength / 2, 0, -strength / 2, 0)
+    next Tone.new(16, 16, 8, 0)
   }
 })
 

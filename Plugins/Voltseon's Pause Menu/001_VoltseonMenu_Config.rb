@@ -31,7 +31,7 @@ MENU_ENTRIES = [
 # An array of aLL the Menu Component Classes from 004_VoltseonMenu_Components
 # that need to be loaded
 MENU_COMPONENTS = [
-  "SafariHud", "BugContestHud", "PokemonPartyHud", "DateAndTimeHud"
+  "SafariHud", "BugContestHud", "PokemonPartyHud", "DateAndTimeHud", "NewQuestHud"
 ]
 
 # The default theme for the menu screen

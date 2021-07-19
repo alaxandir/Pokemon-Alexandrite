@@ -1,14 +1,15 @@
 ################################################################################
 # Mass Berry Picker Script by:
 # - PurpleZaffre
+# - ThatWelshOne_
 # Please give credits when using this.
 ################################################################################
 
 if defined?(PluginManager)
   PluginManager.register({
     :name => "Mass Berry Picker Script",
-    :version => "1.0",
-    :credits => "PurpleZaffre",
+    :version => "1.1",
+    :credits => ["PurpleZaffre","ThatWelshOne_"]
   })
 end
 
@@ -20,20 +21,20 @@ def pbMassBerryPicker(num1,num2,map=nil)
   map = $game_map.map_id if map == nil
   harvestedBerries = false
   for i in num1..num2
-    berryData = i.variable#[[map,i]]
+    berryData = $PokemonGlobal.eventvars[[map,i]]
     if berryData
       berryToReceive=berryData[1]
       if berryData[0] == 5
-        berryvalues=pbGetBerryPlantData(berryData[1])
+        berryvalues=GameData::BerryPlant.get(berryData[1])
         berrycount=1
         if berryData.length>6
-          berrycount=[berryvalues[3]-berryData[6],berryvalues[2]].max
+          berrycount=[berryvalues.maximum_yield-berryData[6],berryvalues.minimum_yield].max
         else
           if berryData[4]>0
-            randomno=rand(1+berryvalues[3]-berryvalues[2])
-            berrycount=(((berryvalues[3]-berryvalues[2])*(berryData[4]-1)+randomno)/4).floor+berryvalues[2]
+            randomno=rand(1+berryvalues.maximum_yield-berryvalues.minimum_yield)
+            berrycount=(((berryvalues.maximum_yield-berryvalues.minimum_yield)*(berryData[4]-1)+randomno)/4).floor+berryvalues.minimum_yield
           else
-            berrycount=berryvalues[2]
+            berrycount=berryvalues.minimum_yield
           end
         end
         $PokemonBag.pbStoreItem(berryToReceive,berrycount)
@@ -44,7 +45,7 @@ def pbMassBerryPicker(num1,num2,map=nil)
         $PokemonGlobal.eventvars[[map,i]]=nil
         $game_map.refresh
         pbWait(1)
-        if NEW_BERRY_PLANTS
+        if Settings::NEW_BERRY_PLANTS
           berryData=[0,0,0,0,0,0,0,0]
         else
           berryData=[0,0,false,0,0,0]

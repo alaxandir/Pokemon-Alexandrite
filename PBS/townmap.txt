@@ -110,11 +110,28 @@ Point = 25,8,Route 102,,,,,
 Point = 26,8,Route 102,,,,,
 Point = 27,8,Bouldergrove City,Powerplant,86,29,23,
 Point = 27,9,Bouldergrove City,Powerplant,86,29,23,
-Point = 27,7,Bouldergrove Mine,,,,,
+Point = 27,7,Bouldergrove Tunnel,,,,,
 Point = 27,5,Cinder Island,,,,,
 Point = 2,2,Rocket Island,Rocket Base,,,,130
 Point = 5,17,Castform Island,Paradise Cove,51,22,24,135
-#-------------------------------
+Point = 19,7,Seafoam Cave,,,,,
+Point = 18,7,Seafoam Cave,,,,,
+Point = 17,7,Seafoam Cave,,,,,
+Point = 16,8,Seafoam Cave,,,,,
+Point = 12,8,Slate Tunnel,In Development,,,,
+Point = 13,8,Ochre Valley,In Development,,,,
+Point = 14,8,Ochre Valley,In Development,,,,
+Point = 15,8,Ochre Valley,In Development,,,,
+Point = 14,9,Ochre Valley,In Development,,,,
+Point = 14,10,Saltrock Villa,In Development,,,,
+Point = 27,6,Bouldergrove Tunnel,,,,,
+Point = 14,16,Frozen Cavern,,,,,
+Point = 14,17,Frozen Cavern,,,,,
+Point = 15,17,Frozen Cavern,,,,,
+Point = 10,3,Origin Cave,,,,,
+
+
+#------------------------------
 [1]
 Name=Tiall
 Filename=mapRegion1.png

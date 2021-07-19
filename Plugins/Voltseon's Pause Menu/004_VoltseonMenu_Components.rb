@@ -3,7 +3,7 @@
 #-------------------------------------------------------------------------------
 class SafariHud < Component
 	def startComponent(viewport)
-		super(viewport, spritehash)
+		super(viewport)
 		@sprites["overlay"] = BitmapSprite.new(Graphics.width/2,96,viewport)
 		@sprites["overlay"].ox = @sprites["overlay"].bitmap.width
 		@sprites["overlay"].x = Graphics.width
@@ -193,7 +193,7 @@ class DateAndTimeHud < Component
 end
 
 #-------------------------------------------------------------------------------
-# New Quesst Message Hud component
+# New Quest Message Hud component
 #-------------------------------------------------------------------------------
 class NewQuestHud < Component
 	def initialize
@@ -239,3 +239,4 @@ class NewQuestHud < Component
 		end
 	end
 end
+

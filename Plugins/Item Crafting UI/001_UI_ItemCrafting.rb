@@ -62,7 +62,7 @@ class ItemCraft_Scene
     @sprites["leftarrow"].visible = false
     @sprites["leftarrow"].play
     @sprites["bottombar"] = BitmapSprite.new(Graphics.width,Graphics.height,@viewport)
-    @sprites["bottombar"].bitmap.fill_rect(0,Graphics.height-32,Graphics.width,32,Color.new(144,184,240))
+    @sprites["bottombar"].bitmap.fill_rect(0,Graphics.height-32,Graphics.width,32,Color.new(122,0,8))
     @sprites["bottombar"].visible = true
     @sprites["overlay1"] = BitmapSprite.new(Graphics.width,Graphics.height,@viewport)
     @overlay1 = @sprites["overlay1"].bitmap

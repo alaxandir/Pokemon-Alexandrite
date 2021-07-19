@@ -208,6 +208,50 @@ Pokemon = DIGLETT,15
 Pokemon = DIGLETT,15
     IV = 30,30,30,30,30,30
 #-------------------------------
+[DESERT_M,Tyler]
+LoseText = "We should take a break after that."
+Pokemon = NINCADA,15
+Pokemon = PONYTA_1,15
+Pokemon = MAGNEMITE,15
+#-------------------------------
+[DESERT_F,Arianna]
+LoseText = "It's too hot out here to concentrate."
+Pokemon = NIDORANfE,15
+Pokemon = KANKWART,15
+Pokemon = YANMA,15
+#-------------------------------
+[DESERT_F,Shakira]
+LoseText = "I'm thirsty after that battle."
+Pokemon = CUBONE,15
+Pokemon = RATTATA_1,15
+#-------------------------------
+[RUINMANIAC,Wallace]
+LoseText = "I got sand in my eyes!"
+Pokemon = ARCHEN,15
+Pokemon = LILEEP,15
+#-------------------------------
+[DESERT_M,Tyler,1]
+LoseText = "We should take a break after that."
+Pokemon = NINJASK,52
+Pokemon = RAPIDASH_1,52
+Pokemon = MAGNEZONE,52
+#-------------------------------
+[DESERT_F,Arianna,1]
+LoseText = "It's too hot out here to concentrate."
+Pokemon = NIDOQUEEN,52
+Pokemon = KANKERSAUR,52
+Pokemon = YANMEGA,52
+#-------------------------------
+[DESERT_F,Shakira,1]
+LoseText = "I'm thirsty after that battle."
+Pokemon = MAROWAK,52
+Pokemon = RATICATE_1,52
+#-------------------------------
+[RUINMANIAC,Wallace,1]
+LoseText = "I got sand in my eyes!"
+Pokemon = ARCHEOPS,52
+Pokemon = CRADILY,52
+#-------------------------------
 [CAMPER,Buddy]
 LoseText = "..."
 Pokemon = HOPPIP,16
@@ -538,28 +582,25 @@ Pokemon = COMFEY,27
 Pokemon = ESPEON,27
 Pokemon = AZUMARILL,27
 #-------------------------------
-[BIKER,Carlos]
-LoseText = "..."
-Pokemon = LAIRON,27
-Pokemon = ELECTRODE,27
-Pokemon = MIGHTYENA,27
-#-------------------------------
 [BIKER,Brent]
 LoseText = "..."
 Pokemon = LIEPARD,27
 Pokemon = MINUN,27
 Pokemon = DUNSPARCE,27
 #-------------------------------
-[BURGLAR,Zack]
+[BURGLARS,Zack & Abbot]
 LoseText = "..."
 Pokemon = NINJASK,27
-Pokemon = RATICATE,27
-#-------------------------------
-[BURGLAR,Abbot]
-LoseText = "..."
 Pokemon = DUGTRIO,27
-Pokemon = NUZLEAF,27
-#-------------------------------
+Pokemon = RATICATE_1,27
+Pokemon = PAWNIARD,27
+#--------------------------
+[BIKER,Carlos]
+LoseText = "..."
+Pokemon = LAIRON,27
+Pokemon = ELECTRODE,27
+Pokemon = MIGHTYENA,27
+#------------------------------
 [BIKER,Fred]
 LoseText = "..."
 Pokemon = KOFFING,20
@@ -1123,46 +1164,34 @@ Pokemon = ELECTIVIRE,55
     IV = 30,30,30,30,30,30
     EV = 0,252,0,252,0,4
 #-------------------------------
-[BIRDKEEPER1,Larry]
-LoseText = "..."
-Pokemon = PIDGEOT,53
-Pokemon = UNFEZANT,54
-#-------------------------------
-[BEAUTY1,Whilma]
+[BIRDBEAUTY,Whilma & Larry]
 LoseText = "..."
 Pokemon = WHIMSICOTT,53
+Pokemon = PIDGEOT,53
 Pokemon = NINETALES,54
     Form = 1
+Pokemon = UNFEZANT,54
 #-------------------------------
-[MEDIUM,Shishi]
+[STRANGEDUO,Dirk & Shishi]
 LoseText = "..."
 Pokemon = GOLURK,52
+Pokemon = WEEZING,52
 Pokemon = DUGTRIO,53
     Form = 1
-#-------------------------------
-[CUEBALL1,Dirk]
-LoseText = "..."
-Pokemon = WEEZING,52
 Pokemon = ARBOK,53
 #-------------------------------
-[COOLTRAINER_F,Danielle]
-LoseText = "..."
-Pokemon = NIDOQUEEN,52
-Pokemon = MISMAGIUS,53
-#-------------------------------
-[COOLTRAINER_M,Daniel]
+[COOLCOUPLE,Danielle & Daniel]
 LoseText = "..."
 Pokemon = NIDOKING,52
+Pokemon = NIDOQUEEN,52
 Pokemon = CHANDELURE,53
+Pokemon = MISMAGIUS,53
 #-------------------------------
-[GENTLEMAN1,Eustace]
+[ACETRAINERS,Dylan & Hailey]
 LoseText = "..."
 Pokemon = METAGROSS,52
-Pokemon = FLYGON,52
-#-------------------------------
-[LASS4,Tyra]
-LoseText = "..."
 Pokemon = DELCATTY,52
+Pokemon = FLYGON,52
 Pokemon = FLAREON,52
 #-------------------------------
 [ROCKETELITE_M,Garin]

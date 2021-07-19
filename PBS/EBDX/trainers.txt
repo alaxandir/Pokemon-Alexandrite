@@ -51,7 +51,6 @@ BattleScript	 = RICHARD
 [LEADER_Lora]
 BattleEnv        = CHAMPION
 BattleVS         = forestSM
-Ace				 = 4
 BattleScript	 = LORA
 #-------------------------------
 [LEADER_Brahm]
@@ -268,4 +267,8 @@ BattleVS		= minorTrainer
 [YOUNGCOUPLE]
 BattleVS		= minorTrainer
 [YOUNGSTER]
+BattleVS		= minorTrainer
+[STRANGEDUO]
+BattleVS		= minorTrainer
+[BURGLARS]
 BattleVS		= minorTrainer

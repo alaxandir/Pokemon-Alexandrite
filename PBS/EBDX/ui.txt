@@ -10,11 +10,11 @@ Container          = containers
 HPColors           = barColors
 ExpandInDoubles    = false
 CONTAINER
-  XYZ              = 20,6,1
+  XYZ              = 40,6,1
 NAME
-  XYZ              = 22,-24,9
+  XYZ              = 22,-20,9
 HP
-  XYZ              = 22,9,9
+  XYZ              = 42,10,9
 STATUS
   XYZ              = -26,16,1
 MEGA
@@ -30,9 +30,9 @@ Bitmap             = dataBox
 Container          = containers
 HPColors           = barColors
 CONTAINER
-  XYZ              = 24,6,1
+  XYZ              = 6,6,1
 NAME
-  XYZ              = 26,-24,9
+  XYZ              = 20,-20,9
 HP
   XYZ              = 20,9,9
 STATUS
@@ -44,6 +44,7 @@ MEGA
 ButtonGraphic      = btnCmd
 SelectorGraphic    = cmdSel
 PartyLineGraphic   = partyLine
+BarGraphic		   = bar1
 #-------------------------------
 [FIGHTMENU]
 ButtonGraphic      = moveSelButtons
@@ -52,6 +53,7 @@ SelectorGraphic    = cmdSel
 CategoryGraphic    = category
 TypeGraphic        = types
 ShowTypeAdvantage  = false
+BarGraphic		   = bar1
 #-------------------------------
 [BAGMENU]
 Shade             = shade
