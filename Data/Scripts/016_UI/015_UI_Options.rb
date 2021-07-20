@@ -15,6 +15,7 @@ class PokemonSystem
   attr_accessor :textinput
   attr_accessor :difficulty
   attr_accessor :grassanim
+  attr_accessor :fontface
 
   def initialize
     @textspeed   = 1     # Text speed (0=slow, 1=normal, 2=fast)
@@ -30,6 +31,7 @@ class PokemonSystem
     @textinput   = 0     # Text input mode (0=cursor, 1=keyboard)
 	@difficulty  = 0     #0.6.1
 	@grassanim   = 0     #0.7.2
+	@fontface    = 0
 	end
 	
   def difficulty						#0.6.1
@@ -40,6 +42,11 @@ class PokemonSystem
   def grassanim						#0.7.2
 	@grassanim = 0 if !@grassanim   #!
   return @grassanim					#!
+  end
+  
+  def fontfance
+	@fontface = 0 if !@fontface #0.8.1
+  return @fontface
   end
 
 end

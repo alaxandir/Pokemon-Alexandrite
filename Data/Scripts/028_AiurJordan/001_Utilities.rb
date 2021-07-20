@@ -190,7 +190,6 @@ class Game_Player
     move_creepy_event(@direction) if $PokemonTemp.mirror_guy_eventid != nil
   end
 end
-
 ################# CHECK ENCOUNTER ID'S ON MAP CHANGE
 
 #Check the desert for encounter tables
