@@ -3,12 +3,12 @@ module MessageConfig
   LIGHT_TEXT_SHADOW_COLOR = Color.new(72, 80, 88)
   DARK_TEXT_MAIN_COLOR    = Color.new(80, 80, 88)
   DARK_TEXT_SHADOW_COLOR  = Color.new(160, 160, 168)
-  FONT_NAME               = "Power Clear"
-  FONT_SIZE               = 29
+  FONT_NAME               = "Power Green"
+  FONT_SIZE               = 28
   SMALL_FONT_NAME         = "Power Green Small"
-  SMALL_FONT_SIZE         = 25
+  SMALL_FONT_SIZE         = 24
   NARROW_FONT_NAME        = "Power Green Narrow"
-  NARROW_FONT_SIZE        = 29
+  NARROW_FONT_SIZE        = 28
   # 0 = Pause cursor is displayed at end of text
   # 1 = Pause cursor is displayed at bottom right
   # 2 = Pause cursor is displayed at lower middle side

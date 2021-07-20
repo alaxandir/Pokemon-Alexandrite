@@ -551,6 +551,71 @@ module EnvironmentEBDX
 	:zoom => 0.5
 	}
   }
+################################
+SPIRITTOWER = {
+    "backdrop" => "IndoorB",
+    "img001" => {
+      :bitmap => "dark001",
+      :oy => 70, :ox => 70, :y => 128, :x => 248, :z => 2, :effect => "rotate", :zoom => 0.75
+    }, "img002" => {
+      :bitmap => "dark002",
+      :oy => 120, :ox => 120, :y => 128, :x => 242, :z => 3, :direction => -1, :effect => "rotate", :zoom => 0.75
+    }, "img003" => {
+      :bitmap => "dark003",
+      :oy => 110, :ox => 110, :y => 128, :x => 234, :z => 4, :effect => "rotate"
+    }, "img004" => {
+      :scrolling => true, :speed => 0.5,
+      :bitmap => "darkFog",
+      :oy => 0, :y => 0, :z => 5, :flat => true
+    }, "vacuum" => true,
+	"img005" => {
+	:bitmap => "indoor1_base1",
+	:x => 238,
+	:y => 188,
+	:z => 1,
+	:zoom => 0.5
+	},
+	"img006" => {
+	:bitmap => "indoor1_base0",
+	:x => 85,
+	:y => 250,
+	:z => 1,
+	:zoom => 0.5
+	}
+  }
+###################################
+DESERT = {
+    "backdrop" => "Sand", "sky" => true, "trees" => {
+      :elements => 8, :bitmap => "Cactus", :colorize => "slight",
+      :x => [271,78,288,176,42,118,348,321],
+      :y => [117,118,122,122,127,127,128,132],
+      :zoom => [0.44,0.59,0.59,0.59,0.64,0.85,0.7,1],
+      :mirror => [false,true,true,true,false,false,true,false]
+    }, "img001" => {
+      :bitmap => "mountainC",
+      :x => 192, :y => 107
+    },
+    "img002" => { :bitmap => "rocks", :x => 228, :y => 148, :colorize => true, :zx => 0.5, :zy => 0.5, :z => 5, :mirror => true },
+    "img003" => { :bitmap => "rocks", :x => 124, :y => 142, :colorize => true, :zx => 0.4, :zy => 0.4, :z => 5 },
+    "img004" => { :bitmap => "rocks", :x => 65, :y => 148, :colorize => true, :zx => 0.7, :zy => 0.7, :z => 5, :mirror => true },
+    "img005" => { :bitmap => "rocks", :x => 292, :y => 150, :colorize => true, :zx => 0.7, :zy => 0.7, :z => 10, :mirror => true },
+    "img006" => { :bitmap => "rocks", :x => 162, :y => 187, :colorize => true, :zx => 0.9, :zy => 0.9, :z => 10 },
+    "img007" => { :bitmap => "rocks", :x => 320, :y => 218, :colorize => true, :zx => 1, :zy => 1, :z => 10 },
+	"img008" => {
+	:bitmap => "rocky_base1",
+	:x => 238,
+	:y => 188,
+	:z => 1,
+	:zoom => 0.5
+	},
+	"img009" => {
+	:bitmap => "rocky_base0",
+	:x => 85,
+	:y => 250,
+	:z => 1,
+	:zoom => 0.5
+	}
+  }
 end
 #===============================================================================
 #  Extra additions to the battle scene based on terrain

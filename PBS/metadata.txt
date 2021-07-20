@@ -310,14 +310,14 @@ MapPosition = 0,16,11
 # Spirit Tower 2F
 Outdoor = false
 ShowArea = true
-Weather = Fog,100
+Weather = None,0
 MapPosition = 0,16,11
 #-------------------------------
 [047]
 # Spirit Tower 3F
 Outdoor = false
 ShowArea = true
-Weather = Fog,100
+Weather = None,0
 MapPosition = 0,16,11
 #-------------------------------
 [048]
@@ -332,7 +332,7 @@ BattleBack = City
 # Spirit Tower 4F
 Outdoor = false
 ShowArea = true
-Weather = Fog,100
+Weather = None,0
 MapPosition = 0,16,11
 #-------------------------------
 [050]

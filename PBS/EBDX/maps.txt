@@ -7,6 +7,22 @@ BattleEnv       = INDOOR2
 # 6F Silph Co
 BattleEnv       = INDOOR2
 #-------------------------------
+[006]
+# fortune city gym
+BattleEnv       = INDOOR2
+#-------------------------------
+[008]
+# spirit garden
+BattleEnv       = FOREST
+#-------------------------------
+[010]
+# vic roa
+BattleEnv       = MOUNTAIN
+#-------------------------------
+[011]
+# vic road water
+BattleEnv       = DARKCAVE
+#-------------------------------
 [016]
 # CYBERSPACE
 BattleEnv       = SCIFI
@@ -23,6 +39,22 @@ BattleEnv       = INDOOR2
 # ROCKETBASE
 BattleEnv       = INDOOR2
 #-------------------------------
+[025]
+#boulder tunnel
+BattleEnv       = CAVE
+#-------------------------------
+[026]
+#boulder tunnel
+BattleEnv       = CAVE
+#-------------------------------
+[027]
+#cinder island
+BattleEnv       = OUTDOOR
+#-------------------------------
+[031]
+# vic road cave
+BattleEnv       = CAVE
+#-------------------------------
 [032]
 # Your Home
 BattleEnv       = INDOOR
@@ -31,20 +63,76 @@ BattleEnv       = INDOOR
 # Earthroot Forest
 BattleEnv       = FOREST
 #-------------------------------
+[034]
+# vic road exterior
+BattleEnv       = OUTDOOR
+#-------------------------------
+[035]
+# vic road lava
+BattleEnv       = MAGMA
+#-------------------------------
+[036]
+# E4 Robert
+BattleEnv       = CHAMPION
+#------------------------------
+[037]
+# E4 will
+BattleEnv       = CHAMPION
+#------------------------------
+[038]
+# E4 kyra
+BattleEnv       = CHAMPION
+#------------------------------
+[039]
+# E4 anya
+BattleEnv       = CHAMPION
+#---------------------------------
+[040]
+# champion
+BattleEnv       = CHAMPION
+#-------------------------------
 [042]
 BattleEnv       = OUTDOOR
 #-------------------------------
 [043]
 BattleEnv       = OUTDOOR
 #-------------------------------
+[046]
+BattleEnv       = SPIRITTOWER
+#-------------------------------
+[047]
+BattleEnv       = SPIRITTOWER
+#-------------------------------
 [048]
 # Seafoam City
 BattleEnv       = OUTDOOR
 #-------------------------------
+[049]
+BattleEnv       = SPIRITTOWER
+#-------------------------------
+[053]
+#verdant jungle
+BattleEnv       = FOREST
+#-------------------------------
+[054]
+#overgrown ruin
+BattleEnv       = INDOOR2
+#-------------------------------
+[073]
+# ochre valley
+BattleEnv       = DESERT
+#-------------------------------
+[074]
+# ochre valley
+BattleEnv       = DESERT
+#-------------------------------
+[075]
+# ochre valley
+BattleEnv       = DESERT
+#-------------------------------
 [078]
 # Seafoam Gym
 BattleEnv       = WATER
-
 #-------------------------------
 [081]
 # Underground Tunnel
