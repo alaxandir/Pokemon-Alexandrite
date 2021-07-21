@@ -853,6 +853,19 @@ GoodRod
     20,GOLDEEN,18
     20,POLIWAG,18
 #-------------------------------
+[106]# Anthrophil City
+OldRod
+    70,FINNEON,10
+    30,LUVDISC,10
+GoodRod
+    50,FINNEON,15
+    30,LUVDISC,15
+    20,POLIWAG,15
+Water,2
+    50,FINNEON,20
+    30,LUVDISC,20
+    20,POLIWAG,20
+#-------------------------------
 [123] # Route 105
 Land,21
     20,EKANS,17,21

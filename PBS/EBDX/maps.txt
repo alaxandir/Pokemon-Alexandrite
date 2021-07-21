@@ -39,6 +39,14 @@ BattleEnv       = INDOOR2
 # ROCKETBASE
 BattleEnv       = INDOOR2
 #-------------------------------
+[022]
+# SAFARI
+BattleEnv       = OUTDOOR
+#-------------------------------
+[024]
+#safari cave
+BattleEnv       = CAVE
+#-------------------------------
 [025]
 #boulder tunnel
 BattleEnv       = CAVE

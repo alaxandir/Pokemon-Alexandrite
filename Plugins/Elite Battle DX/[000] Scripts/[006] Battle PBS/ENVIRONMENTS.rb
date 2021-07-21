@@ -34,8 +34,12 @@ EliteBattle.configProcess(:ENVIRONMENTS) do
   # concrete base when in cities
   EliteBattle.add_data(proc{ |terrain, environ|
     next (($game_map.name.downcase).include?("city") || ($game_map.name.downcase).include?("town")) &&
-         EliteBattle.outdoor_map?
+         EliteBattle.outdoor_map? && terrain != :Bridge && terrain != :FakeBridge
   }, :BACKDROP, TerrainEBDX::CONCRETE)
+  # Bridge & Fake Bridge
+  EliteBattle.add_data(proc{ |terrain, environ|
+    next $PokemonGlobal.fishing && terrain == :Bridge || terrain == :FakeBridge
+  }, :BACKDROP, TerrainEBDX::BRIDGE)
   # water base when surfing and no water environment is defined
   EliteBattle.add_data(proc{ |terrain, environ|
     next $PokemonGlobal.surfing && environ != :MovingWater
