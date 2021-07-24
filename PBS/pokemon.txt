@@ -23376,6 +23376,7 @@ BattlerEnemyX = 0
 BattlerEnemyY = 0
 BattlerShadowX = 0
 BattlerShadowSize = 2
+Evolutions = DIANCIE,Item,DIAMONDSTONE
 #-------------------------------
 [704]
 Name = Goomy

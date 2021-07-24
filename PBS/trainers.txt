@@ -932,6 +932,24 @@ Pokemon = LOPUNNY,44
 Pokemon = FLITTRICK,45
 Pokemon = MILTANK,45
 #-------------------------------
+[CHANELLER,Shauna]
+LoseText = "..."
+Pokemon = CHANDELURE,43
+Pokemon = GENGAR,43
+Pokemon = RAICHU,44
+#-------------------------------
+[CHANELLER,Tyra]
+LoseText = "..."
+Pokemon = MISMAGIUS,43
+Pokemon = GOLURK,43
+Pokemon = MRMIME,44
+#-------------------------------
+[CHANELLER,Alecia]
+LoseText = "..."
+Pokemon = DREEPY,43
+Pokemon = PERSIAN_1,43
+Pokemon = SPIRITOMB,44
+#-------------------------------
 [COOLTRAINER_F,Kayla]
 LoseText = "..."
 Pokemon = EMOLGA,44
@@ -1056,6 +1074,7 @@ Pokemon = UNFEZANT,32
 Pokemon = AZUMARILL,32
 Pokemon = HYPNO,33
 Pokemon = DUSKULL,33
+    Item = SITRUSBERRY
 Pokemon = KANGASKHAN,34
 #-------------------------------
 [POKEMONTRAINER_Brett,Brett,4]
@@ -1235,6 +1254,7 @@ Pokemon = MISMAGIUS,41
 [SCIENTIST_R_F,Isabelle]
 LoseText = "..."
 Pokemon = ROTOM_4,39
+    Item = SITRUSBERRY
 Pokemon = PORYGONZ,40
 Pokemon = AGGRON,40
     Item = AGGRONITE
@@ -1335,8 +1355,11 @@ Pokemon = CROBAT,58
 Items = FULLHEAL
 LoseText = "..."
 Pokemon = VICTREEBEL,54
+    Item = SITRUSBERRY
 Pokemon = AMOONGUSS,54
+    Item = SCOPELENS
 Pokemon = FORRETRESS,55
+    Item = LEFTOVERS
 Pokemon = LOPUNNY,55
     Item = LOPUNNITE
 #-------------------------------
@@ -1433,6 +1456,28 @@ Pokemon = SCOLIPEDE,56
     Moves = MEGAHORN,EARTHQUAKE,ROCKSLIDE,SWORDSDANCE
     AbilityIndex = 2
     Item = FOCUSSASH
+#-------------------------------
+[POKEMONRANGER_F,Gia]
+LoseText = "..."
+Pokemon = CARNIVINE,48
+    Item = ASSAULTVEST
+Pokemon = VENUSAUR,49
+    Item = SITRUSBERRY
+Pokemon = POLIWRATH,49
+    Item = LIFEORB
+Pokemon = FRAXURE,50
+	Item = EVIOLITE
+#-------------------------------
+[BUGCATCHER1,Dax]
+LoseText = "..."
+Pokemon = HERACROSS,49
+    Item = ASSAULTVEST
+Pokemon = NINJASK,49
+    Item = WHITEHERB
+Pokemon = ARIADOS,50
+    Item = SITRUSBERRY
+Pokemon = FORRETRESS,50
+    Item = LEFTOVERS
 #-------------------------------
 [ROCKETBOSS,Giovanni,1]
 Items = FULLRESTORE
@@ -2116,3 +2161,91 @@ Pokemon = MUK,50
     Nature = ADAMANT
     IV = 31,31,31,31,31,31
     EV = 4,252,0,252,0,0
+#-------------------------------
+[ROCKETADEPT_M,Chris]
+LoseText = "..."
+Pokemon = GENGAR,60
+Pokemon = TROPIUS,60
+Pokemon = RHYPERIOR,61
+Pokemon = BRELOOM,61
+#-------------------------------
+[POKEMONTRAINER_Brett,Brett,7]
+LoseText = "....."
+Pokemon = GARCHOMP,60
+    Moves = DRAGONTAIL,STEALTHROCK,CRUNCH,STONEEDGE
+    AbilityIndex = 2
+Pokemon = ARCANINE,60
+    Form = 1
+    Moves = FLAREBLITZ,WILDCHARGE,EXTREMESPEED,MORNINGSUN
+    AbilityIndex = 0
+Pokemon = KANGASKHAN,60
+    Moves = FAKEOUT,SEISMICTOSS,POWERUPPUNCH,BODYSLAM
+    AbilityIndex = 2
+#-------------------------------
+[POKEMONTRAINER_Eve,Eve,7]
+LoseText = "..."
+Pokemon = GARDEVOIR,60
+	Moves = PSYCHIC,HEALPULSE,HEALINGWISH,MAGICALLEAF
+Pokemon = SANDSLASH,60
+	Moves = RAPIDSPIN,SLASH,ROLLOUT,DIG
+Pokemon = BEARTIC,60
+	Moves = ICICLECRASH,FLAIL,AQUAJET,SUPERPOWER
+#-------------------------------
+[ROCKETELITE_F,Keri]
+LoseText = "..."
+Pokemon = CLOYSTER,60
+Pokemon = CHANDELURE,60
+Pokemon = GOLISOPOD,61
+Pokemon = SIRFETCHD,61
+#-------------------------------
+[ROCKETELITE_F,Olivia]
+LoseText = "..."
+Pokemon = AERODACTYL,61
+Pokemon = EXEGGUTOR,61
+Pokemon = GLALIE,61
+Pokemon = ELECTIVIRE,61
+#-------------------------------
+[ROCKETBOSS,Giovanni,2]
+LoseText = "..."
+Pokemon = MEWTWO,61
+    Moves = PSYSTRIKE,ICEBEAM,FIREBLAST,FOCUSBLAST
+    Item = MEWTWONITEY
+    IV = 28,28,28,28,28,28
+	EV = 0,0,40,252,216,0
+    Happiness = 0
+Pokemon = DRAGONITE,61
+    Moves = DRAGONDANCE,FLY,EARTHQUAKE,EXTREMESPEED
+    AbilityIndex = 2
+    Item = FOCUSSASH
+    Nature = JOLLY
+    IV = 28,28,28,28,28,28
+    EV = 0,252,0,252,0,4
+    Happiness = 0
+Pokemon = NIDOKING,61
+    Moves = SLUDGEWAVE,EARTHPOWER,ICEBEAM,IRONTAIL
+    AbilityIndex = 2
+    Item = LIFEORB
+    Nature = TIMID
+    IV = 28,28,28,28,28,28
+    EV = 0,0,4,252,252,0
+Pokemon = HYDREIGON,62
+    Moves = DRACOMETEOR,DARKPULSE,FIREBLAST,ROOST
+    Item = DREADPLATE
+    Nature = TIMID
+    IV = 28,28,28,28,28,28
+    EV = 0,0,0,252,252,4
+Pokemon = METAGROSS,63
+    Moves = METEORMASH,ICEPUNCH,ROCKSLIDE,EARTHQUAKE
+    AbilityIndex = 0
+    Item = ASSAULTVEST
+    Nature = JOLLY
+    IV = 28,28,28,28,28,28
+    EV = 232,60,0,176,0,40
+Pokemon = PERSIAN,64
+    Moves = RETALIATE,RETURN,GIGAIMPACT,CATNAP
+    Item = WEAKNESSPOLICY
+	AbilityIndex = 1
+    Nature = JOLLY
+    IV = 28,28,28,28,28,28
+    EV = 252,252,0,0,0,4
+	Happiness = 255

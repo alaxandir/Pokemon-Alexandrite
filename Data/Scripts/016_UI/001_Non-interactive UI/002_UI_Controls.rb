@@ -17,7 +17,7 @@ class ButtonEventScene < EventScene
     @key_screens = []
 
     addImageForScreen(1, 44, 122, "Graphics/Pictures/Controls help/help_f1")
-    addImageForScreen(1, 44, 252, "Graphics/Pictures/Controls help/help_f8")
+    addImageForScreen(1, 44, 244, "Graphics/Pictures/Controls help/help_f8")
     addLabelForScreen(1, 134, 84, 352, _INTL("Opens the Key Bindings window, where you can choose which keyboard keys to use for each control."))
     addLabelForScreen(1, 134, 244, 352, _INTL("Take a screenshot. It is put in the same folder as the save file."))
 
@@ -33,6 +33,11 @@ class ButtonEventScene < EventScene
     addImageForScreen(4, 16, 252, "Graphics/Pictures/Controls help/help_specialkey")
     addLabelForScreen(4, 134, 52, 352, _INTL("Has various functions depending on context. While moving around, hold to move at a different speed. (Default: Z)"))
     addLabelForScreen(4, 134, 212, 352, _INTL("Press to open the Ready Menu, where registered items and available field moves can be used. (Default: D)"))
+	
+	addImageForScreen(5, 44, 122, "Graphics/Pictures/Controls help/helpQkey")
+    addImageForScreen(5, 44, 244, "Graphics/Pictures/Controls help/helpWkey")
+    addLabelForScreen(5, 134, 84, 352, _INTL("Increase the game speed as a toggle between 1x, 2x, 3x speed. (Default: Q)"))
+    addLabelForScreen(5, 134, 244, 352, _INTL("Toggle follower Pokémon in the overworld. (Default: W)"))
 
     set_up_screen(@current_screen)
     Graphics.transition(20)

@@ -557,7 +557,7 @@ Land,21
     1,LEAFEON,24,27
     1,TRAPINCH,24,27
 #-------------------------------
-[073] # Ochre Valley
+[073,1] # Ochre Valley
 Land,21
     20,CAMERUPT,48,53
     20,MANDIBUZZ,48,53
@@ -568,7 +568,7 @@ Land,21
     5,RAPIDASH_1,48,53
     2,GARCHOMP,48,53
 #-------------------------------
-[073,1] # Ochre Valley
+[073] # Ochre Valley
 Land,21
     20,NUMEL,13,15
     20,NINCADA,13,15
@@ -577,20 +577,20 @@ Land,21
     15,PONYTA_1,13,15
     10,SANDSHREW,13,15
     5,GLIGAR,13,15
-#-------------------------------
-[074] # Ochre Valley
-Land,21
-    20,CAMERUPT,48,53
-    20,MANDIBUZZ,48,53
-    15,AGGRON,48,53
-    15,KROOKODILE,48,53
-    13,GLISCOR,48,53
-    10,MAROWAK,48,53
-    5,RAPIDASH_1,48,53
-    2,GARCHOMP,48,53
 #-------------------------------
 [074,1] # Ochre Valley
 Land,21
+    20,CAMERUPT,48,53
+    20,MANDIBUZZ,48,53
+    15,AGGRON,48,53
+    15,KROOKODILE,48,53
+    13,GLISCOR,48,53
+    10,MAROWAK,48,53
+    5,RAPIDASH_1,48,53
+    2,GARCHOMP,48,53
+#-------------------------------
+[074] # Ochre Valley
+Land,21
     20,NUMEL,13,15
     20,NINCADA,13,15
     15,ARON,13,15
@@ -599,7 +599,7 @@ Land,21
     10,SANDSHREW,13,15
     5,GLIGAR,13,15
 #-------------------------------
-[075] # Ochre Valley
+[075,1] # Ochre Valley
 Land,21
     20,CAMERUPT,48,53
     20,MANDIBUZZ,48,53
@@ -610,7 +610,7 @@ Land,21
     5,RAPIDASH_1,48,53
     2,GARCHOMP,48,53
 #-------------------------------
-[075,1] # Ochre Valley
+[075] # Ochre Valley
 Land,21
     20,NUMEL,13,15
     20,NINCADA,13,15
@@ -852,6 +852,19 @@ GoodRod
     60,MAGIKARP,18
     20,GOLDEEN,18
     20,POLIWAG,18
+#-------------------------------
+[106]# Anthrophil City
+OldRod
+    70,FINNEON,10
+    30,LUVDISC,10
+GoodRod
+    50,FINNEON,15
+    30,LUVDISC,15
+    20,POLIWAG,15
+Water,2
+    50,FINNEON,20
+    30,LUVDISC,20
+    20,POLIWAG,20
 #-------------------------------
 [123] # Route 105
 Land,21

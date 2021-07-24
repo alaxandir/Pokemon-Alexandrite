@@ -1854,7 +1854,7 @@ class PokeBattle_AI
         score -= 50
       end
     #---------------------------------------------------------------------------
-    when "0D5", "0D6"
+    when "0D5", "0D6", "194"
       if user.hp==user.totalhp || (skill>=PBTrainerAI.mediumSkill && !user.canHeal?)
         score -= 90
       else

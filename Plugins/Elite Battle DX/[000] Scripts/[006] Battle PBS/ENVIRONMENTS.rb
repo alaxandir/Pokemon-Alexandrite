@@ -26,18 +26,23 @@ EliteBattle.configProcess(:ENVIRONMENTS) do
   # Puddle
   EliteBattle.add_data(:Puddle, :TerrainTag, :BACKDROP, TerrainEBDX::PUDDLE)
   # Sand
-  EliteBattle.add_data(:Sand, :TerrainTag, :BACKDROP, TerrainEBDX::DIRT)
+  EliteBattle.add_data(:Sand, :TerrainTag, :BACKDROP, EnvironmentEBDX::BEACH)
   # Tall Grass
   EliteBattle.add_data(proc{ |terrain, environ|
-    next [:Grass, :TallGrass].include?(terrain) && environ != :Underwater
+    next [:Grass, :TallGrass].include?(terrain) && environ != :Underwater 
   }, :BACKDROP, TerrainEBDX::TALLGRASS)
   # concrete base when in cities
+  #EliteBattle.add_data(proc{ |terrain, environ|
+  #  next ((($game_map.name.downcase).include?("city") || ($game_map.name.downcase).include?("town")) &&
+  #       EliteBattle.outdoor_map? && (terrain != :Bridge || terrain != :FakeBridge) && (!$PokemonGlobal.surfing ||
+  #		 !$PokemonGlobal.fishing))
+  #}, :BACKDROP, TerrainEBDX::CONCRETE)
+  # Bridge & Fake Bridge
   EliteBattle.add_data(proc{ |terrain, environ|
-    next (($game_map.name.downcase).include?("city") || ($game_map.name.downcase).include?("town")) &&
-         EliteBattle.outdoor_map?
-  }, :BACKDROP, TerrainEBDX::CONCRETE)
+    next $PokemonGlobal.fishing && (terrain == :Bridge || terrain == :FakeBridge)
+  }, :BACKDROP, TerrainEBDX::BRIDGE)
   # water base when surfing and no water environment is defined
   EliteBattle.add_data(proc{ |terrain, environ|
     next $PokemonGlobal.surfing && environ != :MovingWater
   }, :BACKDROP, TerrainEBDX::WATER)
-end
+  end

@@ -23,7 +23,7 @@ class PokeBattle_Scene
     @sprites["ballshadow"].bitmap.bmp_circle(Color.black)
     @sprites["ballshadow"].ox = @sprites["ballshadow"].bitmap.width/2
     @sprites["ballshadow"].oy = @sprites["ballshadow"].bitmap.height/2 + 2
-    @sprites["ballshadow"].z = 32
+    @sprites["ballshadow"].z = 98
     @sprites["ballshadow"].opacity = 255*0.25
     @sprites["ballshadow"].visible = false
     @sprites["captureball"] = Sprite.new(@viewport)
@@ -31,7 +31,7 @@ class PokeBattle_Scene
     @sprites["captureball"].src_rect.set(0, ballframe*40, 41, 40)
     @sprites["captureball"].ox = 20
     @sprites["captureball"].oy = 20
-    @sprites["captureball"].z = 32
+    @sprites["captureball"].z = 99
     @sprites["captureball"].zoom_x = 4
     @sprites["captureball"].zoom_y = 4
     @sprites["captureball"].visible = false

@@ -31,3 +31,12 @@ class PokeBattle_Move_193 < PokeBattle_Move_0C0
     end
   end
 end
+
+#===============================================================================
+# Heals user by 1/2 of its max HP. (CATNAP)
+#===============================================================================
+class PokeBattle_Move_194 < PokeBattle_HealingMove
+	def pbHealAmount(user)
+		return (user.totalhp/2.0).round
+	end
+end

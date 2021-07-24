@@ -24,14 +24,14 @@ module EnvironmentEBDX
       :bitmap => "fog",
       :oy => 0, :z => 4, :flat => true
     },
-		"img005" => {
+	"img008" => {
 	:bitmap => "cave1_base1",
 	:x => 238,
 	:y => 188,
 	:z => 1,
 	:zoom => 0.5
 	},
-	"img006" => {
+	"img009" => {
 	:bitmap => "cave1_base0",
 	:x => 85,
 	:y => 250,
@@ -46,14 +46,14 @@ module EnvironmentEBDX
       :bitmap => "fog",
       :oy => 0, :z => 4, :flat => true
     }, "bubbles" => "bubbleDark",
-	"img005" => {
+	"img008" => {
 	:bitmap => "cave1_base1",
 	:x => 238,
 	:y => 188,
 	:z => 1,
 	:zoom => 0.5
 	},
-	"img006" => {
+	"img009" => {
 	:bitmap => "cave1_base0",
 	:x => 85,
 	:y => 250,
@@ -62,7 +62,39 @@ module EnvironmentEBDX
 	}
   }
   #-----------------------------------------------------------------------------
-  WATER = { "backdrop" => "Water", "sky" => true, "water" => true }
+  WATER = { "backdrop" => "Water", "sky" => true, "water" => true,
+  	"img008" => {
+	:bitmap => "water_base1",
+	:x => 238,
+	:y => 188,
+	:z => 1,
+	:zoom => 0.5
+	},
+	"img009" => {
+	:bitmap => "water_base0",
+	:x => 85,
+	:y => 250,
+	:z => 1,
+	:zoom => 0.5
+	}
+  }
+  #-----------------------------------------------------------------------------
+FISHING = { "backdrop" => "Water", "sky" => true,
+  	"img008" => {
+	:bitmap => "water_base1",
+	:x => 238,
+	:y => 188,
+	:z => 1,
+	:zoom => 0.5
+	},
+	"img009" => {
+	:bitmap => "water_base0",
+	:x => 85,
+	:y => 250,
+	:z => 1,
+	:zoom => 0.5
+	}
+  }
   #-----------------------------------------------------------------------------
   UNDERWATER = {
     "backdrop" => "Underwater", "lightsC" => true, "img001" => {
@@ -89,14 +121,14 @@ module EnvironmentEBDX
       :zoom => [1,1,1.1,0.9,0.8,0.85,0.75,0.75],
       :z => [2,2,2,1,1,1,1,1],
     }, "outdoor" => false,
-	"img002" => {
+	"img008" => {
 	:bitmap => "forest_base1",
 	:x => 238,
 	:y => 188,
 	:z => 1,
 	:zoom => 0.5
 	},
-	"img003" => {
+	"img009" => {
 	:bitmap => "forest_base0",
 	:x => 85,
 	:y => 250,
@@ -113,14 +145,14 @@ module EnvironmentEBDX
       :bitmap => "decor008",
       :oy => 0, :z => 1, :flat => true, :scrolling => true, :direction => -1
     }, "lightsA" => true, "outdoor" => false,
-	"img003" => {
+	"img008" => {
 	:bitmap => "indoor1_base1",
 	:x => 238,
 	:y => 188,
 	:z => 1,
 	:zoom => 0.5
 	},
-	"img004" => {
+	"img009" => {
 	:bitmap => "indoor1_base0",
 	:x => 85,
 	:y => 250,
@@ -137,15 +169,85 @@ module EnvironmentEBDX
       :bitmap => "decor008",
       :oy => 0, :z => 1, :flat => true, :scrolling => true, :direction => -1
     }, "lightsA" => true, "outdoor" => false,
-	"img003" => {
+	"img008" => {
 	:bitmap => "indoor1_base1",
 	:x => 238,
 	:y => 188,
 	:z => 1,
 	:zoom => 0.5
 	},
-	"img004" => {
+	"img009" => {
 	:bitmap => "indoor1_base0",
+	:x => 85,
+	:y => 250,
+	:z => 1,
+	:zoom => 0.5
+	}
+  }
+#-----------------------------------------------------------------------------
+GIOVANNIBOSS = {
+    "backdrop" => "IndoorC", 
+	"img001" => {
+      :bitmap => "decor007",
+      :oy => 0, :z => 1, :flat => true, :scrolling => true, :speed => 0.5
+    }, "img002" => {
+      :bitmap => "decor008",
+      :oy => 0, :z => 1, :flat => true, :scrolling => true, :direction => -1
+    }, 
+	"lightsA" => true, 
+	"outdoor" => false,
+	"img100" => { :bitmap => "GeneratorE", :colorize => false, :x => 80, :y => 125,  :z => 10 },
+	"img101" => { :bitmap => "GeneratorE", :colorize => false, :x => 130, :y => 129,  :z => 10 },
+	"img102" => { :bitmap => "GeneratorE", :colorize => false, :x => 180, :y => 133,  :z => 10 },
+	"img103" => { :bitmap => "GeneratorE", :colorize => false, :x => 230, :y => 137,  :z => 10 },
+	"img104" => { :bitmap => "GeneratorE", :colorize => false, :x => 280, :y => 141,  :z => 10 },
+	"img008" => {
+	:bitmap => "elite7_base1",
+	:x => 238,
+	:y => 188,
+	:z => 1,
+	:zoom => 0.5
+	},
+	"img009" => {
+	:bitmap => "elite7_base0",
+	:x => 85,
+	:y => 250,
+	:z => 1,
+	:zoom => 0.5
+	}
+  }
+#-----------------------------------------------------------------------------
+POWERPLANT = {
+    "backdrop" => "IndoorC", 
+	 "img001" => {
+      :bitmap => "dark001",
+      :oy => 70, :ox => 70, :y => 128, :x => 248, :z => 2, :effect => "rotate", :zoom => 0.75
+    }, "img002" => {
+      :bitmap => "dark002",
+      :oy => 120, :ox => 120, :y => 128, :x => 242, :z => 3, :direction => -1, :effect => "rotate", :zoom => 0.75
+    }, "img003" => {
+      :bitmap => "dark003",
+      :oy => 110, :ox => 110, :y => 128, :x => 234, :z => 4, :effect => "rotate"
+    }, "img004" => {
+      :scrolling => true, :speed => 0.5,
+      :bitmap => "darkFog",
+      :oy => 0, :y => 0, :z => 5, :flat => true
+    }, "vacuum" => true,
+	"outdoor" => false,
+	"img100" => { :bitmap => "Generator", :colorize => false, :x => 80, :y => 125,  :z => 10 },
+	"img101" => { :bitmap => "Generator", :colorize => false, :x => 130, :y => 129,  :z => 10 },
+	"img102" => { :bitmap => "Generator", :colorize => false, :x => 180, :y => 133,  :z => 10 },
+	"img103" => { :bitmap => "Generator", :colorize => false, :x => 230, :y => 137,  :z => 10 },
+	"img104" => { :bitmap => "Generator", :colorize => false, :x => 280, :y => 141,  :z => 10 },
+	"img008" => {
+	:bitmap => "elite7_base1",
+	:x => 238,
+	:y => 188,
+	:z => 1,
+	:zoom => 0.5
+	},
+	"img009" => {
+	:bitmap => "elite7_base0",
 	:x => 85,
 	:y => 250,
 	:z => 1,
@@ -154,21 +256,21 @@ module EnvironmentEBDX
   }
   #-----------------------------------------------------------------------------
   OUTDOOR = {
-    "backdrop" => "Field", "base" => "Dirt", "sky" => true, "trees" => {
+    "backdrop" => "Field", "sky" => true, "trees" => {
       :elements => 9,
       :x => [150,271,78,288,176,42,118,348,321],
       :y => [108,117,118,126,126,128,136,136,145],
       :zoom => [0.44,0.44,0.59,0.59,0.59,0.64,0.85,0.7,1],
       :mirror => [false,false,true,true,true,false,false,true,false]
     },
-	"img001" => {
+	"img008" => {
 	:bitmap => "grass_base1",
 	:x => 238,
 	:y => 188,
 	:z => 1,
 	:zoom => 0.5
 	},
-	"img002" => {
+	"img009" => {
 	:bitmap => "grass_base0",
 	:x => 85,
 	:y => 250,
@@ -186,14 +288,14 @@ module EnvironmentEBDX
       :oy => 32, :y => 102, :z => 2, :flat => false, :sheet => true,
       :vertical => true, :speed => 8, :frames => 2
 	},
-	"img005" => {
+	"img008" => {
 	:bitmap => "champion1_base1",
 	:x => 238,
 	:y => 188,
 	:z => 1,
 	:zoom => 0.5
 	},
-	"img006" => {
+	"img009" => {
 	:bitmap => "champion1_base0",
 	:x => 85,
 	:y => 250,
@@ -212,14 +314,14 @@ module EnvironmentEBDX
       :oy => 32, :y => 112, :z => 2, :flat => false, :sheet => true,
       :vertical => true, :speed => 8, :frames => 2
     },
-	"img005" => {
+	"img008" => {
 	:bitmap => "champion1_base1",
 	:x => 238,
 	:y => 188,
 	:z => 1,
 	:zoom => 0.5
 	},
-	"img006" => {
+	"img009" => {
 	:bitmap => "champion1_base0",
 	:x => 85,
 	:y => 250,
@@ -260,7 +362,7 @@ module EnvironmentEBDX
 	:zoom => 0.5
 	}
   }
-  #-----------------------------------------------------------------------------
+#-----------------------------------------------------------------------------
   MOUNTAINLAKE = {
     "backdrop" => "Field", "sky" => true, "trees" => {
       :elements => 9,
@@ -268,11 +370,12 @@ module EnvironmentEBDX
       :y => [108,117,118,122,122,127,127,128,132],
       :zoom => [0.44,0.44,0.59,0.59,0.59,0.64,0.85,0.7,1],
       :mirror => [false,false,true,true,true,false,false,true,false]
-    }, "img001" => {
+    }, 
+	"img001" => {
       :bitmap => "mountain",
       :x => 192, :y => 107
     }, "base" => "Water", "water" => true,
-	"img005" => {
+	"img008" => {
 	:bitmap => "water_base1",
 	:x => 238,
 	:y => 188,
@@ -281,6 +384,38 @@ module EnvironmentEBDX
 	},
 	"img009" => {
 	:bitmap => "water_base0",
+	:x => 85,
+	:y => 250,
+	:z => 1,
+	:zoom => 0.5
+	}
+  }
+#-----------------------------------------------------------------------------
+BEACH = {
+    "backdrop" => "Sand", "sky" => true, "trees" => {
+	  :bitmap => "treePalm",
+	  :colorize => "slight",
+      :elements => 9,
+      :x => [150,271,78,288,176,42,118,348,321],
+      :y => [108,117,118,122,122,127,127,128,132],
+      :zoom => [0.44,0.44,0.59,0.59,0.59,0.64,0.85,0.7,1],
+      :mirror => [false,false,true,true,true,false,false,true,false]
+    },  
+	"base" => "Water", 
+	"water" => true,
+	"img001" => {
+      :bitmap => "mountain",
+      :x => 192, :y => 107
+    },
+	"img008" => {
+	:bitmap => "sand_base1",
+	:x => 238,
+	:y => 188,
+	:z => 1,
+	:zoom => 0.5
+	},
+	"img009" => {
+	:bitmap => "sand_base0",
 	:x => 85,
 	:y => 250,
 	:z => 1,
@@ -536,14 +671,14 @@ module EnvironmentEBDX
   }
   SCIFI = {
     "backdrop" => "Scifi",
-	"img001" => {
+	"img008" => {
 	:bitmap => "distortion_base1",
 	:x => 238,
 	:y => 188,
 	:z => 1,
 	:zoom => 0.5
 	},
-	"img002" => {
+	"img009" => {
 	:bitmap => "distortion_base0",
 	:x => 85,
 	:y => 250,
@@ -568,14 +703,14 @@ SPIRITTOWER = {
       :bitmap => "darkFog",
       :oy => 0, :y => 0, :z => 5, :flat => true
     }, "vacuum" => true,
-	"img005" => {
+	"img008" => {
 	:bitmap => "indoor1_base1",
 	:x => 238,
 	:y => 188,
 	:z => 1,
 	:zoom => 0.5
 	},
-	"img006" => {
+	"img009" => {
 	:bitmap => "indoor1_base0",
 	:x => 85,
 	:y => 250,
@@ -626,6 +761,23 @@ module TerrainEBDX
   #-----------------------------------------------------------------------------
   PUDDLE = { "base" => "Puddle" }
   #-----------------------------------------------------------------------------
+  BRIDGE = { "base" => "Bridge",
+  	"img008" => {
+	:bitmap => "water_base1",
+	:x => 238,
+	:y => 188,
+	:z => 1,
+	:zoom => 0.5
+	},
+	"img009" => {
+	:bitmap => "sand_base0",
+	:x => 85,
+	:y => 250,
+	:z => 1,
+	:zoom => 0.5
+	} 
+  }
+  #-----------------------------------------------------------------------------
   DIRT = { "base" => "Dirt" }
   #-----------------------------------------------------------------------------
   TALLGRASS = {
@@ -633,7 +785,7 @@ module TerrainEBDX
       :elements => 7,
       :x => [124,274,204,62,248,275,182],
       :y => [160,140,140,185,246,174,170],
-      :z => [2,1,2,17,27,17,17],
+      :z => [2,1,2,4,4,3,3],
       :zoom => [0.7,0.35,0.5,1,1.5,0.7,1],
       :mirror => [false,true,false,true,false,true,false]
     }
@@ -641,5 +793,19 @@ module TerrainEBDX
   #-----------------------------------------------------------------------------
   CONCRETE = { "base" => "Concrete" }
   #-----------------------------------------------------------------------------
-  WATER = { "base" => "Water", "water" => true }
+  WATER = { "base" => "Water", "water" => true,
+  	"img008" => {
+	:bitmap => "water_base1",
+	:x => 238,
+	:y => 188,
+	:z => 1,
+	:zoom => 0.5
+	},
+	"img009" => {
+	:bitmap => "water_base0",
+	:x => 85,
+	:y => 250,
+	:z => 1,
+	:zoom => 0.5
+	}}
 end
