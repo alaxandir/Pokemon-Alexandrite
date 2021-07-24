@@ -21,15 +21,15 @@ BattleVS         = trainerSM
 #-------------------------------
 [SCIENTIST_R_F]
 BattleIntro      = evilTeam
-BattleVS         = trainerSM
+BattleVS         = integratedVS
 #-------------------------------
 [SCIENTIST_R_M]
 BattleIntro      = evilTeam
-BattleVS         = trainerSM
+BattleVS         = integratedVS
 #-------------------------------
 [ROCKETBOSS,Giovanni]
 BattleIntro      = evilTeam
-BattleVS         = integratedVS
+BattleVS         = eliteSM
 BattleScript	= GIOVANNI1
 #-------------------------------
 [ROCKETTHUGS]
@@ -38,97 +38,107 @@ BattleVS         = trainerSM
 #-------------------------------
 [LEADER_Nick]
 BattleEnv        = DIMENSION
-BattleVS         = wavesSM
+BattleVS         = integratedVS
 Ace				 = 3
 BattleScript	 = NICK
 #-------------------------------
 [LEADER_Richard]
 BattleEnv        = CHAMPION
-BattleVS         = crystalSM
+BattleVS         = integratedVS
 Ace				 = 4
 BattleScript	 = RICHARD
 #-------------------------------
 [LEADER_Lora]
 BattleEnv        = CHAMPION
-BattleVS         = forestSM
+BattleVS         = integratedVS
 BattleScript	 = LORA
 #-------------------------------
 [LEADER_Brahm]
 BattleEnv        = MAGMA
-BattleVS         = flamesSM
+BattleVS         = integratedVS
 Ace				 = 5
 BattleScript	 = BRAHM
 #-------------------------------
 [LEADER_Fritz]
 BattleEnv        = NET
-BattleVS         = plamsaSM
+BattleVS         = integratedVS
 Ace				 = 5
 BattleScript	 = FRITZ
 #-------------------------------
 [LEADER_Heidi]
 BattleEnv        = ICEGYM
-BattleVS         = specialSM
+BattleVS         = integratedVS
 Ace				 = 6
 BattleScript	 = HEIDI
 #-------------------------------
 [LEADER_Lee]
 BattleEnv        = DIMENSION
-BattleVS         = spaceSM
+BattleVS         = integratedVS
 Ace				 = 6
 BattleScript	 = LEE
 #-------------------------------
 [POKEMONTRAINER_Brett]
-BattleVS         = integratedVS
+BattleVS         = ultraSM
 #-------------------------------
 [LEADER_HAOAI]
 BattleEnv        = CHAMPION
-BattleVS         = ultraSM
+BattleVS         = integratedVS
 SpriteSpeed      = 0
 BattleScript 	 = HAOAI
 Ace = 6
 #-------------------------------
 [ROCKETBOSS,Giovanni,1]
 BattleIntro      = evilTeam
-BattleVS         = integratedVS
+BattleVS         = eliteSM
 BattleScript	 = GIOVANNI2
 Ace				 = 6
 BattleEnv        = FOREST
 #-------------------------------
+[ROCKETBOSS,Giovanni,2]
+BattleIntro      = evilTeam
+BattleVS         = eliteSM
+BattleBGM        = ChairmanRose.ogg
+Ace				 = 6
+#-------------------------------
 [POKEMONTRAINER_Brett,Brett,2]
-BattleVS         = integratedVS
+BattleVS         = ultraSM
 BattleScript	 = BRETT2
 #-------------------------------
 [POKEMONTRAINER_Brett,Brett,3]
-BattleVS         = integratedVS
+BattleVS         = ultraSM
 BattleScript	 = BRETT3
 #-------------------------------
 [POKEMONTRAINER_Brett,Brett,5]
-BattleVS         = integratedVS
+BattleVS         = ultraSM
 BattleScript	 = BRETT5
 #-------------------------------
 [POKEMONTRAINER_Brett,Brett,6]
-BattleVS         = integratedVS
+BattleVS         = ultraSM
 BattleScript	 = BRETT6
 Ace = 3
 #-------------------------------
+[POKEMONTRAINER_Brett,Brett,7]
+BattleVS         = ultraSM
+BattleScript	 = BRETT7
+#-------------------------------
 [ELITEFOUR_Robert]
-BattleVS         = eliteSM
+BattleVS         = integratedVS
 BattleScript = ROBERT
 #-------------------------------
 [ELITEFOUR_William]
-BattleVS         = eliteSM
+BattleVS         = integratedVS
 BattleScript = WILLIAM
 #-------------------------------
 [ELITEFOUR_Kyra]
-BattleVS         = eliteSM
+BattleVS         = integratedVS
 BattleScript = KYRA
 #-------------------------------
 [ELITEFOUR_Anya]
-BattleVS         = eliteSM
+BattleVS         = integratedVS
 BattleScript = ANYA
 #-------------------------------
 [CHAMPION]
-BattleVS         = eliteSM
+BattleVS         = integratedVS
 BattleScript = JAY
 #-------------------------------
 [ACETRAINERS]

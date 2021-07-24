@@ -2,7 +2,7 @@
 #-------------------------------
 [000]
 Home = 32,33,8,4
-WildBattleBGM = WildPokemonBattle.ogg
+WildBattleBGM = WildFRLG.ogg
 TrainerBattleBGM = BattleTrainer.ogg
 WildVictoryME = PokemonVictory.ogg
 SurfBGM = Surftheme.ogg
@@ -192,7 +192,7 @@ BattleBack = CaveDark
 Outdoor = true
 Weather = None,0
 MapPosition = 0,27,5
-SnapEdges = true
+SnapEdges = false
 #-------------------------------
 [028]
 # PKMN Plaza
@@ -1207,6 +1207,7 @@ ShowArea = true
 Weather = None,0
 MapPosition = 0,13,12
 BattleBack = Mountain
+Environment = Rock
 #-------------------------------
 [172]
 # Mushroom Maniac
@@ -1394,23 +1395,60 @@ ShowArea = true
 Weather = None,0
 MapPosition = 0,16,12
 #-------------------------------
-[197]
+[197] 
 # Fortune City
 Outdoor = true
 ShowArea = true
 Weather = None,0
 MapPosition = 0,4,12
 #-------------------------------
-[198]
+[198] 
 # Waterfall Cave
 Outdoor = false
 Weather = None,0
 MapPosition = 0,15,4
 DarkMap = true
-SnapEdges = true
 BattleBack = CaveDark
 #-------------------------------
-[199]
-# Saltstone Pokémon Center
+[199] 
+#Saltstone Pokemon Center
+Outdoor = false
 HealingSpot = 71,12,16
 MapPosition = 0,14,10
+Weather = None,0
+#-------------------------------
+[200] 
+# Saltstone interior
+Outdoor = false
+MapPosition = 0,14,10
+Weather = None,0
+#-------------------------------
+[201] 
+#Cinder Island shack
+Outdoor = false
+Weather = None,0
+MapPosition = 0,27,5
+#-------------------------------
+[202] 
+#lab postgame
+Outdoor = false
+Weather = None,0
+MapPosition = 0,13,5
+#-------------------------------
+[203]
+# Rocket Base
+Outdoor = true
+Weather = None,0
+MapPosition = 0,2,2
+#-------------------------------
+[204]
+# Rocket Base
+Outdoor = false
+Weather = None,0
+MapPosition = 0,2,2
+#-------------------------------
+[205]
+# Rocket Base
+Outdoor = false
+Weather = None,0
+MapPosition = 0,2,2

@@ -8,7 +8,7 @@ module MessageConfig
   SMALL_FONT_NAME         = "Power Green Small"
   SMALL_FONT_SIZE         = 24
   NARROW_FONT_NAME        = "Power Green Narrow"
-  NARROW_FONT_SIZE        = 28
+  NARROW_FONT_SIZE        = 26
   # 0 = Pause cursor is displayed at end of text
   # 1 = Pause cursor is displayed at bottom right
   # 2 = Pause cursor is displayed at lower middle side

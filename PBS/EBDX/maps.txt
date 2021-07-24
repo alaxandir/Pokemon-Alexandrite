@@ -102,7 +102,7 @@ BattleEnv       = CHAMPION
 [042]
 BattleEnv       = OUTDOOR
 #-------------------------------
-[043]
+[043] #rt 101
 BattleEnv       = OUTDOOR
 #-------------------------------
 [046]
@@ -162,7 +162,7 @@ BattleEnv       = STAGE
 #-------------------------------
 [090]
 # Powerplant
-BattleEnv       = DARKNESS
+BattleEnv       = POWERPLANT
 #-------------------------------
 [091]
 BattleEnv       = DARKNESS
@@ -219,7 +219,7 @@ BattleEnv       = FOREST
 #-------------------------------
 [141]
 # Route 107
-BattleEnv       = MOUNTAINLAKE
+BattleEnv       = OUTDOOR
 #-------------------------------
 [142]
 # Route 108
@@ -259,7 +259,7 @@ BattleEnv       = OUTDOOR
 #-------------------------------
 [170]
 # Route 110
-BattleEnv       = MOUNTAINLAKE
+BattleEnv       = OUTDOOR
 #-------------------------------
 [171]
 # Mt. Mauve

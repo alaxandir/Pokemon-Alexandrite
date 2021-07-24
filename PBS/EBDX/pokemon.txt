@@ -5368,8 +5368,8 @@ BattlerEnemyX           = 0
 [GYARADOS,1]
 BattlerEnemyY           = 0
 BattlerAltitude         = 0
-BattlerPlayerX          = 0
-BattlerPlayerY          = 0
+BattlerPlayerX          = -20
+BattlerPlayerY          = 5
 BattlerEnemyX           = 0
 #-------------------------------
 [AERODACTYL,1]
@@ -5590,10 +5590,10 @@ BattlerPlayerY          = 0
 BattlerEnemyX           = 0
 #-------------------------------
 [ROSERADE,1]
-BattlerEnemyY           = 0
+BattlerEnemyY           = 24
 BattlerAltitude         = 0
 BattlerPlayerX          = 0
-BattlerPlayerY          = 0
+BattlerPlayerY          = 16
 BattlerEnemyX           = 0
 #-------------------------------
 [LOPUNNY,1]
@@ -7569,3 +7569,45 @@ BattlerAltitude         = 0
 BattlerPlayerX          = -3
 BattlerPlayerY          = 30
 BattlerEnemyX           = 2
+#-------------------------------
+[BASTIODON,1]
+BattlerEnemyY           = 36
+BattlerAltitude         = 0
+BattlerPlayerX          = 0
+BattlerPlayerY          = 2
+BattlerEnemyX           = 2
+#-------------------------------
+[DREEPY]
+BattlerEnemyY           = 16
+BattlerAltitude         = 0
+BattlerPlayerX          = 0
+BattlerPlayerY          = 52
+BattlerEnemyX           = 0
+#-------------------------------
+[DRAKLOAK]
+BattlerEnemyY           = 12
+BattlerAltitude         = 0
+BattlerPlayerX          = 6
+BattlerPlayerY          = 48
+BattlerEnemyX           = -1
+#-------------------------------
+[DRAGAPULT]
+BattlerEnemyY           = 3
+BattlerAltitude         = 0
+BattlerPlayerX          = 0
+BattlerPlayerY          = 44
+BattlerEnemyX           = 1
+#-------------------------------
+[IMPURP]
+BattlerEnemyY           = 7
+BattlerAltitude         = 0
+BattlerPlayerX          = -2
+BattlerPlayerY          = 0
+BattlerEnemyX           = 1
+#-------------------------------
+[FLITTRICK]
+BattlerEnemyY           = 7
+BattlerAltitude         = 0
+BattlerPlayerX          = -2
+BattlerPlayerY          = 0
+BattlerEnemyX           = 1

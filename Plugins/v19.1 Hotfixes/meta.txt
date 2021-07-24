@@ -1,5 +1,5 @@
 ﻿Name      = v19.1 Hotfixes
-Version   = 1.0.2
+Version   = 1.0.3
 Conflicts = v19 Updates
 Conflicts = v19 Hotfixes
 Website   = https://github.com/Maruno17/pokemon-essentials
@@ -41,5 +41,25 @@ Credits   = Maruno
 # - Fixed error when trying to return an unused item to the Bag in
 #   battle.
 # - Fixed typo in Relic Song's code that changes Meloetta's form.
+#
+# 1.0.3:
+# - Fixed error when trying to make a roaming Pokémon roam.
+# - Fixed Poké Radar rustling grass not always causing a wild
+#   encounter when stepping in it.
+# - Fixed typo in Conversion's code that treated a type as an item.
+#
+#=====================================================================
+#
+# Some graphics cards have trouble with drawing all the images they
+# should, usually via blt. The mkxp.json file included in this plugin
+# will most likely fix this. It should be put in the project's main
+# folder (replacing the one already in there).
+#
+# It sets the following options:
+#
+#     "subImageFix": true
+#     "enableBlitting": false
+#
+# This is NOT a fix for the "green lines all over the screen" issue.
 #
 #=====================================================================

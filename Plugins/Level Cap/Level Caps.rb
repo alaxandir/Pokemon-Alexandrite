@@ -22,7 +22,7 @@
 #==============================================================================#
 #\\\\\\\\\\\\\\\\\\\\\\\\\\CONFIGURATION\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\#
 #==============================================================================#
-LEVEL_CAPS = [11,16,23,26,31,43,48,56,61,100] #scales according to gym badges
+LEVEL_CAPS = [11,16,23,26,31,43,48,56,61,63] #scales according to gym badges
 										   #The first value is 0 badges.
 LEVEL_CAP_EXP = 2   #the exp gained if the levelcap is active change it if you 
                     #want to make the pokemon gain some exp, recomended less than 100

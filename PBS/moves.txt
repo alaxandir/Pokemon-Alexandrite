@@ -695,6 +695,7 @@
 676,WITHDRAW,Withdraw,01D,0,WATER,Status,0,40,0,User,0,d,"The user withdraws its body into its hard shell, raising its Defense stat."
 #-------------------ADDITIONS	
 677,PSYGRAINE,Psygraine,013,25,PSYCHIC,Special,95,20,5,Other,0,ef,"A weak telekenisis attempts to give the opponent a bad headache. Very small chance of confusion."
+678,CATNAP,Catnap,0D6,0,NORMAL,Status,0,10,0,User,0,d,"The user rests its body. It restores the user's HP by up to half of its max HP."
 700,DUALWINGBEAT,Dual Wingbeat,0BD,40,FLYING,Physical,90,10,0,NearOther,0,abef,"The user slams the target with its wings. The target is hit twice in a row."
 701,METEORASSAULT,Meteor Assault,0C2,150,FIGHTING,Physical,100,5,0,NearOther,0,bef,"Attacks wildly with its thick leek. The user can't move on the next turn."
 702,COACHING,Coaching,18E,0,FIGHTING,Status,0,10,0,NearAlly,0,,"The user properly coaches its ally Pokémon, boosting their Attack and Defense stats."

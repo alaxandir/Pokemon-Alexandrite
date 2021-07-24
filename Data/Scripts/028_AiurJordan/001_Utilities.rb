@@ -196,5 +196,5 @@ end
 Events.onMapChanging += proc { |_sender, e|
   new_map_ID = e[0]
   next if new_map_ID == 0
-  $PokemonGlobal.encounter_version = [73,74,75].include?($game_map.map_id) && $Trainer.badge_count >= 7 ? 1 : 0
+  $PokemonGlobal.encounter_version = [73,74,75].include?($game_map.map_id) && $Trainer.badge_count >= 6 ? 1 : 0
 }
