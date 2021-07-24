@@ -6,7 +6,7 @@
 # https://github.com/Maruno17/pokemon-essentials
 #==============================================================================
 
-Essentials::ERROR_TEXT += "[v19.1 Hotfixes 1.0.2]\r\n"
+Essentials::ERROR_TEXT += "[v19.1 Hotfixes 1.0.3]\r\n"
 
 #==============================================================================
 # Fix for Vs. animation not playing, and a trainer's trainer type possibly
@@ -268,7 +268,7 @@ end
 
 #==============================================================================
 # Fixed abilities that force wild encounters with a particular type using the
-# wrong value as the preferred type and usually crashing
+# wrong value as the preferred type and usually crashing.
 #==============================================================================
 class PokemonEncounters
   def choose_wild_pokemon(enc_type, chance_rolls = 1)
@@ -338,3 +338,132 @@ class PokemonEncounters
     return [encounter[1], level]
   end
 end
+
+#==============================================================================
+# Fixed error when trying to make a roaming Pokémon roam.
+#==============================================================================
+def pbRoamPokemon
+  $PokemonGlobal.roamPokemon = [] if !$PokemonGlobal.roamPokemon
+  # Start all roamers off in random maps
+  if !$PokemonGlobal.roamPosition
+    $PokemonGlobal.roamPosition = {}
+    for i in 0...Settings::ROAMING_SPECIES.length
+      next if !GameData::Species.exists?(Settings::ROAMING_SPECIES[i][0])
+      keys = pbRoamingAreas(i).keys
+      $PokemonGlobal.roamPosition[i] = keys[rand(keys.length)]
+    end
+  end
+  # Roam each Pokémon in turn
+  for i in 0...Settings::ROAMING_SPECIES.length
+    pbRoamPokemonOne(i)
+  end
+end
+
+#==============================================================================
+# Fixed Poké Radar rustling grass not always causing a wild encounter when
+# stepping in it.
+#==============================================================================
+class PokemonEncounters
+  def encounter_triggered?(enc_type, repel_active = false, triggered_by_step = true)
+    if !enc_type || !GameData::EncounterType.exists?(enc_type)
+      raise ArgumentError.new(_INTL("Encounter type {1} does not exist", enc_type))
+    end
+    return false if $game_system.encounter_disabled
+    return false if !$Trainer
+    return false if $DEBUG && Input.press?(Input::CTRL)
+    # Check if enc_type has a defined step chance/encounter table
+    return false if !@step_chances[enc_type] || @step_chances[enc_type] == 0
+    return false if !has_encounter_type?(enc_type)
+    # Poké Radar encounters always happen, ignoring the minimum step period and
+    # trigger probabilities
+    return true if pbPokeRadarOnShakingGrass
+    # Get base encounter chance and minimum steps grace period
+    encounter_chance = @step_chances[enc_type].to_f
+    min_steps_needed = (8 - encounter_chance / 10).clamp(0, 8).to_f
+    # Apply modifiers to the encounter chance and the minimum steps amount
+    if triggered_by_step
+      encounter_chance += @chance_accumulator / 200
+      encounter_chance *= 0.8 if $PokemonGlobal.bicycle
+    end
+    if !Settings::FLUTES_CHANGE_WILD_ENCOUNTER_LEVELS
+      encounter_chance /= 2 if $PokemonMap.blackFluteUsed
+      min_steps_needed *= 2 if $PokemonMap.blackFluteUsed
+      encounter_chance *= 1.5 if $PokemonMap.whiteFluteUsed
+      min_steps_needed /= 2 if $PokemonMap.whiteFluteUsed
+    end
+    first_pkmn = $Trainer.first_pokemon
+    if first_pkmn
+      case first_pkmn.item_id
+      when :CLEANSETAG
+        encounter_chance *= 2.0 / 3
+        min_steps_needed *= 4 / 3.0
+      when :PUREINCENSE
+        encounter_chance *= 2.0 / 3
+        min_steps_needed *= 4 / 3.0
+      else   # Ignore ability effects if an item effect applies
+        case first_pkmn.ability_id
+        when :STENCH, :WHITESMOKE, :QUICKFEET
+          encounter_chance /= 2
+          min_steps_needed *= 2
+        when :SNOWCLOAK
+          if GameData::Weather.get($game_screen.weather_type).category == :Hail
+            encounter_chance /= 2
+            min_steps_needed *= 2
+          end
+        when :SANDVEIL
+          if GameData::Weather.get($game_screen.weather_type).category == :Sandstorm
+            encounter_chance /= 2
+            min_steps_needed *= 2
+          end
+        when :SWARM
+          encounter_chance *= 1.5
+          min_steps_needed /= 2
+        when :ILLUMINATE, :ARENATRAP, :NOGUARD
+          encounter_chance *= 2
+          min_steps_needed /= 2
+        end
+      end
+    end
+    # Wild encounters are much less likely to happen for the first few steps
+    # after a previous wild encounter
+    if triggered_by_step && @step_count < min_steps_needed
+      @step_count += 1
+      return false if rand(100) >= encounter_chance * 5 / (@step_chances[enc_type] + @chance_accumulator / 200)
+    end
+    # Decide whether the wild encounter should actually happen
+    return true if rand(100) < encounter_chance
+    # If encounter didn't happen, make the next step more likely to produce one
+    if triggered_by_step
+      @chance_accumulator += @step_chances[enc_type]
+      @chance_accumulator = 0 if repel_active
+    end
+    return false
+  end
+
+  def allow_encounter?(enc_data, repel_active = false)
+    return false if !enc_data
+    return true if pbPokeRadarOnShakingGrass
+    # Repel
+    if repel_active
+      first_pkmn = (Settings::REPEL_COUNTS_FAINTED_POKEMON) ? $Trainer.first_pokemon : $Trainer.first_able_pokemon
+      if first_pkmn && enc_data[1] < first_pkmn.level
+        @chance_accumulator = 0
+        return false
+      end
+    end
+    # Some abilities make wild encounters less likely if the wild Pokémon is
+    # sufficiently weaker than the Pokémon with the ability
+    first_pkmn = $Trainer.first_pokemon
+    if first_pkmn
+      case first_pkmn.ability_id
+      when :INTIMIDATE, :KEENEYE
+        return false if enc_data[1] <= first_pkmn.level - 5 && rand(100) < 50
+      end
+    end
+    return true
+  end
+end
+
+ItemHandlers::UseInField.add(:POKERADAR,proc { |item|
+  next (pbUsePokeRadar) ? 1 : 0
+})

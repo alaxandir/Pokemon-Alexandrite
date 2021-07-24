@@ -183,7 +183,8 @@ GameData::TerrainTag.register({
 GameData::TerrainTag.register({
   :id                     => :Bridge,
   :id_number              => 15,
-  :bridge                 => true
+  :bridge                 => true,
+  :battle_environment     => :Bridge
 })
 
 GameData::TerrainTag.register({
@@ -191,4 +192,10 @@ GameData::TerrainTag.register({
   :id_number              => 16,
   :battle_environment     => :Puddle,
   :shows_reflections      => true
+})
+
+GameData::TerrainTag.register({
+  :id                     => :FakeBridge,
+  :id_number              => 42,
+  :battle_environment     => :Bridge
 })

@@ -10,7 +10,7 @@ Container          = containers
 HPColors           = barColors
 ExpandInDoubles    = false
 CONTAINER
-  XYZ              = 40,6,1
+  XYZ              = 44,6,1
 NAME
   XYZ              = 22,-20,9
 HP

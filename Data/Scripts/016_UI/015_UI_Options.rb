@@ -15,7 +15,7 @@ class PokemonSystem
   attr_accessor :textinput
   attr_accessor :difficulty
   attr_accessor :grassanim
-  attr_accessor :fontface
+  attr_accessor :wildmusic #0.8.2
 
   def initialize
     @textspeed   = 1     # Text speed (0=slow, 1=normal, 2=fast)
@@ -31,7 +31,7 @@ class PokemonSystem
     @textinput   = 0     # Text input mode (0=cursor, 1=keyboard)
 	@difficulty  = 0     #0.6.1
 	@grassanim   = 0     #0.7.2
-	@fontface    = 0
+	@wildmusic   = 0 #0.8.2
 	end
 	
   def difficulty						#0.6.1
@@ -44,9 +44,9 @@ class PokemonSystem
   return @grassanim					#!
   end
   
-  def fontfance
-	@fontface = 0 if !@fontface #0.8.1
-  return @fontface
+  def wildmusic
+	@wildmusic = 0 if !@wildmusic #0.8.2
+  return @wildmusic
   end
 
 end
@@ -357,6 +357,53 @@ class PokemonOption_Scene
            $PokemonSystem.textspeed = value
            MessageConfig.pbSetTextSpeed(MessageConfig.pbSettingToTextSpeed(value))
          }
+       ),
+	   EnumOption.new(_INTL("Wild PKMN Music"),[_INTL("FRLG"),_INTL("Kanto"),_INTL("Johto"),_INTL("DPPT")], #0.8.2
+		 proc { $PokemonSystem.wildmusic },															   #
+		 proc { |value|
+			if $PokemonSystem.wildmusic != value
+			pbSEStop
+			$PokemonSystem.wildmusic = value
+			case $PokemonSystem.wildmusic
+			when 0 
+				if $game_system.playing_bgm!=nil && !inloadscreen
+				$game_system.bgm_memorize
+				pbBGMFade(0.5)
+				end
+				pbSEPlay("WildFRLG")
+				pbWait(80)
+				pbSEStop
+				$game_system.bgm_restore
+			when 1
+				if $game_system.playing_bgm!=nil && !inloadscreen
+				$game_system.bgm_memorize
+				pbBGMFade(0.5)
+				end
+				pbSEPlay("WildKanto")
+				pbWait(80)
+				pbSEStop
+				$game_system.bgm_restore
+			when 2
+				if $game_system.playing_bgm!=nil && !inloadscreen
+				$game_system.bgm_memorize
+				pbBGMFade(0.5)
+				end
+				pbSEPlay("WildJohto")
+				pbWait(80)
+				pbSEStop
+				$game_system.bgm_restore
+			when 3
+				if $game_system.playing_bgm!=nil && !inloadscreen
+				$game_system.bgm_memorize
+				pbBGMFade(0.5)
+				end
+				pbSEPlay("WildDPPT")
+				pbWait(80)
+				pbSEStop
+				$game_system.bgm_restore
+			end
+			end
+			}
        ),
        EnumOption.new(_INTL("Battle Effects"),[_INTL("On"),_INTL("Off")],
          proc { $PokemonSystem.battlescene },

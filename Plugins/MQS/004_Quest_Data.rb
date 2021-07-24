@@ -387,4 +387,20 @@ SEAVOUCHER = {
     :QuestDescription => "Lee wants you to travel to Trident Cove so you can challenge the 8th gym, but you'll need a Sea Voucher. Lee told you he knows the guard and that he can help you out.",
     :RewardString => "Sea Voucher"
   }
+  
+FINALGAMBIT = {
+    :ID => "48",
+    :Name => "The Final Gambit.",
+    :QuestGiver => "Prof. Yew",
+    :Stage1 => "Talk to Prof. Yew at the Lab",
+	:Stage2 => "Investigate the Origin Ruins",
+	:Stage3 => "Take the boat from Gold Coast",
+	:Stage4 => "Destroy the Power-plant",
+    :Location1 => "Anthrophil Lab",
+	:Location2 => "Origin Ruins",
+	:Location3 => "Gold Coast",
+	:Location4 => "Rocket Island",
+    :QuestDescription => "Prof. Yew wants to talk to you about a final assault on Rocket's home base.",
+    :RewardString => "Post-game Story"
+  }
 end

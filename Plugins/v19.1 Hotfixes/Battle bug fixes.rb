@@ -128,3 +128,15 @@ class PokeBattle_Move_003 < PokeBattle_SleepMove
     user.pbChangeForm(newForm,_INTL("{1} transformed!",user.pbThis))
   end
 end
+
+#==============================================================================
+# Fixed typo in Conversion's code that treated a type as an item.
+#==============================================================================
+class PokeBattle_Move_05E < PokeBattle_Move
+  def pbEffectGeneral(user)
+    newType = @newTypes[@battle.pbRandom(@newTypes.length)]
+    user.pbChangeTypes(newType)
+    typeName = GameData::Type.get(newType).name
+    @battle.pbDisplay(_INTL("{1} transformed into the {2} type!",user.pbThis,typeName))
+  end
+end

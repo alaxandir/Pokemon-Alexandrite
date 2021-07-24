@@ -84,10 +84,10 @@ class TriadCard
       cardbitmap.dispose
     end
     if type
-      typebitmap = AnimatedBitmap.new(_INTL("Graphics/Pictures/types"))
+      typebitmap = AnimatedBitmap.new(_INTL("Graphics/Pictures/cardtypes"))
       type_number = GameData::Type.get(type).id_number
-      typerect = Rect.new(0, type_number * 28, 64, 28)
-      bitmap.blt(8, 50, typebitmap.bitmap, typerect, 192)
+      typerect = Rect.new(0, type_number * 28, 26, 28)
+      bitmap.blt(28, 32, typebitmap.bitmap, typerect, 192)
       typebitmap.dispose
     end
     return bitmap
@@ -101,7 +101,7 @@ class TriadCard
     else            # Player
       cardbitmap = AnimatedBitmap.new(_INTL("Graphics/Pictures/triad_card_player"))
     end
-    typebitmap = AnimatedBitmap.new(_INTL("Graphics/Pictures/types"))
+    typebitmap = AnimatedBitmap.new(_INTL("Graphics/Pictures/cardtypes"))
     iconbitmap = AnimatedBitmap.new(GameData::Species.icon_filename(@species, @form))
     numbersbitmap = AnimatedBitmap.new(_INTL("Graphics/Pictures/triad_numbers"))
     # Draw card background
@@ -109,14 +109,14 @@ class TriadCard
     # Draw type icon
     type_number = GameData::Type.get(@type).id_number
     typerect = Rect.new(0, type_number * 28, 64, 28)
-    bitmap.blt(8, 50, typebitmap.bitmap, typerect, 192)
+    bitmap.blt(48, 6, typebitmap.bitmap, typerect, 192)
     # Draw Pokémon icon
     bitmap.blt(8, 24, iconbitmap.bitmap, Rect.new(0, 0, 64, 64))
     # Draw numbers
-    bitmap.blt(8, 16, numbersbitmap.bitmap, Rect.new(@west * 16, 0, 16, 16))
-    bitmap.blt(22, 6, numbersbitmap.bitmap, Rect.new(@north * 16, 0, 16, 16))
-    bitmap.blt(36, 16, numbersbitmap.bitmap, Rect.new(@east * 16, 0, 16, 16))
-    bitmap.blt(22, 26, numbersbitmap.bitmap, Rect.new(@south * 16, 0, 16, 16))
+    bitmap.blt(6, 16, numbersbitmap.bitmap, Rect.new(@west * 16, 0, 16, 16))
+    bitmap.blt(20, 6, numbersbitmap.bitmap, Rect.new(@north * 16, 0, 16, 16))
+    bitmap.blt(34, 16, numbersbitmap.bitmap, Rect.new(@east * 16, 0, 16, 16))
+    bitmap.blt(20, 26, numbersbitmap.bitmap, Rect.new(@south * 16, 0, 16, 16))
     cardbitmap.dispose
     typebitmap.dispose
     iconbitmap.dispose
@@ -163,7 +163,7 @@ class TriadScene
     # Allocate viewport
     @viewport = Viewport.new(0,0,Graphics.width,Graphics.height)
     @viewport.z = 99999
-    addBackgroundPlane(@sprites,"background","triad_bg",@viewport)
+    addBackgroundPlane(@sprites,"background","triad_bg2",@viewport)
     @sprites["helpwindow"] = Window_AdvancedTextPokemon.newWithSize("",
        0,Graphics.height-64,Graphics.width,64,@viewport)
     for i in 0...@battle.width*@battle.height
@@ -251,12 +251,14 @@ class TriadScene
     for item in cardStorage
       commands.push(_INTL("{1} x{2}", GameData::Species.get(item[0]).name, item[1]))
     end
-    command = Window_CommandPokemonEx.newWithSize(commands,0,0,Graphics.width/2,Graphics.height-64,@viewport)
-    @sprites["helpwindow"].text = _INTL("Choose {1} cards to use for this duel.",@battle.maxCards)
+    command = Window_CommandPokemonEx.newWithSize(commands,0,0,(Graphics.width/4+20),Graphics.height-156,@viewport)
+    pbSetSmallFont(command.contents)
+	command.shadowColor = Color.new(220,220,220)
+	@sprites["helpwindow"].text = _INTL("Choose {1} cards to use for this duel.",@battle.maxCards)
     preview = Sprite.new(@viewport)
-    preview.x = Graphics.width/2 + 20
-    preview.y = 60
-    preview.z = 4
+    preview.x = (Graphics.width/4) - 94
+    preview.y = Graphics.height - 158
+    preview.z = 1
     index = -1
     for i in 0...@battle.maxCards
       @sprites["player#{i}"] = Sprite.new(@viewport)
@@ -409,7 +411,7 @@ class TriadScene
           @sprites["player#{@cardIndexes[i]}"].bitmap = @cardBitmaps[@cardIndexes[i]]
           @sprites["player#{@cardIndexes[i]}"].x      = (i==choice) ? Graphics.width-108 : Graphics.width-92
           @sprites["player#{@cardIndexes[i]}"].y      = y
-          @sprites["player#{@cardIndexes[i]}"].z      = 2
+          @sprites["player#{@cardIndexes[i]}"].z      = (i==choice) ? 3 : 2
           y += 44
         end
         lastChoice = choice

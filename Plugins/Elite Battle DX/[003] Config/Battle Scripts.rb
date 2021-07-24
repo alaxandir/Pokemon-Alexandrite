@@ -115,7 +115,7 @@ module BattleScripts
 	"recallOpp" => "Time for a switch.",
 	"lowHPOpp" => "Hang in there!",
 	"loss" => "Try again soon, you almost had it.",
-	"lowHP" => "What a nailbiter.",
+	"lowHP" => "What a nail-biter.",
 	"Oppitem" => "Let me think about this."
 }
 #----------------# BATTLER 0 IS PLAYER, BATTLER 1 IS OPPONENT
@@ -138,7 +138,7 @@ module BattleScripts
 	"loss" => "Thank you for the battle.",
 	"lowHP" => "This is close.",
 	"item" => "Items won't save you here.",
-	"Oppitem" => "I belive some medicine is in order."
+	"Oppitem" => "I believe some medicine is in order."
 }
 #---------------
   LORA = {
@@ -156,7 +156,6 @@ module BattleScripts
 	@scene.pbTrainerSpeak("#{pname}! Are you okay?")
 	end,
 	"fainted" => "Fainting is only temporary afterall.",
-	"recall" => "A switch? What are you up to.",
 	"lowHPOpp" => "Bug Pokémon don't give up easy!",
 	"loss" => "Well fought, but you're not ready yet."
 }
@@ -173,7 +172,6 @@ module BattleScripts
 	@scene.pbTrainerSpeak("#{pname} isn't looking too hot.")
 	end,
 	"fainted" => "That Pokémon's done.",
-	"recall" => "Switching it up wont save you.",
 	"lowHPOpp" => "I'm sweating here!",
 	"loss" => "That was intense!",
 	"BeforeLastOpp" => "Lets see if I can bring this back."
@@ -190,7 +188,6 @@ module BattleScripts
 	@scene.pbTrainerSpeak("#{pname}, it's lights out for you!")
 	end,
 	"fainted" => "That Pokémon's done.",
-	"recall" => "Switching it up wont save you.",
 	"lowHPOpp" => "I'm just hanging in there!",
 	"loss" => "Fearless combat!",
 	"BeforeLastOpp" => "Power's low, but I'm still going!"
@@ -209,7 +206,6 @@ HEIDI = {
 	pname = @battlers[0].name
 	@scene.pbTrainerSpeak("#{pname} is getting iced.")
 	end,
-	"recall" => "Switching it up wont save you.",
 	"loss" => "Is it cold in here?"
 }
 #---------------# BATTLER 0 IS PLAYER, BATTLER 1 IS OPPONENT
@@ -260,11 +256,9 @@ HAOAI = {
 	"megaOpp" => "BEHOLD! The power of the Mega Ring!",
 	"fainted" => "You have no chance against me.",
 	"fainted2" => "You're faltering.",
-	"recall" => "Running away?",
-	"recall2" => "Stop wasting time, switching is pointless.",
 	"lowHPOpp" => "These Pokémon are too weak!",
 	"afterLastOpp" => "This is impossible!",
-	"afterLast" => "Foolish child, you're defeat is imminent.",
+	"afterLast" => "Foolish child, your defeat is imminent.",
 	"loss" => "Futile, you will remember this day."
 }
 #----------------
@@ -290,7 +284,7 @@ HAOAI = {
 	"fainted2" => "<laughs> You're beaten.",
 	"recall" => "Stop delaying the inevitable.",
 	"recall2" => "Stop wasting my time.",
-	"recall3" => "You're really persistent arent you...",
+	"recall3" => "You're really persistent aren't you...",
 	"recall4" => "Enough of this, stop trying to defeat me.",
 	"lowHPOpp2" => "Argh, come on you, keep fighting!",
 	"lowHPOpp3" => "If you give up, you will be punished!",
@@ -396,7 +390,7 @@ HAOAI = {
 	"item" => "... Really?",
 	"Oppitem" => "I didn't want to have to use this..."
 }
-  #-----------------------------------------------------------------------------
+#-----------------------------------------------------------------------------
   BRETT6 = {
 	"turnStart0" => proc do
 	tname = $Trainer.name
@@ -428,7 +422,10 @@ HAOAI = {
 	"lowHP2" => "Oh my gosh, it's really happening!",
 	"lowHP3" => "Hit it harder! Go now! Attack!"
 }
+  BRETT7 = {
 
+}
+#-----------------------------------------------------------------------------
 ROBERT = {
 	"turnStart0" => proc do
 	tname = $Trainer.name
@@ -554,7 +551,7 @@ ANYA = {
 	"lowHPOpp" => "Hmph, you think that's enough to stop me?",
 	"lowHPOpp2" =>  "You're gonna have to do better than that.",
 	"loss" => "I think you've got some potential, maybe come back when you're older.",
-	"lowHP" => "I didn't expect that, what a suprise.",
+	"lowHP" => "I didn't expect that, what a surprise.",
 	"lowHP2" => "You can't be serious, you're still standing?"
 }
 
@@ -606,5 +603,59 @@ JAY = {
 	pname = @battlers[0].name
 	"How is #{pname} still standing?!"
 	end
+}
+
+#----------------
+  GIOVANNI3 = {
+    "turnStart0" => proc do
+      # hide databoxes
+      @scene.pbHideAllDataboxes
+      # show flavor text
+      @scene.pbDisplay("Mewtwo's psychic energy warps the battlefield!")
+      # play common animation
+      EliteBattle.playCommonAnimation(:AURAFLARE, @scene, 1)
+      # change the battle environment (use animation to transition)
+      @sprites["battlebg"].reconfigure(:DIMENSION, :DISTORTION)
+      @scene.pbDisplay("Its mind distorted the battlefield!")
+      # show databoxes
+      @scene.pbShowAllDataboxes
+    end, 
+	"turnStart2" => proc do
+	tname = $Trainer.name
+	@scene.pbTrainerSpeak("#{tname}, you've crossed me for the last time.")
+	end,
+	"turnStart4" => "You little brat, I'm getting angry.",
+	"turnStart6" => proc do
+	pname = @battlers[0].name
+	@scene.pbTrainerSpeak("Your #{pname}, how is it so strong?")
+	end,
+	"turnStart10" => "I can taste your fear, it's tempting to kill you quickly.",
+	"turnStart15" => "Why won't you die!?",
+	"lowHPOpp" => proc do
+	pname = @battlers[1].name
+	@scene.pbTrainerSpeak("#{pname}! Don't you dare quit.")
+	end,
+	"megaOpp" => "It's time to stop toying with you.",
+	"fainted" => "Give up, you can't win.",
+	"fainted2" => "Don't worry, it'll all be over soon.",
+	"fainted2" => "<laughs> You're beaten.",
+	"lowHPOpp2" => "Argh, come on, keep fighting!",
+	"lowHPOpp3" => proc do
+	pname = @battlers[1].name
+	@scene.pbTrainerSpeak("#{pname}, if you give up, you will be punished!")
+	end,
+	"afterLastOpp" => proc do
+	pname = @battlers[1].name
+	@scene.pbTrainerSpeak("#{pname}! Don't dissapoint me old friend.")
+	EliteBattle.playCommonAnimation(:AURAFLARE, @scene, 1)
+	@battlers[1].pbRaiseStatStageBasic(:ATTACK, 2)
+	@battlers[1].pbRaiseStatStageBasic(:DEFENSE, 2)
+	@battlers[1].pbRaiseStatStageBasic(:SPECIAL_DEFENSE, 2)
+	@battlers[1].pbRaiseStatStageBasic(:SPEED, 2)
+	@scene.pbDisplay("Persian looks ready to fight to the last breath!")
+	@scene.pbDisplay("Persian's stats increased dramatically!")
+	end,
+	"afterLast" => "Foolish child, no more games!",
+	"loss" => "Fufufu, you're mine!"
 }
 end

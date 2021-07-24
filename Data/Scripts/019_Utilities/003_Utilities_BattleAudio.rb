@@ -13,6 +13,20 @@ def pbGetWildBattleBGM(_wildParty)   # wildParty is an array of Pokémon objects
     ret = pbStringToAudioFile(music) if music && music != ""
   end
   if !ret
+    # Check user configured music
+	case $PokemonSystem.wildmusic
+	when 0 
+	music = "WildFRLG"
+	when 1
+	music = "WildKanto"
+	when 2
+	music = "WildJohto"
+	when 3
+	music = "WildDPPT"
+	end
+    ret = pbStringToAudioFile(music) if music && music != ""
+  end
+  if !ret
     # Check global metadata
     music = GameData::Metadata.get.wild_battle_BGM
     ret = pbStringToAudioFile(music) if music && music!=""

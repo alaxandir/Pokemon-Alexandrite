@@ -529,26 +529,26 @@ class MiningGameScene
       # Input
       if Input.trigger?(Input::UP) || Input.repeat?(Input::UP)
         if @sprites["cursor"].position>=BOARDWIDTH
-          pbSEPlay("Mining cursor")
+          pbSEPlay("GUI sel cursor.ogg")
           @sprites["cursor"].position-=BOARDWIDTH
         end
       elsif Input.trigger?(Input::DOWN) || Input.repeat?(Input::DOWN)
         if @sprites["cursor"].position<(BOARDWIDTH*(BOARDHEIGHT-1))
-          pbSEPlay("Mining cursor")
+          pbSEPlay("GUI sel cursor.ogg")
           @sprites["cursor"].position+=BOARDWIDTH
         end
       elsif Input.trigger?(Input::LEFT) || Input.repeat?(Input::LEFT)
         if @sprites["cursor"].position%BOARDWIDTH>0
-          pbSEPlay("Mining cursor")
+          pbSEPlay("GUI sel cursor.ogg")
           @sprites["cursor"].position-=1
         end
       elsif Input.trigger?(Input::RIGHT) || Input.repeat?(Input::RIGHT)
         if @sprites["cursor"].position%BOARDWIDTH<(BOARDWIDTH-1)
-          pbSEPlay("Mining cursor")
+          pbSEPlay("GUI sel cursor.ogg")
           @sprites["cursor"].position+=1
         end
       elsif Input.trigger?(Input::ACTION)   # Change tool mode
-        pbSEPlay("Mining tool change")
+        pbSEPlay("GUI sel cursor.ogg")
         newmode=(@sprites["cursor"].mode+1)%2
         @sprites["cursor"].mode=newmode
         @sprites["tool"].src_rect.set(newmode*68,0,68,100)

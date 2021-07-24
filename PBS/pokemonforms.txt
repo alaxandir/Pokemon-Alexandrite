@@ -1756,16 +1756,6 @@ Color = Red
 Pokedex = This gorgeous Magearna looks as it did at the time of its invention. Its luxurious decoration pleased the king's daughter.
 ####################
 #-------------------------------
-[ROSERADE,1]
-FormName = Mega Roserade
-MegaStone = ROSERITE
-BaseStats = 80,100,110,80,110,110
-Abilities = DAZZLING
-HiddenAbility = DAZZLING
-Weight = 50
-Pokedex = Placeholder pokedex.
-Generation = 6
-#-------------------------------
 [ELECTIVIRE,1]
 FormName = Mega Electivire
 MegaStone = ELECTIRITE
@@ -1847,3 +1837,25 @@ BattlerPlayerX = -2
 BattlerPlayerY = 58
 BattlerEnemyX = 6
 Evolutions = SIRFETCHD,CriticalHits,3
+#-------------------------------
+[BASTIODON,1]
+FormName = Mega Bastiodon
+MegaStone = BASTIOTITE
+BaseStats = 60,62,208,30,77,158
+Type1 = ROCK
+Type1 = STEEL
+Abilities = CLEARBODY
+Weight = 250
+Pokedex = Any frontal attack will fail without cause for err, the massive stony shield with steel spikes protect this Pokémon.
+Generation = 6
+#-------------------------------
+[ROSERADE,1]
+FormName = Mega Roserade
+MegaStone = ROSERITE
+BaseStats = 60,100,100,105,125,125
+Type1 = GRASS
+Type2 = POISON 
+Abilities = GUTS
+Weight = 18
+Pokedex = These normally sweet Pokémon become fierce fighters when injured.
+Generation = 6
