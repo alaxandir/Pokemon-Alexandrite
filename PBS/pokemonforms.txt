@@ -1859,3 +1859,16 @@ Abilities = GUTS
 Weight = 18
 Pokedex = These normally sweet Pokémon become fierce fighters when injured.
 Generation = 6
+#-------------------------------
+[STARMIE,1]
+Name = Mega Starmie
+MegaStone = STARMITE
+Type1 = WATER
+Type2 = PSYCHIC
+Abilities = LIGHTNINGROD
+BaseStats = 60,75,90,115,130,150
+EffortPoints = 0,0,0,2,0,0
+Weight = 60
+Pokedex = Starmie who evolved to immense psychic power, projecting a barrier field that absorb all electric attacks.
+Generation = 6
+#:HP, :ATTACK, :DEFENSE, :SPEED, :SPECIAL_ATTACK, :SPECIAL_DEFENSE

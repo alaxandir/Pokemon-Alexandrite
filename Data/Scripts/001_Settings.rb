@@ -7,7 +7,7 @@
 
 module Settings
   # The version of your game. It has to adhere to the MAJOR.MINOR.PATCH format.
-	GAME_VERSION = '0.9.0'
+	GAME_VERSION = '0.9.1'
 	
   # The generation that the battle system follows. Used throughout the battle
   # scripts, and also by some other settings which are used in and out of battle
@@ -169,7 +169,7 @@ module Settings
       _INTL("Poké Balls"),
       _INTL("TMs & HMs"),
       _INTL("Berries"),
-      _INTL("Mail"),
+      _INTL("Held Items"),
       _INTL("Battle Items"),
       _INTL("Key Items")
     ]

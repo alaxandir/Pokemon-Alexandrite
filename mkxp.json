@@ -360,6 +360,6 @@
     // "Game.rgssad", but specifying the executable name here
     // is a tiny bit less intrusive.
     //
-    // "execName": "Game"
+    "execName": "Pokemon Alexandrite"
 
 }

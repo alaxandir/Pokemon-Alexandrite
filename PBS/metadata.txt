@@ -74,6 +74,7 @@ Outdoor = true
 ShowArea = true
 Weather = None,0
 MapPosition = 0,3,10
+MapSize = 1,11
 #-------------------------------
 [010]
 # Victory Road Ent.
@@ -87,14 +88,14 @@ MapPosition = 0,2,9
 Outdoor = false
 ShowArea = true
 Weather = None,0
-MapPosition = 0,2,9
+MapPosition = 0,2,8
 #-------------------------------
 [012]
 # Victory Plateau
 Outdoor = false
 ShowArea = true
 Weather = None,0
-MapPosition = 0,1,7
+MapPosition = 0,2,6
 #-------------------------------
 [013]
 # Fortune City Interiors
@@ -211,7 +212,7 @@ MapPosition = 0,2,10
 Outdoor = false
 ShowArea = true
 Weather = None,0
-MapPosition = 0,2,9
+MapPosition = 0,2,8
 #-------------------------------
 [032]
 # \PN's House
@@ -226,12 +227,13 @@ Outdoor = true
 ShowArea = true
 Bicycle = true
 Weather = None,0
-MapPosition = 0,20,3
+MapSize = 1,111
+MapPosition = 0,20,2
 BattleBack = Forest
 #-------------------------------
 [034]
 # Victory Road Ext.
-Outdoor = false
+Outdoor = true
 ShowArea = true
 Weather = None,0
 MapPosition = 0,2,7
@@ -241,42 +243,42 @@ MapPosition = 0,2,7
 Outdoor = false
 ShowArea = true
 Weather = None,0
-MapPosition = 0,2,7
+MapPosition = 0,2,9
 #-------------------------------
 [036]
 # Elite Four - Robert
 Outdoor = false
 ShowArea = false
 Weather = None,0
-MapPosition = 0,1,7
+MapPosition = 0,2,6
 #-------------------------------
 [037]
 # Elite Four - William
 Outdoor = false
 ShowArea = false
 Weather = None,0
-MapPosition = 0,1,7
+MapPosition = 0,2,6
 #-------------------------------
 [039]
 # Elite Four - Anya
 Outdoor = false
 ShowArea = false
 Weather = None,0
-MapPosition = 0,1,7
+MapPosition = 0,2,6
 #-------------------------------
 [040]
 # Champion
 Outdoor = false
 ShowArea = false
 Weather = None,0
-MapPosition = 0,1,7
+MapPosition = 0,2,6
 #-------------------------------
 [041]
 # Hall of Fame
 Outdoor = false
 ShowArea = true
 Weather = None,0
-MapPosition = 0,1,7
+MapPosition = 0,2,6
 #-------------------------------
 [042]
 # Earthroot Town
@@ -290,6 +292,7 @@ MapPosition = 0,20,5
 Outdoor = true
 ShowArea = true
 Weather = None,0
+MapSize = 1,11
 MapPosition = 0,20,6
 #-------------------------------
 [044]
@@ -448,7 +451,8 @@ MapPosition = 0,10,2
 Outdoor = true
 ShowArea = true
 Weather = None,0
-MapPosition = 0,9,7
+MapPosition = 0,7,7
+MapSize = 2,11
 BattleBack = Forest
 #-------------------------------
 [067]
@@ -456,7 +460,8 @@ BattleBack = Forest
 Outdoor = true
 ShowArea = true
 Weather = None,0
-MapPosition = 0,10,7
+MapPosition = 0,9,7
+MapSize = 2,11
 BattleBack = Forest
 #-------------------------------
 [068]
@@ -464,7 +469,8 @@ BattleBack = Forest
 Outdoor = true
 ShowArea = true
 Weather = None,0
-MapPosition = 0,11,8
+MapPosition = 0,11,7
+MapSize = 1,111
 BattleBack = Forest
 #-------------------------------
 [069]
@@ -513,6 +519,7 @@ Outdoor = true
 ShowArea = true
 Weather = Sandstorm,100
 MapPosition = 0,14,8
+MapSize = 1,11
 BattleBack = rocky
 Environment = Sand
 #-------------------------------
@@ -564,6 +571,7 @@ ShowArea = true
 BicycleAlways = true
 Weather = None,0
 MapPosition = 0,21,9
+MapSize = 2,11
 SnapEdges = true
 BattleBack = IndoorB
 #-------------------------------
@@ -571,7 +579,8 @@ BattleBack = IndoorB
 # Seafoam Cave
 Outdoor = false
 Weather = None,0
-MapPosition = 0,19,8
+MapPosition = 0,19,7
+MapSize = 1,11
 DarkMap = false
 SnapEdges = true
 BattleBack = CaveDark
@@ -595,7 +604,8 @@ SnapEdges = true
 Outdoor = true
 ShowArea = true
 Weather = None,0
-MapPosition = 0,24,8
+MapPosition = 0,23,8
+MapSize = 4,01111100
 SnapEdges = false
 BattleBack = Outdoor
 #-------------------------------
@@ -667,7 +677,8 @@ SnapEdges = true
 Outdoor = false
 ShowArea = true
 Weather = None,0
-MapPosition = 0,18,7
+MapPosition = 0,17,7
+MapSize = 2,1100
 DarkMap = true
 SnapEdges = true
 BattleBack = CaveDark
@@ -701,6 +712,7 @@ SnapEdges = true
 Outdoor = false
 ShowArea = true
 Weather = None,0
+MapSize = 1,11
 MapPosition = 0,16,7
 DarkMap = true
 SnapEdges = true
@@ -710,7 +722,8 @@ BattleBack = CaveDark
 # Route 103
 Outdoor = true
 Weather = None,0
-MapPosition = 0,16,5
+MapPosition = 0,16,3
+MapSize = 1,11
 DarkMap = false
 SnapEdges = false
 #-------------------------------
@@ -879,7 +892,8 @@ MapPosition = 0,13,5
 Outdoor = true
 ShowArea = true
 Weather = None,0
-MapPosition = 0,10,5
+MapPosition = 0,9,5
+MapSize = 3,111
 DarkMap = false
 SnapEdges = false
 BattleBack = Forest
@@ -969,11 +983,12 @@ Weather = None,0
 MapPosition = 0,8,5
 #-------------------------------
 [136]
-# Gold Sea
+# Coral Island
 Outdoor = true
 ShowArea = true
 Weather = None,0
-MapPosition = 0,16,1
+MapPosition = 0,16,0
+MapSize = 1,11
 #-------------------------------
 [137]
 # PKMN Training Club
@@ -988,6 +1003,7 @@ Outdoor = true
 ShowArea = true
 Weather = Rain,100
 MapPosition = 0,7,5
+MapSize = 1,11
 #-------------------------------
 [139]
 # Shimmerwood Folder
@@ -1010,13 +1026,15 @@ Outdoor = true
 ShowArea = true
 Weather = None,0
 MapPosition = 0,11,10
+MapSize = 1,111
 #-------------------------------
 [142]
 # Route 108
 Outdoor = true
 ShowArea = true
-Weather = Rain,100
-MapPosition = 0,11,13
+Weather = None,0
+MapPosition = 0,9,13
+MapSize = 4,11110000
 #-------------------------------
 [143]
 # Neon City
@@ -1092,8 +1110,10 @@ MapPosition = 0,16,2
 # Route 118
 Outdoor = true
 ShowArea = true
+MapSize = 1,11
 Weather = None,0
-MapPosition = 0,18,3
+MapPosition = 0,17,2
+MapSize = 3,011010110
 #-------------------------------
 [155]
 # Neon Apt
@@ -1162,6 +1182,7 @@ Outdoor = true
 ShowArea = true
 Weather = None,0
 MapPosition = 0,8,9
+MapSize = 3,111
 #-------------------------------
 [165]
 # Trident Cove Town
@@ -1220,7 +1241,8 @@ MapPosition = 0,6,9
 Outdoor = true
 ShowArea = true
 Weather = Snow,100
-MapPosition = 0,12,15
+MapPosition = 0,12,14
+MapSize = 2,1011
 BattleBack = Mountain
 #-------------------------------
 [174]
@@ -1237,6 +1259,7 @@ Outdoor = false
 ShowArea = true
 Weather = None,0
 MapPosition = 0,14,15
+MapSize = 1,111
 BattleBack = Snow
 #-------------------------------
 [176]
@@ -1244,7 +1267,8 @@ BattleBack = Snow
 Outdoor = false
 ShowArea = true
 Weather = None,0
-MapPosition = 0,14,17
+MapPosition = 0,15,17
+MapSize = 2,11
 BattleBack = Snow
 #-------------------------------
 [177]
@@ -1253,6 +1277,7 @@ Outdoor = true
 ShowArea = true
 Weather = Blizzard,100
 MapPosition = 0,17,16
+MapSize = 3,111100
 BattleBack = Snow
 #-------------------------------
 [178]
@@ -1296,7 +1321,8 @@ BattleBack = EliteA
 Outdoor = true
 ShowArea = true
 Weather = Snow,100
-MapPosition = 0,22,16
+MapPosition = 0,21,16
+MapSize = 3,111
 BattleBack = Snow
 #-------------------------------
 [184]
@@ -1318,7 +1344,7 @@ BattleBack = Snow
 # Mt. Mauve Interior
 Outdoor = false
 Weather = None,0
-MapPosition = 0,13,12
+MapPosition = 0,14,12
 DarkMap = true
 BattleBack = Cave
 #-------------------------------
@@ -1372,7 +1398,8 @@ MapPosition = 0,17,12
 Outdoor = true
 ShowArea = true
 Weather = None,0
-MapPosition = 0,20,12
+MapPosition = 0,19,10
+MapSize = 2,010111
 #-------------------------------
 [194]
 # Lighthouse
@@ -1452,3 +1479,21 @@ MapPosition = 0,2,2
 Outdoor = false
 Weather = None,0
 MapPosition = 0,2,2
+#-------------------------------
+[206]
+# Route 103
+Outdoor = true
+Weather = None,0
+MapSize = 1,11
+MapPosition = 0,16,5
+DarkMap = false
+SnapEdges = false
+#-------------------------------
+[207]
+# Route 104
+Outdoor = true
+ShowArea = true
+Weather = None,0
+MapPosition = 0,15,4
+DarkMap = false
+SnapEdges = false

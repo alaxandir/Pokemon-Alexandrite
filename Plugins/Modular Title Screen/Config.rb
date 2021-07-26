@@ -63,7 +63,7 @@ module ModularTitle
   #-------------------------------------------------------------------------------
   #                  V V     add your modifiers in here     V V
   #-------------------------------------------------------------------------------
-"background4", "intro:6", "effect4", "effect5", "effect7", "overlay5", "bgm:daydreamer","misc2"
+"background4", "intro:6", "effect4", "effect5", "effect7", "overlay5", "bgm:daydreamer","misc3","logoY:70","logo:sparkle"
 
   ] # end of config constant
   #-------------------------------------------------------------------------------

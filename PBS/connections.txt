@@ -8,6 +8,16 @@
 26,West,0,25,East,0
 # Verdant Jungle (53) - Paradise Cove (51)
 53,West,0,51,East,0
+# Saltstone Villa (71) - Ochre Valley (73)
+71,North,0,73,South,48
+# Saltstone Villa (71) - Ochre Valley (74)
+71,North,8,74,South,0
+# Saltstone Villa (71) - Ochre Valley (75)
+71,North,40,75,South,0
+# Ochre Valley (74) - Ochre Valley (73)
+74,West,0,73,East,0
+# Ochre Valley (75) - Ochre Valley (74)
+75,West,0,74,East,0
 # Route 102 (85) - Bouldergrove City (86)
 85,East,11,86,West,30
 # Route 107 (141) - Route 108 (142)
@@ -48,34 +58,42 @@
 183,East,27,184,West,19
 # Route 117 (196) - Fortune City (197)
 196,West,16,197,East,31
-# Route 104 (104) - Anthophil City (106)
-104,West,0,106,East,9
-# Route 105 (123) - Anthophil City (106)
-123,East,0,106,West,21
 # Route 101 (43) - Route 104 (104)
 43,North,0,104,South,248
-# Route 103 (98) - Route 104 (104)
-98,West,0,104,East,1
-# Gold Coast (100) - Route 104 (104)
-100,West,39,104,East,0
 # Gold Sea (136) - Route 104 (104)
 136,West,69,104,East,0
+# Anthophil City (106) - Route 104 (104)
+106,East,9,104,West,0
+# Route 104 (207) - Route 104 (104)
+207,West,0,104,East,0
 # Earthroot Town (42) - Route 101 (43)
 42,South,9,43,North,0
 # Seafoam City (48) - Route 101 (43)
 48,North,7,43,South,0
 # Emberton (124) - Route 101 (43)
 124,South,474,43,North,0
+# Route 104 (207) - Route 101 (43)
+207,South,168,43,North,0
 # Earthroot Forest (33) - Earthroot Town (42)
 33,South,0,42,North,6
 # Route 118 (154) - Earthroot Forest (33)
 154,East,0,33,West,1
 # Route 103 (98) - Route 118 (154)
 98,East,0,154,West,37
+# Route 103 (206) - Route 118 (154)
+206,East,0,154,West,102
+# Route 103 (206) - Route 103 (98)
+206,North,0,98,South,0
 # Gold Coast (100) - Route 103 (98)
 100,South,0,98,North,0
+# Route 104 (207) - Route 103 (98)
+207,East,1,98,West,0
+# Route 104 (207) - Route 103 (206)
+207,East,66,206,West,0
 # Gold Sea (136) - Gold Coast (100)
-136,South,0,100,North,0
+136,South,80,100,North,0
+# Route 104 (207) - Gold Coast (100)
+207,East,0,100,West,39
 # Route 116 (193) - Seafoam City (48)
 193,North,0,48,South,25
 # Filler Sea (58) - Seafoam City (48)
@@ -98,13 +116,5 @@
 123,West,0,124,East,0
 # Route 106 (138) - Emberton (124)
 138,East,1,124,West,0
-# Ochre Valley (74) - Ochre Valley (73)
-74,West,0,73,East,0
-# Saltstone Villa (71) - Ochre Valley (73)
-71,North,0,73,South,48
-# Ochre Valley (75) - Ochre Valley (74)
-75,West,0,74,East,0
-# Saltstone Villa (71) - Ochre Valley (74)
-71,North,8,74,South,0
-# Saltstone Villa (71) - Ochre Valley (75)
-71,North,40,75,South,0
+# Anthophil City (106) - Route 105 (123)
+106,West,21,123,East,0
