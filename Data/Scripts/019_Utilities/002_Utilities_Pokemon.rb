@@ -267,15 +267,15 @@ def pbHasEgg?(species)
 end
 
 #===============================================================================
-# 0.6.1 Returns a value equal to each pokemons level (^2) and added togetherg
+# 0.6.1 Returns a value equal to each Pokemon level (^2) and added together
 #===============================================================================
 
 def pbPokeCenterCost(party)
   return 1 if party.length == 0
   sum = 0
   # Add party levels all together
-  party.each { |p| sum += ((p.totalhp-p.hp)*Settings::HP_VALUE_CONST) }
-  party.each { |p| sum += ((p.countspent_PP)*Settings::PP_VALUE_CONST) }
+  party.each { |p| sum += ((p.totalhp-p.hp)*Settings::HP_VALUE_CONST) if !p.egg? }
+  party.each { |p| sum += ((p.countspent_PP)*Settings::PP_VALUE_CONST) if !p.egg? }
   sum = sum.to_i
   
   return 1 if sum == 0

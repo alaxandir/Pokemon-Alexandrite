@@ -191,7 +191,9 @@ GameData::TerrainTag.register({
   :id                     => :Puddle,
   :id_number              => 16,
   :battle_environment     => :Puddle,
-  :shows_reflections      => true
+  :shows_reflections      => true,
+  :can_surf               => false,
+  :can_fish               => false,
 })
 
 GameData::TerrainTag.register({
