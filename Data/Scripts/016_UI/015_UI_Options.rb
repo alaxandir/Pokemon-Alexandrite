@@ -359,7 +359,7 @@ class PokemonOption_Scene
          }
        ),
 	   EnumOption.new(_INTL("Wild PKMN Music"),[_INTL("K"),_INTL("K2"),_INTL("J"),_INTL("S"),_INTL("U")], #0.8.2
-		 proc { $PokemonSystem.wildmusic },															   #
+		 proc { $PokemonSystem.wildmusic },															   
 		 proc { |value|
 			if $PokemonSystem.wildmusic != value
 			pbSEStop

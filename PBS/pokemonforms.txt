@@ -1872,3 +1872,4 @@ Weight = 60
 Pokedex = Starmie who evolved to immense psychic power, projecting a barrier field that absorb all electric attacks.
 Generation = 6
 #:HP, :ATTACK, :DEFENSE, :SPEED, :SPECIAL_ATTACK, :SPECIAL_DEFENSE
+Generation = 6

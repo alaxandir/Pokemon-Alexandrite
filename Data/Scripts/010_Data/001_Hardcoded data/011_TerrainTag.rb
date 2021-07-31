@@ -201,3 +201,9 @@ GameData::TerrainTag.register({
   :id_number              => 42,
   :battle_environment     => :Bridge
 })
+
+GameData::TerrainTag.register({
+  :id                     => :FakeBridge,
+  :id_number              => 42,
+  :battle_environment     => :Bridge
+})
