@@ -1,39 +1,13 @@
 ﻿# See the documentation on the wiki to learn how to edit this file.
 #-------------------------------
-# Spirit Garden (8) - Route 115 (192)
-8,South,35,192,North,0
-# Soul City (188) - Spirit Garden (8)
-188,North,5,8,South,0
-# Route 114 (187) - Spirit Garden (8)
-187,North,77,8,South,0
 # Route 119 (29) - Route 119 (9)
 29,East,22,9,West,0
 # Victory Road Ent. (10) - Route 119 (29)
 10,South,0,29,North,0
 # Bouldergrove Tunnel (26) - Bouldergrove Tunnel (25)
 26,West,0,25,East,0
-# Earthroot Forest (33) - Earthroot Town (42)
-33,South,0,42,North,6
-# Route 118 (154) - Earthroot Forest (33)
-154,East,0,33,West,1
-# Earthroot Town (42) - Route 101 (43)
-42,South,9,43,North,0
-# Route 101 (43) - Route 104 (104)
-43,North,0,104,South,248
-# Seafoam City (48) - Route 101 (43)
-48,North,7,43,South,0
-# Emberton (124) - Route 101 (43)
-124,South,474,43,North,0
-# Route 104 (207) - Route 101 (43)
-207,South,168,43,North,0
-# Route 116 (193) - Seafoam City (48)
-193,North,0,48,South,25
-# Filler Sea (58) - Seafoam City (48)
-58,North,0,48,South,5
 # Verdant Jungle (53) - Paradise Cove (51)
 53,West,0,51,East,0
-# Filler Sea (58) - Route 116 (193)
-58,East,0,193,West,0
 # Saltstone Villa (71) - Ochre Valley (73)
 71,North,0,73,South,48
 # Saltstone Villa (71) - Ochre Valley (74)
@@ -46,30 +20,16 @@
 75,West,0,74,East,0
 # Route 102 (85) - Bouldergrove City (86)
 85,East,11,86,West,30
-# Route 103 (98) - Route 118 (154)
-98,East,0,154,West,37
-# Route 103 (206) - Route 103 (98)
-206,North,0,98,South,0
-# Gold Coast (100) - Route 103 (98)
-100,South,0,98,North,0
-# Route 104 (207) - Route 103 (98)
-207,East,1,98,West,0
-# Coral Sea (136) - Gold Coast (100)
-136,South,80,100,North,0
-# Route 104 (207) - Gold Coast (100)
-207,East,0,100,West,39
-# Coral Sea (136) - Route 104 (104)
-136,West,69,104,East,0
-# Anthophil City (106) - Route 104 (104)
-106,East,9,104,West,0
-# Route 104 (207) - Route 104 (104)
-207,West,0,104,East,0
-# Anthophil City (106) - Route 105 (123)
-106,West,21,123,East,0
-# Route 105 (123) - Emberton (124)
-123,West,0,124,East,0
-# Route 106 (138) - Emberton (124)
-138,East,1,124,West,0
+# Route 108 (142) - Route 107 (141)
+142,North,19,141,South,0
+# Route 110 (170) - Route 107 (141)
+170,West,0,141,East,13
+# filler forest (209) - Route 107 (141)
+209,South,0,141,North,0
+# Neon City (143) - Route 108 (142)
+143,East,0,142,West,14
+# Route 109 (173) - Route 108 (142)
+173,North,0,142,South,32
 # PKMN Training Field (146) - PKMN Training Field Atk (148)
 146,West,5,148,East,5
 # PKMN Training Field (146) - PKMN Training Field Def (149)
@@ -86,43 +46,83 @@
 148,North,8,150,South,8
 # PKMN Training Field Def (149) - PKMN Training Field Sp. Def (151)
 149,North,8,151,South,8
-# Route 103 (206) - Route 118 (154)
-206,East,0,154,West,102
 # Route 112 (164) - Trident Cove Town (165)
 164,West,2,165,East,0
 # Trident Cove Town (165) - Route 117 (196)
 165,South,0,196,North,37
+# Mt. Mauve (171) - Route 110 (170)
+171,West,8,170,East,0
+# filler forest (209) - Route 110 (170)
+209,East,28,170,West,0
 # Route 111 (177) - Glacier City (179)
 177,South,11,179,North,19
 # Glacier City (179) - Route 113 (183)
 179,East,18,183,West,18
 # Route 113 (183) - Siren's Peak (184)
 183,East,27,184,West,19
-# Route 114 (187) - Soul City (188)
-187,East,0,188,West,0
-# Soul City (188) - Route 115 (192)
-188,East,0,192,West,0
-# Route 115 (192) - Route 116 (193)
-192,East,0,193,West,9
 # Route 117 (196) - Fortune City (197)
 196,West,0,197,East,15
 # filler sea (208) - Route 117 (196)
 208,South,0,196,North,0
 # filler sea (208) - Fortune City (197)
 208,West,0,197,East,0
-# Route 104 (207) - Route 103 (206)
-207,East,66,206,West,0
-# Route 108 (142) - Route 107 (141)
-142,North,19,141,South,0
-# Route 110 (170) - Route 107 (141)
-170,West,0,141,East,13
-# filler forest (209) - Route 107 (141)
-209,South,0,141,North,0
-# Neon City (143) - Route 108 (142)
-143,East,0,142,West,14
-# Route 109 (173) - Route 108 (142)
-173,North,0,142,South,32
-# Mt. Mauve (171) - Route 110 (170)
-171,West,8,170,East,0
-# filler forest (209) - Route 110 (170)
-209,East,28,170,West,0
+# Route 103 (98) - Gold Coast (100)
+98,North,0,100,South,0
+# Coral Sea (136) - Gold Coast (100)
+136,South,0,100,North,0
+# Route 104 (207) - Gold Coast (100)
+207,East,0,100,West,39
+# Route 118 (154) - Route 103 (98)
+154,West,37,98,East,0
+# Route 104 (207) - Route 103 (98)
+207,East,1,98,West,0
+# Route 103 (206) - Route 103 (98)
+206,North,0,98,South,0
+# Earthroot Forest (33) - Route 118 (154)
+33,West,1,154,East,0
+# Route 103 (206) - Route 118 (154)
+206,East,0,154,West,102
+# Earthroot Town (42) - Earthroot Forest (33)
+42,North,6,33,South,0
+# Route 101 (43) - Earthroot Town (42)
+43,North,0,42,South,9
+# Route 104 (104) - Route 101 (43)
+104,South,248,43,North,0
+# Route 104 (207) - Route 101 (43)
+207,South,168,43,North,0
+# Emberton (124) - Route 101 (43)
+124,South,474,43,North,0
+# Seafoam City (48) - Route 101 (43)
+48,North,7,43,South,0
+# Route 104 (207) - Route 104 (104)
+207,West,0,104,East,0
+# Anthophil City (106) - Route 104 (104)
+106,East,9,104,West,0
+# Route 104 (207) - Coral Sea (136)
+207,East,0,136,West,69
+# Route 103 (206) - Route 104 (207)
+206,West,0,207,East,66
+# Route 105 (123) - Anthophil City (106)
+123,East,0,106,West,21
+# Emberton (124) - Route 105 (123)
+124,East,0,123,West,0
+# Route 106 (138) - Emberton (124)
+138,East,1,124,West,0
+# Route 116 (193) - Seafoam City (48)
+193,North,0,48,South,25
+# Filler Sea (58) - Seafoam City (48)
+58,North,0,48,South,5
+# Filler Sea (58) - Route 116 (193)
+58,East,0,193,West,0
+# Route 115 (192) - Route 116 (193)
+192,East,0,193,West,9
+# Spirit Garden (8) - Route 115 (192)
+8,South,35,192,North,0
+# Soul City (188) - Route 115 (192)
+188,East,0,192,West,0
+# Soul City (188) - Spirit Garden (8)
+188,North,5,8,South,0
+# Route 114 (187) - Spirit Garden (8)
+187,North,77,8,South,0
+# Route 114 (187) - Soul City (188)
+187,East,0,188,West,0
