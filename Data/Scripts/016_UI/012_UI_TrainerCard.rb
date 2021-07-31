@@ -19,16 +19,42 @@ class PokemonTrainerCard_Scene
     cardexists = pbResolveBitmap(sprintf("Graphics/Pictures/Trainer Card/card_f"))
     @sprites["card"] = IconSprite.new(0,0,@viewport)
     if $Trainer.female? && cardexists
+	  case $Trainer.badge_count
+	  when 0..2
       @sprites["card"].setBitmap("Graphics/Pictures/Trainer Card/card_f")
+	  when 3..4
+	  @sprites["card"].setBitmap("Graphics/Pictures/Trainer Card/card_f_1")
+	  when 5..6
+	  @sprites["card"].setBitmap("Graphics/Pictures/Trainer Card/card_f_2")
+	  when 7..10
+		if $Trainer.pokedex.owned_count >= 350
+		@sprites["card"].setBitmap("Graphics/Pictures/Trainer Card/card_f_4")
+		else
+		@sprites["card"].setBitmap("Graphics/Pictures/Trainer Card/card_f_3")
+		end
+	  end
     else
+	  case $Trainer.badge_count
+	  when 0..2
       @sprites["card"].setBitmap("Graphics/Pictures/Trainer Card/card")
+	  when 3..4
+	  @sprites["card"].setBitmap("Graphics/Pictures/Trainer Card/card_1")
+	  when 5..6
+	  @sprites["card"].setBitmap("Graphics/Pictures/Trainer Card/card_2")
+	  when 7..10
+		if $Trainer.pokedex.owned_count >= 350
+		@sprites["card"].setBitmap("Graphics/Pictures/Trainer Card/card_4")
+		else
+		@sprites["card"].setBitmap("Graphics/Pictures/Trainer Card/card_3")
+		end
+	  end
     end
     @sprites["overlay"] = BitmapSprite.new(Graphics.width,Graphics.height,@viewport)
     pbSetSystemFont(@sprites["overlay"].bitmap)
     @sprites["trainer"] = IconSprite.new(336,112,@viewport)
     @sprites["trainer"].setBitmap(GameData::TrainerType.player_front_sprite_filename($Trainer.trainer_type))
     @sprites["trainer"].x -= (@sprites["trainer"].bitmap.width-128)/2
-    @sprites["trainer"].y -= (@sprites["trainer"].bitmap.height-128)
+    @sprites["trainer"].y -= (@sprites["trainer"].bitmap.height-134)
     @sprites["trainer"].z = 2
     pbDrawTrainerCardFront
     pbFadeInAndShow(@sprites) { pbUpdate }

@@ -23,6 +23,8 @@ def pbGetWildBattleBGM(_wildParty)   # wildParty is an array of Pokémon objects
 	music = "WildJohto"
 	when 3
 	music = "WildDPPT"
+	when 4
+	music = "WildUnova"
 	end
     ret = pbStringToAudioFile(music) if music && music != ""
   end

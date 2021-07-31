@@ -358,8 +358,8 @@ class PokemonOption_Scene
            MessageConfig.pbSetTextSpeed(MessageConfig.pbSettingToTextSpeed(value))
          }
        ),
-	   EnumOption.new(_INTL("Wild PKMN Music"),[_INTL("FRLG"),_INTL("Kanto"),_INTL("Johto"),_INTL("DPPT")], #0.8.2
-		 proc { $PokemonSystem.wildmusic },															   #
+	   EnumOption.new(_INTL("Wild PKMN Music"),[_INTL("K"),_INTL("K2"),_INTL("J"),_INTL("S"),_INTL("U")], #0.8.2
+		 proc { $PokemonSystem.wildmusic },															   
 		 proc { |value|
 			if $PokemonSystem.wildmusic != value
 			pbSEStop
@@ -398,6 +398,15 @@ class PokemonOption_Scene
 				pbBGMFade(0.5)
 				end
 				pbSEPlay("WildDPPT")
+				pbWait(80)
+				pbSEStop
+				$game_system.bgm_restore
+			when 4
+				if $game_system.playing_bgm!=nil && !inloadscreen
+				$game_system.bgm_memorize
+				pbBGMFade(0.5)
+				end
+				pbSEPlay("WildUnovaClip")
 				pbWait(80)
 				pbSEStop
 				$game_system.bgm_restore

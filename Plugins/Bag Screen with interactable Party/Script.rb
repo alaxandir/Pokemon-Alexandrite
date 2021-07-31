@@ -310,8 +310,8 @@ class PokemonBagPartyPanel < SpriteWrapper
     end
     if @helditemsprite && !@helditemsprite.disposed?
       if @helditemsprite.visible
-        @helditemsprite.x     = self.x+48
-        @helditemsprite.y     = self.y+44
+        @helditemsprite.x     = self.x+50
+        @helditemsprite.y     = self.y+40
         @helditemsprite.color = self.color
       end
     end
@@ -696,9 +696,10 @@ class PokemonBag_Scene
           elig = i.check_evolution_on_use_item(itm)
           annotations.push((elig) ? _INTL("ABLE") : _INTL("NOT ABLE"))
         end
-      else
-        for i in $Trainer.party
-          annotations.push((elig) ? _INTL("ABLE") : _INTL("NOT ABLE"))
+	  else
+        for i in 0...Settings::MAX_PARTY_SIZE #was i in $Trainer.party
+		  @sprites["pokemon#{i}"].text = annotations[i] if  annotations
+          #annotations.push((elig) ? _INTL("ABLE") : _INTL("NOT ABLE"))
         end
       end
       for i in 0...Settings::MAX_PARTY_SIZE
@@ -734,7 +735,7 @@ class PokemonBag_Scene
             end
           end
         end
-      else
+	 else
         for i in @party
           annotations.push((elig) ? _INTL("ABLE") : _INTL("NOT ABLE"))
         end

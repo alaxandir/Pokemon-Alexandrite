@@ -10,7 +10,7 @@
 # Made for people who dont want
 # to have ugly pause menus
 # so here's a really cool one!
-# Version: 1.4
+# Version: 1.6
 #
 #
 #-------------------------------------------------------------------------------
@@ -20,12 +20,12 @@
 MENU_FILE_PATH = "Graphics/Pictures/Voltseon's Pause Menu/"
 
 # An array of aLL the Menu Entry Classes from 005_VoltseonMenu_Entries that
-# need to be loaded , "MenuEntryMap"
+# need to be loaded
 MENU_ENTRIES = [
-	"MenuEntryPokemon", "MenuEntryPokedex", "MenuEntryBag", "MenuEntryPokegear",
-	"MenuEntryTrainer", "MenuEntryMap", "MenuEntryExitBugContest",
-	"MenuEntryExitSafari", "MenuEntrySave", "MenuEntryDebug", "MenuEntryOptions",
-	"MenuEntryEncounterList", "MenuEntryQuests", "MenuEntryQuit"
+  "MenuEntryPokemon", "MenuEntryPokedex", "MenuEntryBag", "MenuEntryPokegear",
+  "MenuEntryTrainer", "MenuEntryMap", "MenuEntryExitBugContest",
+  "MenuEntryExitSafari", "MenuEntrySave", "MenuEntryDebug", "MenuEntryOptions",
+  "MenuEntryEncounterList", "MenuEntryQuests", "MenuEntryQuit"
 ]
 
 # An array of aLL the Menu Component Classes from 004_VoltseonMenu_Components
@@ -49,52 +49,50 @@ BACKGROUND_TINT = Color.new(-30,-30,-30,130) # Tone (Red, Green, Blue, Grey) app
 SHOW_MENU_NAMES = true # Whether or not the Menu Names show on screen (true = show names)
 
 # Icon options
-ICON_WIDTH   = 48
-ICON_HEIGHT  = 48
 ACTIVE_SCALE = 1.5
 
 MENU_TEXTCOLOR = [
-						Color.new(248,248,248),
-						Color.new(248,248,248),
-						Color.new(248,248,248),
-						Color.new(248,248,248),
-						Color.new(248,248,248),
-						Color.new(248,248,248),
-						Color.new(248,248,248),
-						Color.new(248,248,248)
-					]
+            Color.new(248,248,248),
+            Color.new(248,248,248),
+            Color.new(248,248,248),
+            Color.new(248,248,248),
+            Color.new(248,248,248),
+            Color.new(248,248,248),
+            Color.new(248,248,248),
+            Color.new(248,248,248)
+          ]
 MENU_TEXTOUTLINE = [
-						Color.new(64,64,64),
-						Color.new(64,64,64),
-						Color.new(68,96,0),
-						Color.new(66,18,0),
-						Color.new(0,82,107),
-						Color.new(126,98,11),
-						Color.new(38,22,91),
-						Color.new(12,37,24),
-						Color.new(0,58,76)
-					]
+            Color.new(64,64,64),
+            Color.new(64,64,64),
+            Color.new(68,96,0),
+            Color.new(66,18,0),
+            Color.new(0,82,107),
+            Color.new(126,98,11),
+            Color.new(38,22,91),
+            Color.new(12,37,24),
+            Color.new(0,58,76)
+          ]
 LOCATION_TEXTCOLOR = [
-						Color.new(248,248,248),
-						Color.new(248,248,248),
-						Color.new(248,248,248),
-						Color.new(248,248,248),
-						Color.new(248,248,248),
-						Color.new(248,248,248),
-						Color.new(248,248,248),
-						Color.new(248,248,248)
-					]
+            Color.new(248,248,248),
+            Color.new(248,248,248),
+            Color.new(248,248,248),
+            Color.new(248,248,248),
+            Color.new(248,248,248),
+            Color.new(248,248,248),
+            Color.new(248,248,248),
+            Color.new(248,248,248)
+          ]
 LOCATION_TEXTOUTLINE = [
-						Color.new(64,64,64),
-						Color.new(64,64,64),
-						Color.new(68,96,0),
-						Color.new(66,18,0),
-						Color.new(0,82,107),
-						Color.new(137,0,100),
-						Color.new(38,22,91),
-						Color.new(12,37,24),
-						Color.new(0,58,76)
-					]
+            Color.new(64,64,64),
+            Color.new(64,64,64),
+            Color.new(68,96,0),
+            Color.new(66,18,0),
+            Color.new(0,82,107),
+            Color.new(137,0,100),
+            Color.new(38,22,91),
+            Color.new(12,37,24),
+            Color.new(0,58,76)
+          ]
 
 # Sound Options
 MENU_OPEN_SOUND   = "GUI menu open"

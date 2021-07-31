@@ -240,3 +240,27 @@ SaveData.register_conversion(:v19_convert_game_screen) do
     game_screen.weather(game_screen.weather_type, game_screen.weather_max, 0)
   end
 end
+
+SaveData.register_conversion(:convert_item_pockets) do
+    game_version "0.9.1"
+    display_title 'Converting bag slots'
+to_value :bag do |bag|
+    bag.instance_eval do
+    @new_pockets = []
+      for i in 0..PokemonBag.numPockets
+        @new_pockets[i] = []
+      end
+        num_pockets = PokemonBag.numPockets
+        @pockets.each do |pocket|
+			next if !pocket
+            pocket.each do |item|
+                p = GameData::Item.get(item[0]).pocket
+                @new_pockets[p].push(item)
+            end
+        end
+        @pockets = @new_pockets
+        p "Done Converting Save"
+        end 
+    end 
+end
+

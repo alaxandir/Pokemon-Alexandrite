@@ -7611,3 +7611,10 @@ BattlerAltitude         = 0
 BattlerPlayerX          = -2
 BattlerPlayerY          = 0
 BattlerEnemyX           = 1
+#-------------------------------
+[STARMIE,1]
+BattlerEnemyY           = -8
+BattlerAltitude         = 0
+BattlerPlayerX          = 0
+BattlerPlayerY          = 34
+BattlerEnemyX           = -1
