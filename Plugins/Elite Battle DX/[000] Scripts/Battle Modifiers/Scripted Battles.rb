@@ -333,8 +333,8 @@ end
 #===============================================================================
 class PokeBattle_AI
   #-----------------------------------------------------------------------------
-  def pbChooseBestNewEnemy(idxBattler,party,enemies)
-    return -1 if !enemies || enemies.length==0
+  def pbChooseBestNewEnemy(idxBattler, party, enemies)
+    return -1 if !enemies || enemies.length == 0
     best    = -1
     bestSum = 0
     # get opponent info
@@ -348,7 +348,7 @@ class PokeBattle_AI
       if !selAce.nil?
         cnt = 0
         party.each { |pl| cnt += 1 if pl.able? }
-        next if i == selAce - 1 && cnt > 1
+        next if i == selAce - 1 && cnt > 2
       end
       sum  = 0
       pkmn.moves.each do |m|
@@ -358,7 +358,7 @@ class PokeBattle_AI
           sum += Effectiveness.calculate(m.type, bTypes[0], bTypes[1], bTypes[2])
         end
       end
-      if best==-1 || sum>bestSum
+      if best == -1 || sum > bestSum
         best = i
         bestSum = sum
       end

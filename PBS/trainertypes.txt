@@ -97,7 +97,7 @@
 94,SETHANDSAMANTHA,Seth and Samantha,30,,,,Mixed,,
 95,WINTERCOOL_F,Cool Trainer,60,Trainer_Battle_Kanto,,Cooltrainer,Female,80,
 96,WINTERCOOL_M,Cool Trainer,60,Trainer_Battle_Kanto,,Cooltrainer,Female,80,
-97,LEADER_HAOAI,Gym Leader,100,Gym_Battle_8,,,Mixed,,
+97,LEADER_HAOAI,Gym Leader,100,Gym_Battle_8,,KimonoGirl,Mixed,,
 98,MEDIUM,Medium,80,TrainerBattle,,Sage,Female,,
 99,BEAUTY1,Beauty,80,TrainerBattle,,Lass2,Female,,
 100,BIRDKEEPER1,Bird Keeper,80,TrainerBattle,,Youngster,Male,,

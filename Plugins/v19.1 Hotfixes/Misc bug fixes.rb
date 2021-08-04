@@ -6,7 +6,7 @@
 # https://github.com/Maruno17/pokemon-essentials
 #==============================================================================
 
-Essentials::ERROR_TEXT += "[v19.1 Hotfixes 1.0.3]\r\n"
+Essentials::ERROR_TEXT += "[v19.1 Hotfixes 1.0.4]\r\n"
 
 #==============================================================================
 # Fix for Vs. animation not playing, and a trainer's trainer type possibly
@@ -467,3 +467,22 @@ end
 ItemHandlers::UseInField.add(:POKERADAR,proc { |item|
   next (pbUsePokeRadar) ? 1 : 0
 })
+
+#==============================================================================
+# Fixed typo in def addBackgroundOrColoredPlane.
+#==============================================================================
+def addBackgroundOrColoredPlane(sprites,planename,background,color,viewport=nil)
+  bitmapName=pbResolveBitmap("Graphics/Pictures/#{background}")
+  if bitmapName==nil
+    # Plane should exist in any case
+    sprites[planename]=ColoredPlane.new(color,viewport)
+  else
+    sprites[planename]=AnimatedPlane.new(viewport)
+    sprites[planename].setBitmap(bitmapName)
+    for spr in sprites.values
+      if spr.is_a?(Window)
+        spr.windowskin=nil
+      end
+    end
+  end
+end
