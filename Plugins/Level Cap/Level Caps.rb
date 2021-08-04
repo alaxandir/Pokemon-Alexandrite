@@ -314,8 +314,13 @@ def pbChangeLevel(pkmn,newlevel,scene)
     # Learn new moves upon level up
     movelist = pkmn.getMoveList
     for i in movelist
-      next if i[0]!=pkmn.level
-      pbLearnMove(pkmn,i[1],true) { scene.pbUpdate }
+		checkmoves = true
+      if checkmoves
+        next if i[0] <= oldlevel || i[0] > pkmn.level
+      else
+        next if i[0] != pkmn.level
+      end
+      pbLearnMove(pkmn, i[1], true) { scene.pbUpdate }
     end
     # Check for evolution
     newspecies = pkmn.check_evolution_on_level_up
@@ -371,13 +376,13 @@ ItemHandlers::UseOnPokemon.add(:EXPCANDYXS,proc { |item,pkmn,scene|
   if (pkmn.growth_rate.level_from_exp(pkmn.exp+100)) > levelCap
     scene.pbMessage(_INTL("{1} refuses to eat the Candy.\\n Would exceed level cap of {2}.",pkmn.name,levelCap))
   	if pbConfirmMessageSerious(_INTL"Bring {1} to level {2}, and waste extra exp?",pkmn.name,levelCap)
-	pbAddExp(pkmn,(pkmn.growth_rate.minimum_exp_for_level(levelCap)-pkmn.exp),scene)
+	pbEXPAdditionItem(pkmn,(pkmn.growth_rate.minimum_exp_for_level(levelCap)-pkmn.exp),scene)
 	next false
 	end
   next false
   end
 
-  pbAddExp(pkmn,100,scene)
+  pbEXPAdditionItem(pkmn,100,scene)
   scene.pbHardRefresh
   next true
 })
@@ -399,13 +404,13 @@ ItemHandlers::UseOnPokemon.add(:EXPCANDYS,proc { |item,pkmn,scene|
   if (pkmn.growth_rate.level_from_exp(pkmn.exp+800)) > levelCap
     scene.pbMessage(_INTL("{1} refuses to eat the Candy.\\n Would exceed level cap of {2}.",pkmn.name,levelCap))
   	if pbConfirmMessageSerious(_INTL"Bring {1} to level {2}, and waste extra exp?",pkmn.name,levelCap)
-	pbAddExp(pkmn,(pkmn.growth_rate.minimum_exp_for_level(levelCap)-pkmn.exp),scene)
+	pbEXPAdditionItem(pkmn,(pkmn.growth_rate.minimum_exp_for_level(levelCap)-pkmn.exp),scene)
 	next false
 	end
   next false
   end
 
-  pbAddExp(pkmn,800,scene)
+  pbEXPAdditionItem(pkmn,800,scene)
   scene.pbHardRefresh
   next true
 })
@@ -427,13 +432,13 @@ ItemHandlers::UseOnPokemon.add(:EXPCANDYM,proc { |item,pkmn,scene|
   if (pkmn.growth_rate.level_from_exp(pkmn.exp+3000)) > levelCap 
     scene.pbMessage(_INTL("{1} refuses to eat the Candy.\\n Would exceed level cap of {2}.",pkmn.name,levelCap))
 	if pbConfirmMessageSerious(_INTL"Bring {1} to level {2}, and waste extra exp?",pkmn.name,levelCap)
-	pbAddExp(pkmn,(pkmn.growth_rate.minimum_exp_for_level(levelCap)-pkmn.exp),scene)
+	pbEXPAdditionItem(pkmn,(pkmn.growth_rate.minimum_exp_for_level(levelCap)-pkmn.exp),scene)
 	next false
 	end
   next false
   end
 
-  pbAddExp(pkmn,3000,scene)
+  pbEXPAdditionItem(pkmn,3000,scene)
   scene.pbHardRefresh
   next true
 })
@@ -455,13 +460,13 @@ ItemHandlers::UseOnPokemon.add(:EXPCANDYL,proc { |item,pkmn,scene|
   if (pkmn.growth_rate.level_from_exp(pkmn.exp+10000)) > levelCap
     scene.pbMessage(_INTL("{1} refuses to eat the Candy.\\n Would exceed level cap of {2}.",pkmn.name,levelCap))
   	if pbConfirmMessageSerious(_INTL"Bring {1} to level {2}, and waste extra exp?",pkmn.name,levelCap)
-	pbAddExp(pkmn,(pkmn.growth_rate.minimum_exp_for_level(levelCap)-pkmn.exp),scene)
+	pbEXPAdditionItem(pkmn,(pkmn.growth_rate.minimum_exp_for_level(levelCap)-pkmn.exp),scene)
 	next false
 	end
   next false
   end
 
-  pbAddExp(pkmn,10000,scene)
+  pbEXPAdditionItem(pkmn,10000,scene)
   scene.pbHardRefresh
   next true
 })
@@ -483,13 +488,13 @@ ItemHandlers::UseOnPokemon.add(:EXPCANDYXL,proc { |item,pkmn,scene|
   if (pkmn.growth_rate.level_from_exp(pkmn.exp+30000)) > levelCap 
     scene.pbMessage(_INTL("{1} refuses to eat the Candy.\\n Would exceed level cap of {2}.",pkmn.name,levelCap))
   	if pbConfirmMessageSerious(_INTL"Bring {1} to level {2}, and waste extra exp?",pkmn.name,levelCap)
-	pbAddExp(pkmn,(pkmn.growth_rate.minimum_exp_for_level(levelCap)-pkmn.exp),scene)
+	pbEXPAdditionItem(pkmn,(pkmn.growth_rate.minimum_exp_for_level(levelCap)-pkmn.exp),scene)
 	next false
 	end
   next false
   end
 
-  pbAddExp(pkmn,30000,scene)
+  pbEXPAdditionItem(pkmn,30000,scene)
   scene.pbHardRefresh
   next true
 })

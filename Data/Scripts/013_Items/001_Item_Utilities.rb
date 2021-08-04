@@ -118,6 +118,7 @@ end
 # Change a Pokémon's level
 #===============================================================================
 def pbChangeLevel(pkmn,newlevel,scene)
+  oldlevel = pkmn.level
   newlevel = newlevel.clamp(1, GameData::GrowthRate.max_level)
   if pkmn.level==newlevel
     pbMessage(_INTL("{1}'s level remained unchanged.",pkmn.name))
@@ -170,9 +171,14 @@ def pbChangeLevel(pkmn,newlevel,scene)
        pkmn.totalhp,pkmn.attack,pkmn.defense,pkmn.spatk,pkmn.spdef,pkmn.speed),scene)
     # Learn new moves upon level up
     movelist = pkmn.getMoveList
-    for i in movelist
-      next if i[0]!=pkmn.level
-      pbLearnMove(pkmn,i[1],true) { scene.pbUpdate }
+   for i in movelist
+      checkmoves = true
+      if checkmoves
+        next if i[0] <= oldlevel || i[0] > pkmn.level
+      else
+        next if i[0] != pkmn.level
+      end
+      pbLearnMove(pkmn, i[1], true) { scene.pbUpdate }
     end
     # Check for evolution
     newspecies = pkmn.check_evolution_on_level_up
@@ -744,15 +750,15 @@ end
 #===============================================================================
 # Add EXP
 #===============================================================================
-#def pbAddEXP(pkmn,exp)
-#  new_exp = pkmn.growth_rate.add_exp(pkmn.exp,exp)
-#  new_level = pkmn.growth_rate.level_from_exp(new_exp)
-#  pkmn.setExp(new_exp)
-#  pkmn.calc_stats
-#  return new_level
-#end
+def pbAddEXP(pkmn,exp,scene)
+  new_exp = pkmn.growth_rate.add_exp(pkmn.exp,exp)
+  new_level = pkmn.growth_rate.level_from_exp(new_exp)
+  pkmn.setExp(new_exp)
+  pkmn.calc_stats
+  return new_level
+end
 
-def pbAddExp(pkmn,exp,scene)
+def ZpbAddEXP(pkmn,exp,scene)
   old_level = pkmn.level
   pkmn.exp = pkmn.growth_rate.add_exp(pkmn.exp,exp)
   level_diff = (pkmn.level+1) - old_level
@@ -826,14 +832,15 @@ def pbAddExp(pkmn,exp,scene)
   end
 end
 
-def pbEXPAdditionItem(pkmn,exp,item,scene)
+def pbEXPAdditionItem(pkmn,exp,scene)
   current_lv = pkmn.level
   current_exp = pkmn.exp
+  scene = scene
   if pkmn.level >= GameData::GrowthRate.max_level || pkmn.shadowPokemon?
     scene.pbDisplay(_INTL("It won't have any effect."))
     return false
   else
-    new_level = pbAddEXP(pkmn,exp)
+    new_level = pbAddEXP(pkmn,exp,scene)
     display_exp = exp
     if pkmn.growth_rate.maximum_exp < (current_exp + exp)
       display_exp = pkmn.growth_rate.maximum_exp - current_exp
