@@ -35,6 +35,7 @@ BattleScript	= GIOVANNI1
 [ROCKETTHUGS]
 BattleIntro      = evilTeam
 BattleVS         = trainerSM
+BattleBGM		 = rocketbattle.ogg
 #-------------------------------
 [LEADER_Nick]
 BattleEnv        = DIMENSION
@@ -159,6 +160,7 @@ BattleVS		= minorTrainer
 BattleVS		= minorTrainer
 [BUGCATCHER]
 BattleVS		= minorTrainer
+BattleBGM		= TrainerBattle.ogg
 [BUGCATCHER1]
 BattleVS		= minorTrainer
 [BURGLAR]

@@ -293,10 +293,10 @@ def pbBerryPlant
       # Gen 4 planting mechanics
       if !berryData[7] || berryData[7]==0 # No mulch used yet
         cmd=pbMessage(_INTL("It's soft, earthy soil."),[
-                            _INTL("Fertilize"),
                             _INTL("Plant Berry"),
+                            _INTL("Fertilize"),
                             _INTL("Exit")],-1)
-        if cmd==0 # Fertilize
+        if cmd==1 # Fertilize
           ret=0
           pbFadeOutIn {
             scene = PokemonBag_Scene.new
@@ -333,7 +333,7 @@ def pbBerryPlant
             end
             return
           end
-        elsif cmd==1 # Plant Berry
+        elsif cmd==0 # Plant Berry
           pbFadeOutIn {
             scene = PokemonBag_Scene.new
             screen = PokemonBagScreen.new(scene,$PokemonBag)
@@ -467,10 +467,10 @@ def pbBerryPlant
       pbMessage(_INTL("{1} put the \\c[1]{2}\\c[0] in the <icon=bagPocket{3}>\\c[1]{4}\\c[0] Pocket.\1",
          $Trainer.name,itemname,pocket,PokemonBag.pocketNames()[pocket]))
       if Settings::NEW_BERRY_PLANTS
-        pbMessage(_INTL("The soil returned to its soft and earthy state."))
+        #pbMessage(_INTL("The soil returned to its soft and earthy state."))
         berryData=[0,nil,0,0,0,0,0,0]
       else
-        pbMessage(_INTL("The soil returned to its soft and loamy state."))
+        #pbMessage(_INTL("The soil returned to its soft and loamy state."))
         berryData=[0,nil,false,0,0,0]
       end
       interp.setVariable(berryData)
@@ -532,10 +532,10 @@ def pbPickBerry(berry, qty = 1)
     pbMessage(_INTL("{1} put the \\c[1]{2}\\c[0] in the <icon=bagPocket{3}>\\c[1]{4}\\c[0] Pocket.\1",
        $Trainer.name,itemname,pocket,PokemonBag.pocketNames()[pocket]))
     if Settings::NEW_BERRY_PLANTS
-      pbMessage(_INTL("The soil returned to its soft and earthy state."))
+      #pbMessage(_INTL("The soil returned to its soft and earthy state."))
       berryData=[0,nil,0,0,0,0,0,0]
     else
-      pbMessage(_INTL("The soil returned to its soft and loamy state."))
+      #pbMessage(_INTL("The soil returned to its soft and loamy state."))
       berryData=[0,nil,false,0,0,0]
     end
     interp.setVariable(berryData)

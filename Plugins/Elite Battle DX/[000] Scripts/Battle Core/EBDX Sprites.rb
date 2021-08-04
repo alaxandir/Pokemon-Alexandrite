@@ -410,6 +410,8 @@ class DynamicPokemonSprite
       end
     end
     @isShadow = false
+    @charged = false
+    @dynamax = false
   end
   #-----------------------------------------------------------------------------
   # refreshes metrics for the Pokemon
