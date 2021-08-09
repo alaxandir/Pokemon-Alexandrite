@@ -43,8 +43,8 @@ end
 
 def pbFishing(hasEncounter,rodType=1)
   speedup = ($Trainer.first_pokemon && [:STICKYHOLD, :SUCTIONCUPS].include?($Trainer.first_pokemon.ability_id))
-  biteChance = 20+(25*rodType)   # 45, 70, 95
-  biteChance *= 1.5 if speedup   # 67.5, 100, 100
+  biteChance = 100   # 45, 70, 95
+  biteChance *= 1 if speedup   # 67.5, 100, 100
   hookChance = 100
   oldpattern = $game_player.fullPattern
   pbFishingBegin
