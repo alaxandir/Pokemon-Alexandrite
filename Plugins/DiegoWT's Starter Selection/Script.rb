@@ -440,12 +440,6 @@ class DiegoWTsStarterSelection
 	  end
       pbAddPokemon(@pkmn_array[@select-1],StarterSelSettings::STARTERL)
 	  pkmn = $Trainer.party[0]
-	  pkmn.iv[:HP] = 15
-	  pkmn.iv[:ATTACK] = 15
-	  pkmn.iv[:DEFENSE] = 15
-	  pkmn.iv[:SPECIAL_ATTACK] = 15
-	  pkmn.iv[:SPECIAL_DEFENSE] = 15
-	  pkmn.iv[:SPEED] = 15
 	  pkmn.reset_moves
 	  pkmn.calc_stats
     else

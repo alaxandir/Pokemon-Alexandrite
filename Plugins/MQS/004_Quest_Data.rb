@@ -403,4 +403,14 @@ FINALGAMBIT = {
     :QuestDescription => "Prof. Yew wants to talk to you about a final assault on Rocket's home base.",
     :RewardString => "Post-game Story"
   }
+
+Vileplume = {
+    :ID => "49",
+    :Name => "Show me a Vileplume",
+    :QuestGiver => "Plant Lady",
+    :Stage1 => "Obtain a Vileplume",
+    :Location1 => "Goldcoast",
+    :QuestDescription => "A slightly scary plant obsessed lady has asked you to show her a Vileplume.",
+    :RewardString => "TM"
+  }
 end

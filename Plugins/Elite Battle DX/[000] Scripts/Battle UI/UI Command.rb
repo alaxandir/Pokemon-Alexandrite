@@ -55,7 +55,7 @@ class PokeBattle_Scene
         pbPlayDecisionSE
         ret = -2
         break
-	  elsif Input.trigger?(Input::ACTION) # New, check stats
+	  elsif Input.trigger?(Input::ACTION) && !@safaribattle # New, check stats
         player = @battle.array_change_stats_in_battle
         opponent = @battle.array_change_stats_in_battle(1)
         quantity = []

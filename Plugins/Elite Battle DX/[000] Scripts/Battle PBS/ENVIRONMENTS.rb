@@ -23,8 +23,11 @@ EliteBattle.configProcess(:ENVIRONMENTS) do
   # Battle Room configurations per Terrain
   # Mountains
   EliteBattle.add_data(:Rock, :TerrainTag, :BACKDROP, TerrainEBDX::MOUNTAIN)
-  # Puddle
+  # Puddle if 
   EliteBattle.add_data(:Puddle, :TerrainTag, :BACKDROP, TerrainEBDX::PUDDLE)
+  EliteBattle.add_data(proc{ |terrain, environ|
+	next $game_player.pbFacingTerrainTag.can_fish && ($game_map.name.downcase).include?("safari")
+  }, :BACKDROP, TerrainEBDX::WATER)
   # Sand
   EliteBattle.add_data(:Sand, :TerrainTag, :BACKDROP, TerrainEBDX::DIRT)
   # Tall Grass

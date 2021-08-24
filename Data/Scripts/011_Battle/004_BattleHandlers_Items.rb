@@ -1349,43 +1349,43 @@ BattleHandlers::ExpGainModifierItem.add(:LUCKYEGG,
 
 BattleHandlers::EVGainModifierItem.add(:MACHOBRACE,
   proc { |item,battler,evYield|
-    evYield.each_key { |stat| evYield[stat] *= 2 }
+    evYield.each_key { |stat| evYield[stat] *= 3 }
   }
 )
 
 BattleHandlers::EVGainModifierItem.add(:POWERANKLET,
   proc { |item,battler,evYield|
-    evYield[:SPEED] += 4
+    evYield[:SPEED] += 8
   }
 )
 
 BattleHandlers::EVGainModifierItem.add(:POWERBAND,
   proc { |item,battler,evYield|
-    evYield[:SPECIAL_DEFENSE] += 4
+    evYield[:SPECIAL_DEFENSE] += 8
   }
 )
 
 BattleHandlers::EVGainModifierItem.add(:POWERBELT,
   proc { |item,battler,evYield|
-    evYield[:DEFENSE] += 4
+    evYield[:DEFENSE] += 8
   }
 )
 
 BattleHandlers::EVGainModifierItem.add(:POWERBRACER,
   proc { |item,battler,evYield|
-    evYield[:ATTACK] += 4
+    evYield[:ATTACK] += 8
   }
 )
 
 BattleHandlers::EVGainModifierItem.add(:POWERLENS,
   proc { |item,battler,evYield|
-    evYield[:SPECIAL_ATTACK] += 4
+    evYield[:SPECIAL_ATTACK] += 8
   }
 )
 
 BattleHandlers::EVGainModifierItem.add(:POWERWEIGHT,
   proc { |item,battler,evYield|
-    evYield[:HP] += 4
+    evYield[:HP] += 8
   }
 )
 

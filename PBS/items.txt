@@ -119,13 +119,13 @@
 117,STICKYBARB,Sticky Barb,Sticky Barbs,6,4000,"A held item that damages the holder on every turn. It may latch on to Pokémon that touch the holder.",0,0,0,
 118,IRONBALL,Iron Ball,Iron Balls,6,4000,"A Pokémon held item that cuts Speed. It makes Flying-type and levitating holders susceptible to Ground moves.",0,0,0,
 119,RINGTARGET,Ring Target,Ring Targets,6,4000,"Moves that would otherwise have no effect will land on the Pokémon that holds it.",0,0,0,
-120,MACHOBRACE,Macho Brace,Macho Braces,6,1500,"An item to be held by a Pokémon. It is a stiff, heavy brace that promotes strong growth but lowers Speed.",0,0,0,
-121,POWERWEIGHT,Power Weight,Power Weights,6,1250,"A Pokémon held item that promotes HP gain on leveling, but reduces the Speed stat.",0,0,0,
-122,POWERBRACER,Power Bracer,Power Bracers,6,1250,"A Pokémon held item that promotes Attack gain on leveling, but reduces the Speed stat.",0,0,0,
-123,POWERBELT,Power Belt,Power Belts,6,1250,"A Pokémon held item that promotes Defense gain on leveling, but reduces the Speed stat.",0,0,0,
-124,POWERLENS,Power Lens,Power Lenses,6,1250,"A Pokémon held item that promotes Sp. Atk gain on leveling, but reduces the Speed stat.",0,0,0,
-125,POWERBAND,Power Band,Power Bands,6,1250,"A Pokémon held item that promotes Sp. Def gain on leveling, but reduces the Speed stat.",0,0,0,
-126,POWERANKLET,Power Anklet,Power Anklets,6,1250,"A Pokémon held item that promotes Speed gain on leveling, but reduces the Speed stat.",0,0,0,
+120,MACHOBRACE,Macho Brace,Macho Braces,6,1500,"An item to be held by a Pokémon. 3x EV gain but lowers Speed.",0,0,0,
+121,POWERWEIGHT,Power Weight,Power Weights,6,1250,"A Pokémon held item, +8 HP EVs gain, but reduces the Speed stat.",0,0,0,
+122,POWERBRACER,Power Bracer,Power Bracers,6,1250,"A Pokémon held item, +8 Attack EVs gain, but reduces the Speed stat.",0,0,0,
+123,POWERBELT,Power Belt,Power Belts,6,1250,"A Pokémon held item, +8 Defense EVs gain, but reduces the Speed stat.",0,0,0,
+124,POWERLENS,Power Lens,Power Lenses,6,1250,"A Pokémon held item, +8 Sp. Atk EVs gain, but reduces the Speed stat.",0,0,0,
+125,POWERBAND,Power Band,Power Bands,6,1250,"A Pokémon held item, +8 Sp. Def EVs gain, but reduces the Speed stat.",0,0,0,
+126,POWERANKLET,Power Anklet,Power Anklets,6,1250,"A Pokémon held item that, +8 Speed EV gain, but reduces the Speed stat.",0,0,0,
 127,LAXINCENSE,Lax Incense,Lax Incenses,6,5000,"An item to be held by a Pokémon. The tricky aroma of this incense may make attacks miss the holder.",0,0,0,
 128,FULLINCENSE,Full Incense,Full Incenses,6,5000,"An item to be held by a Pokémon. This exotic-smelling incense makes the holder bloated and slow moving.",0,0,0,
 129,LUCKINCENSE,Luck Incense,Luck Incenses,6,11000,"An item to be held by a Pokémon. It doubles a battle's prize money if the holding Pokémon joins in.",0,0,0,
@@ -633,7 +633,7 @@
 619,DREAMBALL,Dream Ball,Dream Balls,3,0,"A somewhat different Poké Ball that makes it easier to catch wild Pokémon while they're asleep.",0,4,4,
 620,BEASTBALL,Beast Ball,Beast Balls,3,1000,"A special Poké Ball designed to catch Ultra Beasts. It has a low success rate for catching others.",0,4,4,
 #-------------------------------
-621,TM96,TM96,TM96s,4,10000,"Naturepower",3,0,0,NATUREPOWER
+621,TM96,TM96,TM96s,4,10000,"An attack that makes use of nature's power. Its effects vary depending on the user's environment.",3,0,0,NATUREPOWER
 622,TM97,TM97,TM97s,4,10000,"The user releases a horrible aura imbued with dark thoughts. This may also make the target flinch.",3,0,0,DARKPULSE
 623,TM98,TM98,TM98s,4,10000,"Striking opponents repeatedly makes the user's fists harder. Hitting a target raises the Attack stat.",3,0,0,POWERUPPUNCH
 624,TM99,TM99,TM99s,4,10000,"The user damages opposing Pokémon by emitting a powerful flash.",3,0,0,DAZZLINGGLEAM
@@ -700,6 +700,12 @@
 681,BASTIOTITE,Bastiotite,Bastiotites,6,0,"One of a variety of mysterious Mega Stones. Have Bastiodon hold it, and it will be able to Mega Evolve.",0,0,12,
 682,DIAMONDSTONE,Diamond Stone,Diamond Stones,1,300000,"A peculiar stone that makes certain species of Pokémon evolve. It is shining as brilliantly as the sun..",1,0,7,
 683,STARMITE,Starmite,Starmites,6,0,"One of a variety of mysterious Mega Stones. Have Starmie hold it, and it will be able to Mega Evolve.",0,0,12,
+684,MEGABRACELET,Mega Bracelet,Mega Bracelet,8,0,"Debug Item",0,0,6,
+## MORE TM'S
+685,TM106,TM106,TM106s,4,3000,"The target is punched with an electrified fist. It may also leave the target with paralysis.",3,0,0,THUNDERPUNCH
+686,TM107,TM106,TM106s,4,3000,"The target is punched with an icy fist. It may also leave the target frozen.",3,0,0,ICEPUNCH
+687,TM108,TM106,TM106s,4,3000,"The target is punched with a fiery fist. It may also leave the target with a burn.",3,0,0,FIREPUNCH
+688,TM109,TM106,TM106s,4,3000,"A nutrient-draining attack. The user's HP is restored by half the damage taken by the target.",3,0,0,GIGADRAIN
 900,BOOSTERPACK,Booster Pack,Booster Packs,1,500,A booster pack for Triple Triad. Contains 3 cards.,2,0,0,
 901,PLAINPACK,Plain Pack,Plain Packs,1,500,A booster pack for Triple Triad. Contains 3 normal type cards.,2,0,0,			
 902,FISTPACK,Fist Pack,Fist Packs,1,700,A booster pack for Triple Triad. Contains 3 fighting type cards.,2,0,0,

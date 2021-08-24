@@ -243,8 +243,12 @@ ItemHandlers::UseInField.add(:OLDROD,proc { |item|
   end
   encounter = $PokemonEncounters.has_encounter_type?(:OldRod)
   if pbFishing(encounter,1)
-	EliteBattle.set(:nextBattleBack, :FISHING)
-    pbEncounter(:OldRod)
+		if ($game_map.name.downcase).include?("safari") 
+		pbEncounter(:OldRod)
+	else
+		EliteBattle.set(:nextBattleBack, :FISHING)
+		pbEncounter(:OldRod)
+	end
   end
   next 1
 })
@@ -257,8 +261,12 @@ ItemHandlers::UseInField.add(:GOODROD,proc { |item|
   end
   encounter = $PokemonEncounters.has_encounter_type?(:GoodRod)
   if pbFishing(encounter,2)
-	EliteBattle.set(:nextBattleBack, :FISHING)
-    pbEncounter(:GoodRod)
+	if ($game_map.name.downcase).include?("safari") 
+		pbEncounter(:GoodRod)
+	else
+		EliteBattle.set(:nextBattleBack, :FISHING)
+		pbEncounter(:GoodRod)
+	end
   end
   next 1
 })
@@ -271,8 +279,12 @@ ItemHandlers::UseInField.add(:SUPERROD,proc { |item|
   end
   encounter = $PokemonEncounters.has_encounter_type?(:SuperRod)
   if pbFishing(encounter,3)
-    EliteBattle.set(:nextBattleBack, :FISHING)
-    pbEncounter(:SuperRod)
+    	if ($game_map.name.downcase).include?("safari") 
+		pbEncounter(:SuperRod)
+	else
+		EliteBattle.set(:nextBattleBack, :FISHING)
+		pbEncounter(:SuperRod)
+	end
   end
   next 1
 })

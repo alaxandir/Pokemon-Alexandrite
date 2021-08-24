@@ -242,7 +242,7 @@ SaveData.register_conversion(:v19_convert_game_screen) do
 end
 
 SaveData.register_conversion(:convert_item_pockets) do
-    game_version "0.9.3"
+    game_version "0.9.4"
     display_title 'Converting bag slots'
 to_value :bag do |bag|
     bag.instance_eval do

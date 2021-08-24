@@ -6,7 +6,7 @@
 # https://github.com/Maruno17/pokemon-essentials
 #==============================================================================
 
-Essentials::ERROR_TEXT += "[v19.1 Hotfixes 1.0.4]\r\n"
+Essentials::ERROR_TEXT += "[v19.1 Hotfixes 1.0.5]\r\n"
 
 #==============================================================================
 # Fix for Vs. animation not playing, and a trainer's trainer type possibly
@@ -485,4 +485,60 @@ def addBackgroundOrColoredPlane(sprites,planename,background,color,viewport=nil)
       end
     end
   end
+end
+
+#==============================================================================
+# Fixed crash when choosing Pokémon for NPC Bug Catching Contest participants.
+#==============================================================================
+class PokemonEncounters
+  def choose_wild_pokemon_for_map(map_ID, enc_type)
+    if !enc_type || !GameData::EncounterType.exists?(enc_type)
+      raise ArgumentError.new(_INTL("Encounter type {1} does not exist", enc_type))
+    end
+    # Get the encounter table
+    encounter_data = GameData::Encounter.get(map_ID, $PokemonGlobal.encounter_version)
+    return nil if !encounter_data
+    enc_list = encounter_data.types[enc_type]
+    return nil if !enc_list || enc_list.length == 0
+    # Calculate the total probability value
+    chance_total = 0
+    enc_list.each { |a| chance_total += a[0] }
+    # Choose a random entry in the encounter table based on entry probabilities
+    rnd = rand(chance_total)
+    encounter = nil
+    enc_list.each do |enc|
+      rnd -= enc[0]
+      next if rnd >= 0
+      encounter = enc
+      break
+    end
+    # Return [species, level]
+    level = rand(encounter[2]..encounter[3])
+    return [encounter[1], level]
+  end
+end
+
+#==============================================================================
+# Fixed the event command "Return to Title Screen"/resting in a Battle Facility
+# run causing issues when trying to continue the game again immediately.
+#==============================================================================
+module SaveData
+  class Value
+    def mark_as_unloaded
+      @loaded = false
+    end
+  end
+
+  def self.mark_values_as_unloaded
+    @values.each do |value|
+      value.mark_as_unloaded unless value.load_in_bootup?
+    end
+  end
+end
+
+alias __hotfixes__pbCallTitle pbCallTitle
+def pbCallTitle
+  $game_temp.to_title = false if $game_temp
+  SaveData.mark_values_as_unloaded
+  return __hotfixes__pbCallTitle
 end
