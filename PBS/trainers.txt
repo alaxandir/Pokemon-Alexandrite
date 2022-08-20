@@ -1069,7 +1069,6 @@ Pokemon = SLOWBRO,46
 Pokemon = SLOWKING,47
 #-------------------------------
 [MARTIALARTIST_M,Quentin]
-Items = FULLHEAL
 LoseText = "..."
 Pokemon = HITMONLEE,46
 Pokemon = TOBISHIMI,46
@@ -1186,7 +1185,6 @@ Pokemon = MUK,49
     EV = 4,252,0,252,0,0
 #-------------------------------
 [LEADER_HAOAI,Hao & Ai]
-Items = FULLRESTORE
 LoseText = "..."
 Pokemon = GARCHOMP,54
     Moves = DRAGONTAIL,SWORDSDANCE,STONEEDGE,EARTHQUAKE
@@ -1366,7 +1364,6 @@ Pokemon = LUDICOLO,58
     Moves = RAINDANCE,HYDROPUMP,GIGADRAIN,ICEBEAM
 #-------------------------------
 [TRAILBLAZER,John]
-Items = MAXPOTION
 LoseText = "..."
 Pokemon = STEELIX,57
     Moves = STEALTHROCK,GYROBALL,EARTHQUAKE,CURSE
@@ -1381,7 +1378,6 @@ Pokemon = RHYPERIOR,58
     Item = ROCKYHELMET
 #-------------------------------
 [MARTIALARTIST_M,Dax]
-Items = FULLHEAL
 LoseText = "..."
 Pokemon = MEDICHAM,57
     Moves = FAKEOUT,HIGHJUMPKICK,ICEPUNCH,ZENHEADBUTT
@@ -1398,7 +1394,6 @@ Pokemon = CROBAT,58
     Item = SHARPBEAK
 #-------------------------------
 [AROMALADY,Twila]
-Items = FULLHEAL
 LoseText = "..."
 Pokemon = VICTREEBEL,54
     Item = SITRUSBERRY
@@ -1526,7 +1521,6 @@ Pokemon = FORRETRESS,50
     Item = LEFTOVERS
 #-------------------------------
 [ROCKETBOSS,Giovanni,1]
-Items = FULLRESTORE
 LoseText = "..."
 Pokemon = SNORLAX,51
     Moves = CURSE,REST,EARTHQUAKE,FRUSTRATION
@@ -1569,7 +1563,6 @@ Pokemon = CHARIZARD,51
     EV = 0,252,0,252,0,4
 #-------------------------------
 [ELITEFOUR_Robert,Robert]
-Items = FLAMEORB
 LoseText = "..."
 Pokemon = MAROWAK,60
     Form = 1
@@ -1913,14 +1906,12 @@ Pokemon = RAPIDASH,43
     Form = 1
 #-------------------------------
 [HIKER,Noah,1]
-Items = HYPERPOTION
 LoseText = "Harder than Diamond! You're crazy tough kid."
 Pokemon = STEELIX,36
     Item = IRONPLATE
 Pokemon = GOLEM,36
 #-------------------------------
 [HIKER,Noah,2]
-Items = HYPERPOTION
 LoseText = "Harder than winning an argument on the internet! You're nuts kid!"
 Pokemon = CARBINK,39
 Pokemon = STEELIX,39
@@ -1953,12 +1944,10 @@ Pokemon = ABOMASNOW,44
 Pokemon = CLOYSTER,44
 #-------------------------------
 [TRAILBLAZER,Mitchell]
-Items = HYPERPOTION,FULLHEAL
 LoseText = "..."
 Pokemon = AGGRON,43
 #-------------------------------
 [TRAILBLAZER,Mitchell,1]
-Items = HYPERPOTION,FULLHEAL
 LoseText = "..."
 Pokemon = AGGRON,45
     Item = AGGRONITE
@@ -1967,7 +1956,6 @@ Pokemon = RAPIDASH,45
 Pokemon = SUDOWOODO,45
 #-------------------------------
 [TRAILBLAZER,Mitchell,2]
-Items = HYPERPOTION,FULLHEAL
 LoseText = "..."
 Pokemon = AGGRON,48
     Item = AGGRONITE
@@ -2114,7 +2102,6 @@ Pokemon = HOUNDOOM,60
     IV = 30,31,31,31,30,31
 #-------------------------------
 [POKEMONTRAINER_Brett,Brett,6]
-Items = FULLRESTORE
 LoseText = "....."
 Pokemon = GARCHOMP,50
     Moves = DRAGONTAIL,STEALTHROCK,CRUNCH,STONEEDGE
