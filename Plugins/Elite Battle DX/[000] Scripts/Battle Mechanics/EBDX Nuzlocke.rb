@@ -37,8 +37,8 @@ module EliteBattle
     evo = GameData::Species.get(species).get_evolutions; all = []
     return [species] if evo.length < 1
     for arr in evo
-      all += [arr[2]]
-      all += self.getNextEvos(arr[2])
+      all += [arr[0]]
+      all += self.getNextEvos(arr[0])
     end
     return all.uniq
   end
@@ -83,11 +83,10 @@ module EliteBattle
   #-----------------------------------------------------------------------------
   def self.nuzlockeSelection
     # list of all possible rules
-    modifiers = [:NOREVIVE, :PERMADEATH, :ONEROUTE, :DUPSCLAUSE, :STATIC, :SHINY]
+    modifiers = [:NOREVIVE, :ONEROUTE, :DUPSCLAUSE, :STATIC, :SHINY]
     # list of rule descriptions
     desc = [
       _INTL("Cannot revive fainted battlers"),
-      _INTL("Auto-delete fainted battlers"),
       _INTL("One encounter per map"),
       _INTL("Disregard duplicate species (line)"),
       _INTL("Exclude static from encounter limit"),
@@ -129,7 +128,11 @@ module EliteBattle
     $PokemonGlobal.nuzlockeRules = added
     EliteBattle.add_data(:NUZLOCKE, :RULES, added)
     # shows message
-    msg = _INTL("Your selected Nuzlocke rules have been applied.")
+	if added.length == 5
+	msg = _INTL("Nuzlocke rules applied, eligible for achievement.") 
+	$game_switches[176] = true
+	end
+    msg = _INTL("Your selected Nuzlocke rules have been applied.") if added.length <5
     msg = _INTL("No Nuzlocke rules have been applied.") if added.length < 1
     msg = _INTL("Your selection has been cancelled.") if cmd < 0
     pbMessage(msg)
@@ -148,7 +151,77 @@ module EliteBattle
       $PokemonGlobal.nuzlockeRules = nil
     end
   end
-  #-----------------------------------------------------------------------------
+#-----------------------------------------------------------------------------
+#  NEW 1.0.9 AiurJordan
+#  returns the same map ID for routes which should count as the same encounter
+#-----------------------------------------------------------------------------
+def self.pbNuzlockeMapID
+  mapid = $game_map.map_id
+  case mapid
+  #Route 119, MAPID 029, 009
+  when 29
+	return 9
+  when 9
+	return 9
+  #Route 104, MAPID 104, 207, 121, 105
+  when 104
+	return 104
+  when 207
+	return 104
+  when 105
+	return 104
+  when 121
+	return 104
+  #Route 103, MAPID 029, 009
+  when 98
+	return 98
+  when 206
+	return 98
+  #Spirit Tower, MAPID 045, 046, 047, 049
+  when 45
+	return 45
+  when 46
+	return 45
+  when 47
+	return 45
+  when 49
+	return 45
+  #Ochre Valley MAPID 073, 074, 075
+  when 73
+	return 74
+  when 74
+	return 74
+  when 75
+	return 74
+  #Bouldergrove Tunnel MAPID 025, 026
+  when 25
+	return 25
+  when 26
+	return 25
+  #Siren's Peak MAPID 184, 185
+  when 184
+	return 184
+  when 185
+	return 184
+  #Shimmerwood Forest MAPID 066, 067, 068, 069, 070, 140
+  when 66
+	return 68
+  when 67
+	return 68
+  when 68
+	return 68
+  when 69
+	return 68
+  when 70
+	return 68
+  when 140
+	return 68
+  else
+	return mapid
+  end
+end
+#-----------------------------------------------------------------------------
+  
 end
 #===============================================================================
 #  adding nuzlocke functionality to battler specific classes
@@ -203,6 +276,8 @@ class PokeBattle_Scene
   #-----------------------------------------------------------------------------
   alias pbFaintBattler_ebdx_nuzlocke pbFaintBattler unless self.method_defined?(:pbFaintBattler_ebdx_nuzlocke)
   def pbFaintBattler(battler)
+
+    mapid = EliteBattle.pbNuzlockeMapID
     if !@battle.opponent && !playerBattler?(battler)
       data = EliteBattle.get_data(:NUZLOCKE, :Metrics, :RULES); data = [] if data.nil?
       unless (@battle.pbParty(1).length == 2  && !self.firstFainted)
@@ -210,8 +285,8 @@ class PokeBattle_Scene
           evo = EliteBattle.checkEvoNuzlocke?(battler.pokemon.species) && data.include?(:DUPSCLAUSE)
           static = data.include?(:STATIC) && !$nonStaticEncounter
           shiny = data.include?(:SHINY) && battler.shiny?
-          map = $PokemonGlobal.nuzlockeData[$game_map.map_id]
-          $PokemonGlobal.nuzlockeData[$game_map.map_id] = true if map.nil? && !static && !evo && !shiny
+          map = $PokemonGlobal.nuzlockeData[mapid]
+          $PokemonGlobal.nuzlockeData[mapid] = true if map.nil? && !static && !evo && !shiny
         end
       end
       self.firstFainted = true
@@ -251,18 +326,19 @@ class PokeBattle_Battle
   #-----------------------------------------------------------------------------
   alias pbThrowPokeBall_ebdx_nuzlocke pbThrowPokeBall unless self.method_defined?(:pbThrowPokeBall_ebdx_nuzlocke)
   def pbThrowPokeBall(*args)
+    mapid = EliteBattle.pbNuzlockeMapID
     # part to disable Pokeball throwing if already caught
     data = EliteBattle.get_data(:NUZLOCKE, :Metrics, :RULES); data = [] if data.nil?
     if EliteBattle.get(:nuzlocke) && data.include?(:ONEROUTE)
       static = data.include?(:STATIC) && !$nonStaticEncounter
       shiny = data.include?(:SHINY) && @battlers[args[0]].shiny?
-      map = $PokemonGlobal.nuzlockeData[$game_map.map_id]
+      map = $PokemonGlobal.nuzlockeData[mapid]
       return pbDisplay(_INTL("Nuzlocke rules prevent you from catching a wild Pokémon on a map you already had an encounter on!")) if !map.nil? && !static && !shiny
     end
     pbThrowPokeBall_ebdx_nuzlocke(*args)
     # part that registers caught Pokemon for map
     if EliteBattle.get(:nuzlocke) && data.include?(:ONEROUTE) && @decision == 4
-      $PokemonGlobal.nuzlockeData[$game_map.map_id] = true unless static || shiny
+      $PokemonGlobal.nuzlockeData[mapid] = true unless static || shiny
     end
   end
   #-----------------------------------------------------------------------------
@@ -270,6 +346,7 @@ class PokeBattle_Battle
   #-----------------------------------------------------------------------------
   alias pbRun_ebdx_nuzlocke pbRun unless self.method_defined?(:pbRun_ebdx_nuzlocke)
   def pbRun(*args)
+    mapid = EliteBattle.pbNuzlockeMapID
     data = EliteBattle.get_data(:NUZLOCKE, :Metrics, :RULES); data = [] if data.nil?
     battler = nil
     for i in 0...self.pbSideSize(1)
@@ -285,8 +362,8 @@ class PokeBattle_Battle
       eachOtherSideBattler(args[0]) do |b|
         shiny = true if data.include?(:SHINY) && b.shiny?
       end
-      map = $PokemonGlobal.nuzlockeData[$game_map.map_id]
-      $PokemonGlobal.nuzlockeData[$game_map.map_id] = true if map.nil? && !static && !evo && !shiny
+      map = $PokemonGlobal.nuzlockeData[mapid]
+      $PokemonGlobal.nuzlockeData[mapid] = true if map.nil? && !static && !evo && !shiny
     end
     # returns original function
     return pbRun_ebdx_nuzlocke(*args)
@@ -296,12 +373,13 @@ end
 #===============================================================================
 #  losing the nuzlocke
 #===============================================================================
-alias pbStartOver_ebdx_nuzlocke pbStartOver unless defined?(:pbStartOver_ebdx_nuzlocke)
-def self.pbStartOver(*args)
+alias pbStartOver_ebdx_nuzlocke pbStartOver unless defined?(pbStartOver_ebdx_nuzlocke)
+def pbStartOver(*args)
   if EliteBattle.get(:nuzlocke)
     pbMessage(_INTL("\\w[]\\wm\\c[8]\\l[3]All your Pokémon have fainted. You have lost the Nuzlocke challenge! The challenge will now be turned off."))
+	$game_switches[176] = false
     EliteBattle.set(:nuzlocke, false)
-    $PokemonGloba.isNuzlocke = false
+    $PokemonGlobal.isNuzlocke = false
     pbStartOver_ebdx_nuzlocke(*args)
   end
   return pbStartOver_ebdx_nuzlocke(*args)

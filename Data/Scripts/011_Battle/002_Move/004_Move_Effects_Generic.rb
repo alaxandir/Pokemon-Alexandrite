@@ -540,7 +540,31 @@ class PokeBattle_TwoTurnMove < PokeBattle_Move
   end
 end
 
+class PokeBattle_TwoTurnMove < PokeBattle_Move
+  alias __disparition__pbShowAnimation pbShowAnimation
+  def pbShowAnimation(id,user,targets,hitNum=0,showAnimation=true)
+    __disparition__pbShowAnimation(id,user,targets,hitNum,showAnimation)
+    if ["0C9","0CA","0CB","0CC","0CD","0CE","14D"].include?(@function)
+      @battle.scene.pbVanishSprite(user) if @chargingTurn
+      @battle.scene.pbUnVanishSprite(user) if @damagingTurn
+    end 
+  end
+end 
 
+# Disappearance of battler's sprites for Fly or others.
+class PokeBattle_Scene
+  def pbVanishSprite(pkmn)
+    pkmnsprite=@sprites["pokemon_#{pkmn.index}"]
+    pkmnsprite.visible = false
+    pbUpdate    
+  end
+  def pbUnVanishSprite(pkmn)
+    # @battle.pbCommonAnimation("Fade in",pkmn,nil) if fade
+    pkmnsprite=@sprites["pokemon_#{pkmn.index}"]
+    pkmnsprite.visible = true
+    pbUpdate 
+  end 
+end
 
 #===============================================================================
 # Healing move.

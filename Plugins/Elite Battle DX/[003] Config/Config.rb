@@ -42,7 +42,7 @@ module EliteBattle
   PERFECT_IV_SHINY = 1
 
   # the minimum amount of (random) IV attributes to be set to 31 for super shiny Pokemon
-  PERFECT_IV_SUPER = 3
+  PERFECT_IV_SUPER = 6
 
   # Show player line up during wild battles
   SHOW_LINEUP_WILD = false

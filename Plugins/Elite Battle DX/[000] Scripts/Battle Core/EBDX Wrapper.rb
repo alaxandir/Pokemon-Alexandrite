@@ -78,19 +78,17 @@ class BitmapEBDX
   #-----------------------------------------------------------------------------
   #  preparation and compiling of spritesheet for sprite alterations
   #-----------------------------------------------------------------------------
-  def prepare_strip
+   def prepare_strip
     @strip = []
+    bmp = Bitmap.new(@bitmapFile)
     for i in 0...@totalFrames
-      bitmap = Bitmap.new(@width,@height)
-      bitmap.stretch_blt(Rect.new(0,0,@width,@height),@bitmapFile,Rect.new((@width/@scale)*i,0,@width/@scale,@height/@scale))
+      bitmap = Bitmap.new(@width, @height)
+      bitmap.stretch_blt(Rect.new(0, 0, @width, @height), bmp, Rect.new((@width/@scale)*i, 0, @width/@scale, @height/@scale))
       @strip.push(bitmap)
     end
   end
   def compile_strip
-    @bitmap.clear
-    for i in 0...@strip.length
-      @bitmap.stretch_blt(Rect.new((@width/@scale)*i,0,@width/@scale,@height/@scale),@strip[i],Rect.new(0,0,@width,@height))
-    end
+    self.refresh(@strip)																												
   end
   #-----------------------------------------------------------------------------
   #  creates custom loop if defined in data

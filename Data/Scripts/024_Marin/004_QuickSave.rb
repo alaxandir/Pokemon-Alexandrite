@@ -18,7 +18,7 @@ class Scene_Map
   alias quicksave_update update
   def update
     quicksave_update
-    if Input.press?(Input::F5) && !$game_player.moving? && @mode.nil?
+    if Input.press?(Input::F5) && !$game_player.moving? && @mode.nil? && $game_system.save_disabled == false
       Game.save
       @mode = 0
       @vp = Viewport.new(0,0,Graphics.width,Graphics.height)

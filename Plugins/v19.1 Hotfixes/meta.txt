@@ -1,5 +1,5 @@
 ﻿Name      = v19.1 Hotfixes
-Version   = 1.0.4
+Version   = 1.0.5
 Conflicts = v19 Updates
 Conflicts = v19 Hotfixes
 Website   = https://github.com/Maruno17/pokemon-essentials
@@ -53,6 +53,17 @@ Credits   = Maruno
 #   which move it is to the same move.
 # - Fixed typo in def addBackgroundOrColoredPlane.
 # - Fixed code relating to items initially held by Pokémon in battle.
+#
+# 1.0.5:
+# - Fixed Symbiosis not working.
+# - Fixed Roost not removing the Flying type.
+# - Fixed Normalize not boosting damage in Gen 7+.
+# - Fixed crash when choosing Pokémon for NPC Bug Catching Contest
+#   participants.
+# - Fixed crash when compiling a moves.txt that uses the old format.
+# - Fixed the event command "Return to Title Screen"/resting in a
+#   Battle Facility run causing issues when trying to continue the
+#   game again immediately.
 #
 #=====================================================================
 #

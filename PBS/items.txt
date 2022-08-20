@@ -1,8 +1,8 @@
 ﻿# See the documentation on the wiki to learn how to edit this file.
 #-------------------------------
-1,REPEL,Repel,Repels,1,400,"An item that prevents weak wild Pokémon from appearing for 100 steps after its use.",2,0,0,
-2,SUPERREPEL,Super Repel,Super Repels,1,700,"An item that prevents weak wild Pokémon from appearing for 200 steps after its use.",2,0,0,
-3,MAXREPEL,Max Repel,Max Repels,1,900,"An item that prevents weak wild Pokémon from appearing for 250 steps after its use.",2,0,0,
+1,REPEL,Repel,Repels,1,300,"An item that prevents weak wild Pokémon from appearing for 200 steps after its use.",2,0,0,
+2,SUPERREPEL,Super Repel,Super Repels,1,500,"An item that prevents weak wild Pokémon from appearing for 350 steps after its use.",2,0,0,
+3,MAXREPEL,Max Repel,Max Repels,1,1000,"An item that prevents weak wild Pokémon from appearing for 500 steps after its use.",2,0,0,
 4,BLACKFLUTE,Black Flute,Black Flutes,1,400,"A black flute made from blown glass. Its melody makes wild Pokémon less likely to appear.",2,0,0,
 5,WHITEFLUTE,White Flute,White Flutes,1,500,"A white flute made from blown glass. Its melody makes wild Pokémon more likely to appear.",2,0,0,
 6,HONEY,Honey,Honey,1,300,"A sweet honey with an aroma that attracts wild Pokémon when used in grass, caves or on special trees.",2,0,0,
@@ -119,13 +119,13 @@
 117,STICKYBARB,Sticky Barb,Sticky Barbs,6,4000,"A held item that damages the holder on every turn. It may latch on to Pokémon that touch the holder.",0,0,0,
 118,IRONBALL,Iron Ball,Iron Balls,6,4000,"A Pokémon held item that cuts Speed. It makes Flying-type and levitating holders susceptible to Ground moves.",0,0,0,
 119,RINGTARGET,Ring Target,Ring Targets,6,4000,"Moves that would otherwise have no effect will land on the Pokémon that holds it.",0,0,0,
-120,MACHOBRACE,Macho Brace,Macho Braces,6,1500,"An item to be held by a Pokémon. It is a stiff, heavy brace that promotes strong growth but lowers Speed.",0,0,0,
-121,POWERWEIGHT,Power Weight,Power Weights,6,1250,"A Pokémon held item that promotes HP gain on leveling, but reduces the Speed stat.",0,0,0,
-122,POWERBRACER,Power Bracer,Power Bracers,6,1250,"A Pokémon held item that promotes Attack gain on leveling, but reduces the Speed stat.",0,0,0,
-123,POWERBELT,Power Belt,Power Belts,6,1250,"A Pokémon held item that promotes Defense gain on leveling, but reduces the Speed stat.",0,0,0,
-124,POWERLENS,Power Lens,Power Lenses,6,1250,"A Pokémon held item that promotes Sp. Atk gain on leveling, but reduces the Speed stat.",0,0,0,
-125,POWERBAND,Power Band,Power Bands,6,1250,"A Pokémon held item that promotes Sp. Def gain on leveling, but reduces the Speed stat.",0,0,0,
-126,POWERANKLET,Power Anklet,Power Anklets,6,1250,"A Pokémon held item that promotes Speed gain on leveling, but reduces the Speed stat.",0,0,0,
+120,MACHOBRACE,Macho Brace,Macho Braces,6,1500,"An item to be held by a Pokémon. 3x EV gain but lowers Speed.",0,0,0,
+121,POWERWEIGHT,Power Weight,Power Weights,6,1250,"A Pokémon held item, +8 HP EVs gain, but reduces the Speed stat.",0,0,0,
+122,POWERBRACER,Power Bracer,Power Bracers,6,1250,"A Pokémon held item, +8 Attack EVs gain, but reduces the Speed stat.",0,0,0,
+123,POWERBELT,Power Belt,Power Belts,6,1250,"A Pokémon held item, +8 Defense EVs gain, but reduces the Speed stat.",0,0,0,
+124,POWERLENS,Power Lens,Power Lenses,6,1250,"A Pokémon held item, +8 Sp. Atk EVs gain, but reduces the Speed stat.",0,0,0,
+125,POWERBAND,Power Band,Power Bands,6,1250,"A Pokémon held item, +8 Sp. Def EVs gain, but reduces the Speed stat.",0,0,0,
+126,POWERANKLET,Power Anklet,Power Anklets,6,1250,"A Pokémon held item that, +8 Speed EV gain, but reduces the Speed stat.",0,0,0,
 127,LAXINCENSE,Lax Incense,Lax Incenses,6,5000,"An item to be held by a Pokémon. The tricky aroma of this incense may make attacks miss the holder.",0,0,0,
 128,FULLINCENSE,Full Incense,Full Incenses,6,5000,"An item to be held by a Pokémon. This exotic-smelling incense makes the holder bloated and slow moving.",0,0,0,
 129,LUCKINCENSE,Luck Incense,Luck Incenses,6,11000,"An item to be held by a Pokémon. It doubles a battle's prize money if the holding Pokémon joins in.",0,0,0,
@@ -204,7 +204,7 @@
 202,EVERSTONE,Everstone,Everstones,6,3000,"An item to be held by a Pokémon. The Pokémon holding this peculiar stone is prevented from evolving.",0,0,0,
 203,DRAGONSCALE,Dragon Scale,Dragon Scales,6,2000,"A thick and tough scale. Dragon-type Pokémon may be holding this item when caught.",0,0,0,
 204,UPGRADE,Upgrade,Upgrades,6,2000,"A transparent device filled with all sorts of data. It was produced by Silph Co.",1,0,7,
-205,DUBIOUSDISC,Dubious Disc,Dubious Discs,6,2000,"A transparent device overflowing with dubious data.  Its producer is unknown.",0,0,0,
+205,DUBIOUSDISC,Dubious Disc,Dubious Discs,6,2000,"A transparent device overflowing with dubious data.  Its producer is unknown.",1,0,7,
 206,PROTECTOR,Protector,Protectors,6,2000,"A protective item of some sort. It is extremely stiff and heavy. It is loved by a certain Pokémon.",1,0,7,
 207,ELECTIRIZER,Electirizer,Electirizers,6,2000,"A box packed with a tremendous amount of electric energy. It is loved by a certain Pokémon.",1,0,7,
 208,MAGMARIZER,Magmarizer,Magmarizers,6,2000,"A box packed with a tremendous amount of magma energy. It is loved by a certain Pokémon.",1,0,7,
@@ -251,18 +251,18 @@
 248,MAXELIXIR,Max Elixir,Max Elixirs,2,1600,"It fully restores the PP of all the moves learned by the targeted Pokémon.",1,1,0,
 249,PPUP,PP Up,PP Ups,2,10000,"It slightly raises the maximum PP of a selected move that has been learned by the target Pokémon.",1,0,0,
 250,PPMAX,PP Max,PP Maxes,2,10000,"It maximally raises the top PP of a selected move that has been learned by the target Pokémon.",1,0,0,
-251,HPUP,HP Up,HP Ups,2,5000,"A nutritious drink for Pokémon. It raises the base HP of a single Pokémon by 42 EVs.",1,0,0,
-252,PROTEIN,Protein,Proteins,2,5000,"A nutritious drink for Pokémon. It raises the base Attack stat of a single Pokémon 42 EVs.",1,0,0,
-253,IRON,Iron,Irons,2,5000,"A nutritious drink for Pokémon. It raises the base Defense stat of a single Pokémon 42 EVs.",1,0,0,
-254,CALCIUM,Calcium,Calciums,2,5000,"A nutritious drink for Pokémon. It raises the base Sp. Atk (Special Attack) stat of a single Pokémon 42 EVs.",1,0,0,
-255,ZINC,Zinc,Zincs,2,5000,"A nutritious drink for Pokémon. It raises the base Sp. Def (Special Defense) stat of a single Pokémon 42 EVs.",1,0,0,
-256,CARBOS,Carbos,Carbos,2,5000,"A nutritious drink for Pokémon. It raises the base Speed stat of a single Pokémon 42 EVs.",1,0,0,
-257,HEALTHWING,Health Wing,Health Wings,2,240,"An item for use on a Pokémon. It slightly increases the base HP of a single Pokémon by 2 EVs.",1,0,0,
-258,MUSCLEWING,Muscle Wing,Muscle Wings,2,240,"An item for use on a Pokémon. It slightly increases the base Attack stat of a single Pokémon by 2 EVs.",1,0,0,
-259,RESISTWING,Resist Wing,Resist Wings,2,240,"An item for use on a Pokémon. It slightly increases the base Defense stat of a single Pokémon by 2 EVs.",1,0,0,
-260,GENIUSWING,Genius Wing,Genius Wings,2,240,"An item for use on a Pokémon. It slightly increases the base Sp. Atk stat of a single Pokémon by 2 EVs.",1,0,0,
-261,CLEVERWING,Clever Wing,Clever Wings,2,240,"An item for use on a Pokémon. It slightly increases the base Sp. Def stat of a single Pokémon by 2 EVs.",1,0,0,
-262,SWIFTWING,Swift Wing,Swift Wings,2,240,"An item for use on a Pokémon. It slightly increases the base Speed stat of a single Pokémon by 2 EVs.",1,0,0,
+251,HPUP,HP Up,HP Ups,2,2000,"A nutritious drink for Pokémon. It raises the base HP of a single Pokémon by 50 EVs.",1,0,0,
+252,PROTEIN,Protein,Proteins,2,2000,"A nutritious drink for Pokémon. It raises the base Attack stat of a single Pokémon 50 EVs.",1,0,0,
+253,IRON,Iron,Irons,2,2000,"A nutritious drink for Pokémon. It raises the base Defense stat of a single Pokémon 50 EVs.",1,0,0,
+254,CALCIUM,Calcium,Calciums,2,2000,"A nutritious drink for Pokémon. It raises the base Sp. Atk (Special Attack) stat of a single Pokémon 50 EVs.",1,0,0,
+255,ZINC,Zinc,Zincs,2,2000,"A nutritious drink for Pokémon. It raises the base Sp. Def (Special Defense) stat of a single Pokémon 50 EVs.",1,0,0,
+256,CARBOS,Carbos,Carbos,2,2000,"A nutritious drink for Pokémon. It raises the base Speed stat of a single Pokémon 50 EVs.",1,0,0,
+257,HEALTHWING,Health Wing,Health Wings,2,80,"An item for use on a Pokémon. It slightly increases the base HP of a single Pokémon by 2 EVs.",1,0,0,
+258,MUSCLEWING,Muscle Wing,Muscle Wings,2,80,"An item for use on a Pokémon. It slightly increases the base Attack stat of a single Pokémon by 2 EVs.",1,0,0,
+259,RESISTWING,Resist Wing,Resist Wings,2,80,"An item for use on a Pokémon. It slightly increases the base Defense stat of a single Pokémon by 2 EVs.",1,0,0,
+260,GENIUSWING,Genius Wing,Genius Wings,2,80,"An item for use on a Pokémon. It slightly increases the base Sp. Atk stat of a single Pokémon by 2 EVs.",1,0,0,
+261,CLEVERWING,Clever Wing,Clever Wings,2,80,"An item for use on a Pokémon. It slightly increases the base Sp. Def stat of a single Pokémon by 2 EVs.",1,0,0,
+262,SWIFTWING,Swift Wing,Swift Wings,2,80,"An item for use on a Pokémon. It slightly increases the base Speed stat of a single Pokémon by 2 EVs.",1,0,0,
 263,RARECANDY,Rare Candy,Rare Candies,2,10000,"A candy that is packed with energy. It raises the level of a single Pokémon by one.",1,0,0,
 #-------------------------------
 264,MASTERBALL,Master Ball,Master Balls,3,0,"The best Ball with the ultimate level of performance. It will catch any wild Pokémon without fail.",0,4,4,
@@ -335,7 +335,7 @@
 330,TM43,TM43,TM43s,4,10000,"The user cloaks itself with flame and attacks. Building up more power, it raises the user's Speed stat.",3,0,0,FLAMECHARGE
 331,TM44,TM44,TM44s,4,1000,"The user goes to sleep for two turns. It fully restores the user's HP and heals any status problem.",3,0,0,REST
 332,TM45,TM45,TM45s,4,10000,"If it is the opposite gender of the user, the target becomes infatuated and less likely to attack.",3,0,0,ATTRACT
-333,TM46,TM46,TM46s,4,10000,"The user attacks and steals the target's held item simultaneously. It can't steal if the user holds an item.",3,0,0,THIEF
+333,TM46,TM46,TM46s,4,2500,"The user attacks and steals the target's held item simultaneously. It can't steal if the user holds an item.",3,0,0,THIEF
 334,TM47,TM47,TM47s,4,10000,"The user attacks the target's legs swiftly, reducing the target's Speed stat.",3,0,0,LOWSWEEP
 335,TM48,TM48,TM48s,4,10000,"The user attacks the target with a song. Others can join in the Round to increase the power of the attack.",3,0,0,ROUND
 336,TM49,TM49,TM49s,4,10000,"The user attacks the target with an echoing voice. If this move is used every turn, it does greater damage.",3,0,0,ECHOEDVOICE
@@ -379,18 +379,14 @@
 374,TM87,TM87,TM87s,4,10000,"The user enrages and confuses the target. However, it also sharply raises the target's Attack stat.",3,0,0,SWAGGER
 375,TM88,TM88,TM88s,4,10000,"While it is asleep, the user randomly uses one of the moves it knows.",3,0,0,SLEEPTALK
 376,TM89,TM89,TM89s,4,10000,"After making its attack, the user rushes back to switch places with a party Pokémon in waiting.",3,0,0,UTURN
-377,TM90,TM90,TM90s,4,10000,"The user makes a copy of itself using some of its HP. The copy serves as the user's decoy.",3,0,0,SUBSTITUTE
+377,TM90,TM90,TM90s,4,3000,"The user makes a copy of itself using some of its HP. The copy serves as the user's decoy.",3,0,0,SUBSTITUTE
 378,TM91,TM91,TM91s,4,10000,"The user gathers all its light energy and releases it at once. It may also lower the target's Sp. Def stat.",3,0,0,FLASHCANNON
 379,TM92,TM92,TM92s,4,10000,"The user creates a bizarre space in which slower Pokémon get to move first for five turns.",3,0,0,TRICKROOM
 380,TM93,TM93,TM93s,4,50000,"The user shrouds itself in electricity and smashes into its target. It also damages the user a little.",3,0,0,WILDCHARGE
 381,TM94,TM94,TM94s,4,30000,"The user attacks with a punch that can shatter a rock. It may also lower the target's Defense stat.",3,0,0,ROCKSMASH
 382,TM95,TM95,TM95s,4,10000,"The user yells as if it is ranting about something, making the target's Sp. Atk stat decrease.",3,0,0,SNARL
-383,HM01,HM01,HM01s,4,0,"The target is cut with a scythe or claw. It can also be used to cut down thin trees.",4,0,0,CUT
 384,HM02,HM02,HM02s,4,0,"The user soars, then strikes on the second turn. It can also be used to fly to any familiar town.",4,0,0,FLY
 385,HM03,HM03,HM03s,4,0,"It swamps the area around the user with a giant wave. It can also be used for crossing water.",4,0,0,SURF
-386,HM04,HM04,HM04s,4,0,"The target is slugged with a punch thrown at maximum power. This move can also be used to move boulders.",4,0,0,STRENGTH
-387,HM05,HM05,HM05s,4,0,"The user charges the target at an awesome speed. It can also be used to climb a waterfall.",4,0,0,WATERFALL
-388,HM06,HM06,HM06s,4,0,"The user dives on the first turn, and floats up and attacks on the second. It can be used to dive in the ocean.",4,0,0,DIVE
 #-------------------------------
 389,CHERIBERRY,Cheri Berry,Cheri Berries,5,20,"It may be used or held by a Pokémon to recover from paralysis.",1,1,5,
 390,CHESTOBERRY,Chesto Berry,Chesto Berries,5,20,"It may be used or held by a Pokémon to recover from sleep.",1,1,5,
@@ -538,10 +534,10 @@
 526,ICESTONE,Ice Stone,Ice Stones,1,3000,"A peculiar stone that makes certain species of Pokémon evolve. It has a snowflake pattern.",1,0,7,
 527,JAWFOSSIL,Jaw Fossil,Jaw Fossils,1,7000,"A fossil from a prehistoric Pokémon that once lived on the land. It appears to be part of a large jaw.",0,0,8,
 528,SAILFOSSIL,Sail Fossil,Sail Fossils,1,7000,"A fossil from a prehistoric Pokémon that once lived on the land. It looks like the impression from a skin sail.",0,0,8,
-529,REDNECTAR,Red Nectar,Red Nectars,1,300,"A flower nectar obtained at Ula'ula Meadow. It changes the form of certain species of Pokémon.",1,0,0,
-530,YELLOWNECTAR,Yellow Nectar,Yellow Nectars,1,300,"A flower nectar obtained at Melemele Meadow. It changes the form of certain species of Pokémon.",1,0,0,
-531,PINKNECTAR,Pink Nectar,Pink Nectars,1,300,"A flower nectar obtained from shrubs on Royal Avenue. It changes the form of certain species of Pokémon.",1,0,0,
-532,PURPLENECTAR,Purple Nectar,Purple Nectars,1,300,"A flower nectar obtained at Poni Meadow. It changes the form of certain species of Pokémon.",1,0,0,
+529,REDNECTAR,Red Nectar,Red Nectars,1,300,"A flower nectar obtained at Cinder Island. It changes the form of certain species of Pokémon.",1,0,0,
+530,YELLOWNECTAR,Yellow Nectar,Yellow Nectars,1,300,"A flower nectar obtained near Bouldergrove. It changes the form of certain species of Pokémon.",1,0,0,
+531,PINKNECTAR,Pink Nectar,Pink Nectars,1,300,"A flower nectar obtained from Shimmerwood. It changes the form of certain species of Pokémon.",1,0,0,
+532,PURPLENECTAR,Purple Nectar,Purple Nectars,1,300,"A flower nectar obtained at the Spirit Garden. It changes the form of certain species of Pokémon.",1,0,0,
 533,ASSAULTVEST,Assault Vest,Assault Vests,6,1000,"An item to be held by a Pokémon. This offensive vest raises Sp. Def but prevents the use of status moves.",0,0,0,
 534,SAFETYGOGGLES,Safety Goggles,Safety Goggles,6,4000,"An item to be held by a Pokémon. They protect the holder from weather-related damage and powder.",0,0,0,
 535,PROTECTIVEPADS,Protective Pads,Protective Pads,6,4000,"An item to be held by a Pokémon. They protect the holder from effects caused by making contact.",0,0,0,
@@ -633,7 +629,7 @@
 619,DREAMBALL,Dream Ball,Dream Balls,3,0,"A somewhat different Poké Ball that makes it easier to catch wild Pokémon while they're asleep.",0,4,4,
 620,BEASTBALL,Beast Ball,Beast Balls,3,1000,"A special Poké Ball designed to catch Ultra Beasts. It has a low success rate for catching others.",0,4,4,
 #-------------------------------
-621,TM96,TM96,TM96s,4,10000,"Naturepower",3,0,0,NATUREPOWER
+621,TM96,TM96,TM96s,4,10000,"An attack that makes use of nature's power. Its effects vary depending on the user's environment.",3,0,0,NATUREPOWER
 622,TM97,TM97,TM97s,4,10000,"The user releases a horrible aura imbued with dark thoughts. This may also make the target flinch.",3,0,0,DARKPULSE
 623,TM98,TM98,TM98s,4,10000,"Striking opponents repeatedly makes the user's fists harder. Hitting a target raises the Attack stat.",3,0,0,POWERUPPUNCH
 624,TM99,TM99,TM99s,4,10000,"The user damages opposing Pokémon by emitting a powerful flash.",3,0,0,DAZZLINGGLEAM
@@ -655,36 +651,35 @@
 637,TM104,TM104,TM104s,4,2000,"The user envelops itself in a veil made of water. It regains some HP on every turn.",3,0,0,AQUARING
 638,SECRETNOTE,Secret Note,Secret Notes,8,0,"A crumpled note dropped by Team Rocket. 6624",0,0,6,
 639,HONEYCOMB,Honey Comb,Honey Combs,2,400,"Anthophil's local specialty. It heals all the status problems of one Pokémon.",1,1,0,
-640,CLIPPERS,Clippers,Clippers,8,0,"This item enables the user to cut through thick plants.",2,0,6,
+640,CLIPPERS,Clippers,Clippers,8,0,"This item enables the user to cut through thick plants.",0,0,6,
 641,POPPINGCANDY,Popping Candy,Popping Candies,1,600,"This candy has an intense popping sensation when eaten. Greatly increases a Pokémon's happiness.",1,0,0,
 642,SILPHPASS,Silph Pass,Silph Passes,8,0,"An official looking keycard with the Silph Co logo.",0,0,6,
-644,SHATTERHAMMER,Shatter Hammer,Shatter Hammers,8,0,"This item enables the user to smash boulders.",2,0,6,
-645,REDCRYSTAL,Red Crystal,Red Crystals,8,0,"This crystal is beautiful perfectly shaped, it seems to serve a mysterious purpose.",2,0,6,
-646,BLUECRYSTAL,Blue Crystal,Blue Crystals,8,0,"This crystal is beautiful perfectly shaped, it seems to serve a mysterious purpose.",2,0,6,
-647,YELLOWCRYSTAL,Yellow Crystal,Yellow Crystals,8,0,"This crystal is beautiful perfectly shaped, it seems to serve a mysterious purpose.",2,0,6,
-648,PURPLECRYSTAL,Purple Crystal,Purple Crystals,8,0,"This crystal is beautiful perfectly shaped, it seems to serve a mysterious purpose.",2,0,6,
-649,VIOLETCRYSTAL,Violet Crystal,Violet Crystals,8,0,"This crystal is beautiful perfectly shaped, it seems to serve a mysterious purpose.",2,0,6,
-650,GREENCRYSTAL,Green Crystal,Green Crystals,8,0,"This crystal is beautiful perfectly shaped, it seems to serve a mysterious purpose.",2,0,6,
+644,SHATTERHAMMER,Shatter Hammer,Shatter Hammers,8,0,"This item enables the user to smash boulders.",0,0,6,
+645,REDCRYSTAL,Red Crystal,Red Crystals,8,0,"This crystal is beautiful perfectly shaped, it seems to serve a mysterious purpose.",0,0,6,
+646,BLUECRYSTAL,Blue Crystal,Blue Crystals,8,0,"This crystal is beautiful perfectly shaped, it seems to serve a mysterious purpose.",0,0,6,
+647,YELLOWCRYSTAL,Yellow Crystal,Yellow Crystals,8,0,"This crystal is beautiful perfectly shaped, it seems to serve a mysterious purpose.",0,0,6,
+648,PURPLECRYSTAL,Purple Crystal,Purple Crystals,8,0,"This crystal is beautiful perfectly shaped, it seems to serve a mysterious purpose.",0,0,6,
+649,VIOLETCRYSTAL,Violet Crystal,Violet Crystals,8,0,"This crystal is beautiful perfectly shaped, it seems to serve a mysterious purpose.",0,0,6,
+650,GREENCRYSTAL,Green Crystal,Green Crystals,8,0,"This crystal is beautiful perfectly shaped, it seems to serve a mysterious purpose.",0,0,6,
 651,TM105,TM105,TM105s,4,1000,"Blinds the target with a bright flash of light, reducing the opponent's accuracy.",3,0,0,FLASH
 ######## GEN 8 PROJECT ADDITIONS
 652,EXPCANDYXS,Exp. Candy XS,Exp. Candies XS,1,0,"A candy that is packed with energy. When consumed, it will grant a single Pokémon a very small amount of Exp. Points.",1,0,0,
 653,EXPCANDYS,Exp. Candy S,Exp. Candies S,1,0,"A candy that is packed with energy. When consumed, it will grant a single Pokémon a small amount of Exp. Points.",1,0,0,
 654,EXPCANDYM,Exp. Candy M,Exp. Candies M,1,0,"A candy that is packed with energy. When consumed, it will grant a single Pokémon a moderate amount of Exp. Points.",1,0,0,
 655,EXPCANDYL,Exp. Candy L,Exp. Candies L,1,0,"A candy that is packed with energy. When consumed, it will grant a single Pokémon a large amount of Exp. Points.",1,0,0,
-656,EXPCANDYXL,Exp. Candy XL,Exp. Candies XL,1,0,"A candy that is packed with energy. When consumed, it will grant a single Pokémon a very large amount of Exp. Points.",1,0,0,			
-###################
+656,EXPCANDYXL,Exp. Candy XL,Exp. Candies XL,1,0,"A candy that is packed with energy. When consumed, it will grant a single Pokémon a very large amount of Exp. Points.",1,0,0,
 657,ROSERITE,Roserite,Roserites,6,0,"One of a variety of mysterious Mega Stones. Have Roserade hold it, and it will be able to Mega Evolve.",0,0,12,
 658,ELECTIRITE,Electirite,Electirites,6,0,"One of a variety of mysterious Mega Stones. Have Electivire hold it, and it will be able to Mega Evolve.",0,0,12,											
 659,DUBIOUSDRIVE,Dubious Drive,Dubious Drives,8,0,"This strange device whirs and clicks when you hold it. Insert into the Storage Mainframe.",0,0,6,	
 660,ORIGINPUZZLEKEY,Origin Puzzlekey,Origin Puzzlekey,8,0,"Curious ancient tablet with many sliding pieces.",2,0,6,
 661,MILOTICITE,Miloticite,Miloticites,6,0,"One of a variety of mysterious Mega Stones. Have Milotic hold it, and it will be able to Mega Evolve.",0,0,12,
 662,MEWTITE,Mewtite,Mewtites,6,0,"A very special Megastone containing all Pokémon DNA information. Have Mew hold it, and it will be able to Mega Evolve.",0,0,12,
-663,HPVITAMIN,HP IV Vitamin,HP IV Vitamins,2,5000,"Vitamins packed with a punch, increases HP IV by 2 points, also increases Pokémon happiness.",1,0,0,			
-664,ATTACKVITAMIN,Attack IV Vitamin,Attack IV Vitamins,2,5000,"Vitamins packed with a punch, increases Attack IV by 2 points, also increases Pokémon happiness.",1,0,0,			
-665,DEFENSEVITAMIN,Defense IV Vitamin,Defense IV Vitamins,2,5000,"Vitamins packed with a punch, increases Defense IV by 2 points, also increases Pokémon happiness.",1,0,0,			
-666,SPEEDVITAMIN,Speed IV Vitamin,Speed IV Vitamins,2,5000,"Vitamins packed with a punch, increases Speed IV by 2 points, also increases Pokémon happiness.",1,0,0,			
-667,SPECIALATTACKVITAMIN,Sp. Attack IV Vitamin,Sp. Attack IV Vitamins,2,5000,"Vitamins packed with a punch, increases Sp. Attack IV by 2 points, also increases Pokémon happiness.",1,0,0,			
-668,SPECIALDEFENSEVITAMIN,Sp. Defense IV Vitamin,Sp. Defense IV Vitamins,2,5000,"Vitamins packed with a punch, increases Sp. Defense IV by 2 points, also increases Pokémon happiness.",1,0,0,			
+663,HPVITAMIN,HP IV Vitamin,HP IV Vitamins,2,2000,"Vitamins packed with a punch, increases HP IV by 2 points, also increases Pokémon happiness.",1,0,0,			
+664,ATTACKVITAMIN,Attack IV Vitamin,Attack IV Vitamins,2,2000,"Vitamins packed with a punch, increases Attack IV by 2 points, also increases Pokémon happiness.",1,0,0,			
+665,DEFENSEVITAMIN,Defense IV Vitamin,Defense IV Vitamins,2,2000,"Vitamins packed with a punch, increases Defense IV by 2 points, also increases Pokémon happiness.",1,0,0,			
+666,SPEEDVITAMIN,Speed IV Vitamin,Speed IV Vitamins,2,2000,"Vitamins packed with a punch, increases Speed IV by 2 points, also increases Pokémon happiness.",1,0,0,			
+667,SPECIALATTACKVITAMIN,Sp. Attack IV Vitamin,Sp. Attack IV Vitamins,2,2000,"Vitamins packed with a punch, increases Sp. Attack IV by 2 points, also increases Pokémon happiness.",1,0,0,			
+668,SPECIALDEFENSEVITAMIN,Sp. Defense IV Vitamin,Sp. Defense IV Vitamins,2,2000,"Vitamins packed with a punch, increases Sp. Defense IV by 2 points, also increases Pokémon happiness.",1,0,0,			
 669,CARDCASE,Card Case,Card Cases,8,0,"A case used to store and protect Triple Triad cards.",2,0,6,
 670,LEEK,Leek,Leeks,6,1000,"An item to be held by Farfetch'd. It is a very long and stiff stalk of leek that boosts the critical-hit ratio.",0,0,0,
 671,BERRYA,Berry Adenine,Berry Adenine,5,10,"Berry Adenine nucleotide used for crafting any berry!",0,0,0,
@@ -693,13 +688,21 @@
 674,BERRYC,Berry Cytosine,Berry Cytosine,5,500,"Berry Cytosine nucleotide used for crafting any berry!",0,0,0,
 675,BERRYU,Berry Uracil,Berry Uracil,5,1000,"Berry Uracil nucleotide used for crafting any berry!",0,0,0,
 676,PICKAXE,Pickaxe,Pickaxes,1,1000,"A sturdy pickaxe used in mining expeditions.",0,0,0,
-677,SEAVOUCHER,Sea Voucher,Sea Vouchers,8,0,"A ticket that allows travel through the dangerous sea between Trident Cove and Fortune City.",0,0,0,
-678,JAKESPARCEL,Jakes Parcel,Jakes Parcels,8,0,"A parcel for Jake the Archaeologist in Saltstone Villa, Lee has promised he will exchange this for a Sea Pass.",0,0,0,
-679,BOOMBOX,Boom Box,Boom Boxes,8,0,"A special transmitter which causes Electrodes nearby to explode!",0,0,0,
-680,PERSIANCLAW,Persian's Claw,Persian's Claws,8,0,"A special mememto to prove you have beaten the game.",0,0,0,
+677,SEAVOUCHER,Sea Voucher,Sea Vouchers,8,0,"A ticket that allows travel through the dangerous sea between Trident Cove and Fortune City.",0,0,6,
+678,JAKESPARCEL,Jakes Parcel,Jakes Parcels,8,0,"A parcel for Jake the Archaeologist in Saltstone Villa, Lee has promised he will exchange this for a Sea Pass.",0,0,6,
+679,BOOMBOX,Boom Box,Boom Boxes,8,0,"A special transmitter which causes Electrodes nearby to explode!",0,0,6,
+680,PERSIANCLAW,Persian's Claw,Persian's Claws,8,0,"A special mememto to prove you have beaten the game.",0,0,6,
 681,BASTIOTITE,Bastiotite,Bastiotites,6,0,"One of a variety of mysterious Mega Stones. Have Bastiodon hold it, and it will be able to Mega Evolve.",0,0,12,
 682,DIAMONDSTONE,Diamond Stone,Diamond Stones,1,300000,"A peculiar stone that makes certain species of Pokémon evolve. It is shining as brilliantly as the sun..",1,0,7,
 683,STARMITE,Starmite,Starmites,6,0,"One of a variety of mysterious Mega Stones. Have Starmie hold it, and it will be able to Mega Evolve.",0,0,12,
+684,MEGABRACELET,Mega Bracelet,Mega Bracelet,8,0,"Debug Item",0,0,6,
+685,TM106,TM106,TM106s,4,3000,"The target is punched with an electrified fist. It may also leave the target with paralysis.",3,0,0,THUNDERPUNCH
+686,TM107,TM106,TM106s,4,3000,"The target is punched with an icy fist. It may also leave the target frozen.",3,0,0,ICEPUNCH
+687,TM108,TM106,TM106s,4,3000,"The target is punched with a fiery fist. It may also leave the target with a burn.",3,0,0,FIREPUNCH
+688,TM109,TM106,TM106s,4,3000,"A nutrient-draining attack. The user's HP is restored by half the damage taken by the target.",3,0,0,GIGADRAIN
+689,TM110,TM110,TM110s,4,10000,"The user charges at the target and may make it flinch. Can't be used to climb waterfalls",3,0,0,WATERFALL
+690,PURPLEAPRICORN,Purple Apricorn,Purple Apricorns,1,20,"A purple Apricorn. It has an distinct scent.",0,0,9,
+
 900,BOOSTERPACK,Booster Pack,Booster Packs,1,500,A booster pack for Triple Triad. Contains 3 cards.,2,0,0,
 901,PLAINPACK,Plain Pack,Plain Packs,1,500,A booster pack for Triple Triad. Contains 3 normal type cards.,2,0,0,			
 902,FISTPACK,Fist Pack,Fist Packs,1,700,A booster pack for Triple Triad. Contains 3 fighting type cards.,2,0,0,
@@ -720,11 +723,13 @@
 917,DARKPACK,Dark Pack,Dark Packs,1,1000,A booster pack for Triple Triad. Contains 3 dark type cards.,2,0,0,
 918,HEARTPACK,Heart Pack,Heart Packs,1,1000,A booster pack for Triple Triad. Contains 3 fairy type cards.,2,0,0,
 919,SUPERCAPSULE,Super Capsule,Super Capsule,2,10000,"A capsule that allows a Pokémon with switch between all abilities they possess.",1,0,0,
-920,COFFEE,Coffee,Coffees,2,375,"A stimulating hot beverage, heals 40 HP and cure all statuses, can't be used in battle.",1,0,0,
+920,COFFEE,Coffee,Coffees,2,375,"A stimulating hot beverage, heals 40 HP and cure all statuses, can't be used in battle.",1,1,0,
 921,FOSSILIZEDBIRD,Fossilized Bird,Fossilized Birds,1,5000,"The fossil of an ancient Pokémon that once soared through the sky. What it looked like is a mystery.",0,0,8,
 922,FOSSILIZEDFISH,Fossilized Fish,Fossilized Fishes,1,5000,"The fossil of an ancient Pokémon that once lived in the sea. What it looked like is a mystery.",0,0,8,
 923,FOSSILIZEDDRAKE,Fossilized Drake,Fossilized Drakes,1,5000,"The fossil of an ancient Pokémon that once roamed the land. What it looked like is a mystery.",0,0,13,
 924,FOSSILIZEDDINO,Fossilized Dino,Fossilized Dinos,1,5000,"The fossil of an ancient Pokémon that once lived in the artic. What it looked like is a mystery.",0,0,13,
+925,POCKETPC,Pocket PC,Pocket PC,8,0,"A special transmitter which access the Pokémon Box from anywhere!",2,0,6,
+
 ########GEN8 PROJECT MINTS
 1000,LONELYMINT,Lonely Mint,Lonely Mints,1,0,"When a Pokémon smells this mint, its Attack will grow more easily, but its Defense will grow more slowly.",1,0,0,
 1001,ADAMANTMINT,Adamant Mint,Adamant Mints,1,0,"When a Pokémon smells this mint, its Attack will grow more easily, but its Sp. Atk will grow more slowly.",1,0,0,

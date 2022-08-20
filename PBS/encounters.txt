@@ -1,7 +1,7 @@
 ﻿# See the documentation on the wiki to learn how to edit this file.
 #-------------------------------
 [007] # Glacier Gym Underground
-Cave,15
+Cave,4
     25,NINETALES,40,43
     25,SANDSLASH,40,43
     20,VULPIX_1,40,43
@@ -11,7 +11,7 @@ Cave,15
     5,WEAVILE,43
 #-------------------------------
 [008] # Spirit Garden
-Land,21
+Land,18
     15,MINUN,42,44
     15,PLUSLE,42,44
     15,DREEPY,42,44
@@ -25,10 +25,10 @@ Land,21
     5,REUNICLUS,42,44
 #-------------------------------
 [009] # Route 119
-Land,21
+Land,18
     20,ARBOK,52,54
     20,UNFEZANT,52,54
-    15,HARIYAMA,52,54
+    15,PRIMEAPE_1,52,54
     10,EXPLOUD,52,54
     10,JUMPLUFF,52,54
     10,SWOOBAT,52,54
@@ -56,7 +56,7 @@ SuperRod
     5,SQUIRTLE,15
 #-------------------------------
 [010] # Victory Road Ent.
-Land,21
+Land,18
     20,LIEPARD,55,59
     20,RATICATE_1,55,59
     10,DRUDDIGON,55,59
@@ -87,7 +87,7 @@ SuperRod
     5,BLASTOISE,55,59
 #-------------------------------
 [011] # Victory Road (Water)
-Cave,5
+Cave,3
     20,PROBOPASS,56,60
     20,STEELIX,56,60
     10,AGGRON,56,60
@@ -120,7 +120,7 @@ SuperRod
     5,BLASTOISE,56,60
 #-------------------------------
 [016] # Cyberspace
-Cave,5
+Cave,3
     40,PORYGON,36
     20,PORYGON2,36
     20,ROTOM,36
@@ -128,10 +128,10 @@ Cave,5
     10,PORYGONZ,36
 #-------------------------------
 [022] # Safari
-Land,21
+Land,27
     10,DRUDDIGON,15
     10,GOLETT,10
-    10,MAKUHITA,15
+    10,MANKEY_1,15
     10,PONYTA_1,10
     10,PURRLOIN,14
     10,RATTATA_1,10
@@ -160,7 +160,7 @@ SuperRod
     40,SHELLDER,18
 #-------------------------------
 [024] # Safari Cave
-Cave,8
+Cave,9
     20,GEODUDE_1,15
     20,KOFFING,15
     20,SLUGMA,15
@@ -170,7 +170,7 @@ Cave,8
     8,MAGBY,15
 #-------------------------------
 [025] # Bouldergrove Tunnel
-Cave,4
+Cave,3
     20,GALVANTULA,44,48
     20,GOLEM_1,44,48
     16,ELECTABUZZ,44,48
@@ -195,7 +195,7 @@ SuperRod
     5,GOREBYSS,44,48
 #-------------------------------
 [026] # Bouldergrove Tunnel
-Cave,4
+Cave,3
     20,GALVANTULA,44,48
     20,GOLEM_1,44,48
     16,ELECTABUZZ,44,48
@@ -248,10 +248,10 @@ SuperRod
     5,MILOTIC,44,48
 #-------------------------------
 [029] # Route 119
-Land,21
+Land,18
     20,ARBOK,54,58
     20,UNFEZANT,54,58
-    15,HARIYAMA,54,58
+    15,PRIMEAPE_1,54,58
     10,EXPLOUD,54,58
     10,JUMPLUFF,54,58
     10,SWOOBAT,54,58
@@ -279,7 +279,7 @@ SuperRod
     5,SQUIRTLE,15
 #-------------------------------
 [031] # Victory Road (Cave)
-Cave,5
+Cave,3
     20,PROBOPASS,56,60
     20,STEELIX,56,60
     10,AGGRON,56,60
@@ -312,30 +312,29 @@ SuperRod
     5,BLASTOISE,56,60
 #-------------------------------
 [033] # Earthroot Forest
-Land,21
+Land,18
     15,BELLSPROUT,5,8
-    15,CATERPIE,5,8
     10,SPINARAK,5,8
-    10,BUDEW,5,8
-    10,HOPPIP,5,8
+    15,BUDEW,5,8
+    15,HOPPIP,5,8
     10,POOCHYENA,5,8
     10,NIDORANfE,5,8
-    10,NIDORANmA,5,8
+    15,NIDORANmA,5,8
     5,BULBASAUR,5,8
     5,DRASHIMI,5,8
 OldRod
-    45,GOLDEEN,5
-    40,MAGIKARP,5
-    10,POLIWAG,5
-    5,DRASHIMI,5
+    25,GOLDEEN,5
+    25,MAGIKARP,5
+    25,POLIWAG,5
+    25,DRASHIMI,5
 GoodRod
-    45,GOLDEEN,15
-    40,MARILL,15
-    10,POLIWAG,15
-    5,DRASHIMI,15
+    25,GOLDEEN,15
+    25,MARILL,15
+    25,POLIWAG,15
+    25,DRASHIMI,15
 #-------------------------------
 [034] # Victory Road Ext.
-Land,21
+Land,18
     20,KANKERSAUR,60
     20,NIDOKING,60
     10,KANGASKHAN,60
@@ -348,7 +347,7 @@ Land,21
     5,GARCHOMP,60
 #-------------------------------
 [035] # Victory Road (Lava)
-Cave,5
+Cave,3
     20,CAMERUPT,56,60
     20,MAROWAK_1,56,60
     10,ARCANINE,56,60
@@ -374,17 +373,16 @@ GoodRod
     40,MAGIKARP,18
 #-------------------------------
 [043] # Route 101
-Land,21
+Land,18
     15,EKANS,2,4
-    10,LEDYBA,2,4
+	15,GOSSIFLEUR,2,4
     10,BIDOOF,2,4
     10,RATTATA,2,4
     10,SPEAROW,2,4
-    10,WEEDLE,2,4
 	10,WURMPLE,2,4
     10,PATRAT,2,4
-    5,PIDOVE,2,4
-    5,PICHU,2,4
+    10,PIDOVE,2,4
+    10,PICHU,2,4
     5,SLOWPOKE,2,4
 Water,2
     60,SLOWPOKE,14,19
@@ -401,7 +399,7 @@ GoodRod
     10,POLIWAG,10
 #-------------------------------
 [046] # Spirit Tower 2F
-Cave,5
+Cave,4
     20,LAMPENT,43,45
     20,MISDREAVUS,43,45
     10,RAICHU_1,43,45
@@ -414,7 +412,7 @@ Cave,5
     5,ESPEON,43,45
 #-------------------------------
 [047] # Spirit Tower 3F
-Cave,5
+Cave,4
     20,LAMPENT,43,46
     20,MISDREAVUS,43,46
     10,RAICHU_1,43,46
@@ -445,7 +443,7 @@ GoodRod
     10,MAGIKARP,18
 #-------------------------------
 [049] # Spirit Tower 4F
-Cave,5
+Cave,4
     20,LAMPENT,43,46
     20,MISDREAVUS,43,46
     10,RAICHU_1,43,46
@@ -459,7 +457,7 @@ Cave,5
 #-------------------------------
 [053] # Verdant Jungle
 Land,25
-    30,ARIADOS,49,51
+    30,ORICORIO,49,51
     30,NINJASK,49,51
     10,EXEGGUTOR,49,51
     10,FARFETCHD_1,49,51
@@ -477,11 +475,11 @@ Land,25
     10,FLITTRICK,49,51
 #-------------------------------
 [066] # Shimmerwood Forest
-Land,21
+Land,18
     15,SKIPLOOM,24,27
 	15,MURKROW,24,27
     15,JOLTIK,24,27
-    10,COMBEE,24,27
+    10,ELDEGOSS,24,27
     10,NUZLEAF,24,27
     5,AMOONGUSS,24,27
     5,HERACROSS,24,27
@@ -492,11 +490,11 @@ Land,21
     5,TRAPINCH,24,27
 #-------------------------------
 [067] # Shimmerwood Forest
-Land,21
+Land,18
     15,SKIPLOOM,24,27
 	15,MURKROW,24,27
     15,JOLTIK,24,27
-    10,COMBEE,24,27
+    10,ELDEGOSS,24,27
     10,NUZLEAF,24,27
     5,AMOONGUSS,24,27
     5,HERACROSS,24,27
@@ -507,11 +505,11 @@ Land,21
     5,TRAPINCH,24,27
 #-------------------------------
 [068] # Shimmerwood Forest
-Land,21
+Land,18
     15,SKIPLOOM,24,27
 	15,MURKROW,24,27
     15,JOLTIK,24,27
-    10,COMBEE,24,27
+    10,ELDEGOSS,24,27
     10,NUZLEAF,24,27
     5,AMOONGUSS,24,27
     5,HERACROSS,24,27
@@ -522,11 +520,11 @@ Land,21
     5,TRAPINCH,24,27
 #-------------------------------
 [069] # Shimmerwood Forest
-Land,21
+Land,18
     15,SKIPLOOM,24,27
 	15,MURKROW,24,27
     15,JOLTIK,24,27
-    10,COMBEE,24,27
+    10,ELDEGOSS,24,27
     10,NUZLEAF,24,27
     5,AMOONGUSS,24,27
     5,HERACROSS,24,27
@@ -537,11 +535,11 @@ Land,21
     5,TRAPINCH,24,27
 #-------------------------------
 [070] # Shimmerwood Forest
-Land,21
+Land,18
     15,SKIPLOOM,24,27
 	15,MURKROW,24,27
     15,JOLTIK,24,27
-    10,COMBEE,24,27
+    10,ELDEGOSS,24,27
     10,NUZLEAF,24,27
     5,AMOONGUSS,24,27
     5,HERACROSS,24,27
@@ -552,20 +550,20 @@ Land,21
     5,TRAPINCH,24,27
 #-------------------------------
 [073,1] # Ochre Valley
-Land,21
+Land,18
     20,CAMERUPT,48,53
     20,MANDIBUZZ,48,53
     15,AGGRON,48,53
     15,KROOKODILE,48,53
-    10,GLISCOR,48,53
+    10,HELIOLISK,48,53
     10,MAROWAK,48,53
     5,RAPIDASH_1,48,53
     5,GARCHOMP,48,53
 #-------------------------------
 [073] # Ochre Valley
-Land,21
+Land,18
     20,NUMEL,13,15
-    20,NINCADA,13,15
+    20,HELIOPTILE,13,15
     15,ARON,13,15
     15,SANDILE,13,15
     15,PONYTA_1,13,15
@@ -573,20 +571,20 @@ Land,21
     5,GLIGAR,13,15
 #-------------------------------
 [074,1] # Ochre Valley
-Land,21
+Land,18
     20,CAMERUPT,48,53
     20,MANDIBUZZ,48,53
     15,AGGRON,48,53
     15,KROOKODILE,48,53
-    10,GLISCOR,48,53
+    10,HELIOLISK,48,53
     10,MAROWAK,48,53
     5,RAPIDASH_1,48,53
     5,GARCHOMP,48,53
 #-------------------------------
 [074] # Ochre Valley
-Land,21
+Land,18
     20,NUMEL,13,15
-    20,NINCADA,13,15
+    20,HELIOPTILE,13,15
     15,ARON,13,15
     15,SANDILE,13,15
     15,PONYTA_1,13,15
@@ -594,20 +592,20 @@ Land,21
     5,GLIGAR,13,15
 #-------------------------------
 [075,1] # Ochre Valley
-Land,21
+Land,18
     20,CAMERUPT,48,53
     20,MANDIBUZZ,48,53
     15,AGGRON,48,53
     15,KROOKODILE,48,53
-    10,GLISCOR,48,53
+    10,HELIOLISK,48,53
     10,MAROWAK,48,53
     5,RAPIDASH_1,48,53
     5,GARCHOMP,48,53
 #-------------------------------
 [075] # Ochre Valley
-Land,21
+Land,18
     20,NUMEL,13,15
-    20,NINCADA,13,15
+    20,HELIOPTILE,13,15
     15,ARON,13,15
     15,SANDILE,13,15
     15,PONYTA_1,13,15
@@ -615,8 +613,8 @@ Land,21
     5,GLIGAR,13,15
 #-------------------------------
 [082] # Seafoam Cave
-Cave,5
-    20,DIGLETT,4,6
+Cave,3
+    20,PARAS,4,6
     20,SANDSHREW,4,6
     10,GEODUDE,4,6
     10,IMPURP,4,6
@@ -642,21 +640,21 @@ SuperRod
 #-------------------------------
 [085] # Route 102
 LandDay,21
-    20,FOONGUS,7,9
-    20,LILLIPUP,7,9
-	15,ODDISH,7,9
-    10,PIDGEY,7,9
-    10,MEOWTH,7,9
-    10,YANMA,7,9
-    5,MAKUHITA,7,9
-    5,ELECTRIKE,7,9
-    5,KECLEON,7,9
+    20,FOONGUS,10,12
+    20,LILLIPUP,10,12
+	15,ODDISH,10,12
+    10,PIDGEY,10,12
+    10,GOSSIFLEUR,10,12
+    10,YANMA,10,12
+    5,HAWLUCHA,10,12
+    5,ELECTRIKE,10,12
+    5,KECLEON,10,12
 LandNight,21
-    35,PURRLOIN,7,9
-    20,FOONGUS,7,9
-    20,LITWICK,7,9
-    15,POOCHYENA,7,9
-    10,CLEFFA,7,9
+    35,PURRLOIN,10,12
+    20,FOONGUS,10,12
+    20,LITWICK,10,12
+    15,POOCHYENA,10,12
+    10,CLEFFA,10,12
 OldRod
     70,LUVDISC,10
     30,FINNEON,10
@@ -666,7 +664,7 @@ GoodRod
     20,POLIWAG,18
 HeadbuttLow
     45,PINECO,11,13
-    30,LEDYBA,6,8
+    30,WURMPLE,6,8
     15,SPINARAK,9,12
     5,SUDOWOODO,9,12
     5,MUNCHLAX,11,14
@@ -677,18 +675,14 @@ HeadbuttHigh
 #-------------------------------
 [086] # Bouldergrove City
 OldRod
-    70,LUVDISC,10
-    30,FINNEON,10
+    70,LUVDISC,14
+    30,FINNEON,14
 GoodRod
     60,MAGIKARP,18
     20,BIBAREL,18
     20,GOLDEEN,18
 HeadbuttLow
-    45,PINECO,11,13
-    30,LEDYBA,6,8
-    15,SPINARAK,9,12
-    5,SUDOWOODO,9,12
-    5,MUNCHLAX,11,14
+    100,SUDOWOODO,12,14
 HeadbuttHigh
     50,PINECO,11,13
     30,WURMPLE,6,8
@@ -700,19 +694,19 @@ Water,2
     5,LOTAD,14,17
 #-------------------------------
 [090] # Powerplant
-Cave,5
-    25,GEODUDE,8,10
-    20,MAGNEMITE,8,10
-    20,VOLTORB,8,10
-    10,ELECTRIKE,8,10
-    5,DIGLETT,8,10
-    5,MEOWTH,8,10
-    5,ARON,8,10
-    5,ELEKID,8,10
-    5,PIKACHU,8,10
+Cave,3
+    25,GEODUDE,10,13
+    20,MAGNEMITE,10,13
+    20,VOLTORB,10,13
+    10,ELECTRIKE,10,13
+    5,DIGLETT,10,13
+    5,MEOWTH,10,13
+    5,ARON,10,13
+    5,ELEKID,10,13
+    5,PIKACHU,10,13
 #-------------------------------
 [093] # Seafoam Cave 2F
-Cave,5
+Cave,3
     10,ZUBAT,13,14
     10,DIGLETT,13,14
     10,GEODUDE,12,14
@@ -738,7 +732,7 @@ RockSmash,50
     10,GEODUDE,12,15
 #-------------------------------
 [097] # Seafoam Cave 3F
-Cave,5
+Cave,3
     20,IMPURP,13,14
     20,KRABBY,12,14
     20,WOOBAT,12,14
@@ -758,7 +752,7 @@ RockSmash,50
     10,GEODUDE,12,15
 #-------------------------------
 [098] # Route 103 North
-Land,21
+Land,18
     20,FOONGUS,13,15
     20,HOPPIP,13,16
     20,PARAS,13,15
@@ -782,7 +776,7 @@ Water,2
     25,LUVDISC,14,16
 #-------------------------------
 [206] # Route 103 South
-Land,21
+Land,18
     20,FOONGUS,13,15
     20,HOPPIP,13,16
     20,PARAS,13,15
@@ -827,7 +821,7 @@ SuperRod
     5,LAPRAS,50
 #-------------------------------
 [104] # Route 104 WEST
-Land,21
+Land,18
     20,BUDEW,15,17
     15,PIDGEY,15,17
     10,HOUNDOUR,15,17
@@ -844,7 +838,7 @@ RockSmash,50
     10,GEODUDE,14,17
 HeadbuttLow
     45,PINECO,11,13
-    30,LEDYBA,6,8
+    30,WURMPLE,6,8
     15,SPINARAK,9,12
     5,SUDOWOODO,9,12
     5,MUNCHLAX,11,14
@@ -869,7 +863,7 @@ GoodRod
     20,POLIWAG,18
 #-------------------------------
 [207] # Route 104 EAST
-Land,21
+Land,18
     20,BUDEW,15,17
     15,PIDGEY,15,17
     10,HOUNDOUR,15,17
@@ -886,7 +880,7 @@ RockSmash,50
     10,GEODUDE,14,17
 HeadbuttLow
     45,PINECO,11,13
-    30,LEDYBA,6,8
+    30,WURMPLE,6,8
     15,SPINARAK,9,12
     5,SUDOWOODO,9,12
     5,MUNCHLAX,11,14
@@ -924,7 +918,7 @@ Water,2
     20,POLIWAG,20
 #-------------------------------
 [123] # Route 105
-Land,21
+Land,18
     20,ABRA,17,20
 	15,POLIWAG,17,21
     10,EKANS,17,21
@@ -949,7 +943,7 @@ GoodRod
     20,POLIWAG,18
 #-------------------------------
 [133] # Ancient Cave
-Cave,5
+Cave,3
     10,BANETTE,22,24
     10,KANKRYST,22,24
     10,GASTLY,22,24
@@ -967,7 +961,7 @@ OldRod
     30,MAGIKARP,10
 #-------------------------------
 [134] # Origin Valley
-Land,21
+Land,18
     20,RALTS,25,27
     20,ARIADOS,25,27
     10,BRONZOR,25,27
@@ -981,7 +975,7 @@ Land,21
     5,UMBREON,25,27
 #-------------------------------
 [138] # Route 106
-Land,21
+Land,18
     20,PARASECT,23,26
     10,PIDGEOTTO,23,26
     10,DROWZEE,23,26
@@ -998,7 +992,7 @@ Land,21
 [139] # Shimmerwood Folder
 #-------------------------------
 [141] # Route 107
-Land,21
+Land,18
     20,GLOOM,24,28
     10,BIBAREL,24,28
     10,ARBOK,24,28
@@ -1026,7 +1020,7 @@ GoodRod
     20,SPHEAL,18
 #-------------------------------
 [142] # Route 108
-Land,21
+Land,18
     20,STUNKY,26,30
     10,RATICATE,26,30
     10,FEAROW,26,30
@@ -1053,31 +1047,31 @@ GoodRod
     20,SPHEAL,18
 #-------------------------------
 [147] # PKMN Training Field HP
-Land,21
+Land,18
     100,LOUDRED,1
 #-------------------------------
 [148] # PKMN Training Field Atk
-Land,21
+Land,18
     100,MACHOKE,1
 #-------------------------------
 [149] # PKMN Training Field Def
-Land,21
+Land,18
     100,METAPOD,1
 #-------------------------------
 [150] # PKMN Training Field Sp. Atk
-Land,21
+Land,18
     100,GLOOM,1
 #-------------------------------
 [151] # PKMN Training Field Sp. Def
-Land,21
-    100,LEDIAN,1
+Land,18
+    100,LOMBRE,1
 #-------------------------------
 [152] # PKMN Training Field Spd
-Land,21
+Land,18
     100,RATICATE,1
 #-------------------------------
 [154] # Route 118
-Land,21
+Land,18
     20,NIDORINA,18,22
     20,WHISMUR,18,22
     10,NIDORINO,18,22
@@ -1088,12 +1082,12 @@ Land,21
     5,TROPIUS,18,22
 #-------------------------------
 [164] # Route 112
-Land,21
+Land,18
     20,NIDORINA,28,31
     20,PERSIAN,28,31
     15,SWABLU,28,31
     10,KARRABLAST,28,31
-    10,HARIYAMA,28,31
+    10,PRIMEAPE_1,28,31
     10,HYPNO,28,31
     5,LOUDRED,28,31
     5,DITTO,28,31
@@ -1121,7 +1115,7 @@ SuperRod
     5,GYARADOS,50
 #-------------------------------
 [170] # Route 110
-Land,21
+Land,18
     20,BIBAREL,29,32
     15,GLOOM,29,32
     10,FORRETRESS,29,32
@@ -1148,7 +1142,7 @@ GoodRod
     20,SEAKING,29,32
 #-------------------------------
 [171] # Mt. Mauve
-Land,21
+Land,18
     20,PONYTA_1,30,32
     10,EXEGGCUTE,30,32
     10,BRELOOM,30,32
@@ -1184,24 +1178,23 @@ RockSmash,50
     5,GOLEM,30,33
 HeadbuttLow
     30,PINECO,30
-    20,LEDYBA,30
+    20,WURMPLE,30
     20,COMBEE,30
     10,SPINARAK,30
-    5,ARIADOS,30
-    5,LEDIAN,30
+    10,ARIADOS,30
     5,VESPIQUEN,30
     5,MUNCHLAX,30
 HeadbuttHigh
     30,PINECO,30
     25,CASCOON,30
     20,SILCOON,30
-    10,LEDYBA,30
+    10,WURMPLE,30
     5,ARIADOS,30
     5,BEAUTIFLY,30
     5,DUSTOX,30
 #-------------------------------
 [173] # Route 109
-Land,21
+Land,18
     20,ARIADOS,36,38
     15,PIDGEOT,36,38
     10,VILEPLUME,36,38
@@ -1234,24 +1227,23 @@ RockSmash,50
     5,GOLEM,30,33
 HeadbuttLow
     30,PINECO,30
-    20,LEDYBA,30
+    20,WURMPLE,30
     20,COMBEE,30
     10,SPINARAK,30
-    5,ARIADOS,30
-    5,LEDIAN,30
+    10,ARIADOS,30
     5,VESPIQUEN,30
     5,MUNCHLAX,30
 HeadbuttHigh
     30,PINECO,36
     25,CASCOON,36
     20,SILCOON,36
-    10,LEDYBA,36
+    10,WURMPLE,36
     5,ARIADOS,36
     5,BEAUTIFLY,36
     5,DUSTOX,36
 #-------------------------------
 [175] # Frozen Cavern
-Cave,5
+Cave,3
     20,SANDSLASH,36,38
     10,BIBAREL,36,38
     10,BEARTIC,36,38
@@ -1279,7 +1271,7 @@ GoodRod
     20,SPHEAL,36,38
 #-------------------------------
 [176] # Frozen Cavern 2F
-Cave,5
+Cave,3
     20,SANDSLASH,36,40
 	15,DELIBIRD,36,40
     10,DUNSPARCE,36,40
@@ -1293,7 +1285,7 @@ Cave,5
     5,GLACEON,36,40
 #-------------------------------
 [177] # Route 111
-Land,21
+Land,18
     20,NINETALES,37,41
     20,STOUTLAND,37,41
     15,SNORUNT,37,41
@@ -1305,9 +1297,9 @@ Land,21
     5,GLALIE,37,41
 #-------------------------------
 [183] # Route 113
-Land,21
+Land,18
     20,BEARTIC,39,43
-    20,STOUTLAND,39,43
+    20,PERSIAN_1,39,43
     10,SNOVER,39,43
     10,ABOMASNOW,39,43
     10,GOLDUCK,39,43
@@ -1323,7 +1315,7 @@ RockSmash,50
     5,GOLEM,30,33
 #-------------------------------
 [186] # Mt. Mauve Interior
-Cave,5
+Cave,3
     20,BELDUM,39,44
     20,CARBINK,39,44
     20,ONIX,39,44
@@ -1340,7 +1332,7 @@ RockSmash,50
     5,GOLEM,30,33
 #-------------------------------
 [187] # Route 114
-Land,21
+Land,18
     20,VICTREEBEL,40,43
     10,GARDEVOIR,40,43
     10,FEAROW,40,43
@@ -1353,7 +1345,7 @@ Land,21
     5,HITMONLEE,40,43
 #-------------------------------
 [192] # Route 115
-Land,21
+Land,18
     20,COTTONEE,45,50
     20,GIRAFARIG,45,50
     10,BRELOOM,45,50
@@ -1446,3 +1438,11 @@ SuperRod
     30,SEAKING,50
     30,TENTACRUEL,50
     30,WAILORD,50
+#-------------------------------
+[213] # Cyberspace2
+Cave,3
+    40,PORYGON,50
+    20,PORYGON2,50
+    20,ROTOM,50
+    10,MISSINGNO,50
+    10,PORYGONZ,50

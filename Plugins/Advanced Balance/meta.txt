@@ -1,4 +1,0 @@
-Name = Advanced Balance
-Version = 1.0.0
-Credits = Joltik
-Website = https://reliccastle.com/resources/569/

@@ -171,7 +171,7 @@
     // Enable F12 game reset
     // (default: enabled)
     //
-    // "enableReset": true,
+    "enableReset": false,
 
 
     // Names of the input buttons in the F1 key bindings

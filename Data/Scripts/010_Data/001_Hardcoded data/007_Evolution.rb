@@ -494,6 +494,31 @@ GameData::Evolution.register({
   }
 })
 
+GameData::Evolution.register({
+  :id            => :SpDefOverSpAtk,   # Butterfree, Dustox
+  :parameter     => Integer,
+  :level_up_proc => proc { |pkmn, parameter|
+    next pkmn.level >= parameter && pkmn.spdef > pkmn.spatk
+  }
+})
+
+GameData::Evolution.register({
+  :id            => :SpAtkOverSpDef,   # Beautifly
+  :parameter     => Integer,
+  :level_up_proc => proc { |pkmn, parameter|
+    next pkmn.level >= parameter && pkmn.spdef < pkmn.spatk
+  }
+})
+
+GameData::Evolution.register({
+  :id            => :SpeedOverSpDef,   # Beedrill
+  :parameter     => Integer,
+  :level_up_proc => proc { |pkmn, parameter|
+    next pkmn.level >= parameter && pkmn.speed > pkmn.spdef
+  }
+})
+
+
 #===============================================================================
 # Evolution methods that trigger when using an item on the Pokémon
 #===============================================================================

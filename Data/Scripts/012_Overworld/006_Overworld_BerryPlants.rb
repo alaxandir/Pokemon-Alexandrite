@@ -297,6 +297,10 @@ def pbBerryPlant
                             _INTL("Fertilize"),
                             _INTL("Exit")],-1)
         if cmd==1 # Fertilize
+		  if $PokemonSystem.difficulty == 3
+		    pbMessage(_INTL("Berry planting is disabled on Arceus Mode."))
+			return
+		  end
           ret=0
           pbFadeOutIn {
             scene = PokemonBag_Scene.new
@@ -334,6 +338,10 @@ def pbBerryPlant
             return
           end
         elsif cmd==0 # Plant Berry
+		  if $PokemonSystem.difficulty == 3
+		    pbMessage(_INTL("Berry planting is disabled on Arceus Mode."))
+			return
+		  end
           pbFadeOutIn {
             scene = PokemonBag_Scene.new
             screen = PokemonBagScreen.new(scene,$PokemonBag)
@@ -356,6 +364,10 @@ def pbBerryPlant
           return
         end
       else
+	    if $PokemonSystem.difficulty == 3
+		    pbMessage(_INTL("Berry planting is disabled on Arceus Mode."))
+		    return
+		end
         pbMessage(_INTL("{1} has been laid down.\1",GameData::Item.get(berryData[7]).name))
         if pbConfirmMessage(_INTL("Want to plant a Berry?"))
           pbFadeOutIn {

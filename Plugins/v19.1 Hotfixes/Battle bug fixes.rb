@@ -314,3 +314,48 @@ BattleHandlers::TargetItemOnHit.add(:STICKYBARB,
        target.pbThis,user.itemName,user.pbThis(true)))
   }
 )
+
+#==============================================================================
+# Fixed Symbiosis not working.
+#==============================================================================
+class PokeBattle_Battler
+  def pbSymbiosis
+    return if fainted?
+    return if self.item
+    @battle.pbPriority(true).each do |b|
+      next if b.opposes?
+      next if !b.hasActiveAbility?(:SYMBIOSIS)
+      next if !b.item || b.unlosableItem?(b.item)
+      next if unlosableItem?(b.item)
+      @battle.pbShowAbilitySplash(b)
+      if PokeBattle_SceneConstants::USE_ABILITY_SPLASH
+        @battle.pbDisplay(_INTL("{1} shared its {2} with {3}!",
+           b.pbThis,b.itemName,pbThis(true)))
+      else
+        @battle.pbDisplay(_INTL("{1}'s {2} let it share its {3} with {4}!",
+           b.pbThis,b.abilityName,b.itemName,pbThis(true)))
+      end
+      self.item = b.item
+      b.item = nil
+      b.effects[PBEffects::Unburden] = true
+      @battle.pbHideAbilitySplash(b)
+      pbHeldItemTriggerCheck
+      break
+    end
+  end
+end
+
+#===============================================================================
+# Fixed Roost not removing the Flying type.
+#===============================================================================
+class PokeBattle_Move_0D6 < PokeBattle_HealingMove
+  def pbEffectGeneral(user)
+    super
+    user.effects[PBEffects::Roost] = true
+  end
+end
+
+#===============================================================================
+# Fixed Normalize not boosting damage in Gen 7+.
+#===============================================================================
+BattleHandlers::DamageCalcUserAbility.copy(:AERILATE, :NORMALIZE)

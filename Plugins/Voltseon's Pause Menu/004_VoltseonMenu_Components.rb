@@ -3,7 +3,7 @@
 #-------------------------------------------------------------------------------
 class SafariHud < Component
   def startComponent(viewport)
-    super(viewport, spritehash)
+    super(viewport)
     @sprites["overlay"] = BitmapSprite.new(Graphics.width/2,96,viewport)
     @sprites["overlay"].ox = @sprites["overlay"].bitmap.width
     @sprites["overlay"].x = Graphics.width

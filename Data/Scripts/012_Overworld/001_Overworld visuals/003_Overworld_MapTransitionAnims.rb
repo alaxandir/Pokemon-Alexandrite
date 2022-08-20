@@ -86,9 +86,7 @@ def pbStartOver(gameover=false)
     pbBugContestStartOver
     return
   end
-  if $PokemonSystem.difficulty <3
   $Trainer.heal_party
-  end
   if $PokemonGlobal.pokecenterMapId && $PokemonGlobal.pokecenterMapId>=0
     if gameover
       pbMessage(_INTL("\\w[]\\wm\\c[8]\\l[3]After the unfortunate defeat, you scurry back to a Pokémon Center."))
@@ -129,9 +127,7 @@ def pbStartOver(gameover=false)
       $scene.transfer_player if $scene.is_a?(Scene_Map)
       $game_map.refresh
     else
-	  if $PokemonSystem.difficulty <3
-		$Trainer.heal_party
-	  end
+	  $Trainer.heal_party
     end
   end
   pbEraseEscapePoint

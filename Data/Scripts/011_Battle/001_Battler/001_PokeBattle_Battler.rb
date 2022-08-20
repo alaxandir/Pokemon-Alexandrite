@@ -426,15 +426,16 @@ class PokeBattle_Battler
   # Returns whether the specified item will be unlosable for this Pokémon.
   def unlosableItem?(check_item)
     return false if !check_item
+	item_data = GameData::Item.get(check_item)
     return true if GameData::Item.get(check_item).is_mail?
     return false if @effects[PBEffects::Transform]
     # Items that change a Pokémon's form
     if mega?   # Check if item was needed for this Mega Evolution
-      return true if @pokemon.species_data.mega_stone == check_item
+      return true if @pokemon.species_data.mega_stone == item_data.id
     else   # Check if item could cause a Mega Evolution
       GameData::Species.each do |data|
         next if data.species != @species || data.unmega_form != @form
-        return true if data.mega_stone == check_item
+        return true if data.mega_stone == item_data.id
       end
     end
     # Other unlosable items

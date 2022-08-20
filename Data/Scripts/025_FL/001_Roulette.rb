@@ -262,7 +262,7 @@ class RouletteScene
     @exit=false
     pbDrawCredits
     pbFadeInAndShow(@sprites) { update }
-    pbMessage(_INTL("Place your wager with the arrows, then press the C key."))
+    pbMessage(_INTL("Select your bet, then press the C key."))
     pbDrawMultiplier
   end
   
@@ -432,7 +432,7 @@ class RouletteScene
       pbAddCredits(@wager*multiplier)
     else  
       pbPlayBuzzerSE()
-      pbMessage(_INTL("Nothing doing!"))
+      pbMessage(_INTL("No hits!"))
     end
     @playedBalls[@result]=true
     if i==(ROUNDS-1) # Clear
@@ -452,7 +452,7 @@ class RouletteScene
     pbDrawMultiplier
     if pbConfirmMessage(_INTL("Keep playing?"))
       if $PokemonGlobal.coins<@wager
-        pbMessage(_INTL("You don't have enough Coins to play!"))
+        pbMessage(_INTL("You don't have enough Coins!"))
         @exit=true 
       end
     else  
@@ -493,10 +493,10 @@ def pbRoulette(wager=1)
   if GameData::Item.exists?(:COINCASE) && !$PokemonBag.pbHasItem?(:COINCASE)
     Kernel.pbMessage(_INTL("It's a Roulette Table."))
   elsif Kernel.pbConfirmMessage(_INTL(
-      "\\CNThe minimum wanger at this table is {1}. Do you want to play?",
+      "\\CNThe minimum wager at this table is {1}. Do you want to play?",
       wager))
     if $Trainer.coins <= wager
-    pbMessage(_INTL("You don't have any Coins to play!"))
+    pbMessage(_INTL("You don't have enough Coins!"))
     elsif $Trainer.coins == Settings::MAX_COINS
     pbMessage(_INTL("Your Coin Case is full!"))  
     else    

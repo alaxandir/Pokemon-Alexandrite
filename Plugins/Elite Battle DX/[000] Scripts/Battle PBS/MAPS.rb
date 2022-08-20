@@ -7,8 +7,8 @@ EliteBattle.configProcess(:MAPS) do
   echoln "  -> configuring map data..."
   metrics = load_data("Data/maps.ebdx")
   for key in metrics.keys
-    i = (key.split(",").map { |s| s.strip }).join("__i__")
-    args = [i.to_i]
+														  
+    args = [key.to_i]
     vals = {
       'BattleBGM' => :BGM,
     }

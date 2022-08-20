@@ -132,3 +132,13 @@ Events.onWildPokemonCreate += proc { |_sender, e|
 #    YOUR CODE HERE
 #  end
 #}
+
+# Make all wild Pokémon have a chance to have their hidden ability.
+Events.onWildPokemonCreate+=proc {|sender,e|
+   pkmn=e[0]
+   moves = GameData::Species.get_species_form(pkmn.species, pkmn.form).egg_moves
+   pkmn.learn_move(moves.random) if moves.length > 0
+   if rand(20) == 1
+     pkmn.ability_index = 2
+   end
+}

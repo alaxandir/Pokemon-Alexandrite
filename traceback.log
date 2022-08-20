@@ -1,0 +1,50 @@
+When yanma was using sonic-boom against a mightyena with black glassesScript error in event 2 (coords 34,15), map 75 (Ochre Valley):
+Exception: SystemStackError
+Message: stack level too deep
+
+***Full script:
+pbTrainerBattle(:DESERT_F,"Arianna")
+
+Backtrace:
+009_PokeBattle_Clauses.rb:152:in `pbFailsAgainstTarget?'
+009_PokeBattle_Clauses.rb:152:in `pbFailsAgainstTarget?'
+009_PokeBattle_Clauses.rb:152:in `pbFailsAgainstTarget?'
+009_PokeBattle_Clauses.rb:152:in `pbFailsAgainstTarget?'
+009_PokeBattle_Clauses.rb:152:in `pbFailsAgainstTarget?'
+009_PokeBattle_Clauses.rb:152:in `pbFailsAgainstTarget?'
+009_PokeBattle_Clauses.rb:152:in `pbFailsAgainstTarget?'
+009_PokeBattle_Clauses.rb:152:in `pbFailsAgainstTarget?'
+009_PokeBattle_Clauses.rb:152:in `pbFailsAgainstTarget?'
+009_PokeBattle_Clauses.rb:152:in `pbFailsAgainstTarget?'
+
+
+003_Interpreter.rb:190:in `rescue in execute_script'
+003_Interpreter.rb:136:in `execute_script'
+004_Interpreter_Commands.rb:352:in `command_111'
+004_Interpreter_Commands.rb:29:in `execute_command'
+003_Interpreter.rb:128:in `block in update'
+003_Interpreter.rb:88:in `loop'
+003_Interpreter.rb:88:in `update'
+002_Scene_Map.rb:157:in `block in update'
+002_Scene_Map.rb:155:in `loop'
+002_Scene_Map.rb:155:in `update'
+004_QuickSave.rb:20:in `update'
+003_unrealtime.rb:155:in `update'
+[Following Pokemon EX] 002_Refresh.rb:269:in `update'
+002_Scene_Map.rb:218:in `block in main'
+002_Scene_Map.rb:215:in `loop'
+002_Scene_Map.rb:215:in `main'
+999_Main.rb:34:in `mainFunctionDebug'
+999_Main.rb:20:in `mainFunction'
+999_Main.rb:44:in `block (2 levels) in load_scripts_from_folder'
+999_Main.rb:43:in `loop'
+999_Main.rb:43:in `block in load_scripts_from_folder'
+000:Main:31:in `eval'
+000:Main:31:in `block in load_scripts_from_folder'
+000:Main:28:in `each'
+000:Main:28:in `load_scripts_from_folder'
+000:Main:41:in `block in load_scripts_from_folder'
+000:Main:40:in `each'
+000:Main:40:in `load_scripts_from_folder'
+000:Main:45:in `<main>'
+-e:in `eval'

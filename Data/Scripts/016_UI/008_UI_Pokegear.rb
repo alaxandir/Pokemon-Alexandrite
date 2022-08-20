@@ -162,6 +162,8 @@ class PokemonPokegearScreen
         screen = EncounterList_Screen.new(scene)
         screen.pbStartScreen
         }
+	  elsif cmdSearch>=0 && cmd==cmdSearch
+        vPokeSearch
       elsif cmdClock>=0 && cmd=cmdClock
         t=pbGetTimeNow.strftime("%I:%M %p")
         Kernel.pbMessage(_INTL("It is currently {1}. One hour in-game is equal to five minutes in real-time.",t))

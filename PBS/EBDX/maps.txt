@@ -317,3 +317,7 @@ BattleEnv       = WATER
 [194]
 # SoulGym
 BattleEnv       = CHAMPION
+#-------------------------------
+[214]
+# BattleAcademy
+BattleEnv       = CHAMPION

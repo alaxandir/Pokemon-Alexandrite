@@ -16,6 +16,7 @@ class PokemonSystem
   attr_accessor :difficulty
   attr_accessor :grassanim
   attr_accessor :wildmusic #0.8.2
+  attr_accessor :staticons #1.0.5
 
   def initialize
     @textspeed   = 1     # Text speed (0=slow, 1=normal, 2=fast)
@@ -30,8 +31,9 @@ class PokemonSystem
     @sevolume    = 60    # Volume of sound effects
     @textinput   = 0     # Text input mode (0=cursor, 1=keyboard)
 	@difficulty  = 0     #0.6.1
-	@grassanim   = 0     #0.7.2
-	@wildmusic   = 0 #0.8.2
+	@grassanim   = 1     #0.7.2
+	@wildmusic   = 0 	 #0.8.2
+	@staticons	 = 0 	 #1.0.5
 	end
 	
   def difficulty						#0.6.1
@@ -47,6 +49,11 @@ class PokemonSystem
   def wildmusic
 	@wildmusic = 0 if !@wildmusic #0.8.2
   return @wildmusic
+  end
+  
+  def staticons
+	@staticons = 0 if !@staticons #1.0.5
+  return @staticons
   end
 
 end
@@ -418,28 +425,6 @@ class PokemonOption_Scene
          proc { $PokemonSystem.battlescene },
          proc { |value| $PokemonSystem.battlescene = value }
        ),
-	   EnumOption2.new(_INTL("Difficulty"),[_INTL("Nintendo Mode"),_INTL("Normal: Recomended"),_INTL("Hard"),_INTL("Challenge Mode")], #0.6.1
-		 proc { $PokemonSystem.difficulty },															   #
-		 proc { |value|
-				if value > 0
-				$PokemonSystem.battlestyle = 1
-				end
-			if $PokemonSystem.difficulty != value
-			$PokemonSystem.difficulty = value
-			case $PokemonSystem.difficulty
-			when 0 
-				@sprites["textbox"].text =(_INTL("No special rules, normal Pokémon gameplay."))
-			when 1
-				@sprites["textbox"].text =(_INTL("Limit of 4 items in trainer battles. Set battle mode only."))
-			when 2
-				@sprites["textbox"].text =(_INTL("As Normal but only 3 items. Level caps based on Gym Badges."))
-			when 3
-				pbSetSmallFont(@sprites["textbox"].contents)
-				@sprites["textbox"].text =(_INTL("Hard Mode but only 2 items and Pokémon Centers cost money. Can be very difficult!"))
-			end
-			end
-			}
-	    ),
        EnumOption.new(_INTL("Battle Style"),[_INTL("Switch"),_INTL("Set")],
          proc { $PokemonSystem.battlestyle },
          proc { |value| 
@@ -486,7 +471,17 @@ class PokemonOption_Scene
 		 if $PokemonSystem.grassanim != value
 		 $PokemonSystem.grassanim = value
 		 pbSetSmallFont(@sprites["textbox"].contents)
-		 @sprites["textbox"].text =(_INTL("Disables the grass rustling when walking, useful for lower-end computers."))
+		 @sprites["textbox"].text =(_INTL("Disables the grass rustling when walking, useful for reducing lag."))
+		 end
+		 }
+       ),
+       EnumOption.new(_INTL("Stat Boost Icons"),[_INTL("On"),_INTL("Off")],
+         proc { $PokemonSystem.staticons },
+         proc { |value| 
+		 if $PokemonSystem.staticons != value
+		 $PokemonSystem.staticons = value
+		 pbSetSmallFont(@sprites["textbox"].contents)
+		 @sprites["textbox"].text =(_INTL("Displays icons which show you stat changes in battle such as +1 ATK."))
 		 end
 		 }
        )

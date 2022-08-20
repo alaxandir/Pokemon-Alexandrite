@@ -54,6 +54,10 @@ ItemHandlers::UseFromBag.add(:ITEMFINDER,proc { |item|
   next 2
 })
 
+ItemHandlers::UseFromBag.add(:ITEMFINDER,proc { |item|
+  next 2
+})
+
 ItemHandlers::UseFromBag.copy(:ITEMFINDER,:DOWSINGMCHN,:DOWSINGMACHINE)
 
 #===============================================================================
@@ -103,15 +107,15 @@ ItemHandlers::UseInField.add(:CARDCASE,proc { |item|
 })
 
 ItemHandlers::UseInField.add(:REPEL,proc { |item|
-  next pbRepel(item,100)
-})
-
-ItemHandlers::UseInField.add(:SUPERREPEL,proc { |item|
   next pbRepel(item,200)
 })
 
+ItemHandlers::UseInField.add(:SUPERREPEL,proc { |item|
+  next pbRepel(item,350)
+})
+
 ItemHandlers::UseInField.add(:MAXREPEL,proc { |item|
-  next pbRepel(item,250)
+  next pbRepel(item,500)
 })
 
 Events.onStepTaken += proc {
@@ -243,8 +247,12 @@ ItemHandlers::UseInField.add(:OLDROD,proc { |item|
   end
   encounter = $PokemonEncounters.has_encounter_type?(:OldRod)
   if pbFishing(encounter,1)
-	EliteBattle.set(:nextBattleBack, :FISHING)
-    pbEncounter(:OldRod)
+		if ($game_map.name.downcase).include?("safari") 
+		pbEncounter(:OldRod)
+	else
+		EliteBattle.set(:nextBattleBack, :FISHING)
+		pbEncounter(:OldRod)
+	end
   end
   next 1
 })
@@ -257,8 +265,12 @@ ItemHandlers::UseInField.add(:GOODROD,proc { |item|
   end
   encounter = $PokemonEncounters.has_encounter_type?(:GoodRod)
   if pbFishing(encounter,2)
-	EliteBattle.set(:nextBattleBack, :FISHING)
-    pbEncounter(:GoodRod)
+	if ($game_map.name.downcase).include?("safari") 
+		pbEncounter(:GoodRod)
+	else
+		EliteBattle.set(:nextBattleBack, :FISHING)
+		pbEncounter(:GoodRod)
+	end
   end
   next 1
 })
@@ -271,8 +283,12 @@ ItemHandlers::UseInField.add(:SUPERROD,proc { |item|
   end
   encounter = $PokemonEncounters.has_encounter_type?(:SuperRod)
   if pbFishing(encounter,3)
-    EliteBattle.set(:nextBattleBack, :FISHING)
-    pbEncounter(:SuperRod)
+    	if ($game_map.name.downcase).include?("safari") 
+		pbEncounter(:SuperRod)
+	else
+		EliteBattle.set(:nextBattleBack, :FISHING)
+		pbEncounter(:SuperRod)
+	end
   end
   next 1
 })
@@ -333,6 +349,15 @@ ItemHandlers::UseInField.add(:EXPALL,proc { |item|
 ItemHandlers::UseInField.add(:EXPALLOFF,proc { |item|
   $PokemonBag.pbChangeItem(:EXPALLOFF,:EXPALL)
   pbMessage(_INTL("The Exp Share was turned on."))
+  next 1
+})
+
+ItemHandlers::UseInField.add(:POCKETPC,proc { |item|
+  if $game_map.name.include?("Elite Four") || $game_map.name.include?("Champion")
+	pbMessage(_INTL("Can't use that here."))
+  else
+  pbPokeCenterPC
+  end
   next 1
 })
 
@@ -488,7 +513,7 @@ ItemHandlers::UseOnPokemon.add(:FULLHEAL,proc { |item,pkmn,scene|
 
 ItemHandlers::UseOnPokemon.copy(:FULLHEAL,
    :LAVACOOKIE,:OLDGATEAU,:CASTELIACONE,:LUMIOSEGALETTE,:SHALOURSABLE,
-   :BIGMALASADA,:LUMBERRY)
+   :BIGMALASADA,:LUMBERRY,:HONEYCOMB)
 ItemHandlers::UseOnPokemon.copy(:FULLHEAL,:RAGECANDYBAR) if Settings::RAGE_CANDY_BAR_CURES_STATUS_PROBLEMS
 
 ItemHandlers::UseOnPokemon.add(:FULLRESTORE,proc { |item,pkmn,scene|
@@ -1096,27 +1121,29 @@ ItemHandlers::UseOnPokemon.add(:NLUNARIZER,proc { |item,pkmn,scene|
   next true
 })
 
-ItemHandlers::UseOnPokemon.add(:ABILITYCAPSULE,proc { |item,pkmn,scene|
-  abils = pkmn.getAbilityList
-  abil1 = nil; abil2 = nil
-  for i in abils
-    abil1 = i[0] if i[1]==0
-    abil2 = i[0] if i[1]==1
-  end
-  if abil1.nil? || abil2.nil? || pkmn.hasHiddenAbility? || pkmn.isSpecies?(:ZYGARDE)
-    scene.pbDisplay(_INTL("It won't have any effect."))
-    next false
-  end
-  newabil = (pkmn.ability_index + 1) % 2
-  newabilname = GameData::Ability.get((newabil==0) ? abil1 : abil2).name
-  if scene.pbConfirm(_INTL("Would you like to change {1}'s Ability to {2}?",
-     pkmn.name,newabilname))
-    pkmn.ability_index = newabil
-    scene.pbRefresh
-    scene.pbDisplay(_INTL("{1}'s Ability changed to {2}!",pkmn.name,newabilname))
-    next true
-  end
-  next false
+ItemHandlers::UseOnPokemon.add(:ABILITYCAPSULE,proc { |item,pkmn,scene,pkmnid|
+        abils = pkmn.getAbilityList
+        ability_commands = []
+        abil_cmd = 0
+		cmd = 0
+        for i in abils
+          if i[1]<2 then 
+		  ability_commands.push(GameData::Ability.get(i[0]).name) 
+          abil_cmd = ability_commands.length - 1 if pkmn.ability_id == i[0]
+		  end
+		  break if cmd < 0
+        end
+        abil_cmd = scene.pbShowCommands(_INTL("Choose an ability."), ability_commands, abil_cmd)
+        next if abil_cmd < 0
+		if pkmn.ability_index == abils[abil_cmd][1]
+			scene.pbDisplay(_INTL("{1}'s ability is already {2}!",pkmn.name,pkmn.ability.name))
+			next false
+		end
+        pkmn.ability_index = abils[abil_cmd][1]
+        pkmn.ability = nil
+        scene.pbRefresh
+		scene.pbDisplay(_INTL("{1}'s ability changed to {2}!",pkmn.name,pkmn.ability.name))
+      next true
 })
 
 ItemHandlers::UseOnPokemon.add(:SUPERCAPSULE,proc{|item,pkmn,scene,pkmnid|
@@ -1133,7 +1160,7 @@ ItemHandlers::UseOnPokemon.add(:SUPERCAPSULE,proc{|item,pkmn,scene,pkmnid|
         next if abil_cmd < 0
         pkmn.ability_index = abils[abil_cmd][1]
         pkmn.ability = nil
-        scene.pbRefreshSingle(pkmnid)
+        scene.pbRefresh
 		scene.pbDisplay(_INTL("{1}'s ability changed to {2}!",pkmn.name,pkmn.ability.name))
       next true
 })
@@ -1260,7 +1287,7 @@ ItemHandlers::UseOnPokemon.add(:JOLLYMINT,proc { |item,pkmn,scene|
 })
 
 ItemHandlers::UseOnPokemon.add(:NAIVEMINT,proc { |item,pkmn,scene|
-  ret = pbNatureChangeItem(pkmn,:NAIVEM,item,scene)
+  ret = pbNatureChangeItem(pkmn,:NAIVE,item,scene)
   next ret
 })
 

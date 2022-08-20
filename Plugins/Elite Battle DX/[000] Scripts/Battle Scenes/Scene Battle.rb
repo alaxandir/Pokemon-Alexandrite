@@ -289,7 +289,7 @@ class PokeBattle_Scene
         next if !@sprites["pokemon_#{i*2 + 1}"]
         @sprites["dataBox_#{i*2 + 1}"].inposition = true
         battler = @battlers[i*2 + 1]
-        if shinyBattler?(battler) && @battle.battlescene && !EliteBattle.get(:smAnim)
+        if shinyBattler?(battler) && !EliteBattle.get(:smAnim) #&& @battle.battlescene
           pbCommonAnimation("Shiny", battler, nil)
         end
       end

@@ -39,6 +39,8 @@ module EliteBattle
       for i in 0...data[key].pokemon.length
         next if !species_exclusions.nil? && species_exclusions.include?(data[key].pokemon[i][:species])
         data[key].pokemon[i][:species] = EliteBattle.all_species.sample
+		data[key].pokemon[i].delete(:moves) if data[key].pokemon[i].key?(:moves)
+		data[key].pokemon[i].delete(:ability_index) if data[key].pokemon[i].key?(:ability_index)
       end
     end
     return data
@@ -164,7 +166,7 @@ module EliteBattle
     added = []; cmd = 0
     # creates help text message window
     msgwindow = pbCreateMessageWindow(nil, "choice 1")
-    msgwindow.text = _INTL("Select the Randomizer Modes you wish to apply.")
+    msgwindow.text = _INTL("Select the Randomizer Modes you wish to apply. (Allow up to 2 minutes to process)")
     # main loop
     loop do
       # generates all commands

@@ -38,7 +38,7 @@ module FollowerSettings
   ITEM_TIME_TAKEN       = 375
 
   # Whether the Follower always faces the player, or not like in HGSS.
-  ALWAYS_FACE_PLAYER = false
+  ALWAYS_FACE_PLAYER = true
 
   # List of Pokemon that will always appear behind the player when surfing
   # Doesn't include any flying or water types because those are handled already
