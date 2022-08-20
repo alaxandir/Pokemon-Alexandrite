@@ -1445,7 +1445,7 @@ BattleHandlers::TargetAbilityOnHit.add(:GOOEY,
   }
 )
 
-BattleHandlers::TargetAbilityOnHit.copy(:GOOEY,:TANGLINGHAIR)
+BattleHandlers::TargetAbilityOnHit.copy(:GOOEY,:TANGLINGHAIR,:COTTONDOWN)
 
 BattleHandlers::TargetAbilityOnHit.add(:ILLUSION,
   proc { |ability,user,target,move,battle|
@@ -1596,6 +1596,7 @@ BattleHandlers::TargetAbilityOnHit.add(:WEAKARMOR,
     battle.pbHideAbilitySplash(target)
   }
 )
+
 
 #===============================================================================
 # UserAbilityOnHit handlers

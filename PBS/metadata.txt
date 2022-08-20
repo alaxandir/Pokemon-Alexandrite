@@ -177,7 +177,7 @@ SnapEdges = true
 Outdoor = false
 Weather = None,0
 MapPosition = 0,27,7
-DarkMap = true
+DarkMap = false
 BattleBack = CaveDark
 #-------------------------------
 [026]
@@ -185,7 +185,7 @@ BattleBack = CaveDark
 Outdoor = false
 Weather = None,0
 MapPosition = 0,27,6
-DarkMap = true
+DarkMap = false
 BattleBack = CaveDark
 #-------------------------------
 [027]
@@ -363,14 +363,14 @@ MapPosition = 0,5,17
 # Verdant Jungle
 Outdoor = true
 ShowArea = true
-Weather = Fog,50
+Weather = None,0
 MapPosition = 0,5,17
 #-------------------------------
 [054]
 # Overgrown Ruin
 Outdoor = false
 ShowArea = true
-Weather = Fog,10
+Weather = None,0
 MapPosition = 0,5,17
 #-------------------------------
 [055]
@@ -679,7 +679,7 @@ ShowArea = true
 Weather = None,0
 MapPosition = 0,17,7
 MapSize = 2,1100
-DarkMap = true
+DarkMap = false
 SnapEdges = true
 BattleBack = CaveDark
 #-------------------------------
@@ -714,7 +714,7 @@ ShowArea = true
 Weather = None,0
 MapSize = 1,11
 MapPosition = 0,16,7
-DarkMap = true
+DarkMap = false
 SnapEdges = true
 BattleBack = CaveDark
 #-------------------------------
@@ -926,7 +926,7 @@ MapPosition = 0,8,5
 # Walter's House
 Outdoor = false
 Weather = None,0
-MapPosition = 0,8,5
+MapPosition = 0,20,9
 #-------------------------------
 [128]
 # Groomer House
@@ -964,7 +964,7 @@ Outdoor = false
 ShowArea = true
 Weather = None,0
 MapPosition = 0,10,4
-DarkMap = true
+DarkMap = false
 SnapEdges = false
 BattleBack = Cave
 #-------------------------------
@@ -1345,7 +1345,7 @@ BattleBack = Snow
 Outdoor = false
 Weather = None,0
 MapPosition = 0,14,12
-DarkMap = true
+DarkMap = false
 BattleBack = Cave
 #-------------------------------
 [187]
@@ -1497,3 +1497,22 @@ Weather = None,0
 MapPosition = 0,15,4
 DarkMap = false
 SnapEdges = false
+#-------------------------------
+[210]
+# GC Pokemart
+Outdoor = false
+HealingSpot = 101,8,8
+Weather = None,0
+MapPosition = 0,16,2
+#-------------------------------
+[212]
+# Ruin Maniacs House
+Outdoor = false
+Weather = None,0
+MapPosition = 0,8,5
+#-------------------------------
+[214]
+# Battle Academy (SeaFoam)
+Outdoor = false
+Weather = None,0
+MapPosition = 0,20,9

@@ -352,8 +352,8 @@ class PokeBattle_Move_094 < PokeBattle_Move
   def pbOnStartUse(user,targets)
     @presentDmg = 0   # 0 = heal, >0 = damage
     r = @battle.pbRandom(100)
-    if r<40;    @presentDmg = 40
-    elsif r<70; @presentDmg = 80
+    if r<40;    @presentDmg = 60
+    elsif r<70; @presentDmg = 100
     elsif r<80; @presentDmg = 120
     end
   end

@@ -53,6 +53,21 @@ class HallOfFame_Scene
     @sprites["hallbars"].setBitmap("Graphics/Pictures/hallfamebars")
     @sprites["overlay"]=BitmapSprite.new(Graphics.width,Graphics.height,@viewport)
     @sprites["overlay"].z=10
+	@sprites["difficulty"] = IconSprite.new(416,-16,@viewport)
+	@sprites["nuzlocke"] = IconSprite.new(36,-4,@viewport)
+	case $PokemonSystem.difficulty
+		when 0
+			@sprites["difficulty"].setBitmap("Graphics/Pictures/Common/33v3")
+		when 1
+			@sprites["difficulty"].setBitmap("Graphics/Pictures/Common/M3W")
+		when 2
+			@sprites["difficulty"].setBitmap("Graphics/Pictures/Common/BGkdl")
+		when 3
+			@sprites["difficulty"].setBitmap("Graphics/Pictures/Common/H7aZ")
+	end
+	if $game_switches[176] == true
+		@sprites["nuzlocke"].setBitmap("Graphics/Pictures/Common/NLzz3")
+	end
     pbSetSystemFont(@sprites["overlay"].bitmap)
     @alreadyFadedInEnd=false
     @useMusic=false

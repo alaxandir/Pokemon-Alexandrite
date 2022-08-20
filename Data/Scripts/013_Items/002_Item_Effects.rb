@@ -54,6 +54,10 @@ ItemHandlers::UseFromBag.add(:ITEMFINDER,proc { |item|
   next 2
 })
 
+ItemHandlers::UseFromBag.add(:ITEMFINDER,proc { |item|
+  next 2
+})
+
 ItemHandlers::UseFromBag.copy(:ITEMFINDER,:DOWSINGMCHN,:DOWSINGMACHINE)
 
 #===============================================================================
@@ -103,15 +107,15 @@ ItemHandlers::UseInField.add(:CARDCASE,proc { |item|
 })
 
 ItemHandlers::UseInField.add(:REPEL,proc { |item|
-  next pbRepel(item,100)
-})
-
-ItemHandlers::UseInField.add(:SUPERREPEL,proc { |item|
   next pbRepel(item,200)
 })
 
+ItemHandlers::UseInField.add(:SUPERREPEL,proc { |item|
+  next pbRepel(item,350)
+})
+
 ItemHandlers::UseInField.add(:MAXREPEL,proc { |item|
-  next pbRepel(item,250)
+  next pbRepel(item,500)
 })
 
 Events.onStepTaken += proc {
@@ -345,6 +349,15 @@ ItemHandlers::UseInField.add(:EXPALL,proc { |item|
 ItemHandlers::UseInField.add(:EXPALLOFF,proc { |item|
   $PokemonBag.pbChangeItem(:EXPALLOFF,:EXPALL)
   pbMessage(_INTL("The Exp Share was turned on."))
+  next 1
+})
+
+ItemHandlers::UseInField.add(:POCKETPC,proc { |item|
+  if $game_map.name.include?("Elite Four") || $game_map.name.include?("Champion")
+	pbMessage(_INTL("Can't use that here."))
+  else
+  pbPokeCenterPC
+  end
   next 1
 })
 
@@ -1274,7 +1287,7 @@ ItemHandlers::UseOnPokemon.add(:JOLLYMINT,proc { |item,pkmn,scene|
 })
 
 ItemHandlers::UseOnPokemon.add(:NAIVEMINT,proc { |item,pkmn,scene|
-  ret = pbNatureChangeItem(pkmn,:NAIVEM,item,scene)
+  ret = pbNatureChangeItem(pkmn,:NAIVE,item,scene)
   next ret
 })
 

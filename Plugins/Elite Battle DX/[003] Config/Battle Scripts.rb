@@ -290,7 +290,7 @@ HAOAI = {
 	"lowHPOpp3" => "If you give up, you will be punished!",
 	"afterLastOpp" => "W-What?",
 	"afterLast" => "Foolish child, you're defeat is imminent.",
-	"loss" => "Futile, you will remember this day."
+	"loss" => "I'll be taking that tablet now."
 }
   #-----------------------------------------------------------------------------
   # example Dialga fight
@@ -368,7 +368,7 @@ HAOAI = {
   BRETT5 = {
 	"turnStart0" => proc do
 	tname = $Trainer.name
-	@scene.pbTrainerSpeak("You're done #{pname}. I'm through messing around. ")
+	@scene.pbTrainerSpeak("You're done #{tname}. I'm through messing around. ")
 	end,
 	"damageOpp" => proc do
 	tname = @battlers[0].name
@@ -394,7 +394,7 @@ HAOAI = {
   BRETT6 = {
 	"turnStart0" => proc do
 	tname = $Trainer.name
-	@scene.pbTrainerSpeak("#{pname}, you better try your hardest. I'm not joking around.")
+	@scene.pbTrainerSpeak("#{tname}, you better try your hardest. I'm not joking around.")
 	end,
 	"damageOpp" => proc do
 	tname = @battlers[0].name
@@ -432,8 +432,8 @@ ROBERT = {
 	@scene.pbTrainerSpeak("Alright #{tname}, show me what you're made of!")
 	end,
 	"damageOpp" => proc do
-	tname = @battlers[0].name
-	"Excellent technique by your #{tname}!"
+	pname = @battlers[0].name
+	"Excellent technique by your #{pname}!"
 	end,
 	"damageOpp2" => proc do
 	pname = @battlers[0].name

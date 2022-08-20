@@ -51,6 +51,21 @@ class PokemonTrainerCard_Scene
     end
     @sprites["overlay"] = BitmapSprite.new(Graphics.width,Graphics.height,@viewport)
     pbSetSystemFont(@sprites["overlay"].bitmap)
+	@sprites["difficulty"] = IconSprite.new(406,4,@viewport)
+	@sprites["nuzlocke"] = IconSprite.new(334,20,@viewport)
+	case $PokemonSystem.difficulty
+		when 0
+			@sprites["difficulty"].setBitmap("Graphics/Pictures/Common/33v3")
+		when 1
+			@sprites["difficulty"].setBitmap("Graphics/Pictures/Common/M3W")
+		when 2
+			@sprites["difficulty"].setBitmap("Graphics/Pictures/Common/BGkdl")
+		when 3
+			@sprites["difficulty"].setBitmap("Graphics/Pictures/Common/H7aZ")
+	end
+	if $game_switches[176] == true
+		@sprites["nuzlocke"].setBitmap("Graphics/Pictures/Common/NLzz3")
+	end
     @sprites["trainer"] = IconSprite.new(336,112,@viewport)
     @sprites["trainer"].setBitmap(GameData::TrainerType.player_front_sprite_filename($Trainer.trainer_type))
     @sprites["trainer"].x -= (@sprites["trainer"].bitmap.width-128)/2

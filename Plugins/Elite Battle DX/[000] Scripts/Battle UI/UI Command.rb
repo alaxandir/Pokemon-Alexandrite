@@ -55,18 +55,18 @@ class PokeBattle_Scene
         pbPlayDecisionSE
         ret = -2
         break
-	  elsif Input.trigger?(Input::ACTION) && !@safaribattle # New, check stats
-        player = @battle.array_change_stats_in_battle
-        opponent = @battle.array_change_stats_in_battle(1)
-        quantity = []
-        2.times { |i| quantity << @battle.pbSideBattlerCount(i) }
-        activef = @battle.active_field
-        actives = @battle.active_side
-        activep = @battle.active_position
-        team = [player, opponent]
-        activestore = [activef, actives, activep]
-        CheckStatsInBattle.show(team, quantity, activestore)
-		#break														 
+	  #elsif Input.trigger?(Input::ACTION) && !@safaribattle # New, check stats
+      #  player = @battle.array_change_stats_in_battle
+      #  opponent = @battle.array_change_stats_in_battle(1)
+      #  quantity = []
+      #  2.times { |i| quantity << @battle.pbSideBattlerCount(i) }
+      #  activef = @battle.active_field
+      #  actives = @battle.active_side
+      #  activep = @battle.active_position
+      #  team = [player, opponent]
+      #  activestore = [activef, actives, activep]
+      #  CheckStatsInBattle.show(team, quantity, activestore)
+	  #break														 
       end
     end
     # hide command window
@@ -121,7 +121,7 @@ class CommandWindowEBDX
 
     @btnCmd = pbBitmap(@path+@cmdImg)
     @btnEmp = pbBitmap(@path+@empImg)
-	@btnHint = pbBitmap(@path+@hintImg) #EDIT											   
+	#@btnHint = pbBitmap(@path+@hintImg) #EDIT											   
 
     @sprites["sel"] = SpriteSheet.new(@viewport,4)
     @sprites["sel"].setBitmap(pbSelBitmap(@path+@selImg,Rect.new(0,0,92,38)))
@@ -136,13 +136,13 @@ class CommandWindowEBDX
     @sprites["bg"].bitmap = pbBitmap(@path+@barImg) if !@barImg.nil?
     @sprites["bg"].y = @viewport.height
 	#EDIT
-	@sprites["hint"] = Sprite.new(@viewport)										#
-    @sprites["hint"].bitmap = pbBitmap(@path + @hintImg)							#	
-    @sprites["hint"].z = 101														#
-    @sprites["hint"].src_rect.width /= 2											#
-    @sprites["hint"].center!														#
-    @sprites["hint"].x = 46															#
-    @sprites["hint"].y = @viewport.height - 30										#	  
+	#@sprites["hint"] = Sprite.new(@viewport)										#
+    #@sprites["hint"].bitmap = pbBitmap(@path + @hintImg)							#	
+    #@sprites["hint"].z = 101														#
+    #@sprites["hint"].src_rect.width /= 2											#
+    #@sprites["hint"].center!														#
+    #@sprites["hint"].x = 46														#
+    #@sprites["hint"].y = @viewport.height - 30										#	  
     self.update
   end
   #-----------------------------------------------------------------------------
@@ -204,7 +204,7 @@ class CommandWindowEBDX
       @sprites["b#{i}"].y = @viewport.height + 49
     end
     @sprites["bg"].y = @viewport.height + 68
-	@sprites["hint"].visible = true								
+	#@sprites["hint"].visible = true								
   end
   #-----------------------------------------------------------------------------
   #  compile command menu
@@ -246,7 +246,7 @@ class CommandWindowEBDX
   def dispose
     @btnCmd.dispose
     @btnEmp.dispose
-	@btnHint.dispose
+    #@btnHint.dispose
     pbDisposeSpriteHash(@sprites)
   end
   def color; end; def color=(val); end
@@ -257,7 +257,7 @@ class CommandWindowEBDX
   def show
     @sprites["sel"].visible = false
     @sprites["bg"].y -= @sprites["bg"].bitmap.height/4
-	@sprites["hint"].y -= 30
+#	@sprites["hint"].y -= 30
     for i in 0...@indexes.length
       next if !@sprites["b#{i}"]
       @sprites["b#{i}"].y -= 10
@@ -275,7 +275,7 @@ class CommandWindowEBDX
     return if skip
     @sprites["sel"].visible = false
     @sprites["bg"].y += @sprites["bg"].bitmap.height/4
-	@sprites["hint"].y += 30
+	#@sprites["hint"].y += 30
     for i in 0...@indexes.length
       next if !@sprites["b#{i}"]
       @sprites["b#{i}"].y += 10
@@ -285,7 +285,7 @@ class CommandWindowEBDX
     8.times do
       self.hide; @scene.wait(1, true)
     end
-	@sprites["hint"].visible = false
+	#@sprites["hint"].visible = false
   end
   #-----------------------------------------------------------------------------
   #  update command menu

@@ -190,10 +190,8 @@ class PokemonStorage
       pkmn = self[boxSrc,indexSrc]
       raise "Trying to copy nil to storage" if !pkmn
       pkmn.time_form_set = nil
-      pkmn.form          = 0 if pkmn.isSpecies?(:SHAYMIN)
-      if $PokemonSystem.difficulty <3 
-		pkmn.heal
-	  end
+      pkmn.form          = 0 if pkmn.isSpecies?(:SHAYMIN) 
+	  pkmn.heal
       self[boxDst,indexDst] = pkmn
     end
     return true
@@ -216,9 +214,7 @@ class PokemonStorage
         if box>=0
           pkmn.time_form_set = nil if pkmn.time_form_set
           pkmn.form          = 0 if pkmn.isSpecies?(:SHAYMIN)
-          if $PokemonSystem.difficulty <3 
-			pkmn.heal
-		  end
+		  pkmn.heal
         end
         self[box,i] = pkmn
         return true
@@ -231,9 +227,7 @@ class PokemonStorage
     if @currentBox>=0
       pkmn.time_form_set = nil
       pkmn.form          = 0 if pkmn.isSpecies?(:SHAYMIN)
-      if $PokemonSystem.difficulty <3 
-	   pkmn.heal
-	  end
+	  pkmn.heal
     end
     for i in 0...maxPokemon(@currentBox)
       if self[@currentBox,i]==nil

@@ -94,9 +94,9 @@ COALMINE = {
     :ID => "20",
     :Name => "AREA: Bouldergrove Coalmine",
     :QuestGiver => "nil",
-    :Stage1 => "Find a way to smash rocks.",
+    :Stage1 => "Travel to Glacier City.",
     :Location1 => "Bouldergrove City",
-    :QuestDescription => "A coalmine in the north of Bouldergrove has collapsed, with a way to clear the rocks, you could explore it.",
+    :QuestDescription => "A coalmine in the north of Bouldergrove has collapsed, A man suggested checking Glacier City for a special hammer.",
     :RewardString => "Side Area"
   }
   
@@ -145,7 +145,7 @@ COMFEY = {
     :Name => "TRADE: Heracross for Comfey",
     :QuestGiver => "Scientist",
     :Stage1 => "Trade a Heracross for a Comfey",
-    :Location1 => "Emberton City PKMN Center",
+    :Location1 => "Emberton PKMN Center",
     :QuestDescription => "A trainer wants to trade Pokémon with you. Your Heracross for his Comfey.",
     :RewardString => "Comfey"
   }
@@ -264,8 +264,8 @@ RUINS = {
     :Location2 => "Origin Valley",
 	:Stage3 => "The Six Trials",
     :Location3 => "Origin Cave",
-    :QuestDescription => "A missing link has been discovered in regards to accessing the ruins in Origin Valley!",
-    :RewardString => "Legendary Encounter"
+    :QuestDescription => "A missing link has been discovered in regards to accessing the ruins in Origin Valley! Explore the Verdant Jungle and see what clues you can uncover.",
+    :RewardString => "Post-game Content"
   }
   
 POLIWAG = {
@@ -412,5 +412,45 @@ Vileplume = {
     :Location1 => "Goldcoast",
     :QuestDescription => "A slightly scary plant obsessed lady has asked you to show her a Vileplume.",
     :RewardString => "TM"
+  }
+  
+TORCHIC = {
+    :ID => "50",
+    :Name => "TRADE: Bulbasaur for Torchic",
+    :QuestGiver => "Gentleman",
+    :Stage1 => "Trade a Bulbasaur for a Torchic",
+    :Location1 => "Bouldergrove PKMN Center",
+    :QuestDescription => "A trainer wants to trade Pokémon with you. Your Bulbasaur for his Torchic.",
+    :RewardString => "Torchic"
+  }
+  
+BAGON = {
+    :ID => "51",
+    :Name => "TRADE: Leafeon for Bagon",
+    :QuestGiver => "Lass",
+    :Stage1 => "Trade a Leafeon for a Bagon",
+    :Location1 => "Emberton Museum",
+    :QuestDescription => "A trainer wants to trade Pokémon with you. Your Leafeon for his Bagon.",
+    :RewardString => "Bagon"
+  }
+  
+BATTLEACADEMY = {
+    :ID => "52",
+    :Name => "Recruits for the Academy",
+    :QuestGiver => "Coordinator",
+    :Stage1 => "Find trainers to recruit",
+    :Location1 => "Seafoam City",
+    :QuestDescription => "The coordinator of the Battle Academy asked you to recruit trainers. If you find any trainers willing to join you should ask them!",
+    :RewardString => "Academy Battles"
+  }
+  
+ORICORIO = {
+    :ID => "53",
+    :Name => "To be a Dancer",
+    :QuestGiver => "Oricorio",
+    :Stage1 => "Impress the Oricorio with a dance.",
+    :Location1 => "Gold Coast",
+    :QuestDescription => "The Oricorio of Gold Coast are hard to please, maybe a new dance will impress them!",
+    :RewardString => "???"
   }
 end

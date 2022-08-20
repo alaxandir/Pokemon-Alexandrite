@@ -694,7 +694,7 @@ def pbDisplayIVRating
     if showNature
       natureName = @pokemon.nature.name
       # Changed the color of the text, to the one used in BW
-      memo += _INTL("<c3=0000d6,7394ff>{1}<c3=404040,B0B0B0> nature.\n",natureName)
+      memo += _INTL("<c3=0000d6,7394ff>{1}<c3=404040,B0B0B0>\n",natureName)
     end
     # Write date received
     if @pokemon.timeReceived
@@ -798,8 +798,8 @@ def pbDisplayIVRating
     GameData::Stat.each_main { |s| statshadows[s.id] = shadow }
     if !@pokemon.shadowPokemon? || @pokemon.heartStage > 3
       @pokemon.nature_for_stats.stat_changes.each do |change|
-        statshadows[change[0]] = Color.new(148,148,214) if change[1] > 0
-        statshadows[change[0]] = Color.new(206,148,156) if change[1] < 0
+        statshadows[change[0]] = Color.new(148,148,214) if change[1] < 0
+        statshadows[change[0]] = Color.new(206,148,156) if change[1] > 0
       end
     end
 #===============================================================================

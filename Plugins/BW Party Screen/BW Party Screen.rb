@@ -1165,7 +1165,7 @@ class PokemonPartyScreen
       if !pkmn.egg?
         # Check for hidden moves and add any that were found
         pkmn.moves.each_with_index do |m, i|
-          if [:MILKDRINK, :SOFTBOILED].include?(m.id) ||
+          if [:MILKDRINK, :SOFTBOILED, :HIDDENPOWER].include?(m.id) ||
              HiddenMoveHandlers.hasHandler(m.id)
             commands[cmdMoves[i] = commands.length] = [m.name, 1]
           end
@@ -1186,6 +1186,11 @@ class PokemonPartyScreen
       cmdMoves.each_with_index do |cmd, i|
         next if cmd < 0 || cmd != command
         havecommand = true
+		if [:HIDDENPOWER].include?(pkmn.moves[i].id)
+			type, power = pbHiddenPower(pkmn)
+			typeName = GameData::Type.get(type).real_name
+			pbMessage(_INTL("Hidden Power: #{typeName}, Power: #{power}!"))
+		end
         if [:MILKDRINK, :SOFTBOILED].include?(pkmn.moves[i].id)
           amt = [(pkmn.totalhp/5).floor,1].max
           if pkmn.hp<=amt

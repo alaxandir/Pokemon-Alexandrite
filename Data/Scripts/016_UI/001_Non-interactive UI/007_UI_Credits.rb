@@ -121,7 +121,6 @@ New Mega Evolution Forms
 King_Waluigi<s>Zygoat 
 (Pokemon Banished Platinum)
 
-
 SW/SH Type Icons
 BiggusWeeabus<s>VentZX
 Lichenprincess<s>AiurJordan
@@ -287,6 +286,8 @@ SuperAbility Capsule
 Maruno<s>Kirik
 Marin<s>AiurJordan
 
+Wild Pokemon Hidden Abilities
+Mashirosakura 
 
 
 TESTING

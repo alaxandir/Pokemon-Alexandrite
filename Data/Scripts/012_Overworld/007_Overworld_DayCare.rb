@@ -180,6 +180,10 @@ def pbDayCareGenerateEgg
     if GameData::Species.exists?(:NIDORANfE) && GameData::Species.exists?(:NIDORANmA)
       babyspecies = [:NIDORANfE, :NIDORANmA][rand(2)]
     end
+  when :WEEDLE, :CATERPIE
+    if GameData::Species.exists?(:WEEDLE) && GameData::Species.exists?(:CATERPIE)
+      babyspecies = :WURMPLE if GameData::Species.exists?(:WURMPLE)
+    end
   when :VOLBEAT, :ILLUMISE
     if GameData::Species.exists?(:VOLBEAT) && GameData::Species.exists?(:ILLUMISE)
       babyspecies = [:VOLBEAT, :ILLUMISE][rand(2)]

@@ -8,7 +8,7 @@
 module Settings
   # The version of your game. It has to adhere to the MAJOR.MINOR.PATCH format.
 
-	GAME_VERSION = '0.9.5'
+	GAME_VERSION = '1.0.8'
 
 	
   # The generation that the battle system follows. Used throughout the battle
@@ -35,7 +35,7 @@ module Settings
   # The level of newly hatched Pokémon.
   EGG_LEVEL            = 1
   # The odds of a newly generated Pokémon being shiny (out of 65536).
-  SHINY_POKEMON_CHANCE = (MECHANICS_GENERATION >= 6) ? 512 : 512
+  SHINY_POKEMON_CHANCE = (MECHANICS_GENERATION >= 6) ? 256 : 256
   # The odds of a wild Pokémon/bred egg having Pokérus (out of 65536).
   POKERUS_CHANCE       = 3
   # Whether a bred baby Pokémon can inherit any TM/HM moves from its father. It
@@ -48,7 +48,7 @@ module Settings
   #=============================================================================
 
   # The amount of money the player starts the game with.
-  INITIAL_MONEY        = 700
+  INITIAL_MONEY        = 1200
   # The maximum amount of money the player can have.
   MAX_MONEY            = 999_999
   # The maximum number of Game Corner coins the player can have.
@@ -132,9 +132,9 @@ module Settings
   BADGE_FOR_ROCKSMASH = 0
   BADGE_FOR_SURF      = 4
   BADGE_FOR_FLY       = 5
-  BADGE_FOR_STRENGTH  = 6
-  BADGE_FOR_DIVE      = 7
-  BADGE_FOR_WATERFALL = 8
+  BADGE_FOR_STRENGTH  = 9
+  BADGE_FOR_DIVE      = 9
+  BADGE_FOR_WATERFALL = 9
 
   #=============================================================================
 

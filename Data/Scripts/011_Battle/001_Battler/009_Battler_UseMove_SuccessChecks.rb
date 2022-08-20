@@ -274,7 +274,7 @@ class PokeBattle_Battler
       @battle.pbCommonAnimation("Attract",self)
       @battle.pbDisplay(_INTL("{1} is in love with {2}!",pbThis,
          @battle.battlers[@effects[PBEffects::Attract]].pbThis(true)))
-      if @battle.pbRandom(100)<50
+      if @battle.pbRandom(100)<25 #1.0.6
         @battle.pbDisplay(_INTL("{1} is immobilized by love!",pbThis))
         @lastMoveFailed = true
         return false

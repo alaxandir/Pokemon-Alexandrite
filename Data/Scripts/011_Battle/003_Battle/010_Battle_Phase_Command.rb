@@ -15,9 +15,6 @@ class PokeBattle_Battle
     if @choices[idxBattler][0] == :UseItem
       item = @choices[idxBattler][1]
       pbReturnUnusedItemToBag(item, idxBattler) if item
-	  if pbOwnedByPlayer?(idxBattler)  #!
-		@playerItemcount -= 1 		   #reduce count 0.6.1
-	  end					           #!
     end
     # If idxBattler chose to Mega Evolve, cancel it
     pbUnregisterMegaEvolution(idxBattler)
@@ -105,6 +102,21 @@ class PokeBattle_Battle
       pbDisplay(_INTL("Items can't be used here."))
       return false
     end
+	if trainerBattle? && $PokemonSystem.difficulty==3 #1.0.8
+		pbDisplay(_INTL("You can't use items in trainer battles!"))
+		commandsEnd = false
+		return false
+	end
+	if trainerBattle? && $PokemonSystem.difficulty==2 && @playerItemcount>=1 #1.0.8
+		pbDisplay(_INTL("You've already used an item."))
+		commandsEnd = false
+		return false
+	end
+	if trainerBattle? && $PokemonSystem.difficulty==1 && @playerItemcount>=3 #1.0.8
+		pbDisplay(_INTL("You've already used {1} items.",@playerItemcount))
+		commandsEnd = false
+		return false
+	end
     ret = false
     @scene.pbItemMenu(idxBattler,firstAction) { |item,useType,idxPkmn,idxMove,itemScene|
       next false if !item
@@ -135,6 +147,7 @@ class PokeBattle_Battle
          pkmn,battler,idxMove,firstAction,self,itemScene)
       next false if !pbRegisterItem(idxBattler,item,idxPkmn,idxMove)
       ret = true
+	  	@playerItemcount += 1
       next true
     }
     return ret
@@ -217,13 +230,9 @@ class PokeBattle_Battle
         when 0    # Fight
           break if pbFightMenu(idxBattler)
         when 1    # Bag
-			if trainerBattle? && $PokemonSystem.difficulty>=1 && @playerItemcount>=(3-($PokemonSystem.difficulty-2)) #0.6.1
-			pbDisplay(_INTL("You've already used {1} items.",@playerItemcount))	#!						
-			else																#!
-				if pbItemMenu(idxBattler,actioned.length==1)
+			if pbItemMenu(idxBattler,actioned.length==1)
 				commandsEnd = true if pbItemUsesAllActions?(@choices[idxBattler][1])
 				break
-				end
 			end
         when 2    # Pokémon
           break if pbPartyMenu(idxBattler)

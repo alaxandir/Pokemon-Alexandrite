@@ -208,6 +208,15 @@ class DataBoxEBDX  <  SpriteWrapper
     @loaded = true
   end
   #-----------------------------------------------------------------------------
+  #  force new battler data
+  #-----------------------------------------------------------------------------
+  def battler=(val)
+    @battler = val
+    @pokemon = @battler.displayPokemon
+    @trainer = @battle.opponent ? @battle.opponent[0] : nil
+    self.refresh
+  end
+  #-----------------------------------------------------------------------------
   #  set databox position
   #-----------------------------------------------------------------------------
   def position
@@ -291,8 +300,8 @@ class DataBoxEBDX  <  SpriteWrapper
     @sprites["caught"] = Sprite.new(@viewport)
     @sprites["caught"].bitmap = pbBitmap(@path + "battleBoxOwned") if !@playerpoke && @battler.owned? && !@scene.battle.opponent
     @sprites["caught"].z = @sprites["container"].z
-    @sprites["caught"].ex = @sprites["container"].ex - 18
-    @sprites["caught"].ey = @sprites["container"].ey - 2
+    @sprites["caught"].ex = @sprites["container"].ex - 0
+    @sprites["caught"].ey = @sprites["container"].ey - 22
 
     @sprites["textHP"] = Sprite.new(@viewport)
     @sprites["textHP"].bitmap = Bitmap.new(@sprites["container"].bitmap.width, @sprites["base"].bitmap.height + 8)

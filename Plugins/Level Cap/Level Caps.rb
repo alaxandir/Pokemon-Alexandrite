@@ -22,9 +22,9 @@
 #==============================================================================#
 #\\\\\\\\\\\\\\\\\\\\\\\\\\CONFIGURATION\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\#
 #==============================================================================#
-LEVEL_CAPS = [11,16,23,26,31,43,48,56,61,63] #scales according to gym badges
+LEVEL_CAPS = [10,15,22,25,30,42,47,55,60,62] #scales according to gym badges
 										   #The first value is 0 badges.
-LEVEL_CAP_EXP = 2   #the exp gained if the levelcap is active change it if you 
+LEVEL_CAP_EXP = 1   #the exp gained if the levelcap is active change it if you 
                     #want to make the pokemon gain some exp, recomended less than 100
 #==============================================================================#
 # PASTE THIS def pbAddEXP into your Item_Utilities at the very bottom.         #
@@ -153,12 +153,20 @@ def pbGainExpOne(idxParty,defeatedBattler,numPartic,expShare,expAll,showMessages
       exp /= 7
     end
 #========EXP CHANGING SCRIPT======================================================================#
-    if defined?(pkmn) #check if the pkmn variable exist, for v18 and v19 compatibility
+    if defined?(pkmn) #check if the pkmn variable exist
     	thispoke = pkmn
     end
-    if $PokemonSystem.difficulty >= 2  #<- REPLACE WITH YOUR SETTING $game_variables[id] == X or $game_switches[id] 
-		levelCap=LEVEL_CAPS[$Trainer.badge_count]
-		exp=LEVEL_CAP_EXP if (thispoke.level >= levelCap) && exp>LEVEL_CAP_EXP
+    if $PokemonSystem.difficulty >= 2 
+		levelCap = LEVEL_CAPS[$Trainer.badge_count]
+		if (thispoke.level >= levelCap) && exp>LEVEL_CAP_EXP
+		exp = LEVEL_CAP_EXP 
+		#print("Pokemon Level >= level cap, 1 exp")
+		end
+		
+		if pkmn.exp + exp > pkmn.growth_rate.minimum_exp_for_level(levelCap)
+		exp = pkmn.growth_rate.minimum_exp_for_level(levelCap) - pkmn.exp
+		#print("Pokemon Level + awarded exp >= level cap, min exp for level", pkmn.growth_rate.minimum_exp_for_level(levelCap) - pkmn.exp)
+		end
     else
 		levelCap=GameData::GrowthRate.max_level
     end

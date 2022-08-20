@@ -123,29 +123,29 @@ BattleVS         = ultraSM
 BattleScript	 = BRETT7
 #-------------------------------
 [ELITEFOUR_Robert]
-BattleVS         = integratedVS
+BattleVS         = eliteSM
 BattleScript = ROBERT
 #-------------------------------
 [ELITEFOUR_William]
-BattleVS         = integratedVS
+BattleVS         = wavesSM
 BattleScript = WILLIAM
 #-------------------------------
 [ELITEFOUR_Kyra]
-BattleVS         = integratedVS
+BattleVS         = crazySM
 BattleScript = KYRA
 #-------------------------------
 [ELITEFOUR_Anya]
-BattleVS         = integratedVS
+BattleVS         = crystalSM
 BattleScript = ANYA
 #-------------------------------
 [CHAMPION]
-BattleVS         = integratedVS
+BattleVS         = flamesSM
 BattleScript = JAY
 #-------------------------------
 [ACETRAINERS]
-BattleVS		= minorTrainer
+BattleVS		= ultraSM
 [AROMALADY]
-BattleVS		= minorTrainer
+BattleVS		= trainerSM
 [BEAUTY]
 BattleVS		= minorTrainer
 [BEAUTY1]
@@ -153,16 +153,16 @@ BattleVS		= minorTrainer
 [BIKER]
 BattleVS		= minorTrainer
 [BIRDKEEPER]
-BattleVS		= minorTrainer
+BattleVS		= trainerSM
 [BIRDKEEPER1]
-BattleVS		= minorTrainer
+BattleVS		= trainerSM
 [BLACKBELT]
 BattleVS		= minorTrainer
 [BUGCATCHER]
-BattleVS		= minorTrainer
+BattleVS		= trainerSM
 BattleBGM		= TrainerBattle.ogg
 [BUGCATCHER1]
-BattleVS		= minorTrainer
+BattleVS		= trainerSM
 [BURGLAR]
 BattleVS		= minorTrainer
 [CAMPER]
@@ -176,7 +176,7 @@ BattleVS		= minorTrainer
 [COOLTRAINER_M]
 BattleVS		= minorTrainer
 [CRUSHGIRL]
-BattleVS		= minorTrainer
+BattleVS		= trainerSM
 [CRUSHKIN]
 BattleVS		= minorTrainer
 [CUEBALL]
@@ -188,9 +188,9 @@ BattleVS		= minorTrainer
 [ENGINEER]
 BattleVS		= minorTrainer
 [FISHERMAN]
-BattleVS		= minorTrainer
+BattleVS		= trainerSM
 [FISHERMAN1]
-BattleVS		= minorTrainer
+BattleVS		= trainerSM
 [GAMBLER]
 BattleVS		= minorTrainer
 [GENTLEMAN]
@@ -198,13 +198,13 @@ BattleVS		= minorTrainer
 [GENTLEMAN1]
 BattleVS		= minorTrainer
 [HIKER]
-BattleVS		= minorTrainer
+BattleVS		= trainerSM
 [ICEDIVER]
 BattleVS		= minorTrainer
 [JUGGLER]
 BattleVS		= minorTrainer
 [LADY]
-BattleVS		= minorTrainer
+BattleVS		= trainerSM
 [LASS]
 BattleVS		= minorTrainer
 [LASS4]
@@ -242,14 +242,14 @@ BattleVS		= minorTrainer
 [RUINMANIAC]
 BattleVS		= minorTrainer
 [SAILOR]
-BattleVS		= minorTrainer
+BattleVS		= trainerSM
 [SCIENTIST]
 BattleVS		= minorTrainer
 [SISANDBRO]
 BattleVS		= minorTrainer
 [SUPERNERD]
 BattleBGM       = BattleTrainer.ogg
-BattleVS		= minorTrainer
+BattleVS		= digitalSM
 [SWIMMER2_F]
 BattleVS		= minorTrainer
 [SWIMMER2_M]
@@ -263,13 +263,13 @@ BattleVS		= minorTrainer
 [TRAILBLAZER]
 BattleVS		= minorTrainer
 [TUBER2_F]
-BattleVS		= minorTrainer
+BattleVS		= trainerSM
 [TUBER2_M]
-BattleVS		= minorTrainer
+BattleVS		= trainerSM
 [TUBER_F]
-BattleVS		= minorTrainer
+BattleVS		= trainerSM
 [TUBER_M]
-BattleVS		= minorTrainer
+BattleVS		= trainerSM
 [TWINS]
 BattleVS		= minorTrainer
 [WINTERCOOL_F]
@@ -279,7 +279,7 @@ BattleVS		= minorTrainer
 [YOUNGCOUPLE]
 BattleVS		= minorTrainer
 [YOUNGSTER]
-BattleVS		= minorTrainer
+BattleVS		= trainerSM
 [STRANGEDUO]
 BattleVS		= minorTrainer
 [BURGLARS]

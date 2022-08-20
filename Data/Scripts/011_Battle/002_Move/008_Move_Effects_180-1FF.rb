@@ -40,3 +40,34 @@ class PokeBattle_Move_194 < PokeBattle_HealingMove
 		return (user.totalhp/2.0).round
 	end
 end
+
+#===============================================================================
+# Decreases the target's Attack by 2 stages.
+#===============================================================================
+class PokeBattle_Move_195 < PokeBattle_TargetStatDownMove
+  def initialize(battle,move)
+    super
+    @statDown = [:ATTACK,2]
+  end
+end
+
+
+#===============================================================================
+# Decreases the target's Speed by 2 stages.
+#===============================================================================
+class PokeBattle_Move_196 < PokeBattle_TargetStatDownMove
+  def initialize(battle,move)
+    super
+    @statDown = [:SPEED,2]
+  end
+end
+
+#===============================================================================
+# Decreases the target's Defense by 2 stages.
+#===============================================================================
+class PokeBattle_Move_197 < PokeBattle_TargetStatDownMove
+  def initialize(battle,move)
+    super
+    @statDown = [:DEFENSE,2]
+  end
+end
