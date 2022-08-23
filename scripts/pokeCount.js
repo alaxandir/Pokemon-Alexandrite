@@ -1,6 +1,7 @@
 const fs = require('fs');
+const path = require('path');
 
-fs.readFile('PBS/trainers.txt', 'utf8', (err, data) => {
+fs.readFile( path.resolve(__dirname, '../PBS/trainers.txt'), 'utf8', (err, data) => {
     if (err) {
         console.error(err);
         return;
@@ -28,7 +29,7 @@ fs.readFile('PBS/trainers.txt', 'utf8', (err, data) => {
             .toString();                                                                
 
     // console.log(output);
-    fs.writeFileSync('./pokeCount.txt', sortedPokemon, err => {});
+    fs.writeFileSync('./scripts/pokeCount.txt', sortedPokemon, err => {});
 });
 
 
