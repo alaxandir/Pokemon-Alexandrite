@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-fs.readFile('C:/Users/Spencer/Downloads/trainers.txt', 'utf8', (err, data) => {
+fs.readFile('PBS/trainers.txt', 'utf8', (err, data) => {
     if (err) {
         console.error(err);
         return;
