@@ -687,6 +687,8 @@ BattleHandlers::DamageCalcUserItem.add(:PIXIEPLATE,
   }
 )
 
+BattleHandlers::DamageCalcUserItem.copy(:FAIRYEARRING,:PIXIEPLATE)
+
 BattleHandlers::DamageCalcUserItem.add(:POISONBARB,
   proc { |item,user,target,move,mults,baseDmg,type|
     mults[:base_damage_multiplier] *= 1.2 if type == :POISON

@@ -101,6 +101,12 @@ BattleVS         = eliteSM
 BattleBGM        = ChairmanRose.ogg
 Ace				 = 6
 #-------------------------------
+[ROCKETBOSS,Giovanni,3]
+BattleIntro      = evilTeam
+BattleVS         = eliteSM
+BattleBGM        = ChairmanRose.ogg
+Ace				 = 6
+#-------------------------------
 [POKEMONTRAINER_Brett,Brett,2]
 BattleVS         = ultraSM
 BattleScript	 = BRETT2

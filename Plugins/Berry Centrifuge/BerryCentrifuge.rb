@@ -62,7 +62,7 @@ pbFadeOutIn {
 	case ret
 		when nil
 			pbMessage("Did not select a berry.")
-		# 2 hour berries
+		# 2 hour berries tier 0
 		when :RAZZBERRY,:BLUKBERRY,:NANABBERRY,:WEPEARBERRY,:PINAPBERRY
 			for i in 1..qty
 				v = rand(1..100)
@@ -77,7 +77,7 @@ pbFadeOutIn {
 						components.push(:BERRYC)
 				end
 			end
-		# 3 hour berries
+		# 3 hour berries tier 1
 		when :CHERIBERRY,:CHESTOBERRY,:PECHABERRY,:RAWSTBERRY,:ASPEARBERRY
 			for i in 1..qty
 				v = rand(1..100)
@@ -92,7 +92,7 @@ pbFadeOutIn {
 						components.push(:BERRYC)
 				end
 			end
-		# 4 hour berries	
+		# 4 hour berries t2	
 		when :ORANBERRY,:LEPPABERRY,:PERSIMBERRY
 			for i in 1..qty
 				v = rand(1..100)
@@ -107,7 +107,7 @@ pbFadeOutIn {
 						components.push(:BERRYC)
 				end
 			end
-		# 5 hour berries
+		# 5 hour berries t3
 		when :FIGYBERRY,:WIKIBERRY,:MAGOBERRY,:AGUAVBERRY,:IAPAPABERRY
 			for i in 1..qty
 				v = rand(1..100)
@@ -122,7 +122,7 @@ pbFadeOutIn {
 						components.push(:BERRYC)
 				end
 			end
-		# 6 hour berries
+		# 6 hour berries t4
 		when :CORNNBERRY,:MAGOSTBERRY,:RABUTABERRY,:NOMELBERRY
 			for i in 1..qty
 				v = rand(1..100)
@@ -137,7 +137,7 @@ pbFadeOutIn {
 						components.push(:BERRYC)
 				end
 			end
-		# 8 hour berries
+		# 8 hour berries t5
 		when :POMEGBERRY,:KELPSYBERRY,:QUALOTBERRY,:HONDEWBERRY,:GREPABERRY,:TAMATOBERRY,:SITRUSBERRY
 			for i in 1..qty
 				v = rand(1..100)
@@ -152,7 +152,7 @@ pbFadeOutIn {
 						components.push(:BERRYC)
 				end
 			end
-		# 12 hour berries
+		# 12 hour berries t6
 		when :LUMBERRY,
 			for i in 1..qty
 				v = rand(1..100)
@@ -167,7 +167,7 @@ pbFadeOutIn {
 						components.push(:BERRYC)
 				end
 			end
-		# 15 hour berries
+		# 15 hour berries t7
 		when :SPELONBERRY,:PAMTREBERRY,:WATMELBERRY,:DURINBERRY,:BELUEBERRY
 			for i in 1..qty
 				v = rand(1..100)
@@ -182,7 +182,7 @@ pbFadeOutIn {
 						components.push(:BERRYC)
 				end
 			end
-		#18 hour berries
+		#18 hour berries t8
 		when :OCCABERRY,:PASSHOBERRY,:WACANBERRY,:RINDOBERRY,:YACHEBERRY,:CHOPLEBERRY,:KEBIABERRY,:SHUCABERRY,
 		:COBABERRY,:PAYAPABERRY,:TANGABERRY,:CHARTIBERRY,:KASIBBERRY,:HABANBERRY,:COLBURBERRY,:BABIRIBERRY,:CHILANBERRY
 			for i in 1..qty
@@ -198,32 +198,32 @@ pbFadeOutIn {
 						components.push(:BERRYU)
 				end
 			end
-		#18 hr separating gen 6 for compatibility
+		#18 hr separating gen 6 for compatibility t8
 		when :ROSELIBERRY, :KEEBERRY, :MARANGABERRY
 			for i in 1..qty
 				v = rand(1..100)
 				case v
-					when 1..11
+					when 1..5
 						components.push(:BERRYA)
-					when 12..35
-						components.push(:BERRYG)
-					when 36..75
+					when 6..11
 						components.push(:BERRYC)
-					when 76..100
+					when 12..40
+						components.push(:BERRYG)
+					when 41..100
 						components.push(:BERRYU)
 				end
 			end
-		#24 hour berries
+		#24 hour berries tier 9
 		when :LIECHIBERRY,:GANLONBERRY,:SALACBERRY,:PETAYABERRY,:APICOTBERRY,:LANSATBERRY,:STARFBERRY,:ENIGMABERRY,
 		:MICLEBERRY,:CUSTAPBERRY,:JABOCABERRY,:ROWAPBERRY
 			for i in 1..qty
 				v = rand(1..100)
 				case v
-					when 1..11
+					when 1..2
 						components.push(:BERRYA)
-					when 12..25
+					when 3..33
 						components.push(:BERRYG)
-					when 26..67
+					when 34..67
 						components.push(:BERRYC)
 					when 68..100
 						components.push(:BERRYU)

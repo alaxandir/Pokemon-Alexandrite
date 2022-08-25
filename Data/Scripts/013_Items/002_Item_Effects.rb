@@ -35,6 +35,18 @@ ItemHandlers::UseFromBag.add(:ESCAPEROPE,proc { |item|
   next 0
 })
 
+ItemHandlers::UseFromBag.add(:ENDLESSROPE,proc { |item|
+  if $game_player.pbHasDependentEvents?
+    pbMessage(_INTL("It can't be used when you have someone with you."))
+    next 0
+  end
+  if ($PokemonGlobal.escapePoint rescue false) && $PokemonGlobal.escapePoint.length>0
+    next 2   # End screen and do not consume item
+  end
+  pbMessage(_INTL("Can't use that here."))
+  next 0
+})
+
 ItemHandlers::UseFromBag.add(:BICYCLE,proc { |item|
   next (pbBikeCheck) ? 2 : 0
 })
@@ -68,6 +80,20 @@ ItemHandlers::UseFromBag.copy(:ITEMFINDER,:DOWSINGMCHN,:DOWSINGMACHINE)
 #===============================================================================
 
 ItemHandlers::ConfirmUseInField.add(:ESCAPEROPE,proc { |item|
+  escape = ($PokemonGlobal.escapePoint rescue nil)
+  if !escape || escape==[]
+    pbMessage(_INTL("Can't use that here."))
+    next false
+  end
+  if $game_player.pbHasDependentEvents?
+    pbMessage(_INTL("It can't be used when you have someone with you."))
+    next false
+  end
+  mapname = pbGetMapNameFromId(escape[0])
+  next pbConfirmMessage(_INTL("Want to escape from here and return to {1}?",mapname))
+})
+
+ItemHandlers::ConfirmUseInField.add(:ENDLESSROPE,proc { |item|
   escape = ($PokemonGlobal.escapePoint rescue nil)
   if !escape || escape==[]
     pbMessage(_INTL("Can't use that here."))
@@ -188,6 +214,31 @@ ItemHandlers::UseInField.add(:ESCAPEROPE,proc { |item|
   }
   pbEraseEscapePoint
   next 3
+})
+
+ItemHandlers::UseInField.add(:ENDLESSROPE,proc { |item|
+  escape = ($PokemonGlobal.escapePoint rescue nil)
+  if !escape || escape==[]
+    pbMessage(_INTL("Can't use that here."))
+    next 0
+  end
+  if $game_player.pbHasDependentEvents?
+    pbMessage(_INTL("It can't be used when you have someone with you."))
+    next 0
+  end
+  pbUseItemMessage(item)
+  pbFadeOutIn {
+    $game_temp.player_new_map_id    = escape[0]
+    $game_temp.player_new_x         = escape[1]
+    $game_temp.player_new_y         = escape[2]
+    $game_temp.player_new_direction = escape[3]
+    pbCancelVehicles
+    $scene.transfer_player
+    $game_map.autoplay
+    $game_map.refresh
+  }
+  pbEraseEscapePoint
+  next 1 #USED, not CONSUMED
 })
 
 ItemHandlers::UseInField.add(:SACREDASH,proc { |item|
@@ -359,6 +410,33 @@ ItemHandlers::UseInField.add(:POCKETPC,proc { |item|
   pbPokeCenterPC
   end
   next 1
+})
+
+ItemHandlers::UseInField.add(:POCKETNURSE,proc { |item|
+  if $game_map.name.include?("Elite Four") || $game_map.name.include?("Champion")
+	pbMessage(_INTL("Can't use that here."))
+  else
+    pbFadeOutIn {
+      annot = []
+      scene = PokemonParty_Scene.new
+      screen = PokemonPartyScreen.new(scene,$Trainer.party)
+      screen.pbStartScene(_INTL("Use on which Pokémon?"),false,annot)
+      loop do
+        scene.pbSetHelpText(_INTL("Use on which Pokémon?"))
+        chosen = screen.pbChoosePokemon
+        if chosen<0
+          ret = false
+          break
+        end
+        pkmn = $Trainer.party[chosen]
+        if pbCheckUseOnPokemon(item,pkmn,screen)
+          ret = ItemHandlers.triggerUseOnPokemon(item,pkmn,screen)
+        end
+      end
+      screen.pbEndScene
+    }
+  end
+  next 1  
 })
 
 #===============================================================================
@@ -1314,152 +1392,93 @@ ItemHandlers::UseOnPokemon.add(:COFFEE,proc { |item,pkmn,scene|
 
 #IV VITAMINS
 ItemHandlers::UseOnPokemon.add(:HPVITAMIN,proc{|item,pkmn,scene|
-
    if pkmn.iv[:HP]>=31
-
      scene.pbDisplay(_INTL("It won't have any effect."))
-
      next false
-
    else
-
      pkmn.iv[:HP]=(pkmn.iv[:HP]==30) ? 31 : pkmn.iv[:HP]+2
-
      scene.pbRefresh
-
      scene.pbDisplay(_INTL("{1}'s HP IV increased to #{pkmn.iv[:HP]}",pkmn.name))
-
      pkmn.changeHappiness("vitamin")
-	 
 	 pkmn.calc_stats
-
      next true
-
    end
-
 })
+
 ItemHandlers::UseOnPokemon.add(:ATTACKVITAMIN,proc{|item,pkmn,scene|
-
    if pkmn.iv[:ATTACK]>=31
-
      scene.pbDisplay(_INTL("It won't have any effect."))
-
      next false
-
    else
-
      pkmn.iv[:ATTACK]=(pkmn.iv[:ATTACK]==30) ? 31 : pkmn.iv[:ATTACK]+2
-
      scene.pbRefresh
-
      scene.pbDisplay(_INTL("{1}'s ATTACK IV increased to #{pkmn.iv[:ATTACK]}",pkmn.name))
-
      pkmn.changeHappiness("vitamin")
-	 
 	 pkmn.calc_stats
-
      next true
-
    end
-
 })
+
 ItemHandlers::UseOnPokemon.add(:DEFENSEVITAMIN,proc{|item,pkmn,scene|
-
    if pkmn.iv[:DEFENSE]>=31
-
      scene.pbDisplay(_INTL("It won't have any effect."))
-
      next false
-
    else
-
      pkmn.iv[:DEFENSE]=(pkmn.iv[:DEFENSE]==30) ? 31 : pkmn.iv[:DEFENSE]+2
-
      scene.pbRefresh
-
      scene.pbDisplay(_INTL("{1}'s DEFENSE IV increased to #{pkmn.iv[:DEFENSE]}",pkmn.name))
-
      pkmn.changeHappiness("vitamin")
-	 
 	 pkmn.calc_stats
-
      next true
-
    end
-
 })
+
 ItemHandlers::UseOnPokemon.add(:SPEEDVITAMIN,proc{|item,pkmn,scene|
-
    if pkmn.iv[:SPEED]>=31
-
      scene.pbDisplay(_INTL("It won't have any effect."))
-
      next false
-
    else
-
      pkmn.iv[:SPEED]=(pkmn.iv[:SPEED]==30) ? 31 : pkmn.iv[:SPEED]+2
-
      scene.pbRefresh
-
      scene.pbDisplay(_INTL("{1}'s SPEED IV increased to #{pkmn.iv[:SPEED]}",pkmn.name))
-
      pkmn.changeHappiness("vitamin")
-	 
 	 pkmn.calc_stats
-
      next true
-
    end
-
 })
+
 ItemHandlers::UseOnPokemon.add(:SPECIALATTACKVITAMIN,proc{|item,pkmn,scene|
-
    if pkmn.iv[:SPECIAL_ATTACK]>=31
-
      scene.pbDisplay(_INTL("It won't have any effect."))
-
      next false
-
    else
-
      pkmn.iv[:SPECIAL_ATTACK]=(pkmn.iv[:SPECIAL_ATTACK]==30) ? 31 : pkmn.iv[:SPECIAL_ATTACK]+2
-
      scene.pbRefresh
-
      scene.pbDisplay(_INTL("{1}'s SP. ATTACK IV increased to #{pkmn.iv[:SPECIAL_ATTACK]}",pkmn.name))
-
      pkmn.changeHappiness("vitamin")
-	 
 	 pkmn.calc_stats
-
      next true
-
    end
 
 })
+
 ItemHandlers::UseOnPokemon.add(:SPECIALDEFENSEVITAMIN,proc{|item,pkmn,scene|
-
    if pkmn.iv[:SPECIAL_DEFENSE]>=31
-
      scene.pbDisplay(_INTL("It won't have any effect."))
-
      next false
-
    else
-
      pkmn.iv[:SPECIAL_DEFENSE]=(pkmn.iv[:SPECIAL_DEFENSE]==30) ? 31 : pkmn.iv[:SPECIAL_DEFENSE]+2
-
      scene.pbRefresh
-
      scene.pbDisplay(_INTL("{1}'s SP. DEFENSE IV increased to #{pkmn.iv[:SPECIAL_DEFENSE]}",pkmn.name))
-
      pkmn.changeHappiness("vitamin")
-	 
 	 pkmn.calc_stats
-
      next true
-
    end
+})
 
+ItemHandlers::UseOnPokemon.add(:POCKETNURSE,proc { |item,pkmn,scene|
+  pbSEPlay("Slots coin",100)
+  pkmn.heal
+  scene.pbRefresh
+  next true
 })

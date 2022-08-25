@@ -6,7 +6,7 @@ class IntroEventScene < EventScene
   TITLE_START_IMAGE     = 'start'
   TITLE_START_IMAGE_X   = 0
   TITLE_START_IMAGE_Y   = 322
-  SECONDS_PER_SPLASH    = 2
+  SECONDS_PER_SPLASH    = 3
   TICKS_PER_ENTER_FLASH = 40   # 20 ticks per second
   FADE_TICKS            = 8    # 20 ticks per second
 

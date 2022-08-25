@@ -382,15 +382,15 @@ class PokeBattle_Move
     # Weather
     case @battle.pbWeather
     when :Sun, :HarshSun
-      if type == :FIRE
+      if type == :FIRE && !target.hasActiveItem?(:UTILIYUMBRELLA)
         multipliers[:final_damage_multiplier] *= 1.5
-      elsif type == :WATER
+      elsif type == :WATER && !user.hasActiveItem?(:UTILIYUMBRELLA)
         multipliers[:final_damage_multiplier] /= 2
       end
     when :Rain, :HeavyRain
-      if type == :FIRE
+      if type == :FIRE && !user.hasActiveItem?(:UTILIYUMBRELLA)
         multipliers[:final_damage_multiplier] /= 2
-      elsif type == :WATER
+      elsif type == :WATER && !target.hasActiveItem?(:UTILIYUMBRELLA)
         multipliers[:final_damage_multiplier] *= 1.5
       end
     when :Sandstorm

@@ -596,7 +596,7 @@ class PokemonPokedexInfo_Scene
         oldpage = @page
         @page -= 1
         @page = 1 if @page<1
-        @page = 3 if @page>3
+        @page=@maxPage if @page>@maxPage #@page = 3 if @page>3
         if @page!=oldpage
           pbPlayCursorSE
           dorefresh = true
@@ -605,7 +605,7 @@ class PokemonPokedexInfo_Scene
         oldpage = @page
         @page += 1
         @page = 1 if @page<1
-        @page = 3 if @page>3
+        @page=@maxPage if @page>@maxPage #@page = 3 if @page>3
         if @page!=oldpage
           pbPlayCursorSE
           dorefresh = true

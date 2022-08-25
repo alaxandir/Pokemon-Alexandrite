@@ -39,11 +39,10 @@ Weather = None,0
 MapPosition = 0,4,12
 #-------------------------------
 [005]
-# MAP005
+# Icey Grotto
 Outdoor = true
 ShowArea = true
-Weather = None,0
-MapPosition = 0,4,12
+Weather = Snow,100
 #-------------------------------
 [006]
 # Fortune City Gym
@@ -500,6 +499,7 @@ MapPosition = 0,14,10
 # Slate tunnel
 Outdoor = false
 ShowArea = true
+DarkMap = true
 Weather = None,0
 MapPosition = 0,12,8
 BattleBack = Cave
@@ -1433,7 +1433,7 @@ MapPosition = 0,4,12
 # Waterfall Cave
 Outdoor = false
 Weather = None,0
-MapPosition = 0,15,4
+MapPosition = 0,14,3
 DarkMap = true
 BattleBack = CaveDark
 #-------------------------------

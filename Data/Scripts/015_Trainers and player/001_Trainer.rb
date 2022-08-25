@@ -164,7 +164,7 @@ class Trainer
 
   # Fully heal all Pokémon in the party.
   def heal_party
-    @party.each { |pkmn| pkmn.heal }
+    @party.each { |pkmn| pkmn.heal}
   end
 
   #=============================================================================

@@ -80,3 +80,4 @@
 78,WORLD,World Ribbon,"Pokémon League Champion Ribbon."
 79,NATIONALCHAMPION,National Champion Ribbon,"Pokémon World Championships National Champion Ribbon."
 80,WORLDCHAMPION,World Champion Ribbon,"Pokémon World Championships World Champion Ribbon."
+81,SECRET,SECRET Ribbon,"Ribbon awarded for finding a very well hidden secret."
