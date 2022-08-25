@@ -35,7 +35,7 @@ MENU_COMPONENTS = [
 ]
 
 # The default theme for the menu screen
-DEFAULT_MENU_THEME = 0
+DEFAULT_MENU_THEME = 9
 
 # Change Theme in the Options Menu
 CHANGE_THEME_IN_OPTIONS = true

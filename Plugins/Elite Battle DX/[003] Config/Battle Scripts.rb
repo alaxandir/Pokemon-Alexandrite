@@ -93,7 +93,7 @@ module BattleScripts
   NICK = {
 	"beforeLastOpp" => proc do
 		pname = @battlers[1].name
-		@scene.pbTrainerSpeak("Let me show you what Piplup can do!")
+		@scene.pbTrainerSpeak("Let me show you what #{pname} can do!")
 		end,
 	"turnStart0" => proc do
 	tname = $Trainer.name
@@ -652,8 +652,8 @@ JAY = {
 	@battlers[1].pbRaiseStatStageBasic(:DEFENSE, 2)
 	@battlers[1].pbRaiseStatStageBasic(:SPECIAL_DEFENSE, 2)
 	@battlers[1].pbRaiseStatStageBasic(:SPEED, 2)
-	@scene.pbDisplay("Persian looks ready to fight to the last breath!")
-	@scene.pbDisplay("Persian's stats increased dramatically!")
+	@scene.pbDisplay("#{pname} looks ready to fight to the last breath!")
+	@scene.pbDisplay("#{pname}'s stats increased dramatically!")
 	end,
 	"afterLast" => "Foolish child, no more games!",
 	"loss" => "Fufufu, you're mine!"

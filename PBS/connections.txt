@@ -73,11 +73,11 @@
 # Route 104 (207) - Gold Coast (100)
 207,East,0,100,West,39
 # Route 118 (154) - Route 103 (98)
-154,West,37,98,East,0
+# 154,West,37,98,East,0
 # Route 104 (207) - Route 103 (98)
 207,East,1,98,West,0
 # Route 103 (206) - Route 103 (98)
-206,North,0,98,South,0
+#206,North,0,98,South,0
 # Earthroot Forest (33) - Route 118 (154)
 33,West,1,154,East,0
 # Route 103 (206) - Route 118 (154)
@@ -97,13 +97,13 @@
 # Route 104 (207) - Route 104 (104)
 207,West,0,104,East,0
 # Anthophil City (106) - Route 104 (104)
-106,East,9,104,West,0
+#106,East,9,104,West,0
 # Route 104 (207) - Coral Sea (136)
 207,East,0,136,West,69
 # Route 103 (206) - Route 104 (207)
 206,West,0,207,East,66
 # Route 105 (123) - Anthophil City (106)
-123,East,0,106,West,21
+#123,East,0,106,West,21
 # Emberton (124) - Route 105 (123)
 124,East,0,123,West,0
 # Route 106 (138) - Emberton (124)

@@ -5,7 +5,7 @@ module Settings
   # Whether turn order is recalculated after a Pokémon Mega Evolves.
   RECALCULATE_TURN_ORDER_AFTER_MEGA_EVOLUTION = (MECHANICS_GENERATION >= 7)
   # Whether turn order is recalculated after a Pokémon's Speed stat changes.
-  RECALCULATE_TURN_ORDER_AFTER_SPEED_CHANGES  = (MECHANICS_GENERATION >= 8)
+  RECALCULATE_TURN_ORDER_AFTER_SPEED_CHANGES  = (MECHANICS_GENERATION >= 7)
   # Whether critical hits do 1.5x damage and have 4 stages (true), or they do 2x
   # damage and have 5 stages as in Gen 5 (false). Also determines whether
   # critical hit rate can be copied by Transform/Psych Up.
@@ -35,11 +35,11 @@ module Settings
 
   # The minimum number of badges required to boost each stat of a player's
   # Pokémon by 1.1x, in battle only.
-  NUM_BADGES_BOOST_ATTACK  = (MECHANICS_GENERATION >= 4) ? 999 : 1
-  NUM_BADGES_BOOST_DEFENSE = (MECHANICS_GENERATION >= 4) ? 999 : 5
-  NUM_BADGES_BOOST_SPATK   = (MECHANICS_GENERATION >= 4) ? 999 : 7
-  NUM_BADGES_BOOST_SPDEF   = (MECHANICS_GENERATION >= 4) ? 999 : 7
-  NUM_BADGES_BOOST_SPEED   = (MECHANICS_GENERATION >= 4) ? 999 : 3
+  NUM_BADGES_BOOST_ATTACK  = (MECHANICS_GENERATION >= 4) ? 999 : 9
+  NUM_BADGES_BOOST_DEFENSE = (MECHANICS_GENERATION >= 4) ? 999 : 9
+  NUM_BADGES_BOOST_SPATK   = (MECHANICS_GENERATION >= 4) ? 999 : 9
+  NUM_BADGES_BOOST_SPDEF   = (MECHANICS_GENERATION >= 4) ? 999 : 9
+  NUM_BADGES_BOOST_SPEED   = (MECHANICS_GENERATION >= 4) ? 999 : 9
 
   #=============================================================================
 

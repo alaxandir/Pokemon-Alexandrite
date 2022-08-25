@@ -135,7 +135,11 @@ class ItemCraft_Scene
           if canCraft?(index,volume)
             if $PokemonBag.pbCanStore?(item,volume) 
               $PokemonBag.pbStoreItem(item,volume)
+              if item.is_mega_stone?
+                pbMEPlay("Megastone")
+              else
               pbSEPlay("Pkmn move learnt")
+              end
               removeIngredients(index,volume)
               pbMessage(_INTL("You put the {1} away\\nin the <icon=bagPocket{2}>\\c[1]{3} Pocket\\c[0].",
                 itemname,pocket,PokemonBag.pocketNames()[pocket]))

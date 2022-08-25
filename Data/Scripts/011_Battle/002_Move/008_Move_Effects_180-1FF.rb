@@ -71,3 +71,17 @@ class PokeBattle_Move_197 < PokeBattle_TargetStatDownMove
     @statDown = [:DEFENSE,2]
   end
 end
+
+#===============================================================================
+# Power is doubled if the user moves before the target, or if the target
+# switched in this round. (Bolt Beak, Fishious Rend)
+#===============================================================================
+class PokeBattle_Move_198 < PokeBattle_Move
+  def pbBaseDamage(baseDmg,user,target)
+    if @battle.choices[target.index][0] == :None || #Switched in
+      ([:UseMove, :Shift].include?(@battle.choices[target.index][0]) && !target.movedThisRound?)
+      baseDmg *= 2
+    end
+    return baseDmg
+  end
+end

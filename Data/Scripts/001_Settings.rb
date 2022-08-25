@@ -8,7 +8,7 @@
 module Settings
   # The version of your game. It has to adhere to the MAJOR.MINOR.PATCH format.
 
-	GAME_VERSION = '1.0.8'
+	GAME_VERSION = '1.1.0'
 
 	
   # The generation that the battle system follows. Used throughout the battle
@@ -35,7 +35,7 @@ module Settings
   # The level of newly hatched Pokémon.
   EGG_LEVEL            = 1
   # The odds of a newly generated Pokémon being shiny (out of 65536).
-  SHINY_POKEMON_CHANCE = (MECHANICS_GENERATION >= 6) ? 256 : 256
+  SHINY_POKEMON_CHANCE = (MECHANICS_GENERATION >= 6) ? 128 : 128
   # The odds of a wild Pokémon/bred egg having Pokérus (out of 65536).
   POKERUS_CHANCE       = 3
   # Whether a bred baby Pokémon can inherit any TM/HM moves from its father. It

@@ -309,9 +309,21 @@ class Pokemon
   # Heals all HP, PP, and status problems of this Pokémon.
   def heal
     return if egg?
+    if $PokemonGlobal.isNuzlocke == true
+      data = EliteBattle.get_data(:NUZLOCKE, :Metrics, :RULES); data = [] if data.nil?
+      if EliteBattle.get(:nuzlocke) && (data.include?(:NOREVIVE))
+        if @hp >= 1
+        heal_HP
+        heal_status
+        heal_PP
+        elsif @hp <= 0
+        end
+      end
+    else
     heal_HP
     heal_status
     heal_PP
+    end
   end
 
   #=============================================================================
