@@ -121,11 +121,11 @@ SuperRod
 #-------------------------------
 [016] # Cyberspace
 Cave,3
-    40,PORYGON,36
-    20,PORYGON2,36
-    20,ROTOM,36
+    40,PORYGON,35
+    20,PORYGON2,35
+    20,ROTOM,35
     10,MISSINGNO,36
-    10,PORYGONZ,36
+    10,PORYGONZ,35
 #-------------------------------
 [022] # Safari
 Land,27
@@ -1441,7 +1441,7 @@ Cave,3
     40,PORYGON,50
     20,PORYGON2,50
     20,ROTOM,50
-    10,MISSINGNO,50
+    10,MISSINGNO,63
     10,PORYGONZ,50
 #-------------------------------
 [198] # Waterfall Cave

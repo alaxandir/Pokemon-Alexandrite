@@ -65,7 +65,7 @@ Cubone = {
     :Stage1 => "Find Cubone in Seafoam Cave.",
     :Location1 => "Seafoam City",
     :QuestDescription => "The Pokémaniac wants to see a rare Cubone.",
-    :RewardString => "Rare Item"
+    :RewardString => "Thick Club"
   }
   
 Powerplant = {
@@ -411,7 +411,7 @@ Vileplume = {
     :Stage1 => "Obtain a Vileplume",
     :Location1 => "Goldcoast",
     :QuestDescription => "A slightly scary plant obsessed lady has asked you to show her a Vileplume.",
-    :RewardString => "TM"
+    :RewardString => "Balm Mushroom"
   }
   
 TORCHIC = {

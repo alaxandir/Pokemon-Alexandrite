@@ -11,6 +11,7 @@ IV = 10,10,10,10,10,10
 [BUGCATCHER,Ian]#002
 LoseText = "..."
 Pokemon = WURMPLE,5
+Form = 1
 Item = POISONBARB
 Moves = POISONSTING,STRINGSHOT
 #-------------------------------

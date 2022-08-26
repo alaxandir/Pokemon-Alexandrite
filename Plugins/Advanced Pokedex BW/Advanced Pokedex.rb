@@ -20,7 +20,7 @@
 
 class PokemonPokedexInfo_Scene
     # Switch number that toggle this script ON/OFF
-    SWITCH=70
+    SWITCH=60
     
     # When true displays TMs/TRs/HMs/Tutors moves
     SHOW_MACHINE_TUTOR_MOVES = true
