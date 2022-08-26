@@ -367,6 +367,29 @@ ItemHandlers::UseOnPokemon.add(:RARECANDY,proc { |item,pkmn,scene|
   next true
 })
 
+ItemHandlers::UseOnPokemon.add(:ARCEUSCANDY,proc { |item,pkmn,scene|
+  
+  if $PokemonSystem.difficulty >= 2 #<- REPLACE WITH YOUR SETTING $game_variables[id] == X or $game_switches[id] 
+    levelCap = LEVEL_CAPS[$Trainer.badge_count]
+  else
+    levelCap = GameData::GrowthRate.max_level
+  end
+  
+  if pkmn.level>=GameData::GrowthRate.max_level || pkmn.shadowPokemon?
+    scene.pbDisplay(_INTL("It won't have any effect."))
+    next false
+  elsif pkmn.level>levelCap
+    scene.pbMessage(_INTL("{1} refuses to eat the Rare Candy.",pkmn.name))
+    next false
+  elsif pkmn.level==levelCap
+    scene.pbMessage(_INTL("{1} refuses to eat the Rare Candy.",pkmn.name))
+    next false
+  end
+  pbChangeLevel(pkmn,pkmn.level+1,scene)
+  scene.pbHardRefresh
+  next true
+})
+
 ItemHandlers::UseOnPokemon.add(:EXPCANDYXS,proc { |item,pkmn,scene|
   if pkmn.level>=GameData::GrowthRate.max_level || pkmn.shadowPokemon?
     scene.pbDisplay(_INTL("It won't have any effect."))
