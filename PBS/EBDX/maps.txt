@@ -321,3 +321,10 @@ BattleEnv       = CHAMPION
 [214]
 # BattleAcademy
 BattleEnv       = CHAMPION
+#-------------------------------
+[007]
+BattleEnv       = DARKCAVE
+#-------------------------------
+[198]
+BattleEnv       = DARKCAVE
+

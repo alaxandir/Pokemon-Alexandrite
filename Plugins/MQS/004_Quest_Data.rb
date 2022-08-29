@@ -241,7 +241,7 @@ SIREN = {
     :Stage1 => "Reach Siren's Cave.",
     :Location1 => "Siren's Peak",
     :QuestDescription => "A mysterious cry has been heard coming from Siren's Peak. Investigate to find the source.",
-    :RewardString => "Alolan Exeggutor"
+    :RewardString => "Fateful Encounter"
   }
   
 SUPERROD = {
@@ -284,7 +284,7 @@ CHARMELEON = {
     :QuestGiver => "Lass",
     :Stage1 => "Trade a Pikachu for Charmeleon",
     :Location1 => "Route 109 PKMN Center",
-    :QuestDescription => "A trainer wants to trade Pokémon with you. Your Pikachu for his Charmeleon.",
+    :QuestDescription => "A trainer wants to trade Pokémon with you. Your Pikachu for her Charmeleon.",
     :RewardString => "Charmeleon"
   }
   
@@ -430,7 +430,7 @@ BAGON = {
     :QuestGiver => "Lass",
     :Stage1 => "Trade a Leafeon for a Bagon",
     :Location1 => "Emberton Museum",
-    :QuestDescription => "A trainer wants to trade Pokémon with you. Your Leafeon for his Bagon.",
+    :QuestDescription => "A trainer wants to trade Pokémon with you. Your Leafeon for her Bagon.",
     :RewardString => "Bagon"
   }
   
@@ -452,5 +452,15 @@ ORICORIO = {
     :Location1 => "Gold Coast",
     :QuestDescription => "The Oricorio of Gold Coast are hard to please, maybe a new dance will impress them!",
     :RewardString => "???"
+  }
+
+  DRATINI = {
+    :ID => "54",
+    :Name => "TRADE: Emolga for Dratini",
+    :QuestGiver => "Lady",
+    :Stage1 => "Trade a Emolga for a Dratini",
+    :Location1 => "Paradise Cove",
+    :QuestDescription => "A trainer wants to trade Pokémon with you. Your Emolga for her Dratini.",
+    :RewardString => "Dratini"
   }
 end

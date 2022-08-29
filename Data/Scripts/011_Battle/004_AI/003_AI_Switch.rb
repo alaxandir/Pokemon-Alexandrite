@@ -130,6 +130,7 @@ class PokeBattle_AI
       if list.length>0
         if batonPass>=0 && @battle.pbRegisterMove(idxBattler,batonPass,false)
           PBDebug.log("[AI] #{battler.pbThis} (#{idxBattler}) will use Baton Pass to avoid Perish Song")
+          echoln "[AI] #{battler.pbThis} (#{idxBattler}) will use Baton Pass to avoid Perish Song"
           return true
         end
         if @battle.pbRegisterSwitch(idxBattler,list[0])

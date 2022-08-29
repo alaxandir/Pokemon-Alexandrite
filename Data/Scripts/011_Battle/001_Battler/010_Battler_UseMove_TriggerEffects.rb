@@ -33,6 +33,7 @@ class PokeBattle_Battler
       # Beak Blast
       if target.effects[PBEffects::BeakBlast]
         PBDebug.log("[Lingering effect] #{target.pbThis}'s Beak Blast")
+        echoln "[Lingering effect] #{target.pbThis}'s Beak Blast"
         if move.pbContactMove?(user) && user.affectedByContactEffect?
           target.pbBurn(user) if target.pbCanBurn?(user,false,self)
         end

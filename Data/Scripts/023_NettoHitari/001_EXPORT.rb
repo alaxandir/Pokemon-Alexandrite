@@ -67,7 +67,7 @@ EXPORTDIRNAME = "EventExporter"
 EXPORTEVENTS = false 
 # Names files according to timestamp: Year-Month-Date-HoursMinutesSeconds
 # Ex. 2020-07-01-163851.txt is 4:38pm on July 1, 2020.
-USEDATEANDTIME = false
+USEDATEANDTIME = true
 
 # Custom file name if not using timestamp
 EXPORTFILENAME = "EventTextDump"

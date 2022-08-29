@@ -364,7 +364,6 @@ BattlerEnemyX = -1
 BattlerEnemyY = 23
 BattlerShadowX = 0
 BattlerShadowSize = 2
-Evolutions = BUTTERFREE,Level,10
 #-------------------------------
 [12]
 Name = Butterfree
@@ -465,7 +464,6 @@ BattlerEnemyX = 0
 BattlerEnemyY = 22
 BattlerShadowX = 0
 BattlerShadowSize = 1
-Evolutions = BEEDRILL,Level,14
 #-------------------------------
 [15]
 Name = Beedrill
@@ -6994,7 +6992,7 @@ BattlerEnemyX = -2
 BattlerEnemyY = 0
 BattlerShadowX = 0
 BattlerShadowSize = 2
-Evolutions = GLISCOR,NightHoldItem,RAZORFANG
+Evolutions = GLISCOR,Level,40
 #-------------------------------
 [208]
 Name = Steelix
@@ -7376,7 +7374,7 @@ Name = Magcargo
 InternalName = MAGCARGO
 Type1 = FIRE
 Type2 = ROCK
-BaseStats = 100,50,120,20,90,90
+BaseStats = 75,50,120,20,90,90
 GenderRate = Female50Percent
 GrowthRate = Medium
 BaseEXP = 151
@@ -8955,7 +8953,7 @@ BattlerEnemyX = -2
 BattlerEnemyY = 18
 BattlerShadowX = 0
 BattlerShadowSize = 1
-Evolutions = SILCOON,Silcoon,7,CASCOON,Cascoon,7
+Evolutions = SILCOON,LevelDay,7,CASCOON,LevelNight,7
 #-------------------------------
 [266]
 Name = Silcoon
@@ -8987,7 +8985,7 @@ BattlerEnemyX = 0
 BattlerEnemyY = 24
 BattlerShadowX = 0
 BattlerShadowSize = 2
-Evolutions = BEAUTIFLY,SpAtkOverSpDef,15,BUTTERFREE,SpDefOverSpAtk,15
+Evolutions = BEAUTIFLY,LevelDay,15,DUSTOX,LevelNight,15
 #-------------------------------
 [267]
 Name = Beautifly
@@ -9053,7 +9051,7 @@ BattlerEnemyX = 0
 BattlerEnemyY = 22
 BattlerShadowX = 0
 BattlerShadowSize = 2
-Evolutions = DUSTOX,SpDefOverSpAtk,15,BEEDRILL,SpeedOverSpDef,15
+Evolutions = BUTTERFREE,LevelDay,15,BEEDRILL,LevelNight,15
 #-------------------------------
 [269]
 Name = Dustox
@@ -20744,7 +20742,7 @@ BattlerEnemyX = 1
 BattlerEnemyY = 20
 BattlerShadowX = 0
 BattlerShadowSize = 2
-Evolutions = GOLURK,Level,43
+Evolutions = GOLURK,Level,36
 #-------------------------------
 [623]
 Name = Golurk

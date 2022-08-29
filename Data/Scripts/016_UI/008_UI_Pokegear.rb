@@ -130,15 +130,14 @@ class PokemonPokegearScreen
     cmdJukebox = -1
     cmdEncounters = -1
     cmdClock = -1
-	cmdCards = -1
-    t=pbGetTimeNow.strftime("%I:%M %p")
+	  cmdCards = -1
     commands[cmdMap = commands.length]     = ["map",_INTL("Map")]
     if $PokemonGlobal.phoneNumbers && $PokemonGlobal.phoneNumbers.length>0
       commands[cmdPhone = commands.length] = ["phone",_INTL("Phone")]
     end
     commands[cmdJukebox = commands.length] = ["jukebox",_INTL("Jukebox")]
     commands[cmdEncounters = commands.length] = ["encounter",_INTL("Encounters")]
-    commands[cmdClock = commands.length] = ["clock",_INTL("{1}",t)]
+    commands[cmdClock = commands.length] = ["clock",_INTL("Time Skip")]
     @scene.pbStartScene(commands)
     loop do
       cmd = @scene.pbScene
@@ -162,11 +161,10 @@ class PokemonPokegearScreen
         screen = EncounterList_Screen.new(scene)
         screen.pbStartScreen
         }
-	  elsif cmdSearch>=0 && cmd==cmdSearch
-        vPokeSearch
       elsif cmdClock>=0 && cmd=cmdClock
+        UnrealTime.add_seconds(14400)
         t=pbGetTimeNow.strftime("%I:%M %p")
-        Kernel.pbMessage(_INTL("It is currently {1}. One hour in-game is equal to five minutes in real-time.",t))
+        Kernel.pbMessage(_INTL("\\ts[]Skipped four hours forward.\nIt is now {1}.",t))
       end
     end
     @scene.pbEndScene

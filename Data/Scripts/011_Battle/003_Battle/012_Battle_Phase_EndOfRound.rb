@@ -201,6 +201,7 @@ class PokeBattle_Battle
   def pbEndOfRoundPhase
     PBDebug.log("")
     PBDebug.log("[End of round]")
+    echoln "[End of round]"
     @endOfRound = true
     @scene.pbBeginEndOfRoundPhase
     pbCalculatePriority           # recalculate speeds
@@ -281,6 +282,7 @@ class PokeBattle_Battle
       # Grassy Terrain (healing)
       if @field.terrain == :Grassy && b.affectedByTerrain? && b.canHeal?
         PBDebug.log("[Lingering effect] Grassy Terrain heals #{b.pbThis(true)}")
+        echoln "[Lingering effect] Grassy Terrain heals #{b.pbThis(true)}"
         b.pbRecoverHP(b.totalhp/16)
         pbDisplay(_INTL("{1}'s HP was restored.",b.pbThis))
       end
@@ -444,6 +446,7 @@ class PokeBattle_Battle
         end
       else
         PBDebug.log("[End of effect] #{b.pbThis}'s encore ended (encored move no longer known)")
+        echoln "[End of effect] #{b.pbThis}'s encore ended (encored move no longer known)"
         b.effects[PBEffects::Encore]     = 0
         b.effects[PBEffects::EncoreMove] = nil
       end
@@ -474,6 +477,7 @@ class PokeBattle_Battle
     pbEORCountDownBattlerEffect(priority,PBEffects::Yawn) { |battler|
       if battler.pbCanSleepYawn?
         PBDebug.log("[Lingering effect] #{battler.pbThis} fell asleep because of Yawn")
+        echoln "[Lingering effect] #{battler.pbThis} fell asleep because of Yawn"
         battler.pbSleep
       end
     }

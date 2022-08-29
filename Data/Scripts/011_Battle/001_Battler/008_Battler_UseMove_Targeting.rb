@@ -108,6 +108,7 @@ class PokeBattle_Battler
     end
     if newTarget
       PBDebug.log("[Move target changed] #{newTarget.pbThis}'s Spotlight made it the target")
+      echoln "[Move target changed] #{newTarget.pbThis}'s Spotlight made it the target"
       targets = []
       pbAddTarget(targets,user,newTarget,move,nearOnly)
       return targets
@@ -126,6 +127,7 @@ class PokeBattle_Battler
     end
     if newTarget
       PBDebug.log("[Move target changed] #{newTarget.pbThis}'s Follow Me/Rage Powder made it the target")
+      echoln "[Move target changed] #{newTarget.pbThis}'s Follow Me/Rage Powder made it the target"
       targets = []
       pbAddTarget(targets,user,newTarget,move,nearOnly)
       return targets

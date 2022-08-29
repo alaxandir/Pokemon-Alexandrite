@@ -105,6 +105,7 @@ module PokeBattle_BattleCommon
     @criticalCapture = false
     numShakes = pbCaptureCalc(pkmn,battler,catch_rate,ball)
     PBDebug.log("[Threw Poké Ball] #{itemName}, #{numShakes} shakes (4=capture)")
+    echoln "[Threw Poké Ball] #{itemName}, #{numShakes} shakes (4=capture)"
     # Animation of Ball throw, absorb, shake and capture/burst out
     @scene.pbThrow(ball,numShakes,@criticalCapture,battler.index,showPlayer)
     # Outcome message

@@ -767,6 +767,7 @@ class PokeBattle_Battle
 
   def pbShowAbilitySplash(battler,delay=false,logTrigger=true)
     PBDebug.log("[Ability triggered] #{battler.pbThis}'s #{battler.abilityName}") if logTrigger
+    echoln "[Ability triggered] #{battler.pbThis}'s #{battler.abilityName}" if logTrigger
     return if !PokeBattle_SceneConstants::USE_ABILITY_SPLASH
     @scene.pbShowAbilitySplash(battler)
     if delay

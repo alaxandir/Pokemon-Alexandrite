@@ -12,7 +12,7 @@ class AutomaticLevelScaling
     proportional_scaling: LevelScalingSettings::PROPORTIONAL_SCALING,
     only_scale_if_higher: LevelScalingSettings::ONLY_SCALE_IF_HIGHER,
     only_scale_if_lower: LevelScalingSettings::ONLY_SCALE_IF_LOWER,
-    update_moves: true
+    update_moves: false
   }
 
   def self.setDifficulty(id)

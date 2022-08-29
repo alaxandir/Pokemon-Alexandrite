@@ -27,8 +27,18 @@ class PokeBattle_AI
     maxScore   = 0
     choices.each do |c|
       totalScore += c[1]
-      maxScore = c[1] if maxScore<c[1]
+      maxScore = c[1] if maxScore<c[1] 
     end
+    echoln choices
+
+    logMsg = "[AI] Move choices for #{user.pbThis(true)} (#{user.index}): "
+    choices.each_with_index do |c,i|
+      logMsg += "#{user.moves[c[0]].name}=#{c[1]}"
+      logMsg += " (target #{c[2]})" if c[2]>=0
+      logMsg += ", " if i<choices.length-1
+    end
+    echoln logMsg
+
     # Log the available choices
     if $INTERNAL
       logMsg = "[AI] Move choices for #{user.pbThis(true)} (#{user.index}): "
@@ -38,32 +48,36 @@ class PokeBattle_AI
         logMsg += ", " if i<choices.length-1
       end
       PBDebug.log(logMsg)
+      echoln logMsg
     end
     # Find any preferred moves and just choose from them
     if !wildBattler && skill>=PBTrainerAI.highSkill && maxScore>100
       stDev = pbStdDev(choices)
-      if stDev>=40 && pbAIRandom(100)<90
+      if stDev>=40 #&& pbAIRandom(100)<90
         preferredMoves = []
         choices.each do |c|
-          next if c[1]<200 && c[1]<maxScore*0.8
+          next if c[1]<200 && c[1]<maxScore*0.85
           preferredMoves.push(c)
           preferredMoves.push(c) if c[1]==maxScore   # Doubly prefer the best move
         end
+
         if preferredMoves.length>0
           m = preferredMoves[pbAIRandom(preferredMoves.length)]
           PBDebug.log("[AI] #{user.pbThis} (#{user.index}) prefers #{user.moves[m[0]].name}")
+          echoln "[AI] #{user.pbThis} (#{user.index}) prefers #{user.moves[m[0]].name}"
           @battle.pbRegisterMove(idxBattler,m[0],false)
           @battle.pbRegisterTarget(idxBattler,m[2]) if m[2]>=0
           return
         end
       end
     end
+
     # Decide whether all choices are bad, and if so, try switching instead
     if !wildBattler && skill>=PBTrainerAI.highSkill
       badMoves = false
-      if (maxScore<=20 && user.turnCount>2) ||
-         (maxScore<=40 && user.turnCount>5)
-        badMoves = true if pbAIRandom(100)<80
+      if (maxScore<=20 && user.turnCount>1) ||
+         (maxScore<=40 && user.turnCount>2)
+        badMoves = true #if pbAIRandom(100)<95
       end
       if !badMoves && totalScore<100 && user.turnCount>1
         badMoves = true
@@ -77,6 +91,7 @@ class PokeBattle_AI
       if badMoves && pbEnemyShouldWithdrawEx?(idxBattler,true)
         if $INTERNAL
           PBDebug.log("[AI] #{user.pbThis} (#{user.index}) will switch due to terrible moves")
+          echoln "[AI] #{user.pbThis} (#{user.index}) will switch due to terrible moves"
         end
         return
       end
@@ -84,6 +99,7 @@ class PokeBattle_AI
     # If there are no calculated choices, pick one at random
     if choices.length==0
       PBDebug.log("[AI] #{user.pbThis} (#{user.index}) doesn't want to use any moves; picking one at random")
+      echoln "[AI] #{user.pbThis} (#{user.index}) doesn't want to use any moves; picking one at random"
       user.eachMoveWithIndex do |_m,i|
         next if !@battle.pbCanChooseMove?(idxBattler,i,false)
         choices.push([i,100,-1])   # Move index, score, target
@@ -104,6 +120,7 @@ class PokeBattle_AI
     # Log the result
     if @battle.choices[idxBattler][2]
       PBDebug.log("[AI] #{user.pbThis} (#{user.index}) will use #{@battle.choices[idxBattler][2].name}")
+      echoln "[AI] #{user.pbThis} (#{user.index}) will use #{@battle.choices[idxBattler][2].name}"
     end
   end
 
@@ -185,9 +202,9 @@ class PokeBattle_AI
       if @battle.pbAbleNonActiveCount(user.idxOwnSide)==0
         if !(skill>=PBTrainerAI.highSkill && @battle.pbAbleNonActiveCount(target.idxOwnSide)>0)
           if move.statusMove?
-            score /= 1.5
+            score /= 1.2
           elsif target.hp<=target.totalhp/2
-            score *= 1.5
+            score *= 1.2
           end
         end
       end
@@ -249,16 +266,18 @@ class PokeBattle_AI
         end
       end
     end
+    # Don't prefer moves that are ineffective because of abilities or effects
+    return 0 if pbCheckMoveImmunity(score, move, user, target, skill)
     # Adjust score based on how much damage it can deal
     if move.damagingMove?
       score = pbGetMoveScoreDamage(score,move,user,target,skill)
     else   # Status moves
       # Don't prefer attacks which don't deal damage
-      score -= 10
+      # score -= 10
       # Account for accuracy of move
-      accuracy = pbRoughAccuracy(move,user,target,skill)
-      score *= accuracy/100.0
-      score = 0 if score<=10 && skill>=PBTrainerAI.highSkill
+      # accuracy = pbRoughAccuracy(move,user,target,skill)
+      # score *= accuracy/100.0
+      # score = 0 if score<=10 && skill>=PBTrainerAI.highSkill
     end
     score = score.to_i
     score = 0 if score<0
@@ -271,16 +290,17 @@ class PokeBattle_AI
   #=============================================================================
   def pbGetMoveScoreDamage(score,move,user,target,skill)
     # Don't prefer moves that are ineffective because of abilities or effects
-    return 0 if score<=0 || pbCheckMoveImmunity(score,move,user,target,skill)
+    # return 0 if score<=0 || pbCheckMoveImmunity(score,move,user,target,skill)
+    return 0 if score <= 0
     # Calculate how much damage the move will do (roughly)
     baseDmg = pbMoveBaseDamage(move,user,target,skill)
     realDamage = pbRoughDamage(move,user,target,skill,baseDmg)
     # Account for accuracy of move
-    accuracy = pbRoughAccuracy(move,user,target,skill)
-    realDamage *= accuracy/100.0
+    # accuracy = pbRoughAccuracy(move,user,target,skill)
+    # realDamage *= accuracy/100.0
     # Two-turn attacks waste 2 turns to deal one lot of damage
-    if move.chargingTurnMove? || move.function=="0C2"   # Hyper Beam
-      realDamage *= 2/3   # Not halved because semi-invulnerable during use or hits first turn
+    if move.chargingTurnMove? || move.function == "0C2"   # Hyper Beam
+      realDamage *= 2 / 3   # Not halved because semi-invulnerable during use or hits first turn
     end
     # Prefer flinching external effects (note that move effects which cause
     # flinching are dealt with in the function code part of score calculation)
@@ -295,18 +315,18 @@ class PokeBattle_AI
         if user.hasActiveAbility?(:STENCH) && !move.flinchingMove?
           canFlinch = true
         end
-        realDamage *= 1.3 if canFlinch
+        realDamage *= 1.05 if canFlinch
       end
     end
     # Convert damage to percentage of target's remaining HP
     damagePercentage = realDamage*100.0/target.hp
     # Don't prefer weak attacks
-#    damagePercentage /= 2 if damagePercentage<20
+    damagePercentage /= 2 if damagePercentage<20
     # Prefer damaging attack if level difference is significantly high
     damagePercentage *= 1.2 if user.level-10>target.level
     # Adjust score
-    damagePercentage = 120 if damagePercentage>120   # Treat all lethal moves the same
-    damagePercentage += 40 if damagePercentage>100   # Prefer moves likely to be lethal
+    damagePercentage += 20 if damagePercentage>120   # Treat all lethal moves the same
+    damagePercentage += 20 if damagePercentage>100   # Prefer moves likely to be lethal
     score += damagePercentage.to_i
     return score
   end

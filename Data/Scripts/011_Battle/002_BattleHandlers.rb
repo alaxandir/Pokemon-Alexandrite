@@ -491,6 +491,7 @@ def pbBattleConfusionBerry(battler,battle,item,forced,flavor,confuseMsg)
   if amt>0
     if forced
       PBDebug.log("[Item triggered] Forced consuming of #{itemName}")
+      echoln "[Item triggered] Forced consuming of #{itemName}"
       battle.pbDisplay(_INTL("{1}'s HP was restored.",battler.pbThis))
     else
       battle.pbDisplay(_INTL("{1} restored its health using its {2}!",battler.pbThis,itemName))
@@ -512,6 +513,7 @@ def pbBattleStatIncreasingBerry(battler,battle,item,forced,stat,increment=1)
   itemName = GameData::Item.get(item).name
   if forced
     PBDebug.log("[Item triggered] Forced consuming of #{itemName}")
+    echoln "[Item triggered] Forced consuming of #{itemName}"
     return battler.pbRaiseStatStage(stat,increment,battler)
   end
   battle.pbCommonAnimation("EatBerry",battler)

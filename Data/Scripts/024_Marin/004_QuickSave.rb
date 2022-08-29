@@ -22,7 +22,7 @@ class Scene_Map
       Game.save
       @mode = 0
       @vp = Viewport.new(0,0,Graphics.width,Graphics.height)
-      @vp.z = 100000
+      @vp.z = 0
       @disk = Sprite.new(@vp)
       @disk.bitmap = RPG::Cache.load_bitmap("Graphics/Pictures/","saveDisk")
       @disk.x, @disk.y = 8, 8
@@ -34,11 +34,11 @@ class Scene_Map
       pbSEPlay('GUI save choice')
     end
     if @mode == 0
-      @disk.opacity += 16
+      @disk.opacity += 32
       @mode = 1 if @disk.opacity >= 255
     end
     if @mode == 1
-      @arrow.opacity += 16
+      @arrow.opacity += 32
       @mode = 2 if @arrow.opacity >= 255
     end
     if @mode == 2
@@ -46,8 +46,8 @@ class Scene_Map
       @mode = 3 if @arrow.y >= 22
     end
     if @mode == 3
-      @arrow.opacity -= 16
-      @disk.opacity -= 16
+      @arrow.opacity -= 32
+      @disk.opacity -= 32
       if @disk.opacity <= 0
         @arrow.dispose
         @disk.dispose

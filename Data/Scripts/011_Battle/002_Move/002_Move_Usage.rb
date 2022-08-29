@@ -233,6 +233,7 @@ class PokeBattle_Move
         next if (side==0 && b.opposes?(user)) || (side==1 && !b.opposes?(user))
         oldHP = b.hp+b.damageState.hpLost
         PBDebug.log("[Move damage] #{b.pbThis} lost #{b.damageState.hpLost} HP (#{oldHP}=>#{b.hp})")
+        echoln "[Move damage] #{b.pbThis} lost #{b.damageState.hpLost} HP (#{oldHP}=>#{b.hp})"
         effectiveness = 0
         if Effectiveness.resistant?(b.damageState.typeMod);          effectiveness = 1
         elsif Effectiveness.super_effective?(b.damageState.typeMod); effectiveness = 2
@@ -274,6 +275,7 @@ class PokeBattle_Move
     if target.damageState.critical
 	  user.critical_hits += 1
 	  PBDebug.log("Crit Count #{user.critical_hits}")
+    echoln "Crit Count #{user.critical_hits}"
       if numTargets>1
         @battle.pbDisplay(_INTL("A critical hit on {1}!",target.pbThis(true)))
       else

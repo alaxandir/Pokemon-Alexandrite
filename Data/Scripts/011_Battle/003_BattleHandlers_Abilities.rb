@@ -2374,6 +2374,7 @@ BattleHandlers::AbilityOnSwitchIn.add(:UNNERVE,
 BattleHandlers::AbilityOnSwitchOut.add(:NATURALCURE,
   proc { |ability,battler,endOfBattle|
     PBDebug.log("[Ability triggered] #{battler.pbThis}'s #{battler.abilityName}")
+    echoln "[Ability triggered] #{battler.pbThis}'s #{battler.abilityName}"
     battler.status = :NONE
   }
 )
@@ -2382,6 +2383,7 @@ BattleHandlers::AbilityOnSwitchOut.add(:REGENERATOR,
   proc { |ability,battler,endOfBattle|
     next if endOfBattle
     PBDebug.log("[Ability triggered] #{battler.pbThis}'s #{battler.abilityName}")
+    echoln "[Ability triggered] #{battler.pbThis}'s #{battler.abilityName}"
     battler.pbRecoverHP(battler.totalhp/3,false,false)
   }
 )

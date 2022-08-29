@@ -380,7 +380,7 @@ Events.onStepTaken += proc { |_sender,_e|
   if deposited==2 && $PokemonGlobal.daycareEgg==0
     $PokemonGlobal.daycareEggSteps = 0 if !$PokemonGlobal.daycareEggSteps
     $PokemonGlobal.daycareEggSteps += 1
-    if $PokemonGlobal.daycareEggSteps==256
+    if $PokemonGlobal.daycareEggSteps==64
       $PokemonGlobal.daycareEggSteps = 0
       compatval = [0,20,50,70][pbDayCareGetCompat]
       if GameData::Item.exists?(:OVALCHARM) && $PokemonBag.pbHasItem?(:OVALCHARM)

@@ -50,7 +50,8 @@ class PokeBattle_AI
     #---------------------------------------------------------------------------
     when "005", "006", "0BE"
       if target.pbCanPoison?(user,false)
-        score += 30
+        score += 30 if user.turnCount>=0
+        score += 50 if user.turnCount==0 
         if skill>=PBTrainerAI.mediumSkill
           score += 30 if target.hp<=target.totalhp/4
           score += 50 if target.hp<=target.totalhp/8
@@ -1581,7 +1582,11 @@ class PokeBattle_AI
     when "07A"
     #---------------------------------------------------------------------------
     when "07B"
-    #---------------------------------------------------------------------------
+      if target.effects[PBEffects::Substitute]==0
+        score += 50 if target.status == :POISON   # double power while poisoned
+        score += 50 if target.effects[PBEffects::Toxic]>1 #prefer if opponent is toxic
+      end
+      #---------------------------------------------------------------------------
     when "07C"
       score -= 20 if target.status == :PARALYSIS   # Will cure status
     #---------------------------------------------------------------------------
@@ -1590,10 +1595,18 @@ class PokeBattle_AI
                      target.statusCount > 1
     #---------------------------------------------------------------------------
     when "07E"
+      if target.effects[PBEffects::Substitute]==0
+        score += 50 if user.status == :PARALYSIS   # Power doubles while Para,Psn,Burn
+        score += 50 if user.status == :POISON   # Power doubles while Para,Psn,Burn
+        score += 50 if user.status == :BURN   # Power doubles while Para,Psn,Burn
+      end
     #---------------------------------------------------------------------------
     when "07F"
+      score += 50 if target.status != :NONE # Power increases if target is affected by status
     #---------------------------------------------------------------------------
     when "080"
+      score += 50 if target.hp<target.totalhp/2 &&
+      target.effects[PBEffects::Substitute]==0 # Power doubles if target below half health
     #---------------------------------------------------------------------------
     when "081"
       attspeed = pbRoughStat(user,:SPEED,skill)
@@ -1619,30 +1632,106 @@ class PokeBattle_AI
     when "085"
     #---------------------------------------------------------------------------
     when "086"
+      #score += 20 !user.item
     #---------------------------------------------------------------------------
     when "087"
     #---------------------------------------------------------------------------
     when "088"
+      canChoose = false
+      user.eachOpposing do |b|
+        next if !@battle.pbCanChooseNonActive?(b.index)
+        canChoose = true
+        break
+        end
+      if !canChoose
+        # Opponent can't switch in any Pokemon
+      score -= 40
+      else
+      score += 5*@battle.pbAbleNonActiveCount(user.idxOpposingSide)
+      score += 10 if target.hp<target.totalhp/4
+      end
     #---------------------------------------------------------------------------
     when "089"
     #---------------------------------------------------------------------------
     when "08A"
     #---------------------------------------------------------------------------
     when "08B"
+      score -= 25 if (((user.hp * 100)/ user.totalhp).floor < 50) #Damage decreases as HP is lower
+      score -= 25 if (((user.hp * 100)/ user.totalhp).floor < 25) #Damage decreases as HP is lower
     #---------------------------------------------------------------------------
     when "08C"
+      score += 25 if (((target.hp * 100)/ target.totalhp).floor > 50) #Damage increases as HP is higher
+      score += 25 if (((target.hp * 100)/ target.totalhp).floor > 75) #Damage increases as HP is higher
     #---------------------------------------------------------------------------
     when "08D"
+      aspeed = pbRoughStat(user,:SPEED,skill)
+      #p aspeed
+      ospeed = pbRoughStat(target,:SPEED,skill)
+      #p ospeed
+      speedcomparison = (ospeed.to_f/aspeed.to_f).floor(2) #We care if the opponent is faster than the user
+      #p speedcomparison
+      case speedcomparison
+        when speedcomparison>2 #100% slower than opponent strongly prefer Gyroball
+        score += 50 
+        when speedcomparison>1.5 #50% slower than opponent prefer Gyroball
+        score += 30 
+        when speedcomparison>1.2 #20% slower than opponent slightly prefer Gyroball
+        score += 10 
+        when speedcomparison == 1 #Same speed as user
+        score -= 30 
+        when speedcomparison<1 #Dont prefer Gyroball, opponent is faster
+        score -= 50 
+      end
     #---------------------------------------------------------------------------
     when "08E"
+      #move gets more powerful the more stat changes the user has
+      score += 10 if user.stages[:ATTACK]>0
+      score += 10 if user.stages[:DEFENSE]>0
+      score += 10 if user.stages[:SPECIAL_ATTACK]>0
+      score += 10 if user.stages[:SPECIAL_DEFENSE]>0
+      score += 10 if user.stages[:SPEED]>0
+
+      score += 10 if user.stages[:ATTACK]>1
+      score += 10 if user.stages[:DEFENSE]>1
+      score += 10 if user.stages[:SPECIAL_ATTACK]>1
+      score += 10 if user.stages[:SPECIAL_DEFENSE]>1
+      score += 10 if user.stages[:SPEED]>1
+
+      score += 20 if user.stages[:ATTACK]>2
+      score += 20 if user.stages[:DEFENSE]>2
+      score += 20 if user.stages[:SPECIAL_ATTACK]>2
+      score += 20 if user.stages[:SPECIAL_DEFENSE]>2
+      score += 20 if user.stages[:SPEED]>2
     #---------------------------------------------------------------------------
     when "08F"
+      #move gets more powerful the more stat changes the target has
+      score += 10 if target.stages[:ATTACK]>0
+      score += 10 if target.stages[:DEFENSE]>0
+      score += 10 if target.stages[:SPECIAL_ATTACK]>0
+      score += 10 if target.stages[:SPECIAL_DEFENSE]>0
+      score += 10 if target.stages[:SPEED]>0
+
+      score += 10 if target.stages[:ATTACK]>1
+      score += 10 if target.stages[:DEFENSE]>1
+      score += 10 if target.stages[:SPECIAL_ATTACK]>1
+      score += 10 if target.stages[:SPECIAL_DEFENSE]>1
+      score += 10 if target.stages[:SPEED]>1
+
+      score += 20 if target.stages[:ATTACK]>2
+      score += 20 if target.stages[:DEFENSE]>2
+      score += 20 if target.stages[:SPECIAL_ATTACK]>2
+      score += 20 if target.stages[:SPECIAL_DEFENSE]>2
+      score += 20 if target.stages[:SPEED]>2
     #---------------------------------------------------------------------------
     when "090"
     #---------------------------------------------------------------------------
     when "091"
+      score += 20 if user.lastMoveUsed && 
+      GameData::Move.get(user.lastMoveUsed).function_code == "091"   # FURY CUTER
     #---------------------------------------------------------------------------
     when "092"
+      score += 20 if user.lastMoveUsed && 
+      GameData::Move.get(user.lastMoveUsed).function_code == "092"   # ECHOED VOICE
     #---------------------------------------------------------------------------
     when "093"
       score += 25 if user.effects[PBEffects::Rage]
@@ -1661,8 +1750,32 @@ class PokeBattle_AI
     when "099"
     #---------------------------------------------------------------------------
     when "09A"
+      weight = target.pbWeight
+      #oweight = target.pbWeight
+      #weightcomparison = aweight / oweight
+      if weight>=2000;    score += 30
+      elsif weight>=1000; score += 20
+      elsif weight>=500;  score += 10
+      elsif weight>=250;  score += 5
+      elsif weight>=100;  score -= 10
+      end
     #---------------------------------------------------------------------------
     when "09B"
+      aweight = user.pbWeight
+      oweight = target.pbWeight
+      weightcomparison = (aweight.to_f / oweight.to_f).floor(2)
+      case weightcomparison
+      when weightcomparison>2 #double the opponents weight, strongly prefer
+      score += 30 
+      when weightcomparison>1.5 #50% heavier, prefer
+      score += 20 
+      when weightcomparison>1.2 #20% heavier than opponent slightly prefer
+      score += 10 
+      when weightcomparison == 1 #Same weight as user
+      score -= 20 
+      when weightcomparison<1 #Dont prefer heavy slam, opponent is heavier
+      score -= 90 
+      end
     #---------------------------------------------------------------------------
     when "09C"
       hasAlly = false
@@ -1721,15 +1834,49 @@ class PokeBattle_AI
     when "0A9"
     #---------------------------------------------------------------------------
     when "0AA"
-      if user.effects[PBEffects::ProtectRate]>1 ||
-         target.effects[PBEffects::HyperBeam]>0
-        score -= 90
-      else
-        if skill>=PBTrainerAI.mediumSkill
-          score -= user.effects[PBEffects::ProtectRate]*40
+      aspeed = pbRoughStat(user,:SPEED,skill)
+      ospeed = pbRoughStat(@battle.battlers[0],:SPEED,skill)
+      
+      #p "#{@battle.battlers[0].name} 0 name #{@battle.battlers[1].name} 1 name  "
+      if user.effects[PBEffects::ProtectRate]>1 || target.effects[PBEffects::HyperBeam]>0
+        score -= 100 #Never use protect twice in a row or after an opponent has hyperbeamed
+      elsif target.effects[PBEffects::TwoTurnAttack] 
+        score += 50 
+      elsif @battle.battlers[0].effects[PBEffects::LeechSeed]>=0 ||
+        user.effects[PBEffects::Ingrain] # Use Protect if you didn't last turn and have these effects
+        score += 70
+        if user.hp<=user.totalhp/2 #User if below 50% and has these effects more preference
+        score += 70
         end
-        score += 50 if user.turnCount==0
-        score += 30 if target.effects[PBEffects::TwoTurnAttack]
+      elsif @battle.battlers[0].effects[PBEffects::Toxic]>1
+        score += 150
+      elsif user.effects[PBEffects::Wish] == 1 # Use Protect if it's going to heal this turn
+        score += 70 
+        if user.hp<=user.totalhp/4 #User if below 25% and has these effects more preference
+          score += 70
+          end
+      elsif @battle.battlers[0].status != :NONE 
+        case @battle.battlers[0].status 
+        when :POISON 
+          if @battle.battlers[0].hp<=user.totalhp/8
+            score += 100 
+          end
+            score += 70
+        when :BURN
+          if @battle.battlers[0].hp<=user.totalhp/16
+            score += 100
+          end
+        when :SLEEP
+          score -= 90
+        when :FROZEN
+          score -= 90
+        when :PARALYSIS
+          score -= 50
+        end
+      elsif user.hasActiveItem?(:LEFTOVERS) && user.hp<=user.totalhp/5 #Use if below 20% and has leftovers
+        score += 75
+      else
+        score -= 100
       end
     #---------------------------------------------------------------------------
     when "0AB"
@@ -1955,7 +2102,8 @@ class PokeBattle_AI
         score -= user.hp*100/user.totalhp
       end
     #---------------------------------------------------------------------------
-    when "0E3", "0E4"
+    when "0E3", "0E4" #Wish/Lunar Dance
+      score += 90 if user.hp<=user.totalhp/5 #Heal if under 20%
       score -= 70
     #---------------------------------------------------------------------------
     when "0E5"

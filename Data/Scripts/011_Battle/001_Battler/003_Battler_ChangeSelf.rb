@@ -23,6 +23,7 @@ class PokeBattle_Battler
     oldHP = @hp
     self.hp += amt
     PBDebug.log("[HP change] #{pbThis} gained #{amt} HP (#{oldHP}=>#{@hp})") if amt>0
+    echoln "[HP change] #{pbThis} gained #{amt} HP (#{oldHP}=>#{@hp})" if amt>0
     raise _INTL("HP less than 0") if @hp<0
     raise _INTL("HP greater than total HP") if @hp>@totalhp
     @battle.scene.pbHPChanged(self,oldHP,anim) if anyAnim && amt>0
@@ -49,11 +50,13 @@ class PokeBattle_Battler
   def pbFaint(showMessage=true)
     if !fainted?
       PBDebug.log("!!!***Can't faint with HP greater than 0")
+      echoln "!!!***Can't faint with HP greater than 0"
       return
     end
     return if @fainted   # Has already fainted properly
     @battle.pbDisplayBrief(_INTL("{1} fainted!",pbThis)) if showMessage
     PBDebug.log("[Pokémon fainted] #{pbThis} (#{@index})") if !showMessage
+    echoln "[Pokémon fainted] #{pbThis} (#{@index})" if !showMessage
     @battle.scene.pbFaintBattler(self)
     pbInitEffects(false)
     # Reset status
@@ -142,6 +145,7 @@ class PokeBattle_Battler
     @battle.scene.pbRefreshOne(@index)
     @battle.pbDisplay(msg) if msg && msg!=""
     PBDebug.log("[Form changed] #{pbThis} changed from form #{oldForm} to form #{newForm}")
+    echoln "[Form changed] #{pbThis} changed from form #{oldForm} to form #{newForm}"
     @battle.pbSetSeen(self)
   end
 

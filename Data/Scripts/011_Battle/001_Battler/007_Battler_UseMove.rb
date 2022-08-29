@@ -56,6 +56,7 @@ class PokeBattle_Battler
     end
     # Use the move
     PBDebug.log("[Move usage] #{pbThis} started using #{choice[2].name}")
+    echoln "[Move usage] #{pbThis} started using #{choice[2].name}"
     PBDebug.logonerr{
       pbUseMove(choice,choice[2]==@battle.struggle)
     }
@@ -156,6 +157,7 @@ class PokeBattle_Battler
     end
     choice[3] = target     # Target (-1 means no target yet)
     PBDebug.log("[Move usage] #{pbThis} started using the called/simple move #{choice[2].name}")
+    echoln "[Move usage] #{pbThis} started using the called/simple move #{choice[2].name}"
     pbUseMove(choice,specialUsage)
   end
 
@@ -268,12 +270,14 @@ class PokeBattle_Battler
       targets.each do |b|
         next unless b.opposes?(user) && b.hasActiveAbility?(:PRESSURE)
         PBDebug.log("[Ability triggered] #{b.pbThis}'s #{b.abilityName}")
+        echoln "[Ability triggered] #{b.pbThis}'s #{b.abilityName}"
         user.pbReducePP(move)
       end
       if move.pbTarget(user).affects_foe_side
         @battle.eachOtherSideBattler(user) do |b|
           next unless b.hasActiveAbility?(:PRESSURE)
           PBDebug.log("[Ability triggered] #{b.pbThis}'s #{b.abilityName}")
+          echoln "[Ability triggered] #{b.pbThis}'s #{b.abilityName}"
           user.pbReducePP(move)
         end
       end
@@ -728,6 +732,7 @@ class PokeBattle_Battler
       next if chance<=0
       if @battle.pbRandom(100)<chance
         PBDebug.log("[Item/ability triggered] #{user.pbThis}'s King's Rock/Razor Fang or Stench")
+        echoln "[Item/ability triggered] #{user.pbThis}'s King's Rock/Razor Fang or Stench"
         b.pbFlinch(user)
       end
     end

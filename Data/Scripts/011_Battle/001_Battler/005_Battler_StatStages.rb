@@ -36,6 +36,7 @@ class PokeBattle_Battler
       stat_name = GameData::Stat.get(stat).name
       new = @stages[stat]+increment
       PBDebug.log("[Stat change] #{pbThis}'s #{stat_name}: #{@stages[stat]} -> #{new} (+#{increment})")
+      echoln "[Stat change] #{pbThis}'s #{stat_name}: #{@stages[stat]} -> #{new} (+#{increment})"
       @stages[stat] += increment
     end
     return increment
@@ -168,6 +169,7 @@ class PokeBattle_Battler
       stat_name = GameData::Stat.get(stat).name
       new = @stages[stat]-increment
       PBDebug.log("[Stat change] #{pbThis}'s #{stat_name}: #{@stages[stat]} -> #{new} (-#{increment})")
+      echoln "[Stat change] #{pbThis}'s #{stat_name}: #{@stages[stat]} -> #{new} (-#{increment})"
       @stages[stat] -= increment
     end
     return increment
