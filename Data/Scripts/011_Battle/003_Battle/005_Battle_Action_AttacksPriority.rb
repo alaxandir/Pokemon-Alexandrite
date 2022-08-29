@@ -227,6 +227,7 @@ class PokeBattle_Battle
         comma = true
       end
       PBDebug.log(logMsg)
+      echoln logMsg
     end
   end
 

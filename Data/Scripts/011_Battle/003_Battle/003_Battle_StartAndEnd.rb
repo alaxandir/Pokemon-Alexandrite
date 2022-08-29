@@ -253,6 +253,7 @@ class PokeBattle_Battle
     logMsg += "#{pbParty(1).length} wild Pokémon)" if wildBattle?
     logMsg += "#{@opponent.length} trainer(s))" if trainerBattle?
     PBDebug.log(logMsg)
+    echoln logMsg
     pbEnsureParticipants
     begin
       pbStartBattleCore
@@ -310,10 +311,12 @@ class PokeBattle_Battle
     loop do   # Now begin the battle loop
       PBDebug.log("")
       PBDebug.log("***Round #{@turnCount+1}***")
+      echoln "***Round #{@turnCount+1}***"
       if @debug && @turnCount>=100
         @decision = pbDecisionOnTime
         PBDebug.log("")
         PBDebug.log("***Undecided after 100 rounds, aborting***")
+        echoln "***Undecided after 100 rounds, aborting***"
         pbAbort
         break
       end

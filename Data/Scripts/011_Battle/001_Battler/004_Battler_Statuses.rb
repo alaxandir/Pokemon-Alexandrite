@@ -247,6 +247,7 @@ class PokeBattle_Battler
       end
     end
     PBDebug.log("[Status change] #{pbThis}'s sleep count is #{newStatusCount}") if newStatus == :SLEEP
+    echoln "[Status change] #{pbThis}'s sleep count is #{newStatusCount}" if newStatus == :SLEEP
     # Form change check
     pbCheckFormOnStatusChange
     # Synchronize
@@ -419,6 +420,7 @@ class PokeBattle_Battler
       @battle.pbDisplay(_INTL("{1} is frozen solid!", pbThis))
     end
     PBDebug.log("[Status continues] #{pbThis}'s sleep count is #{@statusCount}") if self.status == :SLEEP
+    echoln ("[Status continues] #{pbThis}'s sleep count is #{@statusCount}") if self.status == :SLEEP
   end
 
   def pbCureStatus(showMessages=true)
@@ -434,6 +436,7 @@ class PokeBattle_Battler
       end
     end
     PBDebug.log("[Status change] #{pbThis}'s status was cured") if !showMessages
+    echoln ("[Status change] #{pbThis}'s status was cured") if !showMessages
   end
 
   #=============================================================================
@@ -487,6 +490,7 @@ class PokeBattle_Battler
     msg = _INTL("{1} became confused!",pbThis) if nil_or_empty?(msg)
     @battle.pbDisplay(msg)
     PBDebug.log("[Lingering effect] #{pbThis}'s confusion count is #{@effects[PBEffects::Confusion]}")
+    echoln "[Lingering effect] #{pbThis}'s confusion count is #{@effects[PBEffects::Confusion]}"
     # Confusion cures
     pbItemStatusCureCheck
     pbAbilityStatusCureCheck

@@ -1,4 +1,4 @@
-Created at 2022-08-14 13:59:33
+Created at 2022-08-29 01:20:48
 -------------------------------
 Map ID: 001. 5F Silph Co
 001. ID: 005 (007,006) item: Kernel.ELECTIRIZER  event: Item
@@ -6,6 +6,9 @@ Map ID: 001. 5F Silph Co
 -------------------------------
 Map ID: 002. 6F Silph Co
 001. ID: 005 (003,015) item: Kernel.TM06  event: Item
+-------------------------------
+Map ID: 005. Icy Grotto
+001. ID: 006 (017,009) item: Kernel.RELICCROWN  event: HiddenItem
 -------------------------------
 Map ID: 006. Fortune City Gym
 001. ID: 013 (023,017) item: Kernel.REDSHARD  event: Item
@@ -19,6 +22,7 @@ Map ID: 007. Glacier Gym
 Map ID: 008. Spirit Garden
 001. ID: 010 (020,008) item: Kernel.DUSKSTONE  event: Item
 002. ID: 013 (010,027) item: Kernel.GALLADITE  event: Item
+003. ID: 014 (010,008) item: PURPLENECTAR  event: Nectar Tree
 -------------------------------
 Map ID: 009. Route 119
 001. ID: 001 (022,055) item: Kernel.TM95  event: Item
@@ -47,14 +51,13 @@ Map ID: 017. Fortune City Cardshop
 001. ID: 024 (009,010) item: Kernel.HEARTSCALE  event: Item
 -------------------------------
 Map ID: 018. Rocket Base 1F
-001. ID: 033 (031,028) item: Kernel.RESETURGE  event: Item
-002. ID: 034 (031,010) item: Kernel.TM23  event: Item
-003. ID: 040 (031,025) item: Kernel.POTION,5  event: Item
-004. ID: 041 (031,016) item: Kernel.ETHER,5  event: Item
-005. ID: 042 (031,013) item: Kernel.REVIVE  event: Item
-006. ID: 043 (031,031) item: Kernel.REVIVE  event: Item
-007. ID: 046 (022,029) item: Kernel.TM34  event: Item
-008. ID: 035 (031,022) item: Kernel.STARDUST  event: HiddenItem
+001. ID: 034 (031,010) item: Kernel.TM23  event: Item
+002. ID: 040 (031,025) item: Kernel.POTION,5  event: Item
+003. ID: 041 (031,016) item: Kernel.ETHER,5  event: Item
+004. ID: 042 (031,013) item: Kernel.REVIVE  event: Item
+005. ID: 043 (031,031) item: Kernel.REVIVE  event: Item
+006. ID: 046 (031,019) item: Kernel.TM34  event: Item
+007. ID: 035 (031,022) item: Kernel.STARDUST  event: HiddenItem
 -------------------------------
 Map ID: 019. Chard House
 001. ID: 004 (016,008) item: Kernel.BIGROOT  event: Item
@@ -74,38 +77,45 @@ Map ID: 025. Bouldergrove Tunnel
 002. ID: 006 (033,008) item: Kernel.TM33  event: Item
 -------------------------------
 Map ID: 027. Cinder Island
-001. ID: 022 (023,017) item: random_item = apricorns.sample;random_item  event: Apricorn tree
+001. ID: 022 (031,015) item: REDNECTAR  event: Nectar Tree
 002. ID: 023 (061,033) item: Kernel.BIGPEARL  event: Item
 003. ID: 024 (038,009) item: Kernel.CHARIZARDITEY  event: Item
 004. ID: 026 (023,018) item: random_item = apricorns.sample;random_item  event: Apricorn tree
 005. ID: 036 (057,020) item: Kernel.TM38  event: Item
-006. ID: 027 (041,031) item: Kernel.RELICCOPPER  event: HiddenItem
-007. ID: 028 (020,016) item: Kernel.TINYMUSHROOM  event: HiddenItem
-008. ID: 029 (062,022) item: Kernel.RELICCOPPER  event: HiddenItem
+006. ID: 037 (047,016) item: Kernel.NUGGET  event: Item
+007. ID: 027 (041,031) item: Kernel.RELICCOPPER  event: HiddenItem
+008. ID: 028 (020,016) item: Kernel.TINYMUSHROOM  event: HiddenItem
+009. ID: 029 (062,022) item: Kernel.RELICCOPPER  event: HiddenItem
 -------------------------------
 Map ID: 029. Route 119
 001. ID: 004 (017,023) item: Kernel.TM80  event: Item
 002. ID: 005 (028,029) item: Kernel.TINYMUSHROOM  event: HiddenItem
-003. ID: 006 (010,017) item: Kernel.NESTBALL  event: HiddenItem
+003. ID: 006 (010,017) item: Kernel.TINYMUSHROOM  event: HiddenItem
 004. ID: 007 (029,011) item: Kernel.BIGROOT  event: HiddenItem
 005. ID: 010 (031,022) item: Kernel.STARDUST  event: HiddenItem
 -------------------------------
 Map ID: 031. Victory Road (Cave)
 001. ID: 001 (032,015) item: Kernel.GREENSHARD  event: Item
-002. ID: 006 (009,008) item: Kernel.DAMPROCK  event: Item
+002. ID: 006 (013,009) item: Kernel.DAMPROCK  event: Item
+003. ID: 023 (018,007) item: Kernel.FULLRESTORE  event: HiddenItem
+004. ID: 024 (017,036) item: Kernel.BLUESHARD  event: HiddenItem
+005. ID: 025 (026,015) item: Kernel.RAREBONE  event: HiddenItem
+006. ID: 026 (015,010) item: Kernel.RAREBONE  event: HiddenItem
 -------------------------------
 Map ID: 032. \PN's House
-001. ID: 022 (012,009) item: Kernel.CARDCASE  event: Item
+001. ID: 018 (001,010) item: Kernel.TM10  event: HiddenItem
 -------------------------------
 Map ID: 033. Earthroot Forest
 001. ID: 005 (039,007) item: Kernel.POKEBALL  event: Item
 002. ID: 006 (008,017) item: Kernel.POKETOY  event: Item
 003. ID: 008 (021,037) item: Kernel.GREENSHARD  event: Item
 004. ID: 016 (008,033) item: Kernel.POTION  event: Item
-005. ID: 010 (013,031) item: Kernel.ENERGYPOWDER  event: HiddenItem
-006. ID: 017 (029,024) item: Kernel.TINYMUSHROOM  event: HiddenItem
-007. ID: 018 (010,012) item: Kernel.TINYMUSHROOM  event: HiddenItem
-008. ID: 019 (038,039) item: Kernel.BERRYJUICE  event: HiddenItem
+005. ID: 021 (013,025) item: random_item = apricorns.sample;random_item  event: Apricorn tree
+006. ID: 022 (013,021) item: random_item = apricorns.sample;random_item  event: Apricorn tree
+007. ID: 010 (013,031) item: Kernel.ENERGYPOWDER  event: HiddenItem
+008. ID: 017 (029,024) item: Kernel.TINYMUSHROOM  event: HiddenItem
+009. ID: 018 (010,012) item: Kernel.TINYMUSHROOM  event: HiddenItem
+010. ID: 019 (032,037) item: Kernel.BERRYJUICE  event: HiddenItem
 -------------------------------
 Map ID: 034. Victory Road Ext.
 001. ID: 003 (010,044) item: Kernel.AMULETCOIN  event: Item
@@ -114,23 +124,27 @@ Map ID: 034. Victory Road Ext.
 -------------------------------
 Map ID: 035. Victory Road (Lava)
 001. ID: 011 (033,010) item: Kernel.BLAZIKENITE  event: Item
+002. ID: 012 (038,020) item: Kernel.RELICGOLD  event: HiddenItem
+003. ID: 013 (027,015) item: Kernel.WHITEHERB  event: HiddenItem
 -------------------------------
 Map ID: 042. Earthroot Town
-001. ID: 004 (023,004) item: random_item = apricorns.sample;random_item  event: Apricorn tree
+001. ID: 004 (023,002) item: random_item = apricorns.sample;random_item  event: Apricorn tree
 002. ID: 036 (035,016) item: Kernel.RARECANDY,999  event: EV036
 003. ID: 036 (035,016) item: Kernel.WATERSTONE,1;Kernel.LEAFSTONE,1;Kernel.THUNDERSTONE,1;Kernel.DUSKSTONE,1;Kernel.DAWNSTONE,1;Kernel.SHINYSTONE,1;Kernel.MOONSTONE,1;Kernel.SUNSTONE,1  event: EV036
-004. ID: 036 (035,016) item: Kernel.NUGGET,100  event: EV036
+004. ID: 036 (035,016) item: Kernel.NUGGET,777  event: EV036
 005. ID: 025 (026,029) item: Kernel.BERRYJUICE  event: HiddenItem
 -------------------------------
 Map ID: 043. Route 101
-001. ID: 007 (023,055) item: Kernel.SILVERPOWDER  event: Item
+001. ID: 007 (020,057) item: Kernel.SILVERPOWDER  event: Item
 002. ID: 008 (008,026) item: Kernel.EXPCANDYXS  event: Item
 003. ID: 009 (014,015) item: Kernel.TM54  event: Item
-004. ID: 013 (025,063) item: Kernel.TM11  event: Item
+004. ID: 013 (024,063) item: Kernel.TM11  event: Item
 005. ID: 014 (034,054) item: random_item = apricorns.sample;random_item  event: Apricorn tree
 006. ID: 027 (029,037) item: random_item = apricorns.sample;random_item  event: Apricorn tree
 007. ID: 028 (026,001) item: Kernel.EXPCANDYXS  event: Item
 008. ID: 011 (030,055) item: Kernel.RELICCOPPER  event: HiddenItem
+009. ID: 041 (009,053) item: Kernel.TM49  event: HiddenItem
+010. ID: 045 (022,073) item: Kernel.LUMBERRY  event: HiddenItem
 -------------------------------
 Map ID: 044. Anthophil Farm
 001. ID: 030 (026,017) item: random_item = apricorns.sample;random_item  event: Apricorn tree
@@ -159,7 +173,7 @@ Map ID: 048. Seafoam City
 003. ID: 021 (021,041) item: Kernel.PEARL  event: HiddenItem
 004. ID: 029 (060,017) item: Kernel.PEARL  event: HiddenItem
 005. ID: 030 (058,043) item: Kernel.PEARL  event: HiddenItem
-006. ID: 035 (016,024) item: Kernel.PEARL  event: HiddenItem
+006. ID: 035 (016,024) item: Kernel.NUGGET  event: HiddenItem
 007. ID: 043 (012,014) item: Kernel.TINYMUSHROOM  event: HiddenItem
 008. ID: 044 (051,033) item: Kernel.POPPINGCANDY  event: HiddenItem
 009. ID: 046 (027,027) item: Kernel.POPPINGCANDY  event: HiddenItem
@@ -209,11 +223,10 @@ Map ID: 059. Origin Ruins
 004. ID: 017 (020,032) item: Kernel.OLDAMBER  event: Item
 -------------------------------
 Map ID: 066. Shimmerwood Forest
-001. ID: 115 (051,032) item: Kernel.TM10  event: Item
-002. ID: 175 (019,037) item: Kernel.GREENCRYSTAL  event: Reflection
-003. ID: 003 (023,009) item: Kernel.TINYMUSHROOM  event: HiddenItem
-004. ID: 004 (026,041) item: Kernel.TINYMUSHROOM  event: HiddenItem
-005. ID: 170 (012,012) item: Kernel.TINYMUSHROOM  event: HiddenItem
+001. ID: 175 (019,037) item: Kernel.GREENCRYSTAL  event: Reflection
+002. ID: 003 (023,009) item: Kernel.TINYMUSHROOM  event: HiddenItem
+003. ID: 004 (026,041) item: Kernel.TINYMUSHROOM  event: HiddenItem
+004. ID: 170 (012,012) item: Kernel.TINYMUSHROOM  event: HiddenItem
 -------------------------------
 Map ID: 067. Shimmerwood Forest
 001. ID: 001 (019,037) item: Kernel.TM83  event: Item
@@ -222,16 +235,17 @@ Map ID: 067. Shimmerwood Forest
 004. ID: 168 (060,041) item: Kernel.BIGMUSHROOM  event: HiddenItem
 -------------------------------
 Map ID: 068. Shimmerwood Forest
-001. ID: 164 (017,064) item: Kernel.ENERGYROOT  event: Item
-002. ID: 171 (009,032) item: Kernel.HEAVYBALL  event: Item
-003. ID: 196 (009,080) item: Kernel.HEARTSCALE  event: Item
-004. ID: 008 (011,040) item: Kernel.TINYMUSHROOM  event: HiddenItem
-005. ID: 169 (014,014) item: Kernel.TINYMUSHROOM  event: HiddenItem
+001. ID: 009 (025,089) item: Kernel.TM88  event: Item
+002. ID: 164 (017,064) item: Kernel.ENERGYROOT  event: Item
+003. ID: 171 (009,032) item: Kernel.HEAVYBALL  event: Item
+004. ID: 196 (009,080) item: Kernel.HEARTSCALE  event: Item
+005. ID: 008 (011,040) item: Kernel.TINYMUSHROOM  event: HiddenItem
+006. ID: 169 (014,014) item: Kernel.TINYMUSHROOM  event: HiddenItem
 -------------------------------
 Map ID: 069. Shimmerwood Forest
-001. ID: 114 (024,008) item: Kernel.PINSIRITE  event: Item
-002. ID: 162 (046,013) item: Kernel.ULTRABALL  event: Item
-003. ID: 166 (060,041) item: Kernel.ICEHEAL  event: Item
+001. ID: 004 (018,032) item: PINKNECTAR  event: Nectar Tree
+002. ID: 114 (024,008) item: Kernel.PINSIRITE  event: Item
+003. ID: 162 (046,013) item: Kernel.ULTRABALL  event: Item
 -------------------------------
 Map ID: 070. Shimmerwood Forest
 001. ID: 195 (058,010) item: Kernel.HEARTSCALE  event: Item
@@ -239,8 +253,13 @@ Map ID: 070. Shimmerwood Forest
 003. ID: 125 (010,032) item: Kernel.BIGMUSHROOM  event: HiddenItem
 004. ID: 167 (043,032) item: Kernel.BIGMUSHROOM  event: HiddenItem
 -------------------------------
-Map ID: 072. Slate tunnel
-001. ID: 003 (026,012) item: Kernel.TM52  event: Item
+Map ID: 072. Slate Tunnel
+001. ID: 003 (026,013) item: Kernel.TM52  event: Item
+-------------------------------
+Map ID: 073. Ochre Valley
+001. ID: 004 (034,010) item: Kernel.SUNSTONE  event: Item
+002. ID: 010 (010,009) item: Kernel.NUGGET  event: Item
+003. ID: 011 (023,012) item: Kernel.TM58  event: Item
 -------------------------------
 Map ID: 078. Seafoam Gym
 001. ID: 008 (022,017) item: Kernel.HEARTSCALE  event: Item
@@ -254,12 +273,13 @@ Map ID: 082. Seafoam Cave
 -------------------------------
 Map ID: 085. Route 102
 001. ID: 004 (053,022) item: Kernel.POTION  event: Item
-002. ID: 005 (009,007) item: Kernel.ANTIDOTE  event: Item
+002. ID: 005 (009,007) item: Kernel.ABILITYCAPSULE  event: Item
 003. ID: 006 (023,014) item: Kernel.TINYMUSHROOM  event: Item
 004. ID: 014 (036,026) item: Kernel.TM46  event: Item
-005. ID: 017 (049,009) item: random_item = apricorns.sample;random_item  event: Apricorn tree
-006. ID: 012 (062,024) item: Kernel.HEARTSCALE  event: HiddenItem
-007. ID: 043 (027,018) item: Kernel.GREATBALL  event: HiddenItem
+005. ID: 017 (040,020) item: random_item = apricorns.sample;random_item  event: Apricorn tree
+006. ID: 020 (047,009) item: YELLOWNECTAR  event: Nectar Tree
+007. ID: 012 (062,024) item: Kernel.HEARTSCALE  event: HiddenItem
+008. ID: 043 (027,018) item: Kernel.GREATBALL  event: HiddenItem
 -------------------------------
 Map ID: 086. Bouldergrove City
 001. ID: 044 (045,051) item: Kernel.ESCAPEROPE  event: Item
@@ -273,7 +293,8 @@ Map ID: 086. Bouldergrove City
 009. ID: 052 (049,012) item: Kernel.HEARTSCALE  event: HiddenItem
 -------------------------------
 Map ID: 087. Bouldergrove Gym
-001. ID: 016 (022,020) item: Kernel.GREATBALL  event: HiddenItem
+001. ID: 018 (015,013) item: Kernel.ENDLESSROPE  event: Item
+002. ID: 016 (022,020) item: Kernel.HARDSTONE  event: HiddenItem
 -------------------------------
 Map ID: 090. Powerplant
 001. ID: 002 (021,066) item: Kernel.FULLHEAL  event: Item
@@ -281,10 +302,11 @@ Map ID: 090. Powerplant
 003. ID: 005 (016,042) item: Kernel.GREATBALL  event: Item
 004. ID: 006 (071,067) item: Kernel.SUPERPOTION  event: Item
 005. ID: 007 (050,069) item: Kernel.BLACKGLASSES  event: Item
-006. ID: 024 (036,064) item: Kernel.POTION  event: Item
-007. ID: 025 (056,051) item: Kernel.POTION  event: Item
-008. ID: 026 (056,065) item: Kernel.TIMERBALL  event: Item
-009. ID: 027 (037,057) item: Kernel.GREATBALL  event: HiddenItem
+006. ID: 015 (029,007) item: Kernel.TM57  event: Item
+007. ID: 024 (036,064) item: Kernel.POTION  event: Item
+008. ID: 025 (056,051) item: Kernel.POTION  event: Item
+009. ID: 026 (056,065) item: Kernel.TIMERBALL  event: Item
+010. ID: 027 (037,057) item: Kernel.GREATBALL  event: HiddenItem
 -------------------------------
 Map ID: 091. Powerplant
 001. ID: 002 (021,066) item: Kernel.FULLHEAL  event: Item
@@ -292,9 +314,10 @@ Map ID: 091. Powerplant
 003. ID: 005 (016,042) item: Kernel.GREATBALL  event: Item
 004. ID: 006 (071,067) item: Kernel.SUPERPOTION  event: Item
 005. ID: 007 (050,069) item: Kernel.BLACKGLASSES  event: Item
-006. ID: 024 (036,064) item: Kernel.POTION  event: Item
-007. ID: 025 (056,051) item: Kernel.POTION  event: Item
-008. ID: 026 (056,065) item: Kernel.TIMERBALL  event: Item
+006. ID: 011 (029,007) item: Kernel.TM57  event: Item
+007. ID: 024 (036,064) item: Kernel.POTION  event: Item
+008. ID: 025 (056,051) item: Kernel.POTION  event: Item
+009. ID: 026 (056,065) item: Kernel.TIMERBALL  event: Item
 -------------------------------
 Map ID: 093. Seafoam Cave 2F
 001. ID: 006 (070,041) item: Kernel.GREATBALL  event: Item
@@ -312,7 +335,9 @@ Map ID: 097. Seafoam Cave 3F
 001. ID: 008 (022,067) item: Kernel.GYARADOSITE  event: Item
 002. ID: 009 (027,051) item: Kernel.PURPLECRYSTAL  event: Item
 003. ID: 011 (009,057) item: Kernel.MOONSTONE  event: Item
-004. ID: 005 (058,077) item: Kernel.HARDSTONE  event: HiddenItem
+004. ID: 016 (016,025) item: Kernel.RELICSTATUE  event: Item
+005. ID: 018 (035,078) item: Kernel.NUGGET  event: Item
+006. ID: 005 (058,077) item: Kernel.HARDSTONE  event: HiddenItem
 -------------------------------
 Map ID: 098. Route 103
 001. ID: 001 (008,006) item: Kernel.TM18  event: Item
@@ -325,39 +350,12 @@ Map ID: 098. Route 103
 008. ID: 031 (005,020) item: Kernel.RARECANDY  event: HiddenItem
 009. ID: 039 (036,002) item: Kernel.GREENSHARD  event: HiddenItem
 -------------------------------
-Map ID: 206. Route 103
-001. ID: 003 (020,045) item: random_item = apricorns.sample;random_item  event: Apricorn tree
-002. ID: 033 (017,014) item: Kernel.LOPUNNITE  event: Item
-003. ID: 037 (027,006) item: random_item = apricorns.sample;random_item  event: Apricorn tree
-004. ID: 018 (018,006) item: Kernel.POKEBALL  event: HiddenItem
-005. ID: 019 (009,046) item: Kernel.GREATBALL  event: HiddenItem
-006. ID: 023 (033,006) item: Kernel.TINYMUSHROOM  event: HiddenItem
--------------------------------
-Map ID: 207. Route 104
-001. ID: 029 (072,020) item: Kernel.TM65  event: Item
-002. ID: 030 (023,024) item: Kernel.EXPERTBELT  event: Item
-003. ID: 006 (029,041) item: Kernel.HEALPOWDER  event: HiddenItem
-004. ID: 056 (067,012) item: Kernel.POKEBALL  event: HiddenItem
-005. ID: 057 (069,044) item: Kernel.HYPERPOTION  event: HiddenItem
-006. ID: 080 (032,022) item: Kernel.RARECANDY  event: HiddenItem
--------------------------------
-Map ID: 104. Route 104
-001. ID: 031 (024,008) item: Kernel.POKEBALL  event: Item
-002. ID: 032 (013,028) item: Kernel.HPUP  event: Item
-003. ID: 062 (025,022) item: Kernel.TM91  event: Item
-004. ID: 063 (007,008) item: Kernel.DIREHIT  event: Item
-005. ID: 093 (051,021) item: Kernel.TM31  event: Item
-006. ID: 096 (019,025) item: random_item = apricorns.sample;random_item  event: Apricorn tree
-007. ID: 007 (047,036) item: Kernel.TM39  event: HiddenItem
-008. ID: 055 (061,008) item: Kernel.POKEBALL  event: HiddenItem
-009. ID: 070 (074,039) item: Kernel.BALMMUSHROOM  event: HiddenItem
--------------------------------
 Map ID: 100. Gold Coast
-001. ID: 019 (051,012) item: Kernel.HEARTSCALE  event: Item
-002. ID: 021 (050,020) item: random_item = apricorns.sample;random_item  event: Apricorn tree
-003. ID: 022 (030,037) item: random_item = apricorns.sample;random_item  event: Apricorn tree
-004. ID: 025 (048,023) item: Kernel.EVIOLITE  event: Item
-005. ID: 027 (023,020) item: Kernel.TM66  event: Item
+001. ID: 021 (050,020) item: random_item = apricorns.sample;random_item  event: Apricorn tree
+002. ID: 022 (030,037) item: random_item = apricorns.sample;random_item  event: Apricorn tree
+003. ID: 025 (048,023) item: Kernel.EVIOLITE  event: Item
+004. ID: 019 (051,012) item: Kernel.HEARTSCALE  event: HiddenItem
+005. ID: 027 (023,020) item: Kernel.TM66  event: HiddenItem
 006. ID: 029 (013,012) item: Kernel.PEARL  event: HiddenItem
 007. ID: 030 (046,013) item: Kernel.PEARL  event: HiddenItem
 008. ID: 031 (030,012) item: Kernel.PEARL  event: HiddenItem
@@ -365,12 +363,25 @@ Map ID: 100. Gold Coast
 Map ID: 101. Gold Coast
 001. ID: 001 (002,006) item: Kernel.LEMONADE,1  event: HiddenItem
 -------------------------------
+Map ID: 102. Gold Coast
+001. ID: 004 (013,010) item: Kernel.TM109  event: HiddenItem
+-------------------------------
+Map ID: 104. Route 104
+001. ID: 001 (060,022) item: Kernel.CARBOS  event: Item
+002. ID: 003 (051,020) item: Kernel.NUGGET  event: Item
+003. ID: 031 (033,008) item: Kernel.POKEBALL  event: Item
+004. ID: 062 (034,022) item: Kernel.TM91  event: Item
+005. ID: 063 (016,008) item: Kernel.DIREHIT  event: Item
+006. ID: 096 (028,025) item: random_item = apricorns.sample;random_item  event: Apricorn tree
+007. ID: 007 (056,042) item: Kernel.NUGET  event: HiddenItem
+008. ID: 055 (070,008) item: Kernel.POKEBALL  event: HiddenItem
+009. ID: 070 (083,039) item: Kernel.BALMMUSHROOM  event: HiddenItem
+-------------------------------
 Map ID: 106. Anthophil City
-001. ID: 002 (011,024) item: Kernel.SHINYSTONE  event: Item
-002. ID: 003 (048,059) item: Kernel.NUGGET  event: Item
-003. ID: 045 (037,020) item: Kernel.FULLHEAL  event: Item
-004. ID: 057 (013,019) item: Kernel.SCIZORITE  event: Item
-005. ID: 010 (021,027) item: Kernel.PEARL  event: HiddenItem
+001. ID: 003 (049,059) item: Kernel.NUGGET  event: Item
+002. ID: 045 (038,020) item: Kernel.FULLHEAL  event: Item
+003. ID: 057 (014,019) item: Kernel.SCIZORITE  event: Item
+004. ID: 010 (022,027) item: Kernel.MAGNET  event: HiddenItem
 -------------------------------
 Map ID: 112. Department Store
 001. ID: 031 (005,004) item: Kernel.TM63  event: Item
@@ -390,7 +401,6 @@ Map ID: 123. Route 105
 005. ID: 034 (017,012) item: random_item = apricorns.sample;random_item  event: Apricorn tree
 006. ID: 035 (063,020) item: Kernel.SUPERPOTION  event: Item
 -------------------------------
-
 Map ID: 124. Emberton
 001. ID: 055 (013,029) item: Kernel.HEATROCK  event: Item
 002. ID: 057 (034,024) item: random_item = apricorns.sample;random_item  event: Apricorn tree
@@ -402,10 +412,11 @@ Map ID: 132. Emberton
 001. ID: 003 (011,003) item: Kernel.HEARTSCALE  event: Item
 -------------------------------
 Map ID: 133. Ancient Cave
-001. ID: 002 (037,013) item: Kernel.ROCKINCENSE  event: Item
-002. ID: 005 (024,010) item: Kernel.BANETTITE  event: Item
-003. ID: 006 (025,027) item: Kernel.EXPCANDYS  event: Item
-004. ID: 004 (024,016) item: Kernel.TINYMUSHROOM  event: HiddenItem
+001. ID: 002 (024,016) item: Kernel.ROCKINCENSE  event: Item
+002. ID: 004 (012,013) item: Kernel.NUGGET  event: Item
+003. ID: 005 (024,010) item: Kernel.BANETTITE  event: Item
+004. ID: 006 (025,027) item: Kernel.EXPCANDYS  event: Item
+005. ID: 007 (037,013) item: Kernel.TM53  event: Item
 -------------------------------
 Map ID: 134. Origin Valley
 001. ID: 019 (008,037) item: Kernel.TM17  event: Item
@@ -420,7 +431,7 @@ Map ID: 136. Coral Sea
 004. ID: 005 (020,020) item: Kernel.BIGPEARL  event: HiddenItem
 -------------------------------
 Map ID: 138. Route 106
-001. ID: 010 (020,017) item: Kernel.DAMPROCK  event: Item
+001. ID: 010 (026,022) item: Kernel.DAMPROCK  event: Item
 002. ID: 011 (029,020) item: random_item = apricorns.sample;random_item  event: Apricorn tree
 003. ID: 022 (009,031) item: Kernel.HEAVYBALL  event: Item
 004. ID: 023 (011,009) item: Kernel.REVIVE  event: Item
@@ -431,33 +442,36 @@ Map ID: 138. Route 106
 009. ID: 026 (035,023) item: Kernel.HYPERPOTION  event: HiddenItem
 -------------------------------
 Map ID: 141. Route 107
-001. ID: 022 (015,042) item: Kernel.TM70  event: Item
-002. ID: 031 (008,038) item: random_item = apricorns.sample;random_item  event: Apricorn tree
-003. ID: 041 (030,016) item: Kernel.GREATBALL  event: Item
-004. ID: 043 (008,028) item: Kernel.REVIVALHERB  event: Item
-005. ID: 044 (030,044) item: Kernel.NETBALL  event: Item
-006. ID: 047 (009,006) item: Kernel.HYPERPOTION  event: HiddenItem
+001. ID: 021 (024,017) item: Kernel.TM56  event: Item
+002. ID: 022 (015,042) item: Kernel.TM70  event: Item
+003. ID: 031 (008,038) item: random_item = apricorns.sample;random_item  event: Apricorn tree
+004. ID: 041 (031,037) item: Kernel.GREATBALL  event: Item
+005. ID: 043 (008,028) item: Kernel.REVIVALHERB  event: Item
+006. ID: 044 (030,044) item: Kernel.NETBALL  event: Item
+007. ID: 028 (030,022) item: Kernel.BRIGHTPOWDER  event: HiddenItem
+008. ID: 047 (009,006) item: Kernel.HYPERPOTION  event: HiddenItem
 -------------------------------
 Map ID: 142. Route 108
 001. ID: 006 (008,021) item: Kernel.ULTRABALL  event: Item
 002. ID: 008 (009,010) item: Kernel.TAMATOBERRY  event: Item
 003. ID: 009 (054,006) item: Kernel.ROSEINCENSE  event: Item
-004. ID: 019 (007,019) item: random_item = apricorns.sample;random_item  event: Apricorn tree
-005. ID: 020 (007,020) item: random_item = apricorns.sample;random_item  event: Apricorn tree
-006. ID: 010 (011,009) item: Kernel.FULLRESTORE  event: HiddenItem
-007. ID: 011 (027,018) item: Kernel.RARECANDY  event: HiddenItem
-008. ID: 012 (056,031) item: Kernel.NETBALL  event: HiddenItem
-009. ID: 014 (021,032) item: Kernel.GRASSGEM  event: HiddenItem
-010. ID: 015 (041,023) item: Kernel.GRASSGEM  event: HiddenItem
-011. ID: 016 (045,010) item: Kernel.GRASSGEM  event: HiddenItem
+004. ID: 014 (028,018) item: Kernel.TM29  event: Item
+005. ID: 019 (007,019) item: random_item = apricorns.sample;random_item  event: Apricorn tree
+006. ID: 020 (007,020) item: random_item = apricorns.sample;random_item  event: Apricorn tree
+007. ID: 024 (031,041) item: Kernel.TM42  event: Item
+008. ID: 010 (011,009) item: Kernel.FULLRESTORE  event: HiddenItem
+009. ID: 011 (016,013) item: Kernel.RARECANDY  event: HiddenItem
+010. ID: 012 (056,031) item: Kernel.TINYMUSHROOM  event: HiddenItem
+011. ID: 015 (041,023) item: Kernel.ULTRABALL  event: HiddenItem
 -------------------------------
 Map ID: 154. Route 118
 001. ID: 006 (020,029) item: Kernel.TIMERBALL  event: Item
-002. ID: 007 (022,006) item: Kernel.XATTACK  event: Item
-003. ID: 012 (016,050) item: random_item = apricorns.sample;random_item  event: Apricorn tree
+002. ID: 012 (016,050) item: random_item = apricorns.sample;random_item  event: Apricorn tree
+003. ID: 013 (018,011) item: Kernel.QUICKBALL  event: Item
 004. ID: 008 (030,047) item: Kernel.RELICCOPPER  event: HiddenItem
 005. ID: 010 (024,046) item: Kernel.BIGMUSHROOM  event: HiddenItem
 006. ID: 011 (033,033) item: Kernel.ENERGYROOT  event: HiddenItem
+007. ID: 014 (025,014) item: Kernel.RELICCOPPER  event: HiddenItem
 -------------------------------
 Map ID: 155. Neon City
 001. ID: 006 (005,024) item: Kernel.ULTRABALL  event: HiddenItem
@@ -487,6 +501,9 @@ Map ID: 164. Route 112
 -------------------------------
 Map ID: 165. Trident Cove Town
 001. ID: 015 (039,006) item: Kernel.PEARL  event: Item
+002. ID: 022 (015,019) item: Kernel.PEARL  event: HiddenItem
+003. ID: 023 (028,010) item: Kernel.PEARL  event: HiddenItem
+004. ID: 024 (029,031) item: Kernel.BIGPEARL  event: HiddenItem
 -------------------------------
 Map ID: 168. Earthroot Town
 001. ID: 003 (017,005) item: Kernel.HEARTSCALE  event: Item
@@ -503,9 +520,10 @@ Map ID: 171. Mt. Mauve
 002. ID: 025 (036,026) item: Kernel.SILPHPASS  event: Item
 003. ID: 026 (037,011) item: Kernel.ABSOLITE  event: Item
 004. ID: 029 (044,022) item: Kernel.ARMORFOSSIL  event: Item
-005. ID: 032 (042,006) item: Kernel.STARDUST  event: size(2,1)
-006. ID: 033 (054,024) item: Kernel.TM02  event: Item
-007. ID: 012 (036,036) item: Kernel.TINYMUSHROOM  event: HiddenItem
+005. ID: 033 (054,024) item: Kernel.TM02  event: Item
+006. ID: 034 (043,007) item: Kernel.TM97  event: Item
+007. ID: 036 (045,039) item: Kernel.NUGGET  event: Item
+008. ID: 012 (036,036) item: Kernel.TINYMUSHROOM  event: HiddenItem
 -------------------------------
 Map ID: 173. Route 109
 001. ID: 013 (008,018) item: Kernel.EXPCANDYM  event: Item
@@ -558,6 +576,8 @@ Map ID: 184. Siren's Peak
 001. ID: 001 (026,014) item: Kernel.RELICSILVER  event: Hidden Item
 002. ID: 006 (031,010) item: Kernel.HEARTSCALE  event: Item
 003. ID: 007 (030,029) item: Kernel.ABOMASITE  event: Item
+004. ID: 010 (007,012) item: Kernel.NUGGET  event: Item
+005. ID: 009 (015,026) item: Kernel.SHINYSTONE  event: HiddenItem
 -------------------------------
 Map ID: 186. Mt. Mauve Interior
 001. ID: 009 (013,036) item: Kernel.MAXPOTION  event: Item
@@ -572,9 +592,10 @@ Map ID: 187. Route 114
 -------------------------------
 Map ID: 188. Soul City
 001. ID: 014 (037,013) item: Kernel.BIGROOT  event: Item
-002. ID: 006 (017,018) item: Kernel.TINYMUSHROOM  event: HiddenItem
-003. ID: 007 (030,015) item: Kernel.SWIFTWING  event: HiddenItem
-004. ID: 008 (011,023) item: Kernel.SWIFTWING  event: HiddenItem
+002. ID: 019 (004,008) item: Kernel.NUGGET  event: Item
+003. ID: 006 (017,018) item: Kernel.TINYMUSHROOM  event: HiddenItem
+004. ID: 007 (030,015) item: Kernel.SWIFTWING  event: HiddenItem
+005. ID: 008 (011,023) item: Kernel.RARECANDY  event: HiddenItem
 -------------------------------
 Map ID: 191. Soul City Interior
 001. ID: 005 (002,024) item: Kernel.HEARTSCALE  event: Item
@@ -585,32 +606,67 @@ Map ID: 192. Route 115
 001. ID: 005 (022,008) item: Kernel.MAXREVIVE  event: Item
 002. ID: 006 (007,017) item: Kernel.SHINYSTONE  event: Item
 003. ID: 012 (026,008) item: random_item = apricorns.sample;random_item  event: Apricorn tree
-004. ID: 011 (004,019) item: Kernel.STARDUST  event: HiddenItem
+004. ID: 002 (029,010) item: Kernel.PEARL  event: HiddenItem
+005. ID: 011 (004,019) item: Kernel.STARDUST  event: HiddenItem
+006. ID: 014 (034,021) item: Kernel.PEARL  event: HiddenItem
 -------------------------------
 Map ID: 193. Route 116
 001. ID: 001 (019,024) item: Kernel.BLUECRYSTAL  event: Item
+002. ID: 009 (025,022) item: Kernel.PEARL  event: HiddenItem
 -------------------------------
 Map ID: 194. Lighthouse
 001. ID: 009 (008,049) item: Kernel.HEARTSCALE  event: Item
 -------------------------------
 Map ID: 195. Soul Gym
-001. ID: 025 (013,011) item: Kernel.FOCUSSASH  event: Item
+001. ID: 015 (008,009) item: Kernel.TM92  event: Item
+002. ID: 025 (013,011) item: Kernel.FOCUSSASH  event: Item
 -------------------------------
 Map ID: 196. Route 117
-001. ID: 002 (065,026) item: Kernel.BIGMUSHROOM  event: HiddenItem
+001. ID: 008 (059,019) item: Kernel.RELICVASE  event: Item
+002. ID: 002 (065,026) item: Kernel.BIGMUSHROOM  event: HiddenItem
+003. ID: 007 (023,019) item: Kernel.PEARL  event: HiddenItem
 -------------------------------
 Map ID: 197. Fortune City
 001. ID: 030 (011,037) item: Kernel.PEARL  event: Item
 002. ID: 031 (049,039) item: Kernel.MIRACLESEED  event: Item
-003. ID: 039 (018,025) item: Kernel.TM96  event: Item
-004. ID: 003 (023,032) item: Kernel.HEARTSCALE  event:  HiddenItem
-005. ID: 038 (065,020) item: Kernel.MYSTICWATER  event: HiddenItem
+003. ID: 003 (023,032) item: Kernel.HEARTSCALE  event:  HiddenItem
+004. ID: 038 (065,020) item: Kernel.MYSTICWATER  event: HiddenItem
+005. ID: 039 (018,025) item: Kernel.TM96  event: HiddenItem
+006. ID: 043 (065,038) item: Kernel.PEARL  event: HiddenItem
+007. ID: 045 (021,011) item: Kernel.DRAGONSCALE  event: HiddenItem
 -------------------------------
 Map ID: 198. Waterfall Cave
-001. ID: 002 (017,016) item: Kernel.YELLOWCRYSTAL  event: Item
+001. ID: 002 (021,008) item: Kernel.YELLOWCRYSTAL  event: Item
+002. ID: 006 (010,020) item: Kernel.TM71  event: Item
+003. ID: 008 (019,012) item: Kernel.AUDINITE  event: Item
+004. ID: 007 (031,022) item: Kernel.BALMMUSHROOM  event: HiddenItem
+-------------------------------
+Map ID: 200. Saltstone Villa
+001. ID: 011 (062,009) item: Kernel.GRIPCLAW  event: EV011
 -------------------------------
 Map ID: 201. Cinder Island
 001. ID: 002 (013,008) item: Kernel.HEARTSCALE  event: Item
 002. ID: 003 (005,003) item: Kernel.HEARTSCALE  event: Item
 003. ID: 004 (012,003) item: Kernel.HEARTSCALE  event: Item
 004. ID: 005 (001,004) item: Kernel.PICKAXE  event: HiddenItem
+-------------------------------
+Map ID: 206. Route 103
+001. ID: 003 (020,045) item: random_item = apricorns.sample;random_item  event: Apricorn tree
+002. ID: 010 (036,023) item: Kernel.TM48  event: Item
+003. ID: 033 (017,014) item: Kernel.LOPUNNITE  event: Item
+004. ID: 037 (009,009) item: random_item = apricorns.sample;random_item  event: Apricorn tree
+005. ID: 019 (009,046) item: Kernel.GREATBALL  event: HiddenItem
+006. ID: 023 (025,034) item: Kernel.TINYMUSHROOM  event: HiddenItem
+-------------------------------
+Map ID: 207. Route 104
+001. ID: 029 (072,020) item: Kernel.TM65  event: Item
+002. ID: 030 (023,024) item: Kernel.EXPERTBELT  event: Item
+003. ID: 006 (029,041) item: Kernel.HEALPOWDER  event: HiddenItem
+004. ID: 056 (067,012) item: Kernel.POKEBALL  event: HiddenItem
+005. ID: 057 (069,044) item: Kernel.HYPERPOTION  event: HiddenItem
+006. ID: 080 (032,022) item: Kernel.RARECANDY  event: HiddenItem
+-------------------------------
+Map ID: 211. MAP211
+001. ID: 004 (007,012) item: Kernel.CHARIZARDITEY  event: Item
+002. ID: 005 (010,012) item: Kernel.CHARIZARDITEY  event: Item
+003. ID: 006 (013,012) item: Kernel.LOPUNNITE  event: Item

@@ -147,6 +147,7 @@ class PokeBattle_Battler
 
   def pbConsumeItem(recoverable=true,symbiosis=true,belch=true)
     PBDebug.log("[Item consumed] #{pbThis} consumed its held #{itemName}")
+    echoln "[Item consumed] #{pbThis} consumed its held #{itemName}"
     if recoverable
       setRecycleItem(@item_id)
       @effects[PBEffects::PickupItem] = @item_id

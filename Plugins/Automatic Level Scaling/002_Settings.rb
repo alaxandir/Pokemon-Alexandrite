@@ -10,7 +10,7 @@ module LevelScalingSettings
   WILD_VARIABLE = 100
 
   # If evolution levels are not defined when creating a difficulty, these are the default values used
-  AUTOMATIC_EVOLUTIONS = true
+  AUTOMATIC_EVOLUTIONS = false
   DEFAULT_FIRST_EVOLUTION_LEVEL = 20
   DEFAULT_SECOND_EVOLUTION_LEVEL = 40
 

@@ -16,7 +16,6 @@ module PBTrainerAI
 end
 
 
-
 class PokeBattle_AI
   def initialize(battle)
     @battle = battle
@@ -31,17 +30,17 @@ class PokeBattle_AI
       sum += c[1]
       n   += 1
     end
-    return 0 if n<2
+    return 0 if n < 2
     mean = sum.to_f/n.to_f
     varianceTimesN = 0
     choices.each do |c|
       next if c[1]<=0
-      deviation = c[1].to_f-mean
-      varianceTimesN += deviation*deviation
+      deviation = c[1].to_f - mean
+      varianceTimesN += deviation * deviation
     end
     # Using population standard deviation
     # [(n-1) makes it a sample std dev, would be 0 with only 1 sample]
-    return Math.sqrt(varianceTimesN/n)
+    return Math.sqrt(varianceTimesN / n)
   end
 
   #=============================================================================
@@ -51,6 +50,7 @@ class PokeBattle_AI
     battler = @battle.battlers[idxBattler]
     if @battle.pbCanMegaEvolve?(idxBattler)   # Simple "always should if possible"
       PBDebug.log("[AI] #{battler.pbThis} (#{idxBattler}) will Mega Evolve")
+      echoln "[AI] #{battler.pbThis} (#{idxBattler}) will Mega Evolve"
       return true
     end
     return false

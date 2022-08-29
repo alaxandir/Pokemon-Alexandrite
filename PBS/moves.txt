@@ -496,7 +496,7 @@
 482,PROTECT,Protect,0AA,0,NORMAL,Status,0,10,0,User,4,,"It enables the user to evade all attacks. Its chance of failing rises if it is used in succession."
 483,PSYCHUP,Psych Up,055,0,NORMAL,Status,0,10,0,NearOther,0,,"The user hypnotizes itself into copying any stat change made by the target."
 484,RECOVER,Recover,0D5,0,NORMAL,Status,0,3,0,User,0,d,"Restoring its own cells, the user restores its own HP by half of its max HP."
-485,RECYCLE,Recycle,0F6,0,NORMAL,Status,0,10,0,User,0,d,"The user recycles a held item that has been used in battle so it can be used again."
+485,RECYCLE,Recycle,0F6,0,NORMAL,Status,0,3,0,User,0,d,"The user recycles a held item that has been used in battle so it can be used again."
 486,REFLECTTYPE,Reflect Type,062,0,NORMAL,Status,0,15,0,NearOther,0,b,"The user reflects the target's type, making it the same type as the target."
 487,REFRESH,Refresh,018,0,NORMAL,Status,0,20,0,User,0,d,"The user rests to cure itself of a poisoning, burn, or paralysis."
 488,ROAR,Roar,0EB,0,NORMAL,Status,0,20,0,NearOther,-6,cek,"The target is scared off and replaced by another Pokémon in its party. In the wild, the battle ends."

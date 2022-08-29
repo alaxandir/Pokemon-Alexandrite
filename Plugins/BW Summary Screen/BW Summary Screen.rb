@@ -731,8 +731,8 @@ def pbDisplayIVRating
       mapname = pbGetMapNameFromId(@pokemon.hatched_map)
       mapname = _INTL("Faraway place") if nil_or_empty?(mapname)
         # Changed the colors of the text, to the one used in BW
-      memo += sprintf("<c3=C60000,FF7373>%s\n",mapname)
-      memo += _INTL("<c3=404040,B0B0B0>Egg hatched.\n")
+      memo += sprintf("<c3=C60000,FF7373>%s",mapname)
+      memo += _INTL("<c3=404040,B0B0B0> egg hatched.\n")
     else
       memo += "\n"   # Empty line
     end
@@ -784,7 +784,12 @@ def pbDisplayIVRating
       memo += sprintf("<c3=404040,B0B0B0>%s\n", characteristics[best_stat][best_iv % 5])
     end
     # Write all text
-    drawFormattedTextEx(overlay,12,68,300,memo)
+
+    type, power = pbHiddenPower(@pokemon)
+    typeName = GameData::Type.get(type).real_name
+    memo += _INTL("Hidden Power: {1} {2}",typeName,power)
+
+    drawFormattedTextEx(overlay,12,68,320,memo)
   end
   def drawPageThree
     overlay = @sprites["overlay"].bitmap
@@ -841,7 +846,7 @@ def pbDisplayIVRating
     ability = @pokemon.ability
     if ability
       textpos.push([ability.name,240,284,2,Color.new(90,82,82),Color.new(165,165,173)])
-      drawTextEx(overlay,12,324,282,2,ability.description,base,shadow)
+      drawTextEx(overlay,4,324,282,2,ability.description,base,shadow)
     end
     # Draw all text
     pbDrawTextPositions(overlay,textpos)

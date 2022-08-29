@@ -124,6 +124,7 @@ class PokeBattle_Battler
   def pbDisobey(choice,badgeLevel)
     move = choice[2]
     PBDebug.log("[Disobedience] #{pbThis} disobeyed")
+    echoln "[Disobedience] #{pbThis} disobeyed"
     @effects[PBEffects::Rage] = false
     # Do nothing if using Snore/Sleep Talk
     if @status == :SLEEP && move.usableWhenAsleep?
@@ -186,6 +187,7 @@ class PokeBattle_Battler
     # Check whether it's possible for self to do anything at all
     if @effects[PBEffects::SkyDrop]>=0   # Intentionally no message here
       PBDebug.log("[Move failed] #{pbThis} can't use #{move.name} because of being Sky Dropped")
+      echoln "[Move failed] #{pbThis} can't use #{move.name} because of being Sky Dropped"
       return false
     end
     if @effects[PBEffects::HyperBeam]>0   # Intentionally before Truant
@@ -403,6 +405,7 @@ class PokeBattle_Battler
     # Type immunity
     if move.pbDamagingMove? && Effectiveness.ineffective?(typeMod)
       PBDebug.log("[Target immune] #{target.pbThis}'s type immunity")
+      echoln "[Target immune] #{target.pbThis}'s type immunity"
       @battle.pbDisplay(_INTL("It doesn't affect {1}...",target.pbThis(true)))
       return false
     end
@@ -410,6 +413,7 @@ class PokeBattle_Battler
     if Settings::MECHANICS_GENERATION >= 7 && user.effects[PBEffects::Prankster] &&
        target.pbHasType?(:DARK) && target.opposes?(user)
       PBDebug.log("[Target immune] #{target.pbThis} is Dark-type and immune to Prankster-boosted moves")
+      echoln "[Target immune] #{target.pbThis} is Dark-type and immune to Prankster-boosted moves"
       @battle.pbDisplay(_INTL("It doesn't affect {1}...",target.pbThis(true)))
       return false
     end
@@ -443,6 +447,7 @@ class PokeBattle_Battler
     if move.powderMove?
       if target.pbHasType?(:GRASS) && Settings::MORE_TYPE_EFFECTS
         PBDebug.log("[Target immune] #{target.pbThis} is Grass-type and immune to powder-based moves")
+        echoln "[Target immune] #{target.pbThis} is Grass-type and immune to powder-based moves"
         @battle.pbDisplay(_INTL("It doesn't affect {1}...",target.pbThis(true)))
         return false
       end
@@ -459,6 +464,7 @@ class PokeBattle_Battler
         end
         if target.hasActiveItem?(:SAFETYGOGGLES)
           PBDebug.log("[Item triggered] #{target.pbThis} has Safety Goggles and is immune to powder-based moves")
+          echoln "[Item triggered] #{target.pbThis} has Safety Goggles and is immune to powder-based moves"
           @battle.pbDisplay(_INTL("It doesn't affect {1}...",target.pbThis(true)))
           return false
         end
@@ -468,6 +474,7 @@ class PokeBattle_Battler
     if target.effects[PBEffects::Substitute]>0 && move.statusMove? &&
        !move.ignoresSubstitute?(user) && user.index!=target.index
       PBDebug.log("[Target immune] #{target.pbThis} is protected by its Substitute")
+      echoln "[Target immune] #{target.pbThis} is protected by its Substitute"
       @battle.pbDisplay(_INTL("{1} avoided the attack!",target.pbThis(true)))
       return false
     end
@@ -520,6 +527,7 @@ class PokeBattle_Battler
     end
     # Missed
     PBDebug.log("[Move failed] Failed pbAccuracyCheck or target is semi-invulnerable")
+    echoln "[Move failed] Failed pbAccuracyCheck or target is semi-invulnerable"
     return false
   end
 
