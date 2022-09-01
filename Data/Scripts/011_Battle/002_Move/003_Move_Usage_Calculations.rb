@@ -258,10 +258,12 @@ class PokeBattle_Move
     }
     pbCalcDamageMultipliers(user,target,numTargets,type,baseDmg,multipliers)
     # Main damage calculation
+    #baseDmg = [(baseDmg * multipliers[:base_damage_multiplier]).round, 1].max
     baseDmg = [(baseDmg * multipliers[:base_damage_multiplier]).round, 1].max
     atk     = [(atk     * multipliers[:attack_multiplier]).round, 1].max
     defense = [(defense * multipliers[:defense_multiplier]).round, 1].max
-    damage  = (((2.0 * user.level / 5 + 2).floor * baseDmg * atk / defense).floor / 50).floor + 2
+   # damage  = (((2.0 * user.level / 5 + 2).floor * baseDmg * atk / defense).floor / 50).floor + 2
+    damage  = (((2.0 * user.level / 5 + 2).floor * baseDmg * atk / defense) / 50) + 2
     damage  = [(damage  * multipliers[:final_damage_multiplier]).round, 1].max
     target.damageState.calcDamage = damage
   end
@@ -493,5 +495,9 @@ class PokeBattle_Move
     ret *= 2 if user.hasActiveAbility?(:SERENEGRACE) ||
                 user.pbOwnSide.effects[PBEffects::Rainbow]>0
     return ret
+  end
+
+  def pokeRound(num) 
+    return num % 1 > 0.5 ? Math.ceil(num) : Math.floor(num);
   end
 end
