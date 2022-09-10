@@ -5183,7 +5183,7 @@ BattlerPlayerX          = 32
 BattlerPlayerY          = 46
 BattlerEnemyX           = -20
 #-------------------------------
-[BEEDRILL,1]
+[BEEDRILL,2]
 BattlerEnemyY           = 33
 BattlerAltitude         = 16
 BattlerPlayerX          = 23

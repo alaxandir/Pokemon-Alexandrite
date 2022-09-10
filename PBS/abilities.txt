@@ -234,3 +234,4 @@
 232,PRISMARMOR,Prism Armor,"Reduces damage from super-effective attacks."
 233,NEUROFORCE,Neuroforce,"Powers up moves that are super-effective."
 234,COTTONDOWN,Cottondown,"Scatters Speed-lowering cotton fluff when hit."
+235,REQUITAL,Requital,"Powers up Dark-type moves in a pinch."

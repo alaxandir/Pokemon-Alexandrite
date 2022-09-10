@@ -44,7 +44,7 @@ Weight = 101.1
 Pokedex = The cannon on its back is as powerful as a tank gun. Its tough legs and back enable it to withstand the recoil from firing the cannon.
 Generation = 6
 #-------------------------------
-[BEEDRILL,1]
+[BEEDRILL,2]
 FormName = Mega Beedrill
 MegaStone = BEEDRILLITE
 BaseStats = 75,150,40,145,15,95
@@ -1926,4 +1926,4 @@ BattlerEnemyX = -2
 BattlerEnemyY = 18
 BattlerShadowX = 0
 BattlerShadowSize = 1
-Evolutions = SILCOON,LevelDay,7,CASCOON,LevelNight,7
+Evolutions = SILCOON,LevelDaySetForm0,7,CASCOON,LevelNightSetForm0,7

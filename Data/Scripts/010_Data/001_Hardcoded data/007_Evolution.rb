@@ -99,6 +99,30 @@ GameData::Evolution.register({
 })
 
 GameData::Evolution.register({
+  :id            => :LevelDaySetForm0,
+  :parameter     => Integer,
+  :level_up_proc => proc { |pkmn, parameter|
+    next pkmn.level >= parameter && PBDayNight.isDay?
+  },
+  :after_evolution_proc => proc { |pkmn, new_species, parameter, evo_species|
+    pkmn.form = 0   # Item is now consumed
+    next true
+  }
+})
+
+GameData::Evolution.register({
+  :id            => :LevelNightSetForm0,
+  :parameter     => Integer,
+  :level_up_proc => proc { |pkmn, parameter|
+    next pkmn.level >= parameter && PBDayNight.isNight?
+  },
+  :after_evolution_proc => proc { |pkmn, new_species, parameter, evo_species|
+    pkmn.form = 0   # Item is now consumed
+    next true
+  }
+})
+
+GameData::Evolution.register({
   :id            => :LevelMorning,
   :parameter     => Integer,
   :level_up_proc => proc { |pkmn, parameter|

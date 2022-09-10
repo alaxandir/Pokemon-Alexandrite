@@ -22,6 +22,23 @@ ItemHandlers::UseFromBag.add(:HONEY,proc { |item|
   next 4
 })
 
+ItemHandlers::UseFromBag.add(:POCKETPC,proc { |item|
+  if ($game_map.name.include?("Elite Four") || $game_map.name.include?("Champion"))
+	  pbMessage(_INTL("Can't use that here."))
+    next 0
+  else
+    next 2
+  end
+})
+
+ItemHandlers::UseFromBag.add(:POCKETNURSE,proc { |item|
+  if ($game_map.name.include?("Elite Four") || $game_map.name.include?("Champion"))
+	  pbMessage(_INTL("Can't use that here."))
+    next 0
+  else
+    next 2
+  end 
+})
 
 ItemHandlers::UseFromBag.add(:ESCAPEROPE,proc { |item|
   if $game_player.pbHasDependentEvents?
@@ -404,17 +421,17 @@ ItemHandlers::UseInField.add(:EXPALLOFF,proc { |item|
 })
 
 ItemHandlers::UseInField.add(:POCKETPC,proc { |item|
-  if $game_map.name.include?("Elite Four") || $game_map.name.include?("Champion")
+  if ($game_map.name.include?("Elite Four") || $game_map.name.include?("Champion"))
 	pbMessage(_INTL("Can't use that here."))
   else
-  pbPokeCenterPC
+    pbPokeCenterPC
   end
-  next 1
+  next 0
 })
 
 ItemHandlers::UseInField.add(:POCKETNURSE,proc { |item|
-  if $game_map.name.include?("Elite Four") || $game_map.name.include?("Champion")
-	pbMessage(_INTL("Can't use that here."))
+  if ($game_map.name.include?("Elite Four") || $game_map.name.include?("Champion"))
+	  pbMessage(_INTL("Can't use that here."))
   else
     pbFadeOutIn {
       annot = []
@@ -436,7 +453,7 @@ ItemHandlers::UseInField.add(:POCKETNURSE,proc { |item|
       screen.pbEndScene
     }
   end
-  next 1  
+  next 0  
 })
 
 #===============================================================================

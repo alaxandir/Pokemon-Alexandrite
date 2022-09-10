@@ -285,11 +285,11 @@ end
 
 def pbRaiseEffortValues(pkmn, stat, evGain = 60, ev_limit = true)
   stat = GameData::Stat.get(stat).id
-  return 0 if ev_limit && pkmn.ev[stat] >= 180
+  return 0 if ev_limit && pkmn.ev[stat] >= 252
   evTotal = 0
   GameData::Stat.each_main { |s| evTotal += pkmn.ev[s.id] }
   evGain = evGain.clamp(0, Pokemon::EV_STAT_LIMIT - pkmn.ev[stat])
-  evGain = evGain.clamp(0, 100 - pkmn.ev[stat]) if ev_limit
+  evGain = evGain.clamp(0, 252 - pkmn.ev[stat]) if ev_limit
   evGain = evGain.clamp(0, Pokemon::EV_LIMIT - evTotal)
   if evGain > 0
     pkmn.ev[stat] += evGain
