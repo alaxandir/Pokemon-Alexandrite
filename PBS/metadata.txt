@@ -1300,7 +1300,6 @@ BattleBack = Snow
 # Glacier Interiors
 Outdoor = false
 Weather = None,0
-Weather = None,0
 MapPosition = 0,20,16
 #-------------------------------
 [181]

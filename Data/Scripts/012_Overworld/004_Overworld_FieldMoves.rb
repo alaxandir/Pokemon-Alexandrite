@@ -538,22 +538,13 @@ HiddenMoveHandlers::UseMove.add(:FLY,proc { |move,pokemon|
 #===============================================================================
 def pbHeadbuttEffect(event=nil)
   event = $game_player.pbFacingEvent(true) if !event
-  a = (event.x+(event.x/24).floor+1)*(event.y+(event.y/24).floor+1)
-  a = (a*2/5)%10   # Even 2x as likely as odd, 0 is 1.5x as likely as odd
-  b = $Trainer.public_ID % 10   # Practically equal odds of each value
-  chance = 1                             # ~50%
-  if a==b;                  chance = 8   # 10%
-  elsif a>b && (a-b).abs<5; chance = 5   # ~30.3%
-  elsif a<b && (a-b).abs>5; chance = 5   # ~9.7%
+  case rand(6)
+  when 0..2 then enctype = :HeadbuttHigh
+  when 3..6 then enctype = :HeadbuttLow
   end
-  if rand(10)>=chance
-    pbMessage(_INTL("Nope. Nothing..."))
-  else
-    enctype = (chance==1) ? :HeadbuttLow : :HeadbuttHigh
     if !pbEncounter(enctype)
       pbMessage(_INTL("Nope. Nothing..."))
     end
-  end
 end
 
 def pbHeadbutt(event=nil)
@@ -617,7 +608,7 @@ def pbRockSmash
   return false
 end
 
-HiddenMoveHandlers::CanUseMove.add(:ROCKSMASH,proc { |move,pkmn,showmsg|
+=begin HiddenMoveHandlers::CanUseMove.add(:ROCKSMASH,proc { |move,pkmn,showmsg|
   next false if !pbCheckHiddenMoveBadge(Settings::BADGE_FOR_ROCKSMASH,showmsg)
   facingEvent = $game_player.pbFacingEvent
   if !facingEvent || !facingEvent.name[/smashrock/i]
@@ -637,7 +628,8 @@ HiddenMoveHandlers::UseMove.add(:ROCKSMASH,proc { |move,pokemon|
     pbRockSmashRandomEncounter
   end
   next true
-})
+}) 
+=end
 
 
 
@@ -963,7 +955,7 @@ def pbWaterfall
   return false
 end
 
-Events.onAction += proc { |_sender,_e|
+=begin Events.onAction += proc { |_sender,_e|
   terrain = $game_player.pbFacingTerrainTag
   if terrain.waterfall
     pbWaterfall
@@ -987,7 +979,8 @@ HiddenMoveHandlers::UseMove.add(:WATERFALL,proc { |move,pokemon|
   end
   pbAscendWaterfall
   next true
-})
+}) 
+=end
 #===============================================================================
 # Rain Dance
 #===============================================================================

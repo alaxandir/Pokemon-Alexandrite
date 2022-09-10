@@ -984,6 +984,14 @@ BattleHandlers::DamageCalcUserAbility.add(:OVERGROW,
   }
 )
 
+BattleHandlers::DamageCalcUserAbility.add(:REQUITAL,
+  proc { |ability,user,target,move,mults,baseDmg,type|
+    if user.hp <= user.totalhp / 3 && type == :DARK
+      mults[:attack_multiplier] *= 1.5
+    end
+  }
+)
+
 BattleHandlers::DamageCalcUserAbility.add(:RECKLESS,
   proc { |ability,user,target,move,mults,baseDmg,type|
     mults[:base_damage_multiplier] *= 1.2 if move.recoilMove?

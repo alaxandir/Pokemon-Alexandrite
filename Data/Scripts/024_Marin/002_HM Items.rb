@@ -200,6 +200,7 @@ if USING_ROCK_SMASH_ITEM
     #item = PBItems.getName(getConst(PBItems,ROCK_SMASH_ITEM))
     if Kernel.pbConfirmMessage(_INTL("This rock appears to be breakable. Would you like to use the SHATTERHAMMER?"))
       Kernel.pbMessage(_INTL("{1} used the SHATTERHAMMER!",$Trainer.name))
+      #pbRockSmashRandomEncounter
       return true
     end
     return false
