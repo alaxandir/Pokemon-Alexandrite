@@ -8,7 +8,11 @@
 module Settings
   # The version of your game. It has to adhere to the MAJOR.MINOR.PATCH format.
 
+<<<<<<< Updated upstream
 	GAME_VERSION = '1.1.4'
+=======
+	GAME_VERSION = '1.1.5'
+>>>>>>> Stashed changes
 
 	
   # The generation that the battle system follows. Used throughout the battle
