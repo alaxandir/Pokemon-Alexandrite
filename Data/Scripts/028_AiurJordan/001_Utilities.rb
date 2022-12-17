@@ -127,7 +127,7 @@ def pbStartMirror(eventid)
 end
 
 def pbEndMirror
-  $PokemonTemp.mirror_guy_eventid =999
+  #$PokemonTemp.mirror_guy_eventid =999
 end
 
 def caught
