@@ -1333,7 +1333,7 @@ Moves = PSYCHIC,HYPNOSIS,DREAMEATER,FIREPUNCH
 IV = 25,25,25,25,25,25
 
 Pokemon = FLAREON,28
-Item = FLAMEORB
+Item = TOXICORB
 AbilityIndex = 2 #GUTS
 Gender = Female
 IV = 22,22,22,22,22,22
@@ -3972,7 +3972,7 @@ Gender = Male
 IV = 25,25,25,25,25,25
 Moves = WILLOWISP,SHADOWBALL,HEX,OMINOUSWIND
 Pokemon = FLAREON,44
-Item = FLAMEORB
+Item = TOXICORB
 AbilityIndex = 2 #GUTS
 Gender = Female
 IV = 22,22,22,22,22,22
